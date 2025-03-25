@@ -21,8 +21,11 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k0juu"]
+margin = 0.0
+height = 1.7
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wyf3"]
+margin = 0.0
 height = 1.2
 
 [node name="World" type="Node3D"]
@@ -62,11 +65,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.605285, 0)
 shape = SubResource("CapsuleShape3D_4wyf3")
 disabled = true
 
-[node name="Head" type="Node3D" parent="Player"]
+[node name="RayCast3D" type="RayCast3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+target_position = Vector3(0, 1.7, 0)
+
+[node name="Neck" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Player/Head"]
+[node name="Head" type="Node3D" parent="Player/Neck"]
 
-[node name="RayCast3D" type="RayCast3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306229, 0)
-target_position = Vector3(0, 1.7, 0)
+[node name="Eyes" type="Node3D" parent="Player/Neck/Head"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/Neck/Head/Eyes"]
