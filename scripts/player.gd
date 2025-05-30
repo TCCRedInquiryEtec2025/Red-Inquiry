@@ -12,6 +12,7 @@ extends CharacterBody3D
 
 # Speed vars
 var curSpeed = 5.0
+var can_move = true
 
 const walkingSpeed = 5.0
 const sprintSpeed = 8.0
@@ -59,8 +60,11 @@ const mouseSensi = 0.25
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:	
 	# Mouse looking logic
+	if(can_move) == false:
+		return
+	
 	if event is InputEventMouseMotion: # Moves camera
 		if freeLooking:
 			neck.rotate_y(deg_to_rad(event.relative.x * mouseSensi) * -1)
@@ -75,6 +79,8 @@ func _physics_process(delta: float) -> void:
 	# Getting movement input
 	var input_dir := Input.get_vector("walkLeft", "walkRight", "walkUp", "walkDown")
 	# Handle movement state
+	if can_move == false:
+		return
 	
 	# Crouching
 	if Input.is_action_pressed("crouch") or sliding:
