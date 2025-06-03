@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event.is_action_pressed("ui_tab"):
-		toggle_agenda()
+		if(player.is_on_floor()):
+			toggle_agenda()
 
 func toggle_agenda():
 	hud.visible = !hud.visible

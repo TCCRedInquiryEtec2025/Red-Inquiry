@@ -1,10 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl3me73mor0ud"]
+[gd_scene load_steps=23 format=3 uid="uid://bl3me73mor0ud"]
 
-[ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scenes/main.gd" id="1_71j4m"]
+[ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_71j4m"]
 [ext_resource type="Texture2D" uid="uid://drcq0i0fajhe8" path="res://assets/textures/dev/grids/Dark/texture_07.png" id="1_rwgxs"]
 [ext_resource type="Texture2D" uid="uid://cog0om1v4djaw" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_4wyf3"]
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="3_4wyf3"]
 [ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="4_k0juu"]
+[ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="6_qfnet"]
+[ext_resource type="Texture2D" uid="uid://bsl1kga0okqvo" path="res://assets/icons/PNG/White/2x/arrowLeft.png" id="7_w7kh3"]
+[ext_resource type="Texture2D" uid="uid://dbxpusbfsqafn" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_e_outline.png" id="8_e3hyu"]
+[ext_resource type="Texture2D" uid="uid://cm3chjprx5jun" path="res://assets/icons/PNG/White/2x/arrowRight.png" id="9_q5onr"]
+[ext_resource type="Texture2D" uid="uid://k0qxrnc8gxja" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_q_outline.png" id="10_e3hyu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0juu"]
 albedo_texture = ExtResource("1_rwgxs")
@@ -50,6 +55,22 @@ font_color = Color(0, 0, 0, 1)
 outline_size = 2
 shadow_size = 4
 shadow_offset = Vector2(3.1, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_o8fc1"]
+device = -1
+keycode = 69
+unicode = 101
+
+[sub_resource type="Shortcut" id="Shortcut_xo05s"]
+events = [SubResource("InputEventKey_o8fc1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qfnet"]
+device = -1
+keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_i7141"]
+events = [SubResource("InputEventKey_qfnet")]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_71j4m")
@@ -106,27 +127,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 visible = false
 script = ExtResource("4_k0juu")
 
-[node name="Control" type="Control" parent="NoteBookHUD"]
+[node name="AgendaUI" type="Control" parent="NoteBookHUD"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CenterContainer" type="CenterContainer" parent="NoteBookHUD/Control"]
-layout_mode = 1
-anchors_preset = -1
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(500, 300)
+script = ExtResource("6_qfnet")
 
-[node name="Panel" type="Panel" parent="NoteBookHUD/Control/CenterContainer"]
-custom_minimum_size = Vector2(1000, 600)
+[node name="CenterContainer" type="CenterContainer" parent="NoteBookHUD/AgendaUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelPg1" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
+custom_minimum_size = Vector2(1600, 900)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
 
-[node name="Label" type="Label" parent="NoteBookHUD/Control/CenterContainer/Panel"]
+[node name="Label" type="Label" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg1"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -134,3 +157,79 @@ text = "ISSO É O UM TESTE"
 label_settings = SubResource("LabelSettings_k0juu")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ButtonPage2" type="TextureButton" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_right = 300.0
+grow_horizontal = 0
+grow_vertical = 2
+shortcut = SubResource("Shortcut_xo05s")
+
+[node name="ContainerSprites" type="VBoxContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg1/ButtonPage2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpriteArrowRight" type="Sprite2D" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg1/ButtonPage2/ContainerSprites"]
+position = Vector2(0, -100)
+texture = ExtResource("9_q5onr")
+
+[node name="SpriteKeyE" type="Sprite2D" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg1/ButtonPage2/ContainerSprites"]
+texture = ExtResource("8_e3hyu")
+
+[node name="PanelPg2" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
+custom_minimum_size = Vector2(1600, 900)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
+
+[node name="Label" type="Label" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ISSO É O UM TESTE, SÓ QUE 2"
+label_settings = SubResource("LabelSettings_k0juu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPage1" type="TextureButton" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_right = -300.0
+grow_vertical = 2
+shortcut = SubResource("Shortcut_i7141")
+
+[node name="ContainerSprites" type="VBoxContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg2/ButtonPage1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SpriteArrowLeft" type="Sprite2D" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg2/ButtonPage1/ContainerSprites"]
+position = Vector2(0, -100)
+texture = ExtResource("7_w7kh3")
+
+[node name="SpriteKeyQ" type="Sprite2D" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg2/ButtonPage1/ContainerSprites"]
+texture = ExtResource("10_e3hyu")

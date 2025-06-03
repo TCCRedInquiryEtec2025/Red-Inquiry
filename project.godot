@@ -11,9 +11,21 @@ config_version=5
 [application]
 
 config/name="RedInquiry"
+config/description="Jogo para TCC"
 run/main_scene="uid://bl3me73mor0ud"
 config/features=PackedStringArray("4.4", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://ctyp782ojjkxu"
 
 [input]
 

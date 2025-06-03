@@ -1,3 +1,18 @@
-# Godot 4+ specific ignores
+# Godot-specific folders
+.import/
+.export/
 .godot/
-/android/
+
+# Exported builds
+*.exe
+*.apk
+*.zip
+*.x86_64
+*.pck
+
+# Godot temporary files
+*.godot/tmp/*
+
+# OS junk
+.DS_Store
+Thumbs.db
