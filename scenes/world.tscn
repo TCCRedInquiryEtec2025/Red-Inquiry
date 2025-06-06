@@ -145,7 +145,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelPg1" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
-custom_minimum_size = Vector2(1600, 900)
+custom_minimum_size = Vector2(1200, 900)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
 
@@ -165,8 +165,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 300.0
-offset_right = 300.0
+offset_left = 150.0
+offset_right = 190.0
+offset_bottom = 40.0
 grow_horizontal = 0
 grow_vertical = 2
 shortcut = SubResource("Shortcut_xo05s")
@@ -191,7 +192,7 @@ texture = ExtResource("9_q5onr")
 texture = ExtResource("8_e3hyu")
 
 [node name="PanelPg2" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
-custom_minimum_size = Vector2(1600, 900)
+custom_minimum_size = Vector2(1200, 900)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
 
@@ -209,8 +210,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_right = -300.0
+offset_left = -200.0
+offset_right = -160.0
+offset_bottom = 40.0
 grow_vertical = 2
 shortcut = SubResource("Shortcut_i7141")
 
