@@ -7,8 +7,8 @@ extends Control
 var current_page_index = 0
 
 func _ready():
-	# button_page1.pressed.connect(func(): switch_page(0))
-	# button_page2.pressed.connect(func(): switch_page(1))
+	button_page1.pressed.connect(func(): switch_page(0))
+	button_page2.pressed.connect(func(): switch_page(1))
 	update_pages()
 
 func _input(event):
