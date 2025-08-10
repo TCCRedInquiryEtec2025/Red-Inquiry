@@ -1,9 +1,10 @@
-[gd_scene load_steps=155 format=4 uid="uid://bl3me73mor0ud"]
+[gd_scene load_steps=156 format=4 uid="uid://bl3me73mor0ud"]
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_71j4m"]
 [ext_resource type="Texture2D" uid="uid://cog0om1v4djaw" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="2_jhx03"]
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="3_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://rdpik2xs0fvt" path="res://assets/hdris/wmremove-transformed_LE_upscale_balanced_x4.jpg" id="3_lakw3"]
 [ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="4_k0juu"]
 [ext_resource type="Shader" uid="uid://dbxg5ngmcx8jd" path="res://assets/shaders/vignette.gdshader" id="5_e3hyu"]
 [ext_resource type="Script" uid="uid://b3yxlxxhq0e7h" path="res://scripts/vignette.gd" id="6_q5onr"]
@@ -26,7 +27,7 @@ ao_light_affect = 1.0
 refraction_scale = -1.0
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_71j4m"]
-panorama = ExtResource("2_4wyf3")
+panorama = ExtResource("3_lakw3")
 
 [sub_resource type="Sky" id="Sky_qfnet"]
 sky_material = SubResource("PanoramaSkyMaterial_71j4m")
@@ -35,17 +36,18 @@ process_mode = 1
 [sub_resource type="Environment" id="Environment_i7141"]
 background_mode = 2
 sky = SubResource("Sky_qfnet")
+sky_rotation = Vector3(0, 3.14159, 0)
 ambient_light_source = 1
 reflected_light_source = 1
 tonemap_mode = 4
-tonemap_exposure = 0.4
 ssao_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_density = 0.1761
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k0juu"]
 margin = 0.0
-height = 2.2
+height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wyf3"]
 margin = 0.0
@@ -1315,6 +1317,9 @@ shadow_mesh = SubResource("ArrayMesh_ywprb")
 resource_name = "Office_Sh.019"
 cull_mode = 2
 albedo_texture = ExtResource("16_7t5mc")
+backlight_enabled = true
+backlight = Color(0.563626, 0.563626, 0.563626, 1)
+grow_amount = -2.265
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_70ors"]
 _surfaces = [{
@@ -1350,9 +1355,13 @@ shadow_mesh = SubResource("ArrayMesh_70ors")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktga5"]
 resource_name = "Glass.003"
-cull_mode = 2
-albedo_texture = ExtResource("2_4wyf3")
-distance_fade_mode = 1
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+albedo_texture = ExtResource("16_7t5mc")
+emission_enabled = true
+emission = Color(0.348533, 0.422801, 0.385873, 1)
+emission_energy_multiplier = 1.78
 distance_fade_max_distance = 30.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tg1bh"]
@@ -1412,6 +1421,7 @@ shadow_mesh = SubResource("ArrayMesh_tg1bh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heo3p"]
 resource_name = "Office_Sh.024"
 cull_mode = 2
+albedo_texture = ExtResource("13_jhx03")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vc782"]
 _surfaces = [{
@@ -1450,6 +1460,8 @@ shadow_mesh = SubResource("ArrayMesh_vc782")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smyhy"]
 resource_name = "Office_Sh.025"
 cull_mode = 2
+albedo_texture = ExtResource("16_7t5mc")
+backlight = Color(0.468777, 0.468777, 0.468777, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1xs2r"]
 _surfaces = [{
@@ -1485,7 +1497,11 @@ shadow_mesh = SubResource("ArrayMesh_1xs2r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijw7o"]
 resource_name = "Glass.005"
-cull_mode = 2
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+proximity_fade_enabled = true
+proximity_fade_distance = 5.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tr7uh"]
 _surfaces = [{
@@ -1544,6 +1560,7 @@ shadow_mesh = SubResource("ArrayMesh_tr7uh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6l63"]
 resource_name = "Office_Sh.009"
 cull_mode = 2
+albedo_texture = ExtResource("13_jhx03")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vo5sv"]
 _surfaces = [{
@@ -1580,6 +1597,7 @@ shadow_mesh = SubResource("ArrayMesh_vo5sv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akauk"]
 resource_name = "Office_Sh.016"
 cull_mode = 2
+albedo_texture = ExtResource("13_jhx03")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vpkmq"]
 _surfaces = [{
@@ -1616,6 +1634,7 @@ shadow_mesh = SubResource("ArrayMesh_vpkmq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juyia"]
 resource_name = "Office_Sh.017"
 cull_mode = 2
+albedo_texture = ExtResource("13_jhx03")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_uyv5n"]
 _surfaces = [{
@@ -1652,6 +1671,7 @@ shadow_mesh = SubResource("ArrayMesh_uyv5n")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crwxy"]
 resource_name = "Office_Sh.010"
 cull_mode = 2
+albedo_texture = ExtResource("13_jhx03")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_g44o2"]
 _surfaces = [{
@@ -1688,6 +1708,7 @@ shadow_mesh = SubResource("ArrayMesh_g44o2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35kw0"]
 resource_name = "Office_Sh.018"
 cull_mode = 2
+albedo_texture = ExtResource("13_jhx03")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kdvir"]
 _surfaces = [{
@@ -1724,6 +1745,7 @@ shadow_mesh = SubResource("ArrayMesh_kdvir")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k08ex"]
 resource_name = "Office_Sh.026"
 cull_mode = 2
+albedo_texture = ExtResource("13_jhx03")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_uiyiv"]
 _surfaces = [{
@@ -1762,6 +1784,9 @@ shadow_mesh = SubResource("ArrayMesh_uiyiv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8io3i"]
 resource_name = "Office_Sh.027"
 cull_mode = 2
+albedo_texture = ExtResource("16_7t5mc")
+backlight_enabled = true
+backlight = Color(0.574328, 0.574328, 0.574328, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_81kpv"]
 _surfaces = [{
@@ -1797,7 +1822,13 @@ shadow_mesh = SubResource("ArrayMesh_81kpv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cc0i8"]
 resource_name = "Glass.006"
-cull_mode = 2
+transparency = 2
+alpha_scissor_threshold = 0.7
+alpha_antialiasing_mode = 2
+alpha_antialiasing_edge = 0.5
+depth_draw_mode = 1
+backlight_enabled = true
+backlight = Color(0.244867, 0.192242, 0.169103, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_df05x"]
 _surfaces = [{
@@ -1855,6 +1886,7 @@ shadow_mesh = SubResource("ArrayMesh_df05x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7t5mc"]
 albedo_color = Color(1, 0, 0, 1)
+metallic = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_lakw3"]
 material = SubResource("StandardMaterial3D_7t5mc")
@@ -1884,6 +1916,18 @@ use_collision = true
 size = Vector3(7.5, 1, 2)
 material = SubResource("StandardMaterial3D_w7kh3")
 
+[node name="Wall5" type="CSGBox3D" parent="Office"]
+transform = Transform3D(1.83151e-07, 2.74699e-06, 0.6, -4.19, 2.74699e-06, 2.62268e-08, -3.16336e-07, -36.385, 4.52987e-08, -13.5088, 2.50421, -0.124798)
+use_collision = true
+size = Vector3(7.5, 1, 2)
+material = SubResource("StandardMaterial3D_w7kh3")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Office/Wall5"]
+transform = Transform3D(0.238663, 7.10543e-15, 4.15992e-16, -1.33227e-15, 0.0274839, 1.11022e-15, -2.39446e-15, -9.9476e-14, 1.66667, 0.197474, 1.07102e-08, 9.95942)
+light_energy = 6.772
+spot_range = 11.677
+spot_angle = 61.78
+
 [node name="Wall3" type="CSGBox3D" parent="Office"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, -8.50043, 2.50421, 0)
 visible = false
@@ -1898,11 +1942,41 @@ use_collision = true
 size = Vector3(7.5, 1, 2)
 material = SubResource("StandardMaterial3D_w7kh3")
 
-[node name="Floor2" type="CSGBox3D" parent="Office"]
+[node name="Roof" type="CSGBox3D" parent="Office"]
 transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 0, 5.52846, 0)
 use_collision = true
 size = Vector3(7.5, 1, 5.5)
 material = SubResource("StandardMaterial3D_w7kh3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40514, 2.48295, 3.44039)
+visible = false
+use_collision = true
+size = Vector3(6.135, 4, 4.4)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99138, 2.48295, -1.211)
+visible = false
+use_collision = true
+size = Vector3(2.96252, 4, 0.05)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69381, 2.48295, -1.211)
+visible = false
+use_collision = true
+size = Vector3(3.32452, 4, 0.05)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93111, 3.58164, -1.211)
+visible = false
+use_collision = true
+size = Vector3(1.14566, 1.80261, 0.05)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Office"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0426213, 2.48295, -3.30327)
+visible = false
+use_collision = true
+size = Vector3(4.1775, 4, 0.05)
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -1917,7 +1991,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55642, 0)
 shape = SubResource("CapsuleShape3D_k0juu")
 
 [node name="CrouchingCollisionShape" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10209, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25936, 0)
 shape = SubResource("CapsuleShape3D_4wyf3")
 disabled = true
 
@@ -1934,6 +2008,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168516, 0)
 [node name="Eyes" type="Node3D" parent="Player/Neck/Head"]
 
 [node name="Camera3D" type="Camera3D" parent="Player/Neck/Head/Eyes"]
+fov = 85.0
 
 [node name="Shaders" type="Control" parent="Player/Neck/Head/Eyes/Camera3D"]
 layout_mode = 3
@@ -2102,7 +2177,7 @@ texture = ExtResource("7_w7kh3")
 texture = ExtResource("10_e3hyu")
 
 [node name="Ceilling_Fan" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44757, 3.94374, 0.874751)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93724, 3.94374, 0.00435126)
 mesh = SubResource("ArrayMesh_cnmi1")
 skeleton = NodePath("")
 
@@ -2114,8 +2189,7 @@ omni_range = 10.118
 omni_attenuation = -0.166
 
 [node name="DetectiveDesk" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59177, 0, 5.43064)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.377, 0.26, 16.356)
 
 [node name="Wall" type="MeshInstance3D" parent="DetectiveDesk"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45728, 0, -0.465537)
@@ -2469,17 +2543,17 @@ skeleton = NodePath("")
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 2.74671, 0.567042, 4.13544)
 
 [node name="Parede1e" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(-6.55671e-08, 0, 1, 0, 1, 0, -1.5, 0, -4.37114e-08, -9.539, -0.0443268, -1.753)
+transform = Transform3D(-3.0598e-08, 0, 1, 0, 1, 0, -0.7, 0, -4.37114e-08, -9.539, -0.0443268, -3.68096)
 mesh = SubResource("ArrayMesh_1q01p")
 skeleton = NodePath("")
 
 [node name="Parede4e" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(-8.30516e-08, 0, -1, 0, 1, 0, 1.9, 0, -4.37114e-08, -9.539, -0.0483071, 6.34551)
+transform = Transform3D(-1.09278e-07, 0, -1, 0, 1, 0, 2.5, 0, -4.37114e-08, -9.539, -0.0483071, 5.4982)
 mesh = SubResource("ArrayMesh_fs7wl")
 skeleton = NodePath("")
 
 [node name="Janela2e" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -0.375, 0, 0, -9.53911, 1.25944, 1.90148)
+transform = Transform3D(-3.0598e-08, 0, 1, 0, 1, 0, -0.7, 0, -4.37114e-08, -9.53911, 1.25944, -0.898049)
 mesh = SubResource("ArrayMesh_0my21")
 skeleton = NodePath("")
 
@@ -2494,12 +2568,12 @@ mesh = SubResource("ArrayMesh_nbpi2")
 skeleton = NodePath("")
 
 [node name="Parede1b" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1, -7.625, 0, -4.745)
+transform = Transform3D(0.9, 0, 0, 0, 1, 0, 0, 0, 1, -7.83972, 0, -4.745)
 mesh = SubResource("ArrayMesh_1xkq2")
 skeleton = NodePath("")
 
 [node name="Janela2b" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0.625, 0, 0, 0, 1, 0, 0, 0, 1, -4.2138, 1.30422, -4.74536)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2138, 1.30422, -4.74536)
 mesh = SubResource("ArrayMesh_bi5o5")
 skeleton = NodePath("")
 
@@ -2509,12 +2583,12 @@ mesh = SubResource("ArrayMesh_cqg2e")
 skeleton = NodePath("")
 
 [node name="Parede3b" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1, -0.765, 0, -4.745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.253044, 0, -4.745)
 mesh = SubResource("ArrayMesh_bxmed")
 skeleton = NodePath("")
 
 [node name="Parede1f" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1, -7.15622, -0.021, 10.174)
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, -7.30847, -0.021, 10.174)
 mesh = SubResource("ArrayMesh_ha816")
 skeleton = NodePath("")
 
@@ -2539,7 +2613,7 @@ mesh = SubResource("ArrayMesh_hr4ah")
 skeleton = NodePath("")
 
 [node name="Porta3q" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -0.375, 0, 0, -5.42536, 0.617798, 2.58936)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -0.375, 0, 0, -5.35, 0, 6.664)
 mesh = SubResource("ArrayMesh_2ruk7")
 skeleton = NodePath("")
 
@@ -2554,32 +2628,32 @@ mesh = SubResource("ArrayMesh_7i8ep")
 skeleton = NodePath("")
 
 [node name="Parede1q" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -6.41541, 0, 3.95074)
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52423, 0, 2.78268)
 mesh = SubResource("ArrayMesh_in1wx")
 skeleton = NodePath("")
 
 [node name="Parede2q" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 0.375, 0, 0, -5.40538, 0, 4.84936)
+transform = Transform3D(-3.4532e-08, 0, -1, 0, 1, 0, 0.79, 0, -4.37114e-08, -5.35, 0, 4.33769)
 mesh = SubResource("ArrayMesh_wfcqe")
 skeleton = NodePath("")
 
 [node name="Parede4q" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -0.25, 0, 0, -5.49046, 0, 8.13078)
+transform = Transform3D(-2.97237e-08, 0, 1, 0, 1, 0, -0.68, 0, -4.37114e-08, -5.35, 0, 8.73612)
 mesh = SubResource("ArrayMesh_xklus")
 skeleton = NodePath("")
 
 [node name="Parede1t" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -1.99846, 0, 5.33437)
+transform = Transform3D(1.115, 0, 0, 0, 1, 0, 0, 0, 1, -0.686893, -0.021, 4.065)
 mesh = SubResource("ArrayMesh_5ncxx")
 skeleton = NodePath("")
 
 [node name="Parede3t" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -0.25, 0, 0, -2.91335, 0, 8.13078)
+transform = Transform3D(-3.19093e-08, 0, 1, 0, 1, 0, -0.73, 0, -4.37114e-08, -2.9, -0.021, 8.774)
 mesh = SubResource("ArrayMesh_spwqo")
 skeleton = NodePath("")
 
 [node name="Porta3q_001" type="MeshInstance3D" parent="ParedesFinal"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 0.375, 0, 0, -2.88937, 0, 6.58071)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 0.375, 0, 0, -2.9, -0.021, 6.581)
 mesh = SubResource("ArrayMesh_g1lo7")
 skeleton = NodePath("")
 
@@ -2593,9 +2667,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 1.00271, -0.0520753)
 mesh = SubResource("ArrayMesh_yii7f")
 skeleton = NodePath("")
 
+[node name="Parede3t2" type="MeshInstance3D" parent="ParedesFinal"]
+transform = Transform3D(-1.9233e-08, 0, 1, 0, 1, 0, -0.44, 0, -4.37114e-08, -2.9, -0.021, 4.95607)
+mesh = SubResource("ArrayMesh_spwqo")
+skeleton = NodePath("")
+
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+visible = false
 occluder = ExtResource("15_xo05s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89089, 3.11266, 0)
 mesh = SubResource("SphereMesh_lakw3")
+
+[node name="Ceilling_Fan2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.81143, 3.94374, -3.4089)
+mesh = SubResource("ArrayMesh_cnmi1")
+skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceilling_Fan2"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -0.00365955, -0.0361636, 0.0190845)
+light_energy = 1.678
+omni_range = 5.365
+omni_attenuation = 0.0

@@ -12,10 +12,15 @@ config_version=5
 
 config/name="Red Inquiry"
 config/description="Jogo para TCC"
+config/tags=PackedStringArray("tcc")
 run/main_scene="uid://bl3me73mor0ud"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=120
 config/icon="uid://0kwnxspp82wn"
+
+[autoload]
+
+GameState="*res://scripts/gameState.gd"
 
 [display]
 
@@ -84,8 +89,13 @@ ui_tab={
 ]
 }
 
+[physics]
+
+3d/run_on_separate_thread=true
+
 [rendering]
 
+renderer/rendering_method="mobile"
 anti_aliasing/quality/msaa_3d=3
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
