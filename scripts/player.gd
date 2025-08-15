@@ -7,16 +7,16 @@ extends CharacterBody3D
 
 @onready var standCollision = $StandingCollisionShape
 @onready var crouchCollision = $CrouchingCollisionShape
-@onready var hitSensor = $RayCast3D
+@onready var hitSensor = $HeadChecker
 @onready var camera_3d = $Neck/Head/Eyes/Camera3D
 
 # Speed vars
-var curSpeed = 5.0
+var curSpeed = walkingSpeed
 var can_move = true
 
-const walkingSpeed = 5.0
-const sprintSpeed = 8.0
-const crouchSpeed = 3.0
+const walkingSpeed = 2.0
+const sprintSpeed = walkingSpeed * 2
+const crouchSpeed = walkingSpeed / 2
 
 # States
 var walking = false
@@ -28,17 +28,17 @@ var sliding = false
 # Slide vars
 var slideTimer = 0.0
 var slideTimerMax = 1.0
-var slideSpeed = 10.0
+var slideSpeed = 5.5
 var slideVector = Vector2.ZERO
 
 # Head bobbing vars
-const headBobbingSprintingSpeed = 22.0
-const headBobbingWalkingSpeed = 14.0
-const headBobbingCrouchingSpeed = 10.0
+const headBobbingSprintingSpeed = 10.0
+const headBobbingWalkingSpeed = 6.0
+const headBobbingCrouchingSpeed = 4.5
 
-const headBobbingSprintingIntensity = 0.02
+const headBobbingSprintingIntensity = 0.3
 const headBobbingWalkingIntensity = 0.1
-const headBobbingCrouchingIntensity = 0.05
+const headBobbingCrouchingIntensity = 0.08
 var headBobbingCurIntensity = 0.0
 
 var headBobbingVector = Vector2.ZERO
@@ -47,9 +47,9 @@ var headBobbingIndex = 0.0
 # Movement vars
 var crouchDepth = -0.5
 
-const jumpVelocity = 4.5
+const jumpVelocity = 3
 
-var lerpSpeed = 12.0
+var lerpSpeed = 8.0
 
 var freeLookTiltAmount = 8
 

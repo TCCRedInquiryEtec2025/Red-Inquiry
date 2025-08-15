@@ -3,11 +3,11 @@ class_name Interactable
 
 signal interacted(body)
 
-@export var prompt_message = "Interact"
+@export var prompt_message = "Interagir"
 @export var prompt_input = "interact"
 
 func get_prompt():
-	var keyName = ""
+	var keyName = "TECLA"
 	for action in InputMap.action_get_events(prompt_input):
 		if action is InputEventKey:
 			keyName = action.as_text_physical_keycode()
@@ -16,5 +16,5 @@ func get_prompt():
 	return prompt_message + "\n[" + keyName + "]"
 	
 func interact(body):
-	# print(body.name + " interacted with " + name)
+	print(body.name + " interacted with " + name)
 	interacted.emit(body)

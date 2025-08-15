@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var player = null
+@export var player = null
 @onready var hud = self
 
 var is_on = false
@@ -9,9 +9,6 @@ var is_on = false
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _input(event):
 	if event.is_action_pressed("ui_tab"):

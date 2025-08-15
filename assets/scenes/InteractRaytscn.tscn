@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjursw5wdv40k"]
+
+[ext_resource type="Script" uid="uid://cqvev0kpjqpqs" path="res://scripts/InteractRay.gd" id="1_pruh5"]
+
+[node name="InteractRay" type="RayCast3D"]
+target_position = Vector3(0, 0, -1.5)
+debug_shape_thickness = 3
+script = ExtResource("1_pruh5")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -23.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 30
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 25
+text = "PROMPT [TECLA]"
+horizontal_alignment = 1
+vertical_alignment = 1
