@@ -1,15 +1,14 @@
 extends Interactable
 
 @onready var animation = $AnimationPlayer
-@onready var collision = $CollisionShape3D
 var opened = false
 
-func _on_interacted(_body: Variant) -> void:
+func _on_interacted(body: Variant) -> void:
 	print("Tentando rodar animação...")
 	if opened:
-		animation.play_backwards("on_off")
+		animation.play_backwards("openClose")
 	else:
-		animation.play("on_off")
+		animation.play("openClose")
 	opened = !opened
 
 func _process(_delta):

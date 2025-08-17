@@ -13,6 +13,23 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.707107, 0, 0.707107)
 
+[sub_resource type="Animation" id="Animation_0ivlr"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.707107, 0, 0.707107)
+
 [sub_resource type="Animation" id="Animation_a6beb"]
 resource_name = "on_off"
 length = 1.25
@@ -30,23 +47,6 @@ tracks/1/path = NodePath("../CollisionShape3D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.707107, 0, 0.707107, 1.23333, 1, 0, 0.976296, 0, -0.21644)
-
-[sub_resource type="Animation" id="Animation_0ivlr"]
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape3D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.707107, 0, 0.707107)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_38ubo"]
 _data = {

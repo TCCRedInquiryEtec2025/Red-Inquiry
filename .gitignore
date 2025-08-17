@@ -9,6 +9,9 @@
 *.zip
 *.x86_64
 *.pck
+*.blend
+*.glb
+*.tscn
 
 # Godot temporary files
 *.godot/tmp/*
@@ -16,3 +19,6 @@
 # OS junk
 .DS_Store
 Thumbs.db
+
+assets/models
+assets/scenes

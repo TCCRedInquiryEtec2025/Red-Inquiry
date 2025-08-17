@@ -36,7 +36,7 @@ const headBobbingSprintingSpeed = 10.0
 const headBobbingWalkingSpeed = 6.0
 const headBobbingCrouchingSpeed = 4.5
 
-const headBobbingSprintingIntensity = 0.3
+const headBobbingSprintingIntensity = 0.2
 const headBobbingWalkingIntensity = 0.1
 const headBobbingCrouchingIntensity = 0.08
 var headBobbingCurIntensity = 0.0

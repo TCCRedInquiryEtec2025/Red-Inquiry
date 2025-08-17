@@ -1,7 +1,7 @@
 extends Node
 
 var state := {
-	"Carta1": false
+	"Carta1": 0
 }
 
 func getValue(key):

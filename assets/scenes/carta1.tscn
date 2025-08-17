@@ -6,7 +6,7 @@
 size = Vector3(0.21, 0.3, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_67aym"]
-size = Vector3(0.278, 0.343, 0.1)
+size = Vector3(0.230572, 0.314055, 0.0209595)
 
 [node name="Carta1" type="RigidBody3D"]
 mass = 0.001
@@ -17,7 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00
 mesh = SubResource("BoxMesh_xyupw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00212367, -0.00674781, -0.000179913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000632434, -0.0072497, 0.00387893)
 shape = SubResource("BoxShape3D_67aym")
 
 [node name="Label3D" type="Label3D" parent="."]
