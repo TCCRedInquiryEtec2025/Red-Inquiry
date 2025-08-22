@@ -5,6 +5,7 @@ signal interacted(body)
 
 @export var prompt_message = "Interagir"
 @export var prompt_input = "interact"
+@export var response_prompt = ""
 
 func get_prompt():
 	var keyName = "TECLA"
@@ -14,6 +15,7 @@ func get_prompt():
 			break
 			
 	return prompt_message + "\n[" + keyName + "]"
+	
 	
 func interact(body):
 	print(body.name + " interacted with " + name)

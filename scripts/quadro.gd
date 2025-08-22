@@ -13,4 +13,8 @@ func _process(_delta: float) -> void:
 			cartas[i].show()
 
 func _on_interacted(_body: Variant) -> void:
-	pass
+	if GameState.getValue("Carta1") < 3:
+		response_prompt = "Eu ainda preciso de mais informações..."
+		
+	elif GameState.getValue("Carta1") == 3:
+		get_tree().change_scene_to_file("res://scenes/quadroUI.tscn")
