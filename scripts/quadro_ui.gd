@@ -18,5 +18,5 @@ func _on_button_pressed() -> void:
 		print("Codigo errado, tente novamente...")
 
 
-func _on_line_edit_text_submitted(new_text: String) -> void:
+func _on_line_edit_text_submitted(_new_text: String) -> void:
 	_on_button_pressed()

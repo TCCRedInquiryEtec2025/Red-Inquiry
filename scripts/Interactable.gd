@@ -7,6 +7,8 @@ signal interacted(body)
 @export var prompt_input = "interact"
 @export var response_prompt = ""
 
+@export var isCarta = false
+
 func get_prompt():
 	var keyName = "TECLA"
 	for action in InputMap.action_get_events(prompt_input):

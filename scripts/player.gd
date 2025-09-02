@@ -12,24 +12,10 @@ extends CharacterBody3D
 
 # Speed vars
 var curSpeed = walkingSpeed
-var can_move = true
 
 const walkingSpeed = 2.0
 const sprintSpeed = walkingSpeed * 2
 const crouchSpeed = walkingSpeed / 2
-
-# States
-var walking = false
-var sprinting = false
-var crouching = false
-var freeLooking = false
-var sliding = false
-
-# Slide vars
-var slideTimer = 0.0
-var slideTimerMax = 1.0
-var slideSpeed = 5.5
-var slideVector = Vector2.ZERO
 
 # Head bobbing vars
 const headBobbingSprintingSpeed = 10.0
@@ -62,15 +48,11 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:	
 	# Mouse looking logic
-	if(can_move) == false:
+	if(!GameState.getValue("podeAndar")):
 		return
 	
 	if event is InputEventMouseMotion: # Moves camera
-		if freeLooking:
-			neck.rotate_y(deg_to_rad(event.relative.x * mouseSensi) * -1)
-			neck.rotation.y = clamp(neck.rotation.y, deg_to_rad(-120), deg_to_rad(120))
-		else:
-			rotate_y(deg_to_rad(event.relative.x * mouseSensi) * -1)
+		rotate_y(deg_to_rad(event.relative.x * mouseSensi) * -1)
 			
 		head.rotate_x(deg_to_rad(event.relative.y * mouseSensi) * -1)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80)) # Não deixa a câmera virar 360 lol
@@ -79,11 +61,11 @@ func _physics_process(delta: float) -> void:
 	# Getting movement input
 	var input_dir := Input.get_vector("walkLeft", "walkRight", "walkUp", "walkDown")
 	# Handle movement state
-	if can_move == false:
+	if !GameState.getValue("podeAndar"):
 		return
 	
 	# Crouching
-	if Input.is_action_pressed("crouch") or sliding:
+	if Input.is_action_pressed("crouch"):
 		curSpeed = crouchSpeed
 		
 		head.position.y = lerp(head.position.y, crouchDepth, delta * lerpSpeed)
@@ -91,17 +73,9 @@ func _physics_process(delta: float) -> void:
 		standCollision.disabled = true
 		crouchCollision.disabled = false
 		
-		# Slide begin logic
-		if sprinting && input_dir != Vector2.ZERO:
-			sliding = true
-			slideTimer = slideTimerMax
-			slideVector = input_dir
-			freeLooking = true
-			print("Slide begin")
-		
-		walking = false
-		sprinting = false
-		crouching = true
+		GameState.setValue("andando", false) # Walking = false
+		GameState.setValue("correndo", false) # Sprinting = false
+		GameState.setValue("agachando", true)   # Crouching = true
 	
 	# Standing
 	elif !hitSensor.is_colliding():
@@ -114,53 +88,32 @@ func _physics_process(delta: float) -> void:
 			# Sprinting
 			curSpeed = sprintSpeed
 			
-			walking = false
-			sprinting = true
-			crouching = false
+			GameState.setValue("andando", false) # Walking = false
+			GameState.setValue("correndo", true) # Sprinting = true
+			GameState.setValue("agachando", false)   # Crouching = false
 			
 		else:
 			# Walking
 			curSpeed = walkingSpeed
 			
-			walking = true
-			sprinting = false
-			crouching = false
-			
-	# Handle freelooking
-	if Input.is_action_pressed("freeLook") or sliding:
-		freeLooking = true
-		
-		if sliding:
-			camera_3d.rotation.z = lerp(camera_3d.rotation.z, -deg_to_rad(7), delta * lerpSpeed)
-		else:
-			camera_3d.rotation.z = -deg_to_rad(neck.rotation.y * freeLookTiltAmount)
-	else:
-		freeLooking = false
-		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta * lerpSpeed)
-		camera_3d.rotation.z = lerp(camera_3d.rotation.z, 0.0, delta * lerpSpeed)
-		
-	# Handle sliding
-	if sliding:
-		slideTimer -= delta
-		if slideTimer <= 0:
-			sliding = false
-			freeLooking = false
-			print("Slide ends")
+			GameState.setValue("andando", true) # Walking = true
+			GameState.setValue("correndo", false) # Sprinting = false
+			GameState.setValue("agachando", false)   # Crouching = false
 			
 	# Handle Headbob
-	if sprinting:
+	if GameState.getValue("correndo"):
 		headBobbingCurIntensity = headBobbingSprintingIntensity
 		headBobbingIndex += headBobbingSprintingSpeed * delta
 	
-	elif walking:
+	elif GameState.getValue("andando"):
 		headBobbingCurIntensity = headBobbingWalkingIntensity
 		headBobbingIndex += headBobbingWalkingSpeed * delta
 	
-	elif crouching:
+	elif GameState.getValue("agachando"):
 		headBobbingCurIntensity = headBobbingCrouchingIntensity
 		headBobbingIndex += headBobbingCrouchingSpeed * delta
 		
-	if is_on_floor() and !sliding and input_dir != Vector2.ZERO:
+	if is_on_floor() and input_dir != Vector2.ZERO:
 		headBobbingVector.y = sin(headBobbingIndex)
 		headBobbingVector.x = sin(headBobbingIndex / 2) + 0.5
 		
@@ -178,22 +131,15 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = jumpVelocity
-		sliding = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = lerp(direction,(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * lerpSpeed)
 	
-	if sliding:
-		direction = (transform.basis * Vector3(slideVector.x, 0, slideVector.y)).normalized()
-	
 	if direction:
 		velocity.x = direction.x * curSpeed
 		velocity.z = direction.z * curSpeed
-		
-		if sliding:
-			velocity.x = direction.x * (slideTimer + 0.3) * slideSpeed
-			velocity.z = direction.z * (slideTimer + 0.3) * slideSpeed
+	
 	else:
 		velocity.x = move_toward(velocity.x, 0, curSpeed)
 		velocity.z = move_toward(velocity.z, 0, curSpeed)

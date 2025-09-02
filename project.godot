@@ -21,6 +21,7 @@ config/icon="uid://0kwnxspp82wn"
 [autoload]
 
 GameState="*res://scripts/gameState.gd"
+MouseManager="*res://scripts/mouseManager.gd"
 
 [display]
 
