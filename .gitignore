@@ -2,6 +2,8 @@
 .import/
 .export/
 .godot/
+export.cfg
+export_presets.cfg
 
 # Exported builds
 *.exe
@@ -11,7 +13,6 @@
 *.pck
 *.blend
 *.glb
-*.tscn
 
 # Godot temporary files
 *.godot/tmp/*
@@ -21,4 +22,3 @@
 Thumbs.db
 
 assets/models
-assets/scenes

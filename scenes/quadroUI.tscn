@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://8n82y6uq32l0"]
+
+[ext_resource type="Texture2D" uid="uid://0kwnxspp82wn" path="res://icon.svg" id="1_ci1mp"]
+[ext_resource type="Script" uid="uid://c1xn428gdou8r" path="res://scripts/quadro_ui.gd" id="1_pchnr"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_pchnr"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_7hbbi"]
+events = [SubResource("InputEventKey_pchnr")]
+
+[node name="Quadro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pchnr")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_ci1mp")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Codigo"
+alignment = 1
+max_length = 22
+expand_to_text_length = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+draw_control_chars = true
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.477966, 0.605056, 0.735128, 1)
+theme_override_font_sizes/font_size = 28
+shortcut = SubResource("Shortcut_7hbbi")
+shortcut_in_tooltip = false
+text = "Enviar"
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_ci1mp")
+stretch_mode = 3
+
+[connection signal="text_submitted" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

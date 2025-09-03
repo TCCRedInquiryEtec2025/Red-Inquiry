@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccip78h4p28f0"]
+
+[ext_resource type="Script" uid="uid://bey1drfr5hc0a" path="res://scripts/jornal_semanal.gd" id="1_vlw0r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xyupw"]
+size = Vector3(0.5, 0.35, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjcnx"]
+size = Vector3(0.507607, 0.361422, 0.0352135)
+
+[node name="JornalSemanal" type="RigidBody3D"]
+mass = 0.001
+script = ExtResource("1_vlw0r")
+response_prompt = "Aquele Mafioso daqui tem alguma coisa a ver com isso. Sei disso."
+isCarta = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)
+mesh = SubResource("BoxMesh_xyupw")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+pixel_size = 0.001
+double_sided = false
+text = "JORNAL"
+font_size = 46
+outline_size = 18
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00162128, -0.0048438, 0.00278364)
+shape = SubResource("BoxShape3D_fjcnx")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]

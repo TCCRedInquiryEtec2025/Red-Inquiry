@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://biudj1nuio5tr"]
+
+[ext_resource type="Texture2D" uid="uid://su3yxw6qqu8j" path="res://assets/textures/wood_table_worn_diff_4k.jpg" id="1_5134s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rngw"]
+resource_name = "Material.001"
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.34595, 0.531252, 0.82743, 1)
+albedo_texture = ExtResource("1_5134s")
+disable_receive_shadows = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o61c2"]
+_surfaces = [{
+"aabb": AABB(-2.00524, 0, -1.44527, 4.01048, 1e-05, 2.89054),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ckye5"]
+resource_name = "Carpete_Plane"
+_surfaces = [{
+"aabb": AABB(-2.00524, 0, -1.44527, 4.01048, 1e-05, 2.89054),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_1rngw"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_o61c2")
+
+[node name="Carpete" type="Node3D"]
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_ckye5")
+skeleton = NodePath("")

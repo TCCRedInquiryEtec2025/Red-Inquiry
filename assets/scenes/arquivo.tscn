@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ph5dmad4elmn"]
+
+[ext_resource type="Script" uid="uid://f6yo0fhud1cq" path="res://scripts/carta_joanne.gd" id="1_k0r62"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ebtq"]
+size = Vector3(0.21, 0.3, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmmx4"]
+size = Vector3(0.242798, 0.320831, 0.0352135)
+
+[node name="Arquivo" type="RigidBody3D"]
+mass = 0.001
+script = ExtResource("1_k0r62")
+response_prompt = "Vou ter que deixar essa investigação de lado por um tempo. Também preciso pagar as contas."
+isCarta = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)
+mesh = SubResource("BoxMesh_7ebtq")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+pixel_size = 0.001
+double_sided = false
+text = "Arquivo"
+font_size = 46
+outline_size = 18
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00311279, -0.0059967, 0.00278364)
+shape = SubResource("BoxShape3D_jmmx4")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
