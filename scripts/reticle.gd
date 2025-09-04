@@ -12,3 +12,6 @@ func _ready() -> void:
 func _draw():
 	draw_circle(Vector2(0,0), DOT_RADIUS, DOT_COLOR)
 	draw_circle(Vector2(0,0), DOT_RADIUS + 1, Color.BLACK, false, 3)
+
+func _process(delta: float) -> void:
+	visible = !GameState.getValue("lendoCarta")

@@ -102,6 +102,7 @@ script = ExtResource("5_8sknh")
 
 [node name="Carta" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Documentos"]
 visible = false
+z_index = -1
 custom_minimum_size = Vector2(500, 700)
 layout_mode = 2
 mouse_default_cursor_shape = 2

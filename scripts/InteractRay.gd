@@ -4,7 +4,7 @@ extends RayCast3D
 @onready var response = $ResponseLabel
 
 
-func show_response(text: String, time: float = 2) -> void:
+func show_response(text: String) -> void:
 	var label = $ResponseLabel
 	
 	if(text.is_empty() or text == ""):
@@ -18,10 +18,12 @@ func show_response(text: String, time: float = 2) -> void:
 	tween.tween_property(label, "modulate:a", 1, 0.5)
 	await tween.finished
 	
+	var lines = label.get_line_count()
+	var time = 1.5 + (lines * 1.2)
 	await get_tree().create_timer(time).timeout # Tempo que a mensagem fica na tela
 	
 	tween = create_tween() # Fade-out
-	tween.tween_property(label, "modulate:a", 0, 0.5)
+	tween.tween_property(label, "modulate:a", 0, 0.8)
 	await tween.finished
 	
 
