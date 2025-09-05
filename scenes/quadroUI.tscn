@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8n82y6uq32l0"]
 
-[ext_resource type="Texture2D" uid="uid://0kwnxspp82wn" path="res://icon.svg" id="1_ci1mp"]
 [ext_resource type="Script" uid="uid://c1xn428gdou8r" path="res://scripts/quadro_ui.gd" id="1_pchnr"]
+[ext_resource type="Texture2D" uid="uid://yrvstsevwgvx" path="res://assets/textures/Imagem do WhatsApp de 2025-04-15 à(s) 18.52.30_663286ec.jpg" id="2_pchnr"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_pchnr"]
 device = -1
@@ -35,22 +35,39 @@ layout_mode = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(525, 750)
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_ci1mp")
-stretch_mode = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("2_pchnr")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(525, 750)
+layout_direction = 4
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("2_pchnr")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect3"]
+custom_minimum_size = Vector2(525, 750)
+layout_mode = 2
+offset_top = -2.0
+offset_right = 525.0
+offset_bottom = 748.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect3/VBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 35
-placeholder_text = "Codigo"
 alignment = 1
 max_length = 22
 expand_to_text_length = true
@@ -62,8 +79,11 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 draw_control_chars = true
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect3/VBoxContainer"]
+custom_minimum_size = Vector2(210, 50)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.477966, 0.605056, 0.735128, 1)
 theme_override_font_sizes/font_size = 28
 shortcut = SubResource("Shortcut_7hbbi")
@@ -71,10 +91,12 @@ shortcut_in_tooltip = false
 text = "Enviar"
 
 [node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(525, 750)
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_ci1mp")
-stretch_mode = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("2_pchnr")
+expand_mode = 1
 
-[connection signal="text_submitted" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="text_submitted" from="PanelContainer/MarginContainer/HBoxContainer/TextureRect3/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/TextureRect3/VBoxContainer/Button" to="." method="_on_button_pressed"]
