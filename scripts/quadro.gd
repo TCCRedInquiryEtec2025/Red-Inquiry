@@ -8,4 +8,5 @@ func _on_interacted(_body: Variant) -> void:
 		response_prompt = "Eu ainda preciso de mais informações..."
 		
 	elif GameState.getValue("cartaTerence") and GameState.getValue("folhaArrancada"):
+		GameState.setValue("podeAndar", false)
 		get_tree().change_scene_to_file("res://scenes/quadroUI.tscn")

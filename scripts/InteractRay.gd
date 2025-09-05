@@ -19,7 +19,7 @@ func show_response(text: String) -> void:
 	await tween.finished
 	
 	var lines = label.get_line_count()
-	var time = 1.5 + (lines * 1.2)
+	var time = 1.5 + (lines * 2)
 	await get_tree().create_timer(time).timeout # Tempo que a mensagem fica na tela
 	
 	tween = create_tween() # Fade-out

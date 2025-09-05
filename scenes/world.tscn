@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=4 uid="uid://bl3me73mor0ud"]
+[gd_scene load_steps=120 format=4 uid="uid://bl3me73mor0ud"]
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_71j4m"]
 [ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="2_jhx03"]
@@ -37,6 +37,9 @@
 [ext_resource type="PackedScene" uid="uid://ph5dmad4elmn" path="res://assets/scenes/arquivo.tscn" id="35_817gm"]
 [ext_resource type="PackedScene" uid="uid://ciqb6x5eawn8v" path="res://assets/scenes/carta_joanne.tscn" id="36_ggc52"]
 [ext_resource type="PackedScene" uid="uid://ccip78h4p28f0" path="res://assets/scenes/jornal_semanal.tscn" id="37_l8ah6"]
+[ext_resource type="Script" uid="uid://dn6jscnm8fwkg" path="res://scripts/trovao.gd" id="38_ggc52"]
+[ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/thunderstorm-ambiance-191991 (2).mp3" id="39_l8ah6"]
+[ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/winter-rain-in-oak-forest-loop-185672.mp3" id="40_e75v4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
 shading_mode = 0
@@ -918,6 +921,37 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0ukrm")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_817gm"]
+transparency = 1
+specular_mode = 1
+albedo_color = Color(1, 1, 1, 0.079)
+roughness = 0.4
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 10.0
+emission_operator = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_817gm"]
+material = SubResource("StandardMaterial3D_817gm")
+size = Vector2(4.615, 4.91)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e75v4"]
+emission_shape_offset = Vector3(0, 3.5, 0)
+emission_shape = 3
+emission_box_extents = Vector3(4, 0.35, 1)
+direction = Vector3(0, -1, 0)
+spread = 1.0
+initial_velocity_min = 5.5
+initial_velocity_max = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u370"]
+shading_mode = 0
+albedo_color = Color(0.322022, 0.528973, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rga7q"]
+material = SubResource("StandardMaterial3D_8u370")
+size = Vector2(0.06, 0.3)
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_71j4m")
 
@@ -1168,7 +1202,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54218, 0.55, -5.32761)
 transform = Transform3D(-1.15835e-08, 0, 0.265, 0, 0.4, 0, -0.265, 0, -1.15835e-08, -1.30908, 2.7613, 2)
 
 [node name="Lampada" parent="Office" instance=ExtResource("13_munwf")]
-transform = Transform3D(1, 0, 0, 0, 1.50662, 0, 0, 0, 1, -5.37425, 2.1594, -1.22707)
+transform = Transform3D(1, 0, 0, 0, 1.50662, 0, 0, 0, 1, -5.374, 2.159, -1.225)
 
 [node name="Pendurador" parent="Office" instance=ExtResource("8_0nbtd")]
 transform = Transform3D(0.85, 0, 0, 0, 1.281, 0, 0, 0, 0.85, 1.85858, 0.55004, 5.01518)
@@ -1359,7 +1393,7 @@ transform = Transform3D(-0.0886283, 0, 0.492082, 0, 0.5, 0, -0.492082, 0, -0.088
 transform = Transform3D(-0.0200783, 0, 0.999743, 0, 1, 0, -0.884772, 0, -0.0226873, 4.80603, 0.371795, -0.0533515)
 
 [node name="Comoda" parent="." instance=ExtResource("31_luhhm")]
-transform = Transform3D(0.5, 0, 0, 0, 0.45, 0, 0, 0, 0.5, -1.87892, 0.929908, -1.71932)
+transform = Transform3D(0.5, 0, 0, 0, 0.4, 0, 0, 0, 0.5, -1.60907, 0.866243, -1.71932)
 
 [node name="Cama" parent="." instance=ExtResource("32_fh13f")]
 transform = Transform3D(0.00374816, 0, 0.279975, 0, 0.2, 0, -0.279975, 0, 0.00374816, -2.3839, -0.126817, -4.80032)
@@ -1381,3 +1415,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52157, 0.522293, -0.882415)
 
 [node name="JornalSemanal" parent="." instance=ExtResource("37_l8ah6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55709, 0.547292, -2.22763)
+
+[node name="Trovao" type="Node3D" parent="."]
+visible = false
+script = ExtResource("38_ggc52")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Trovao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.15, 0)
+light_energy = 3.0
+light_size = 2.0
+shadow_enabled = true
+shadow_blur = 0.0
+distance_fade_begin = 45.35
+omni_range = 7.5
+omni_attenuation = -3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Trovao"]
+transform = Transform3D(1.19249e-08, -0.999992, 0.00401416, -1, -1.19248e-08, 4.78683e-11, 0, -0.00401416, -0.999992, 7.63736, 2.1001, -0.00559557)
+mesh = SubResource("PlaneMesh_817gm")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Trovao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.15, 0)
+stream = ExtResource("39_l8ah6")
+
+[node name="Chuva" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.22779, 1.53129, 0)
+stream = ExtResource("40_e75v4")
+volume_db = 10.0
+max_db = 6.0
+pitch_scale = 1.6
+autoplay = true
+max_distance = 25.0
+parameters/looping = true
+
+[node name="ParticulasChuva" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.38761e-07, 0, -0.897972, 0, 1.77161, 0, 11.6362, 0, 1.07082e-08, 13.4495, 0, -1.43148)
+emitting = false
+amount = 100
+sub_emitter = NodePath(".")
+lifetime = 0.6
+speed_scale = 2.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_e75v4")
+draw_pass_1 = SubResource("QuadMesh_rga7q")

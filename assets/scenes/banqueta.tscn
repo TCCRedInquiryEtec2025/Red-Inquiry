@@ -215,9 +215,10 @@ shadow_mesh = SubResource("ArrayMesh_tygnk")
 size = Vector3(1.01294, 0.609924, 2.03766)
 
 [node name="Banqueta" type="StaticBody3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.945, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Cube_008" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.15, 0, 0, 0, 1, 0, 0.424284, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.08, 0, 0, 0, 1, 0, 0.374357, 0)
 mesh = SubResource("ArrayMesh_sn6lx")
 skeleton = NodePath("")
 

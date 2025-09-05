@@ -8,7 +8,7 @@ outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [node name="InteractRay" type="RayCast3D"]
-target_position = Vector3(0, 0, -1.5)
+target_position = Vector3(0, 0, -2)
 debug_shape_thickness = 3
 script = ExtResource("1_pruh5")
 
@@ -36,10 +36,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -333.0
-offset_right = 100.0
-offset_bottom = -233.0
+offset_left = -600.0
+offset_top = -280.0
+offset_right = 600.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3

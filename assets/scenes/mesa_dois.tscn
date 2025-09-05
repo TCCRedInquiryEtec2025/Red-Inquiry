@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=4 uid="uid://c3vam4vl63k65"]
+[gd_scene load_steps=22 format=4 uid="uid://c3vam4vl63k65"]
 
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="1_yy41q"]
 [ext_resource type="PackedScene" uid="uid://cc2gvjqiuwh4j" path="res://assets/scenes/folhaArrancada.tscn" id="2_xjwwk"]
+[ext_resource type="PackedScene" uid="uid://cab5n7sx7cott" path="res://assets/scenes/lampadaNoir.tscn" id="3_awkb7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdkoa"]
 albedo_color = Color(0.317647, 0.219608, 0.113725, 1)
@@ -216,5 +217,8 @@ shape = SubResource("BoxShape3D_ncudi")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99258, 5.57214, -1.26962)
 shape = SubResource("BoxShape3D_xjwwk")
+
+[node name="lampadaNoir" parent="." instance=ExtResource("3_awkb7")]
+transform = Transform3D(-5.15577, 0, -8.56844, 0, 10, 0, 8.56844, 0, -5.15577, 7.04021, 5.48091, -3.14703)
 
 [connection signal="interacted" from="Gaveta" to="Gaveta" method="_on_interacted"]
