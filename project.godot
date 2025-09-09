@@ -98,4 +98,5 @@ common/max_physics_steps_per_frame=10
 [rendering]
 
 renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="gl_compatibility"
 occlusion_culling/use_occlusion_culling=true
