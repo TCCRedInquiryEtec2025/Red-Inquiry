@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://8n82y6uq32l0"]
+[gd_scene load_steps=7 format=3 uid="uid://8n82y6uq32l0"]
 
 [ext_resource type="Script" uid="uid://c1xn428gdou8r" path="res://scripts/quadro_ui.gd" id="1_pchnr"]
-[ext_resource type="Texture2D" uid="uid://yrvstsevwgvx" path="res://assets/textures/Imagem do WhatsApp de 2025-04-15 à(s) 18.52.30_663286ec.jpg" id="2_pchnr"]
+[ext_resource type="Texture2D" uid="uid://ccl8te2ukladd" path="res://assets/textures/WoodFloor013_1K-JPG_Color.jpg" id="2_g3mub"]
+[ext_resource type="Texture2D" uid="uid://d10h2qdnearmj" path="res://assets/textures/Cork002_1K-JPG_Color.jpg" id="3_k70iu"]
+[ext_resource type="Texture2D" uid="uid://0kwnxspp82wn" path="res://icon.svg" id="4_1i01y"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_pchnr"]
 device = -1
@@ -35,23 +37,54 @@ layout_mode = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(525, 750)
+self_modulate = Color(0.343723, 0.280792, 0.122844, 1)
+custom_minimum_size = Vector2(1720, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("2_pchnr")
+size_flags_horizontal = 3
+texture = ExtResource("2_g3mub")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 1030.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer"]
+self_modulate = Color(0.083196, 0.200098, 0.0906147, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_k70iu")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4"]
+custom_minimum_size = Vector2(525, 750)
+layout_mode = 2
+offset_left = 81.0
+offset_top = 115.0
+offset_right = 606.0
+offset_bottom = 865.0
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("4_1i01y")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4"]
 custom_minimum_size = Vector2(525, 750)
 layout_direction = 4
 layout_mode = 2
+offset_left = 649.0
+offset_top = 115.0
+offset_right = 1174.0
+offset_bottom = 865.0
 size_flags_horizontal = 6
 size_flags_vertical = 4
-texture = ExtResource("2_pchnr")
+texture = ExtResource("4_1i01y")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4/TextureRect3"]
 custom_minimum_size = Vector2(525, 750)
 layout_mode = 2
 offset_top = -2.0
@@ -62,7 +95,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect3/VBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4/TextureRect3/VBoxContainer"]
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -79,7 +112,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 draw_control_chars = true
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect3/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4/TextureRect3/VBoxContainer"]
 custom_minimum_size = Vector2(210, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -90,13 +123,17 @@ shortcut = SubResource("Shortcut_7hbbi")
 shortcut_in_tooltip = false
 text = "Enviar"
 
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4"]
 custom_minimum_size = Vector2(525, 750)
 layout_mode = 2
-size_flags_horizontal = 6
+offset_left = 1217.0
+offset_top = 115.0
+offset_right = 1742.0
+offset_bottom = 865.0
+size_flags_horizontal = 2
 size_flags_vertical = 4
-texture = ExtResource("2_pchnr")
+texture = ExtResource("4_1i01y")
 expand_mode = 1
 
-[connection signal="text_submitted" from="PanelContainer/MarginContainer/HBoxContainer/TextureRect3/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/TextureRect3/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="text_submitted" from="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4/TextureRect3/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4/TextureRect3/VBoxContainer/Button" to="." method="_on_button_pressed"]
