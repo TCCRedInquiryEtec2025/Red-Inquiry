@@ -12,8 +12,9 @@ config_version=5
 
 config/name="Red Inquiry"
 config/description="Jogo para TCC"
+config/version="Beta v0.1"
 config/tags=PackedStringArray("tcc")
-run/main_scene="uid://bl3me73mor0ud"
+run/main_scene="uid://8navspruggjk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=120
 config/icon="uid://0kwnxspp82wn"

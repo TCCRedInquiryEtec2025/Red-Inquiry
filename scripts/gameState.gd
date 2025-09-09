@@ -25,3 +25,4 @@ func getValue(key):
 
 func setValue(key, value):
 	state[key] = value
+	

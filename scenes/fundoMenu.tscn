@@ -1,0 +1,263 @@
+[gd_scene load_steps=29 format=4 uid="uid://bahtauago805q"]
+
+[ext_resource type="Texture2D" uid="uid://rdpik2xs0fvt" path="res://assets/hdris/wmremove-transformed_LE_upscale_balanced_x4.jpg" id="1_3m7yw"]
+[ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="1_7lsr1"]
+[ext_resource type="Script" uid="uid://bilfgoj4lmyd" path="res://scenes/fundo_menu.gd" id="1_k4050"]
+[ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="2_42mv4"]
+[ext_resource type="Texture2D" uid="uid://drlxoye4i20q6" path="res://assets/textures/Concrete042A_4K-PNG_Color.png" id="4_vj7jv"]
+[ext_resource type="PackedScene" uid="uid://r4sr0buf7dbh" path="res://assets/scenes/paredeJanela.tscn" id="6_38wos"]
+[ext_resource type="PackedScene" uid="uid://biudj1nuio5tr" path="res://assets/scenes/Carpete.tscn" id="9_qfe6e"]
+[ext_resource type="PackedScene" uid="uid://bec1o7ycwl88g" path="res://assets/scenes/Estante.tscn" id="11_o58qu"]
+[ext_resource type="Script" uid="uid://dn6jscnm8fwkg" path="res://scripts/trovao.gd" id="16_r27xm"]
+[ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/thunderstorm-ambiance-191991 (2).mp3" id="17_38wos"]
+[ext_resource type="PackedScene" uid="uid://c3vam4vl63k65" path="res://assets/scenes/mesa_dois.tscn" id="18_7lsr1"]
+[ext_resource type="PackedScene" uid="uid://djfxl76tmxu75" path="res://assets/scenes/cadera.tscn" id="19_k4050"]
+[ext_resource type="PackedScene" uid="uid://3446ia86njgy" path="res://assets/scenes/Planta.tscn" id="20_38wos"]
+[ext_resource type="PackedScene" uid="uid://dymlnvhjf20c0" path="res://assets/scenes/ventilador.tscn" id="23_qfe6e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4050"]
+shader = ExtResource("1_7lsr1")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h1rnp"]
+panorama = ExtResource("1_3m7yw")
+
+[sub_resource type="Sky" id="Sky_2p0sf"]
+sky_material = SubResource("PanoramaSkyMaterial_h1rnp")
+
+[sub_resource type="Environment" id="Environment_wwaul"]
+background_mode = 2
+background_energy_multiplier = 0.15
+sky = SubResource("Sky_2p0sf")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
+shading_mode = 0
+albedo_color = Color(0.733005, 0.733005, 0.733005, 1)
+albedo_texture = ExtResource("2_42mv4")
+refraction_scale = -1.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jcg1v"]
+_surfaces = [{
+"aabb": AABB(-3.75, -0.5, -2.75, 7.5, 1, 5.5),
+"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
+"format": 34359738391,
+"material": SubResource("StandardMaterial3D_w7kh3"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AABwwAAAAL8AADBAAABwwAAAAL8AADDAAABwwAAAAD8AADDAAABwQAAAAL8AADDAAABwwAAAAL8AADDAAABwwAAAAL8AADBAAABwwAAAAD8AADDAAABwwAAAAL8AADDAAABwQAAAAL8AADDAAABwwAAAAD8AADDAAABwwAAAAD8AADBAAABwwAAAAL8AADBAAABwwAAAAL8AADBAAABwwAAAAD8AADBAAABwQAAAAD8AADBAAABwQAAAAD8AADBAAABwwAAAAD8AADBAAABwwAAAAD8AADDAAABwwAAAAL8AADBAAABwQAAAAL8AADBAAABwQAAAAL8AADDAAABwQAAAAD8AADBAAABwQAAAAL8AADBAAABwwAAAAL8AADBAAABwQAAAAL8AADDAAABwQAAAAL8AADBAAABwQAAAAD8AADBAAABwQAAAAL8AADDAAABwQAAAAD8AADDAAABwwAAAAD8AADDAAABwwAAAAD8AADDAAABwQAAAAD8AADDAAABwQAAAAD8AADBAAABwQAAAAD8AADBAAABwQAAAAD8AADDAAABwQAAAAL8AADDAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hie3k"]
+resource_name = "Office_Sh.008"
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.345402, 0.652112, 0.441709, 1)
+albedo_texture = ExtResource("4_vj7jv")
+uv1_scale = Vector3(3.75, 1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_50ybc"]
+_surfaces = [{
+"aabb": AABB(-2, -0.014125, -0.0261624, 4, 4, 0.0540002),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwACAAQAAAAFAAEABQAGAAEABQAHAAYABwAIAAYABwAJAAgACQAKAAgACQALAAoADAANAA4ADAAPAA0A"),
+"name": "Office_Sh.008",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AACiOf7/AAD///5A//8AAP//ojn//wAAAAAAAP7/AAD//wAA//8AAAAA/kD+/wAA///+QAAAAAAAAP5AAAAAAP//ojkAAAAAAACiOQAAAAD//wAAAAAAAAAAAAAAAAAA///+QAd8AAAAAP//B3wAAP////8HfAAAAAD+QAd8AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4fs2i"]
+resource_name = "ParedesFinal_Wall_005"
+_surfaces = [{
+"aabb": AABB(-2, -0.014125, -0.0261624, 4, 4, 0.0540002),
+"attribute_data": PackedByteArray("piUsgN4sq33eLCyApiWrfdogQnjxLUJ48S1CeNogQngUdb/XUpPw0FKTv9cUdfDQpiWrfd4sLIDeLKt9piUsgBR18NBSk7/XUpPw0BR1v9ctNg40sRAWGC02FhixEA40"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_hie3k"),
+"name": "Office_Sh.008",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACiOf7/AID///5A//8AgP//ojn//wCAAAD+QP7/AIAAAP5A/v//v////kAAAP+////+QP///78AAP5AAAD/vwAAAAD+/wCA//+iOf//AID//wAA//8AgAAAojn+/wCAAAD+QAAAAAD//6I5AAAAAP///kAAAAAAAACiOQAAAAAAAKI5AAAAAP//AAAAAAAA//+iOQAAAAAAAAAAAAAAAP///kAHfACAAAD//wd8AID/////B3wAgAAA/kAHfACA/3////9/////f////3///////3////9/////f////3//f////3////9/////f///////f////3////9/////f////3////9/////f////3//f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_50ybc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_817gm"]
+transparency = 1
+specular_mode = 1
+albedo_color = Color(1, 1, 1, 0.079)
+roughness = 0.4
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 10.0
+emission_operator = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qfe6e"]
+material = SubResource("StandardMaterial3D_817gm")
+size = Vector2(4.615, 4.91)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_deq8l"]
+emission_shape_offset = Vector3(0, 3.5, 0)
+emission_shape = 3
+emission_box_extents = Vector3(4, 0.35, 1)
+direction = Vector3(0, -1, 0)
+spread = 1.0
+initial_velocity_min = 5.5
+initial_velocity_max = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u370"]
+shading_mode = 0
+albedo_color = Color(0.322022, 0.528973, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_o58qu"]
+material = SubResource("StandardMaterial3D_8u370")
+size = Vector2(0.06, 0.3)
+
+[node name="FundoMenu" type="Node3D"]
+script = ExtResource("1_k4050")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.442465, 0.555596, -0.703945, -0.0211629, 0.778276, 0.627565, 0.896536, 0.292573, -0.332602, 2.51469, 2.97929, -0.372578)
+fov = 65.0
+far = 15.0
+
+[node name="Control" type="Control" parent="Camera3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shaders" type="Control" parent="Camera3D/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/Control/Shaders"]
+material = SubResource("ShaderMaterial_k4050")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wwaul")
+
+[node name="Office" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.663737, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Chao" type="Node3D" parent="Office"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Office/Chao"]
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Office/Chao/StaticBody3D"]
+transform = Transform3D(2.02031, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 0, -0.5, 0)
+mesh = SubResource("ArrayMesh_jcg1v")
+skeleton = NodePath("../../..")
+
+[node name="ParedeDireita" type="Node3D" parent="Office"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Office/ParedeDireita"]
+
+[node name="Parede1d" type="MeshInstance3D" parent="Office/ParedeDireita/StaticBody3D"]
+transform = Transform3D(3.79779, 0, 5.56363e-08, 0, 1, 0, -2.11295e-07, 0, 1, 0.0217102, 0.546042, 5.49044)
+mesh = SubResource("ArrayMesh_4fs2i")
+skeleton = NodePath("")
+
+[node name="ParedeEsquerda" type="Node3D" parent="Office"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.46189e-07, 0, -0.169423)
+
+[node name="ParedeFrente" type="Node3D" parent="Office"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Office/ParedeFrente"]
+
+[node name="ParedeTras" type="Node3D" parent="Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.120952)
+
+[node name="Janela" parent="Office/ParedeTras" instance=ExtResource("6_38wos")]
+transform = Transform3D(-3.93403e-08, 0, 1, 0, 1.03732, 0, -0.9, 0, -4.37114e-08, 7.4967, 0.57, 0.133)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Office/ParedeTras"]
+transform = Transform3D(-1.17355e-08, 0, 1, 0, 1, 0, -0.268477, 0, -4.37114e-08, 2.03044, 0, 4.58816)
+
+[node name="Parede1d" type="MeshInstance3D" parent="Office/ParedeTras/StaticBody3D"]
+transform = Transform3D(3.75, 0, 5.56363e-08, 0, 1, 0, -2.08636e-07, 0, 1, 0.0217102, 0.546042, 5.49044)
+mesh = SubResource("ArrayMesh_4fs2i")
+skeleton = NodePath("")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Office/ParedeTras"]
+transform = Transform3D(-1.17355e-08, 0, 1, 0, 1, 0, -0.268477, 0, -4.37114e-08, 2.03044, 0, -3.84712)
+
+[node name="Parede1d" type="MeshInstance3D" parent="Office/ParedeTras/StaticBody3D2"]
+transform = Transform3D(3.75, 0, 5.56363e-08, 0, 1, 0, -2.08636e-07, 0, 1, 0.0217102, 0.546042, 5.49044)
+mesh = SubResource("ArrayMesh_4fs2i")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" parent="Office" instance=ExtResource("11_o58qu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.50662, 0, 8.74228e-08, 0, -1, -1.87278, 0.624716, 4.84373)
+
+[node name="Trovao" type="Node3D" parent="."]
+visible = false
+script = ExtResource("16_r27xm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Trovao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.15, 0)
+light_energy = 3.0
+light_size = 2.0
+shadow_enabled = true
+shadow_blur = 0.0
+distance_fade_begin = 45.35
+omni_range = 7.5
+omni_attenuation = -3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Trovao"]
+transform = Transform3D(1.19249e-08, -0.999992, 0.00401416, -1, -1.19248e-08, 4.78683e-11, 0, -0.00401416, -0.999992, 7.63736, 2.1001, -0.00559557)
+mesh = SubResource("PlaneMesh_qfe6e")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Trovao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.15, 0)
+stream = ExtResource("17_38wos")
+
+[node name="ParticulasChuva" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.38761e-07, 0, -0.897972, 0, 1.77161, 0, 11.6362, 0, 1.07082e-08, 13.4495, 0, -1.43148)
+amount = 100
+sub_emitter = NodePath(".")
+lifetime = 0.6
+speed_scale = 2.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_deq8l")
+draw_pass_1 = SubResource("QuadMesh_o58qu")
+
+[node name="MesaDois" parent="." instance=ExtResource("18_7lsr1")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 5.05761, 0.437146, 0.269421)
+
+[node name="Cadera" parent="." instance=ExtResource("19_k4050")]
+transform = Transform3D(0.0225333, 0, -0.499492, 0, 0.5, 0, 0.499492, 0, 0.0225333, 5.4222, 0.947447, 0.151979)
+
+[node name="Cadera2" parent="." instance=ExtResource("19_k4050")]
+transform = Transform3D(0.194875, 0, 0.46046, 0, 0.5, 0, -0.46046, 0, 0.194875, 4.01453, 0.947447, -0.632953)
+
+[node name="Cadera3" parent="." instance=ExtResource("19_k4050")]
+transform = Transform3D(-0.0886283, 0, 0.492082, 0, 0.5, 0, -0.492082, 0, -0.0886283, 3.89544, 0.947447, 0.395807)
+
+[node name="Carpete" parent="." instance=ExtResource("9_qfe6e")]
+transform = Transform3D(-0.0200783, 0, 0.999743, 0, 1, 0, -0.884772, 0, -0.0226873, 4.80603, 0.371795, -0.0533515)
+
+[node name="Planta2" parent="." instance=ExtResource("20_38wos")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.54918, 0.365055, 5.14578)
+
+[node name="Ventilador" parent="." instance=ExtResource("23_qfe6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.052, 2.472, 0.25)
