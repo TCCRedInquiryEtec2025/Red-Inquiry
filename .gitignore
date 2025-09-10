@@ -4,6 +4,7 @@
 .godot/
 export.cfg
 export_presets.cfg
+*.occ
 
 # Exported builds
 *.exe
