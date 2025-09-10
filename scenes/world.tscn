@@ -1363,6 +1363,6 @@ draw_pass_1 = SubResource("QuadMesh_rga7q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.052, 2.472, 0.25)
 
 [node name="Lampada" parent="." instance=ExtResource("41_8u370")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98786, 2.5494, -3.25018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97718, 2.52824, -3.25395)
 
 [connection signal="interacted" from="Quadro" to="." method="_on_quadro_interacted"]

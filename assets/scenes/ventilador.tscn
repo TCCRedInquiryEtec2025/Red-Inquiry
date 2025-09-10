@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://dymlnvhjf20c0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nvpax"]
-size = Vector3(2.66754, 0.166138, 2.70587)
+size = Vector3(2.22599, 0.166138, 2.05918)
 
 [sub_resource type="Animation" id="Animation_k4050"]
 length = 0.001
@@ -148,7 +148,7 @@ omni_range = 6.74
 omni_attenuation = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00357056, -0.0275269, -0.00564575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0385858, -0.0275269, 0.0199924)
 shape = SubResource("BoxShape3D_nvpax")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
