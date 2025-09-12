@@ -12,7 +12,7 @@ void fragment() {
     // Verifica se o vermelho é significativamente maior que os outros componentes
     float red_diff = r - max(g, b);
 
-    if (red_diff < 0.3) {
+    if (red_diff < 0.5) {
         // Converte para escala de cinza (média simples)
         float gray = (r + g + b) / 3.0;
         color.rgb = vec3(gray);

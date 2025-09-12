@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=4 uid="uid://bl3me73mor0ud"]
+[gd_scene load_steps=116 format=4 uid="uid://bl3me73mor0ud"]
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_71j4m"]
 [ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="2_jhx03"]
@@ -34,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://cejwurtknbdgp" path="res://assets/scenes/cama.tscn" id="32_fh13f"]
 [ext_resource type="PackedScene" uid="uid://dymlnvhjf20c0" path="res://assets/scenes/ventilador.tscn" id="34_8u370"]
 [ext_resource type="PackedScene" uid="uid://cma0802wr3ivw" path="res://assets/scenes/Shelf.tscn" id="34_f17e3"]
-[ext_resource type="PackedScene" uid="uid://ph5dmad4elmn" path="res://assets/scenes/arquivo.tscn" id="35_817gm"]
 [ext_resource type="PackedScene" uid="uid://ciqb6x5eawn8v" path="res://assets/scenes/carta_joanne.tscn" id="36_ggc52"]
 [ext_resource type="PackedScene" uid="uid://ccip78h4p28f0" path="res://assets/scenes/jornal_semanal.tscn" id="37_l8ah6"]
 [ext_resource type="Script" uid="uid://dn6jscnm8fwkg" path="res://scripts/trovao.gd" id="38_ggc52"]
@@ -1113,7 +1112,7 @@ mesh = SubResource("ArrayMesh_xklus")
 skeleton = NodePath("")
 
 [node name="PortaDetetive1" parent="Office/Quarto/StaticBody3D" instance=ExtResource("7_lakw3")]
-transform = Transform3D(-3.8466e-08, 0, 0.87086, 0, 1.25615, 0, -0.88, 0, -3.80665e-08, -4.4995, 1.96172, -1.22765)
+transform = Transform3D(-3.8466e-08, 0, 0.87086, 0, 1.25615, 0, -0.88, 0, -3.80665e-08, -4.49142, 1.96172, -1.22765)
 
 [node name="Carpete" parent="Office" instance=ExtResource("8_pm21f")]
 transform = Transform3D(-4.74269e-08, 0, 1.085, 0, 1.628, 0, -1.085, 0, -4.74269e-08, 0.144614, 0.556801, 3.44839)
@@ -1307,11 +1306,8 @@ transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 1, -6.29145, 1.26983, -5.256
 [node name="Armario2" parent="." instance=ExtResource("34_f17e3")]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 1, -5.18093, 1.26983, -5.25284)
 
-[node name="Arquivo" parent="." instance=ExtResource("35_817gm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82124, 0.522293, -0.706228)
-
 [node name="CartaJoanne" parent="." instance=ExtResource("36_ggc52")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52157, 0.522293, -0.882415)
+transform = Transform3D(0.944812, -0.307469, 0.113108, 0, 0.345249, 0.938511, -0.327614, -0.886716, 0.326195, 0.547574, 0.769209, 2.87194)
 
 [node name="JornalSemanal" parent="." instance=ExtResource("37_l8ah6")]
 transform = Transform3D(-0.661037, -0.749948, 0.0246687, 0, 0.0328761, 0.999459, -0.750353, 0.66068, -0.0217323, 5.00247, 1.27868, 0.562113)
@@ -1345,17 +1341,17 @@ volume_db = 10.0
 max_db = 6.0
 pitch_scale = 1.6
 autoplay = true
-max_distance = 25.0
+max_distance = 18.0
 parameters/looping = true
 
 [node name="ParticulasChuva" type="GPUParticles3D" parent="."]
 transform = Transform3D(1.38761e-07, 0, -0.897972, 0, 1.77161, 0, 11.6362, 0, 1.07082e-08, 13.4495, 0, -1.43148)
-emitting = false
 amount = 100
 sub_emitter = NodePath(".")
 lifetime = 0.6
-speed_scale = 2.0
+speed_scale = 3.0
 randomness = 1.0
+fixed_fps = 45
 process_material = SubResource("ParticleProcessMaterial_e75v4")
 draw_pass_1 = SubResource("QuadMesh_rga7q")
 

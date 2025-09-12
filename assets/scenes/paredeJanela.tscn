@@ -12,7 +12,7 @@ albedo_texture = ExtResource("1_ehbtn")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2oat"]
 resource_name = "Office_Sh.001"
 cull_mode = 2
-albedo_color = Color(0.742719, 0.739993, 0.487749, 1)
+albedo_color = Color(0.423058, 0.419525, 0.227125, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7tpd"]
 resource_name = "Glass"

@@ -4,6 +4,8 @@ extends Node
 @onready var mat = $MeshInstance3D.get_active_material(0) as StandardMaterial3D
 @onready var luz = $OmniLight3D
 
+signal trovao_acionado
+
 func _ready() -> void:
 		loopTrovao()
 		
@@ -34,6 +36,8 @@ func toggleTrovao() -> bool:
 		
 		await get_tree().create_timer(0.4).timeout		
 		self.visible = false # Desapareçe
+		
+		emit_signal("trovao_acionado")
 		
 		return true
 	return false

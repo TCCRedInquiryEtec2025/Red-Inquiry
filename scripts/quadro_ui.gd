@@ -1,11 +1,11 @@
 extends Control
 
-@onready var codigo = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/LineEdit
+@onready var codigo = $PanelContainer/MarginContainer/HBoxContainer/TextureRect/TextureRect4/VBoxContainer/LineEdit
 
 signal useCoords
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	GameState.setValue("podeAndar", false)
 
 
 func _on_button_pressed() -> void:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=79 format=4 uid="uid://bec1o7ycwl88g"]
+[gd_scene load_steps=80 format=4 uid="uid://bec1o7ycwl88g"]
 
 [ext_resource type="Texture2D" uid="uid://cv15awoa0hje3" path="res://assets/models/Estante_Image.png" id="1_717dj"]
+[ext_resource type="PackedScene" uid="uid://ph5dmad4elmn" path="res://assets/scenes/arquivo.tscn" id="2_aqox6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6dfi"]
 resource_name = "bookleaf"
@@ -1971,9 +1972,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_h6420")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aqox6"]
-size = Vector3(1.83264, 2.04834, 0.628357)
+size = Vector3(1.83264, 2.04834, 0.59433)
 
 [node name="StaticBody3D" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="book1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, -0.03832, 0, 0.148283, 0, 0.123757, 0, 0, -8.09515, 0.896287, -0.203359)
@@ -2141,5 +2144,9 @@ mesh = SubResource("ArrayMesh_wbhpy")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.19499, 0.976807, -0.294512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.19499, 0.976807, -0.311526)
 shape = SubResource("BoxShape3D_aqox6")
+
+[node name="Arquivo" parent="." instance=ExtResource("2_aqox6")]
+transform = Transform3D(0.0335738, -4.37114e-08, -0.999436, -0.999436, -4.37114e-08, -0.0335738, -4.22192e-08, 1, -4.51543e-08, -8.31509, 0.849866, -0.136225)
+freeze = true

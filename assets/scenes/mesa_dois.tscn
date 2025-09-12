@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=4 uid="uid://c3vam4vl63k65"]
+[gd_scene load_steps=23 format=4 uid="uid://c3vam4vl63k65"]
 
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="1_yy41q"]
 [ext_resource type="PackedScene" uid="uid://cc2gvjqiuwh4j" path="res://assets/scenes/folhaArrancada.tscn" id="2_xjwwk"]
 [ext_resource type="PackedScene" uid="uid://cab5n7sx7cott" path="res://assets/scenes/lampadaNoir.tscn" id="3_awkb7"]
+[ext_resource type="PackedScene" uid="uid://cenob6cdlvk2i" path="res://assets/scenes/retratoMesa.tscn" id="4_11fne"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdkoa"]
 albedo_color = Color(0.317647, 0.219608, 0.113725, 1)
@@ -220,5 +221,8 @@ shape = SubResource("BoxShape3D_xjwwk")
 
 [node name="lampadaNoir" parent="." instance=ExtResource("3_awkb7")]
 transform = Transform3D(-5.15577, 0, -8.56844, 0, 10, 0, 8.56844, 0, -5.15577, 7.04021, 5.48091, -3.14703)
+
+[node name="RetratoMesa" parent="." instance=ExtResource("4_11fne")]
+transform = Transform3D(0.91941, -0.3933, -1.71917e-08, -8.84584e-16, -4.37114e-08, 1, -0.3933, -0.91941, -4.01887e-08, -2.88211, 5.75293, -3.00519)
 
 [connection signal="interacted" from="Gaveta" to="Gaveta" method="_on_interacted"]

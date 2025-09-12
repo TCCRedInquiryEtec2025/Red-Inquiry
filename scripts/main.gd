@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var fotoNina = $MesaDois/RetratoMesa/Foto
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,8 +12,7 @@ func _ready() -> void:
 	
 	GameState.setValue("podeAndar", true)
 	
-func _init() -> void:
-	if(GameState.getValue("usarCoordenadas")):
-		if(get_tree().current_scene.name in GameState.player_positions):
-			$Player.position = GameState.player_positions[get_tree().current_scene.name]
-			GameState.setValue("usarCoordenadas", false)
+	var matNina = fotoNina.mesh.surface_get_material(0)
+	if(matNina is StandardMaterial3D):
+		matNina.albedo_texture = load("res://assets/textures/Imagem do WhatsApp de 2025-04-15 à(s) 18.52.30_663286ec.jpg")
+		matNina.uv1_scale = Vector3(3.2, 2.1, 1.0)
