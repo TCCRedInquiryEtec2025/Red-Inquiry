@@ -12,8 +12,6 @@ export_presets.cfg
 *.zip
 *.x86_64
 *.pck
-*.blend
-*.glb
 
 # Godot temporary files
 *.godot/tmp/*

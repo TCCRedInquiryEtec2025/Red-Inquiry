@@ -1,10 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=18 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
 [ext_resource type="Script" uid="uid://0c0cns6vn1s1" path="res://scripts/documentos.gd" id="5_8sknh"]
 [ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="5_60g6h"]
+[ext_resource type="Texture2D" uid="uid://c0ouu504y8fq8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_w_outline.png" id="6_c6vv5"]
 [ext_resource type="Script" uid="uid://5io2so8aapg5" path="res://scripts/reticle.gd" id="6_hrrj1"]
+[ext_resource type="Texture2D" uid="uid://duux1n4qvt4xf" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_a_outline.png" id="7_nh07x"]
+[ext_resource type="Texture2D" uid="uid://bixv66sany65t" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_s_outline.png" id="8_00pic"]
+[ext_resource type="Texture2D" uid="uid://ulm4ipqipuve" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_d_outline.png" id="9_0bskb"]
+[ext_resource type="Texture2D" uid="uid://c15i6xjax4ph8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_shift_outline.png" id="10_1dmvh"]
+[ext_resource type="Texture2D" uid="uid://drq1tdsc5pvh0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_ctrl_outline.png" id="11_ratp2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6vv5"]
 margin = 0.0
@@ -23,6 +29,22 @@ radius = 0.4
 shader = ExtResource("5_60g6h")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4wcc8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84enu"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+bg_color = Color(1, 1, 1, 0.25)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 3
@@ -109,3 +131,124 @@ custom_minimum_size = Vector2(500, 700)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = SubResource("CanvasTexture_4wcc8")
+
+[node name="Tutorial" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
+
+[node name="Control" type="Control" parent="Neck/Head/Eyes/Camera3D/Tutorial"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -574.0
+offset_right = 598.0
+offset_bottom = 0.00061035156
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_84enu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Andar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="WASD" type="GridContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="VSeparator" type="VSeparator" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+layout_mode = 2
+
+[node name="W" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_c6vv5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="VSeparator2" type="VSeparator" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+layout_mode = 2
+
+[node name="A" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("7_nh07x")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="S" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("8_00pic")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="D" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("9_0bskb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar"]
+layout_mode = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 52
+text = "Andar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Correr" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 125
+alignment = 2
+
+[node name="Shift" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Correr"]
+layout_mode = 2
+texture = ExtResource("10_1dmvh")
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Correr"]
+layout_mode = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 52
+text = "Correr"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Agachar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 2
+
+[node name="Control" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Agachar"]
+layout_mode = 2
+texture = ExtResource("11_ratp2")
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Agachar"]
+layout_mode = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 52
+text = "Agachar"
+horizontal_alignment = 1
+vertical_alignment = 1

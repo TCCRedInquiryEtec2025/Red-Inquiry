@@ -1,6 +1,3 @@
-<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs/>
-  <g>
-    <path stroke="none" fill="#FFFFFF" d="M56 20 L56 48 Q56 56 48 56 L16 56 Q8 56 8 48 L8 20 Q8 15.05 15.05 11.5 22.05 8 32 8 41.95 8 49 11.5 56 15.05 56 20"/>
-  </g>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:d56d1fb3002b737004e994afdeecc253e6c0747c6dee7e448bf49cfa35553d5d
+size 296
