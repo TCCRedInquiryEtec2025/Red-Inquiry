@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Crouching
-	if Input.is_action_pressed("crouch"):
+	if Input.is_action_pressed("crouch"):			
 		curSpeed = crouchSpeed
 		
 		head.position.y = lerp(head.position.y, crouchDepth, delta * lerpSpeed)
@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 		
 		head.position.y = lerp(head.position.y, 0.0, delta * lerpSpeed)
 		
-		if Input.is_action_pressed("sprint"):
+		if Input.is_action_pressed("sprint"):			
 			# Sprinting
 			curSpeed = sprintSpeed
 			
@@ -99,7 +99,7 @@ func _physics_process(delta: float) -> void:
 			GameState.setValue("andando", true) # Walking = true
 			GameState.setValue("correndo", false) # Sprinting = false
 			GameState.setValue("agachando", false)   # Crouching = false
-			
+	
 	# Handle Headbob
 	if GameState.getValue("correndo"):
 		headBobbingCurIntensity = headBobbingSprintingIntensity

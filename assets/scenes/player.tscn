@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=26 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="5_60g6h"]
 [ext_resource type="Texture2D" uid="uid://c0ouu504y8fq8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_w_outline.png" id="6_c6vv5"]
 [ext_resource type="Script" uid="uid://5io2so8aapg5" path="res://scripts/reticle.gd" id="6_hrrj1"]
+[ext_resource type="Script" uid="uid://b6ibqpel2ubsb" path="res://assets/scenes/painelTutorial.gd" id="6_nh07x"]
 [ext_resource type="Texture2D" uid="uid://duux1n4qvt4xf" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_a_outline.png" id="7_nh07x"]
 [ext_resource type="Texture2D" uid="uid://bixv66sany65t" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_s_outline.png" id="8_00pic"]
 [ext_resource type="Texture2D" uid="uid://ulm4ipqipuve" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_d_outline.png" id="9_0bskb"]
@@ -31,20 +32,100 @@ shader = ExtResource("5_60g6h")
 [sub_resource type="CanvasTexture" id="CanvasTexture_4wcc8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84enu"]
-content_margin_left = 30.0
-content_margin_top = 30.0
-content_margin_right = 30.0
-content_margin_bottom = 30.0
 bg_color = Color(1, 1, 1, 0.25)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_blend = true
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hrrj1"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+color = Color(0, 0, 0, 0)
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_c6vv5"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+color = Color(0, 0, 0, 0)
+vertical = true
+
+[sub_resource type="Animation" id="Animation_c6vv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Andar:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_00pic"]
+resource_name = "handleAgachar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Agachar:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hrrj1"]
+resource_name = "handleAndar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Andar:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nh07x"]
+resource_name = "handleCorrer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Correr:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bskb"]
+_data = {
+&"RESET": SubResource("Animation_c6vv5"),
+&"handleAgachar": SubResource("Animation_00pic"),
+&"handleAndar": SubResource("Animation_hrrj1"),
+&"handleCorrer": SubResource("Animation_nh07x")
+}
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 3
@@ -142,37 +223,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control"]
+[node name="TutorialPainel" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control"]
 custom_minimum_size = Vector2(500, 300)
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -574.0
-offset_right = 598.0
-offset_bottom = 0.00061035156
-grow_vertical = 0
+offset_left = 600.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84enu")
+script = ExtResource("6_nh07x")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel"]
 layout_mode = 2
 alignment = 1
 
-[node name="Andar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer"]
+[node name="Andar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 50
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 2
 
-[node name="WASD" type="GridContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar"]
+[node name="WASD" type="GridContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 3
 
-[node name="VSeparator" type="VSeparator" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+[node name="VSeparator" type="VSeparator" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_hrrj1")
 
-[node name="W" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+[node name="W" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -181,10 +265,11 @@ texture = ExtResource("6_c6vv5")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="VSeparator2" type="VSeparator" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+[node name="VSeparator2" type="VSeparator" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_c6vv5")
 
-[node name="A" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+[node name="A" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -193,7 +278,7 @@ texture = ExtResource("7_nh07x")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="S" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+[node name="S" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -202,7 +287,7 @@ texture = ExtResource("8_00pic")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="D" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar/WASD"]
+[node name="D" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -211,44 +296,53 @@ texture = ExtResource("9_0bskb")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Andar"]
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar"]
 layout_mode = 2
 theme_override_constants/outline_size = 25
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 40
 text = "Andar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Correr" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer"]
+[node name="Correr" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 125
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 2
 
-[node name="Shift" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Correr"]
+[node name="Shift" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Correr"]
 layout_mode = 2
 texture = ExtResource("10_1dmvh")
 
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Correr"]
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Correr"]
 layout_mode = 2
 theme_override_constants/outline_size = 25
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 40
 text = "Correr"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Agachar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer"]
+[node name="Agachar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 80
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 2
 
-[node name="Control" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Agachar"]
+[node name="Control" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Agachar"]
 layout_mode = 2
 texture = ExtResource("11_ratp2")
 
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/PanelContainer/VBoxContainer/Agachar"]
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Agachar"]
 layout_mode = 2
 theme_override_constants/outline_size = 25
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 40
 text = "Agachar"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_0bskb")
+}
+playback_auto_capture_transition_type = 7

@@ -1,6 +1,6 @@
 extends Node
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(GameState.getValue("lendoCarta")):
 		set_mouse_confined()
 		
