@@ -8,11 +8,10 @@ size = Vector3(0.21, 0.3, 0.01)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wei7"]
 size = Vector3(0.242798, 0.320831, 0.0352135)
 
-[node name="CartaJoanne" type="RigidBody3D"]
+[node name="CartaJoanne" type="RigidBody3D" groups=["legiveis"]]
 mass = 0.001
 script = ExtResource("1_tslmq")
 response_prompt = "Essa senhora tá realmente desesperada. Gostaria de resolver tudo logo, mas com tão poucas informações…"
-isCarta = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)

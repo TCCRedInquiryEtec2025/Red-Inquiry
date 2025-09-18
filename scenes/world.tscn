@@ -1308,9 +1308,11 @@ transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 1, -5.18093, 1.26983, -5.252
 
 [node name="CartaJoanne" parent="." instance=ExtResource("36_ggc52")]
 transform = Transform3D(0.944812, -0.307469, 0.113108, 0, 0.345249, 0.938511, -0.327614, -0.886716, 0.326195, 0.547574, 0.769209, 2.87194)
+isCarta = false
 
 [node name="JornalSemanal" parent="." instance=ExtResource("37_l8ah6")]
 transform = Transform3D(-0.661037, -0.749948, 0.0246687, 0, 0.0328761, 0.999459, -0.750353, 0.66068, -0.0217323, 5.00247, 1.27868, 0.562113)
+isCarta = false
 
 [node name="Trovao" type="Node3D" parent="."]
 visible = false

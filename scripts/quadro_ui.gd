@@ -2,7 +2,6 @@ extends Control
 
 @onready var codigo = $PanelContainer/MarginContainer/HBoxContainer/TextureRect/TextureRect4/VBoxContainer/LineEdit
 
-signal useCoords
 
 func _ready() -> void:
 	GameState.setValue("podeAndar", false)

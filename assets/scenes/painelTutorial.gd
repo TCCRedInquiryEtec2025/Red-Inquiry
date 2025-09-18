@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 		agachar_done = true
 		anim_player.play("handleAgachar")
 		
-	if(Input.is_action_just_pressed("sprint") and not correr_done): # TUTORIAL: AGACHAR
+	if(Input.is_action_just_pressed("sprint") and not correr_done): # TUTORIAL: CORRER
 		correr_done = true
 		anim_player.play("handleCorrer")
 		

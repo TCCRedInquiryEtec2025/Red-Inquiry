@@ -8,7 +8,7 @@ var state := {
 	"arquivo": false,
 	
 	"abrindoAgenda": false,
-	"lendoCarta": false,
+	"lendo": false,
 	"podeAndar": true,
 	
 	"andando": false,

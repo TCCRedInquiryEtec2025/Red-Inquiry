@@ -14,11 +14,11 @@ size = Vector3(0.5, 0.35, 0.01)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjcnx"]
 size = Vector3(0.507607, 0.361422, 0.0352135)
 
-[node name="JornalSemanal" type="RigidBody3D"]
+[node name="JornalSemanal" type="RigidBody3D" groups=["legiveis"]]
 mass = 0.001
 script = ExtResource("1_vlw0r")
+tipo = 1
 response_prompt = "Aquele Mafioso daqui tem alguma coisa a ver com isso. Sei disso."
-isCarta = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)

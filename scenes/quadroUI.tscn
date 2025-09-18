@@ -48,7 +48,7 @@ size_flags_horizontal = 3
 texture = ExtResource("2_g3mub")
 
 [node name="TextureRect4" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect"]
-self_modulate = Color(0.083196, 0.200098, 0.0906147, 1)
+self_modulate = Color(0.16691673, 0.3569355, 0.17958105, 1)
 layout_mode = 0
 offset_left = 50.0
 offset_top = 50.0

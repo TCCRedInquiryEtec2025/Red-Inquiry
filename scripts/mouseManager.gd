@@ -1,7 +1,7 @@
 extends Node
 	
 func _process(_delta: float) -> void:
-	if(GameState.getValue("lendoCarta")):
+	if(GameState.getValue("lendo")):
 		set_mouse_confined()
 		
 	if(!GameState.getValue("podeAndar")):

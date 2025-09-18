@@ -44,6 +44,8 @@ func _physics_process(_delta: float) -> void:
 				collider.interact(owner)
 				show_response(collider.response_prompt)
 				
-				if(collider.isCarta):
-					GameState.setValue("lendoCarta", true)
+				if(collider.get_class() == "Carta"):
+					collider.interacted.emit(collider)
+					
+					GameState.setValue("lendo", true)
 					GameState.setValue("podeAndar", false)

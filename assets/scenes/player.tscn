@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=30 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
 [ext_resource type="Script" uid="uid://0c0cns6vn1s1" path="res://scripts/documentos.gd" id="5_8sknh"]
 [ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="5_60g6h"]
+[ext_resource type="Texture2D" uid="uid://c6tss7lcdqskg" path="res://assets/cartas/Jornal.png" id="6_00pic"]
 [ext_resource type="Texture2D" uid="uid://c0ouu504y8fq8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_w_outline.png" id="6_c6vv5"]
 [ext_resource type="Script" uid="uid://5io2so8aapg5" path="res://scripts/reticle.gd" id="6_hrrj1"]
 [ext_resource type="Script" uid="uid://b6ibqpel2ubsb" path="res://assets/scenes/painelTutorial.gd" id="6_nh07x"]
@@ -29,7 +30,26 @@ radius = 0.4
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1dmvh"]
 shader = ExtResource("5_60g6h")
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_4wcc8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh07x"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nh07x"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_1dmvh"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_ratp2"]
+events = [SubResource("InputEventKey_1dmvh")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84enu"]
 bg_color = Color(1, 1, 1, 0.25)
@@ -168,6 +188,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="Neck/Head/Eyes/Camera3D/Shaders"]
+z_index = 2
 material = SubResource("ShaderMaterial_1dmvh")
 layout_mode = 1
 anchors_preset = 15
@@ -197,23 +218,79 @@ grow_vertical = 2
 script = ExtResource("6_hrrj1")
 DOT_RADIUS = 4.0
 
-[node name="Documentos" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D"]
+[node name="Documentos" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nh07x")
 script = ExtResource("5_8sknh")
 
-[node name="Carta" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Documentos"]
-visible = false
-z_index = -1
+[node name="HBoxContainer" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Documentos"]
+layout_mode = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CartaVertical" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/CenterContainer"]
+z_index = 1
 custom_minimum_size = Vector2(500, 700)
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture = SubResource("CanvasTexture_4wcc8")
+texture = SubResource("PlaceholderTexture2D_nh07x")
+expand_mode = 5
+
+[node name="Jornal" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/CenterContainer"]
+z_index = 1
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+texture = ExtResource("6_00pic")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(600, 750)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 22
+text = "[TEXTO CONTIDO NA CARTA]"
+horizontal_alignment = 1
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Button" type="Button" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_ratp2")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "FECHAR"
+flat = true
 
 [node name="Tutorial" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
+visible = false
 
 [node name="Control" type="Control" parent="Neck/Head/Eyes/Camera3D/Tutorial"]
 layout_mode = 3
@@ -346,3 +423,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_0bskb")
 }
 playback_auto_capture_transition_type = 7
+
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer/Button" to="Neck/Head/Eyes/Camera3D/Documentos" method="_on_button_pressed"]
