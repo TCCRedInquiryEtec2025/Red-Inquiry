@@ -283,6 +283,7 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 40
+action_mode = 0
 shortcut = SubResource("Shortcut_ratp2")
 shortcut_feedback = false
 shortcut_in_tooltip = false

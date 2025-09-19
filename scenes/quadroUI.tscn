@@ -6,15 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://0kwnxspp82wn" path="res://icon.svg" id="4_1i01y"]
 [ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="5_k70iu"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i01y"]
+shader = ExtResource("5_k70iu")
+
 [sub_resource type="InputEventKey" id="InputEventKey_pchnr"]
 device = -1
 keycode = 4194309
 
 [sub_resource type="Shortcut" id="Shortcut_7hbbi"]
 events = [SubResource("InputEventKey_pchnr")]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i01y"]
-shader = ExtResource("5_k70iu")
 
 [node name="Quadro" type="Control"]
 layout_mode = 3
@@ -24,6 +24,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pchnr")
+
+[node name="Shaders" type="Control" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Shaders"]
+material = SubResource("ShaderMaterial_1i01y")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -130,23 +148,6 @@ theme_override_font_sizes/font_size = 28
 shortcut = SubResource("Shortcut_7hbbi")
 shortcut_in_tooltip = false
 text = "Enviar"
-
-[node name="Shaders" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Shaders"]
-material = SubResource("ShaderMaterial_1i01y")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="text_submitted" from="PanelContainer/MarginContainer/HBoxContainer/TextureRect/TextureRect4/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/TextureRect/TextureRect4/VBoxContainer/Button" to="." method="_on_button_pressed"]

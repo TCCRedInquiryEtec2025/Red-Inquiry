@@ -11,7 +11,7 @@ func _on_button_pressed() -> void:
 	if(codigo.text.to_upper() == "VERMELHO EM GREENVILLE"):
 		print("Codigo certo!!!")
 		GameState.setValue("podeAndar", true)
-		get_tree().change_scene_to_file("res://scenes/fimDemo.tscn")
+		TransicaoCenas.change_scene("res://scenes/fimDemo.tscn")
 		
 	elif(codigo.text.to_upper() == "LABUBU"):
 		print("Morango do amor. Hmmmm...")

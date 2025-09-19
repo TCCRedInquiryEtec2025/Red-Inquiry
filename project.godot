@@ -23,6 +23,7 @@ config/main_scene="uid://bl3me73mor0ud"
 
 GameState="*res://scripts/gameState.gd"
 MouseManager="*res://scripts/mouseManager.gd"
+TransicaoCenas="*res://scenes/transicao_cenas.tscn"
 
 [display]
 

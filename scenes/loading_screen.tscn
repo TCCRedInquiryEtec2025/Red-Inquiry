@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://bigptdc4ibawy"]
+
+[ext_resource type="Script" uid="uid://dty5ut07vclbw" path="res://scripts/loading_screen.gd" id="1_ep5rh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hprjd"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep5rh"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.18120003, 0.18120006, 0.18120003, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku3bi"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0, 0, 0.69600004)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ep5rh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hprjd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Carregando..."
+horizontal_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(800, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 25
+theme_override_styles/background = SubResource("StyleBoxFlat_ep5rh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ku3bi")

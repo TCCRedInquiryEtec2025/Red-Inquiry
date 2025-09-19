@@ -10,4 +10,4 @@ func _on_interacted(_body: Variant) -> void:
 	elif GameState.getValue("cartaTerence") and GameState.getValue("folhaArrancada"):
 		GameState.setValue("podeAndar", false)
 	
-		get_tree().change_scene_to_file("res://scenes/quadroUI.tscn")
+		TransicaoCenas.change_scene("res://scenes/quadroUI.tscn")

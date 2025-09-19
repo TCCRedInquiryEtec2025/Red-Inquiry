@@ -13,6 +13,8 @@ func _process(_delta: float) -> void:
 		visible = true
 
 func _ready() -> void:
+	visible = false
+	
 	jornal.visible = false
 	carta.visible = false
 	
@@ -50,4 +52,4 @@ func _on_interacted(interactable: Carta) -> void:
 			print(">> Achou a carta da Joanne")
 			carta.texture = carta_map["joanne"]
 
-	$HBoxContainer/VBoxContainer/CenterContainer2/RichTextLabel.text = interactable.texto
+	$HBoxContainer/VBoxContainer/CenterContainer2/RichTextLabel.text = interactable.texto # Texto contido na carta
