@@ -20,10 +20,10 @@ content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
 bg_color = Color(0.18120003, 0.18120006, 0.18120003, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 corner_detail = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku3bi"]
@@ -32,10 +32,10 @@ content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
 bg_color = Color(1, 0, 0, 0.69600004)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 corner_detail = 6
 
 [node name="LoadingScreen" type="Control"]
@@ -79,7 +79,7 @@ custom_minimum_size = Vector2(800, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_constants/outline_size = 25
+theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 25
 theme_override_styles/background = SubResource("StyleBoxFlat_ep5rh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ku3bi")

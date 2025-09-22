@@ -45,6 +45,10 @@ const mouseSensi = 0.25
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	await get_tree().create_timer(3).timeout
+	
+	$Neck/Head/Eyes/Camera3D/Tutorial.visible = true
 
 func _input(event: InputEvent) -> void:	
 	# Mouse looking logic

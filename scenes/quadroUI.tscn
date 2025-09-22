@@ -120,7 +120,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/HBoxContainer/TextureRect4/TextureRect3/VBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/TextureRect/TextureRect4/VBoxContainer"]
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 size_flags_horizontal = 4

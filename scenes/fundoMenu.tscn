@@ -233,6 +233,7 @@ stream = ExtResource("17_38wos")
 
 [node name="ParticulasChuva" type="GPUParticles3D" parent="."]
 transform = Transform3D(1.38761e-07, 0, -0.897972, 0, 1.77161, 0, 11.6362, 0, 1.07082e-08, 13.4495, 0, -1.43148)
+emitting = false
 amount = 100
 sub_emitter = NodePath(".")
 lifetime = 0.6

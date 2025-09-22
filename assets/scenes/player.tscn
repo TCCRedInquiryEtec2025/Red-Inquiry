@@ -291,6 +291,7 @@ text = "FECHAR"
 flat = true
 
 [node name="Tutorial" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
+layer = -1
 visible = false
 
 [node name="Control" type="Control" parent="Neck/Head/Eyes/Camera3D/Tutorial"]

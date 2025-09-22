@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://8navspruggjk"]
+[gd_scene load_steps=6 format=3 uid="uid://8navspruggjk"]
 
 [ext_resource type="Script" uid="uid://bcd2164ydly4x" path="res://scenes/menu_inicial.gd" id="1_p0uqc"]
 [ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/winter-rain-in-oak-forest-loop-185672.mp3" id="2_jhs6u"]
 [ext_resource type="PackedScene" uid="uid://bahtauago805q" path="res://scenes/fundoMenu.tscn" id="2_mxdwk"]
 [ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/thunderstorm-ambiance-191991 (2).mp3" id="3_81crh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxdwk"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
 
 [node name="MenuInicial" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -39,26 +51,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-custom_minimum_size = Vector2(1920, 1080)
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
 layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/CenterContainer"]
+custom_minimum_size = Vector2(450, 600)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mxdwk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
 alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 430)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-color = Color(0.133196, 0.133196, 0.133196, 1)
-
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/ColorRect"]
+[node name="Button" type="Button" parent="PanelContainer/CenterContainer/PanelContainer/VBoxContainer"]
 z_as_relative = false
 custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
-offset_left = 25.0
-offset_top = 30.0
-offset_right = 375.0
-offset_bottom = 100.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
@@ -70,14 +79,10 @@ theme_override_font_sizes/font_size = 40
 action_mode = 0
 text = "Iniciar"
 
-[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/ColorRect"]
+[node name="Button2" type="Button" parent="PanelContainer/CenterContainer/PanelContainer/VBoxContainer"]
 z_as_relative = false
 custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
-offset_left = 25.0
-offset_top = 130.0
-offset_right = 375.0
-offset_bottom = 200.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
@@ -89,14 +94,10 @@ theme_override_font_sizes/font_size = 40
 action_mode = 0
 text = "Opções"
 
-[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/ColorRect"]
+[node name="Button3" type="Button" parent="PanelContainer/CenterContainer/PanelContainer/VBoxContainer"]
 z_as_relative = false
 custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
-offset_left = 25.0
-offset_top = 230.0
-offset_right = 375.0
-offset_bottom = 300.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
@@ -108,14 +109,10 @@ theme_override_font_sizes/font_size = 40
 action_mode = 0
 text = "Créditos"
 
-[node name="Button4" type="Button" parent="PanelContainer/VBoxContainer/ColorRect"]
+[node name="Button4" type="Button" parent="PanelContainer/CenterContainer/PanelContainer/VBoxContainer"]
 z_as_relative = false
 custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
-offset_left = 25.0
-offset_top = 330.0
-offset_right = 375.0
-offset_bottom = 400.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
@@ -127,11 +124,6 @@ theme_override_font_sizes/font_size = 40
 action_mode = 0
 text = "Sair"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_vertical = 8
-
 [node name="Chuva" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jhs6u")
 volume_db = -10.0
@@ -142,7 +134,7 @@ parameters/looping = true
 [node name="Trovao" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_81crh")
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ColorRect/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ColorRect/Button2" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ColorRect/Button3" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ColorRect/Button4" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/PanelContainer/VBoxContainer/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/PanelContainer/VBoxContainer/Button3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/PanelContainer/VBoxContainer/Button4" to="." method="_on_button_pressed"]
