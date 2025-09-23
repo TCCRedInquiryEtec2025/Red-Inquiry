@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qsbidkllr5f"
-valid=false
+uid="uid://csoqmng80r3d2"
+path="res://.godot/imported/Glass.blend-0b71f1a781032e3b4e199697d33d8731.scn"
 
 [deps]
 
-source_file="res://assets/models/comoda.blend"
+source_file="res://assets/models/Glass.blend"
+dest_files=["res://.godot/imported/Glass.blend-0b71f1a781032e3b4e199697d33d8731.scn"]
 
 [params]
 

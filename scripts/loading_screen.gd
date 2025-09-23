@@ -1,7 +1,7 @@
 extends Control
 
 @onready var progress = $PanelContainer/VBoxContainer/CenterContainer2/ProgressBar
-var path := "res://scenes/world.tscn"
+var path := "res://scenes/escritorio.tscn"
 
 func _ready():	
 	ResourceLoader.load_threaded_request(path, "PackedScene")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpkvaco16f6rl"
-path="res://.godot/imported/Carta_Joanne_Rochefart.jpg-43f2a4db4e7a92e3a0db5b3f4b11f850.ctex"
+uid="uid://dgwjpw1mg71mf"
+path="res://.godot/imported/Red-Inquiry.png-401e5ef50114cca94020e264fbfbc690.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cartas/Carta_Joanne_Rochefart.jpg"
-dest_files=["res://.godot/imported/Carta_Joanne_Rochefart.jpg-43f2a4db4e7a92e3a0db5b3f4b11f850.ctex"]
+source_file="res://assets/Red-Inquiry.png"
+dest_files=["res://.godot/imported/Red-Inquiry.png-401e5ef50114cca94020e264fbfbc690.ctex"]
 
 [params]
 

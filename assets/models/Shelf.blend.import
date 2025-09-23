@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cbns5v1chnq77"
-path="res://.godot/imported/Shelf.blend-b22007c84fcfa72d66cecf1954452388.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/models/Shelf.blend"
-dest_files=["res://.godot/imported/Shelf.blend-b22007c84fcfa72d66cecf1954452388.scn"]
 
 [params]
 

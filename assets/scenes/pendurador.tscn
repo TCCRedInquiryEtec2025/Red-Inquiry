@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://bopd65sk2st0l"]
+[gd_scene load_steps=6 format=4 uid="uid://bopd65sk2st0l"]
+
+[ext_resource type="PackedScene" uid="uid://bocxoodqwhwyy" path="res://assets/scenes/fedora.tscn" id="1_s4wyy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7nul"]
 resource_name = "Office_Sh"
@@ -49,3 +51,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00811768, 0.981689, 0.00546265)
 shape = SubResource("BoxShape3D_s4wyy")
+
+[node name="fedora" parent="." instance=ExtResource("1_s4wyy")]
+transform = Transform3D(0.00651901, 0.058843, 0.0373497, -0.00818965, 0.0378996, -0.0582799, -0.0692129, 0.0010578, 0.0104139, 0.254814, 1.81329, 0.00818755)

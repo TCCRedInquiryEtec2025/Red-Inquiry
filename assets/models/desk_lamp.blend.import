@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bu4mpncdp8nau"
-path="res://.godot/imported/desk_lamp.blend-09ca69753ee314d2effd666c28932601.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/models/desk_lamp.blend"
-dest_files=["res://.godot/imported/desk_lamp.blend-09ca69753ee314d2effd666c28932601.scn"]
 
 [params]
 

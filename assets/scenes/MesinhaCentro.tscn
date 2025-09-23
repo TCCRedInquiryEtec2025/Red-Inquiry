@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://lhsujdq04cxh"]
+[gd_scene load_steps=9 format=4 uid="uid://lhsujdq04cxh"]
 
 [ext_resource type="Texture2D" uid="uid://cbpfg2dq014e3" path="res://assets/models/MesinhaCentro_wood05.jpg" id="1_gpae2"]
+[ext_resource type="PackedScene" uid="uid://hcuxcrogpn2x" path="res://assets/scenes/copo.tscn" id="1_ugxqb"]
 [ext_resource type="Texture2D" uid="uid://bhfpq0ai0fna" path="res://assets/models/MesinhaCentro_wood05b.jpg" id="2_7t8q7"]
+[ext_resource type="PackedScene" uid="uid://plhfqqsjwmpg" path="res://assets/scenes/Whisky.tscn" id="4_7ypsh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knxjw"]
 resource_name = "blinn1"
@@ -51,6 +53,9 @@ size = Vector3(4.10785, 0.486267, 1.39252)
 
 [node name="MesinhaCentro" type="Node3D"]
 
+[node name="Glass2" parent="." instance=ExtResource("1_ugxqb")]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -0.520973, 0.856418, 0.0803003)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="table" type="MeshInstance3D" parent="StaticBody3D"]
@@ -61,3 +66,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00515747, 0.508641, -0.0039978)
 shape = SubResource("BoxShape3D_gpae2")
+
+[node name="Glass" parent="." instance=ExtResource("1_ugxqb")]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -0.0821262, 0.856629, -0.0419138)
+
+[node name="Whisky" parent="." instance=ExtResource("4_7ypsh")]
+transform = Transform3D(2.09976, 0, -0.93861, 0, 2.3, 0, 0.93861, 0, 2.09976, -0.340919, 1.11884, -0.112125)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=4 uid="uid://bxnwlt1bl5qw7"]
+[gd_scene load_steps=23 format=4 uid="uid://bxnwlt1bl5qw7"]
 
 [ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="1_te44w"]
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="2_p6hy1"]
 [ext_resource type="PackedScene" uid="uid://lrm1rnuukciv" path="res://assets/scenes/carta_terence.tscn" id="3_6jugk"]
 [ext_resource type="Texture2D" uid="uid://c30qwopp0lwdu" path="res://assets/models/abajur_0.png" id="4_tb6i7"]
+[ext_resource type="PackedScene" uid="uid://b0d3530rw4k6d" path="res://assets/scenes/despertador.tscn" id="5_15hgr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tm6q"]
 resource_name = "madeira"
@@ -250,5 +251,8 @@ light_specular = 0.0
 shadow_enabled = true
 omni_range = 8.0
 omni_shadow_mode = 0
+
+[node name="clock" parent="." instance=ExtResource("5_15hgr")]
+transform = Transform3D(-0.189351, 0, 0.0643904, 0, 0.25, 0, -0.0643904, 0, -0.189351, 0.302065, 1.07747, 0.274178)
 
 [connection signal="interacted" from="Gaveta" to="Gaveta" method="_on_interacted"]
