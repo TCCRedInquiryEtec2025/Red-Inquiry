@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qsbidkllr5f"
-valid=false
+uid="uid://ci2lb1qmm7qd4"
+path="res://.godot/imported/Whisky.blend-d85a7c387123e97a2c63842b22bfd5e0.scn"
 
 [deps]
 
-source_file="res://assets/models/comoda.blend"
+source_file="res://assets/models/Whisky.blend"
+dest_files=["res://.godot/imported/Whisky.blend-d85a7c387123e97a2c63842b22bfd5e0.scn"]
 
 [params]
 

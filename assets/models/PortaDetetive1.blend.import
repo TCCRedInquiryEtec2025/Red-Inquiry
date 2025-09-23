@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bf4d1p7ks6kyk"
-path="res://.godot/imported/PortaDetetive1.blend-29b836bd08052239fa36a858232baf81.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/models/PortaDetetive1.blend"
-dest_files=["res://.godot/imported/PortaDetetive1.blend-29b836bd08052239fa36a858232baf81.scn"]
 
 [params]
 

@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qsbidkllr5f"
-valid=false
+uid="uid://cpenemna87uh6"
+path="res://.godot/imported/clock.blend-fe23fa96a1178cc83224eb89e5795214.scn"
 
 [deps]
 
-source_file="res://assets/models/comoda.blend"
+source_file="res://assets/models/clock.blend"
+dest_files=["res://.godot/imported/clock.blend-fe23fa96a1178cc83224eb89e5795214.scn"]
 
 [params]
 

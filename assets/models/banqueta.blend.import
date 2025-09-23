@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://coc31fqxjfqdh"
-path="res://.godot/imported/banqueta.blend-4c7d2b269b28d42829341ff6a8b5b282.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/models/banqueta.blend"
-dest_files=["res://.godot/imported/banqueta.blend-4c7d2b269b28d42829341ff6a8b5b282.scn"]
 
 [params]
 

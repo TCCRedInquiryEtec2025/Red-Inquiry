@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c2xoy740hw581"
-path="res://.godot/imported/ParedeGrossa.blend-c879e9b9095691abd86d9234b0bac4c5.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/models/ParedeGrossa.blend"
-dest_files=["res://.godot/imported/ParedeGrossa.blend-c879e9b9095691abd86d9234b0bac4c5.scn"]
 
 [params]
 

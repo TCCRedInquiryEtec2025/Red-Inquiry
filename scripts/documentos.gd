@@ -52,4 +52,4 @@ func _on_interacted(interactable: Carta) -> void:
 			print(">> Achou a carta da Joanne")
 			carta.texture = carta_map["joanne"]
 
-	$HBoxContainer/VBoxContainer/CenterContainer2/RichTextLabel.text = interactable.texto # Texto contido na carta
+	$HBoxContainer/PanelContainer/VBoxContainer/CenterContainer2/RichTextLabel.text = interactable.texto # Texto contido na carta

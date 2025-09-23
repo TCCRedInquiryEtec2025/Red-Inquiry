@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://fu6gllv4wko7"
-path="res://.godot/imported/cama.blend-ada27c5013faebd60bb27e3d9b0dce62.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/models/cama.blend"
-dest_files=["res://.godot/imported/cama.blend-ada27c5013faebd60bb27e3d9b0dce62.scn"]
 
 [params]
 
