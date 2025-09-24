@@ -40,7 +40,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ts0tc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s4wyy"]
-size = Vector3(0.681274, 2.02295, 0.706116)
+size = Vector3(0.3261836, 1.9576416, 0.32556152)
 
 [node name="Pendurador" type="StaticBody3D"]
 
@@ -48,9 +48,9 @@ size = Vector3(0.681274, 2.02295, 0.706116)
 mesh = SubResource("ArrayMesh_efb5o")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00811768, 0.981689, 0.00546265)
-shape = SubResource("BoxShape3D_s4wyy")
-
 [node name="fedora" parent="." instance=ExtResource("1_s4wyy")]
-transform = Transform3D(0.00651901, 0.058843, 0.0373497, -0.00818965, 0.0378996, -0.0582799, -0.0692129, 0.0010578, 0.0104139, 0.254814, 1.81329, 0.00818755)
+transform = Transform3D(0.0050624534, 0.065663174, 0.023721639, -0.005204696, 0.024072686, -0.06552414, -0.069622375, 0.0029749868, 0.0066231997, 0.255, 1.803, 0.008)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0141543, 0.96221924, -0.01739502)
+shape = SubResource("BoxShape3D_s4wyy")

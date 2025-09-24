@@ -1,14 +1,15 @@
-# 🕵️‍♂️ Red Inquiry
+<p align="center">
+  <img src="assets/Red-Inquiry.png" alt="Logo Red INquiry" width="600"/>
+</p> 
 
-Um jogo **puzzle investigativo** com estética **noir** desenvolvido em **Godot**.  
-Acompanhe a jornada de um detetive que começa investigando um caso simples, mas logo descobre um esquema obscuro envolvendo **tráfico de animais em risco de extinção**.
+**Red Inquiry** é um jogo de **puzzle investigativo** com estética **noir** desenvolvido com **Godot**. Acompanhe a jornada de um detetive que começa investigando um caso simples, mas logo descobre um esquema obscuro envolvendo o **tráfico de animais em risco de extinção**.
 
 ---
 
 ## 🎮 Gameplay
 
 - Resolva puzzles investigativos para avançar na trama.  
-- Colete pistas espalhadas pela cena.
+- Colete pistas espalhadas pelo decorrer do jogo.
 - Interaja com o ambiente para descobrir mais sobre a história
 
 ---
@@ -16,23 +17,23 @@ Acompanhe a jornada de um detetive que começa investigando um caso simples, mas
 ## ✨ Features
 
 - Atmosfera **misteriosa** com tons de vermelho marcantes.  
-- Narrativa **envolvente e imersiva**.  
-- Arte inspirada em **cinema noir**.  
+- Narrativa **envolvente** e **imersiva**.  
+- Arte inspirada em **cinema Noir**.
 
 ---
 
 ## 🖼️ Capturas de Tela
 
 <p align="center">
-  <img src="assets/screenshots/menu.png" alt="Menu Inicial" width="400"/>
+  <img src="assets/screenshots/menuInicial.png" alt="Menu Inicial" width="900"/>
   <br>
-  <em>Menu inicial estilizado</em>
+  <em>Menu inicial</em>
 </p> 
 
 <p align="center">
   <img src="assets/screenshots/gameplay.gif" alt="Gameplay" width="400"/>
   <br>
-  <em>Exemplo de gameplay</em>
+  <em>Gameplay de exemplo</em>
 </p>
 
 ---
@@ -48,4 +49,4 @@ Acompanhe a jornada de um detetive que começa investigando um caso simples, mas
 
 ## 🚀 Disponibilização
 
-> [Página no Itch.io](https://pauloonada.itch.io/red-inquiry)
+> [Página do Itch.io](https://pauloonada.itch.io/red-inquiry)

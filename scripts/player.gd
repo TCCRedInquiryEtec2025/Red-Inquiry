@@ -37,11 +37,8 @@ const jumpVelocity = 3
 
 var lerpSpeed = 8.0
 
-var freeLookTiltAmount = 8
-
 # Input vars
 var direction = Vector3.ZERO
-const mouseSensi = 0.25
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -56,6 +53,8 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	if event is InputEventMouseMotion: # Moves camera
+		var mouseSensi = Settings.sensibilidade
+		
 		rotate_y(deg_to_rad(event.relative.x * mouseSensi) * -1)
 			
 		head.rotate_x(deg_to_rad(event.relative.y * mouseSensi) * -1)
@@ -117,6 +116,7 @@ func _physics_process(delta: float) -> void:
 		headBobbingCurIntensity = headBobbingCrouchingIntensity
 		headBobbingIndex += headBobbingCrouchingSpeed * delta
 		
+	# Handle Movement / Camera
 	if is_on_floor() and input_dir != Vector2.ZERO:
 		headBobbingVector.y = sin(headBobbingIndex)
 		headBobbingVector.x = sin(headBobbingIndex / 2) + 0.5
@@ -149,3 +149,11 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, curSpeed)
 		
 	move_and_slide()
+
+
+func tocar_passos(input: Vector2) -> void:
+	if(input != Vector2.ZERO):
+		$Andando.play()
+	
+	else:
+		$Andando.stop()

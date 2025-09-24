@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=32 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ulm4ipqipuve" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_d_outline.png" id="9_0bskb"]
 [ext_resource type="Texture2D" uid="uid://c15i6xjax4ph8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_shift_outline.png" id="10_1dmvh"]
 [ext_resource type="Texture2D" uid="uid://drq1tdsc5pvh0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_ctrl_outline.png" id="11_ratp2"]
+[ext_resource type="AudioStream" uid="uid://bbbim7rqf3pf6" path="res://assets/sounds/walking-on-wood-363349.mp3" id="14_00pic"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6vv5"]
 margin = 0.0
@@ -433,5 +434,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_0bskb")
 }
 playback_auto_capture_transition_type = 7
+
+[node name="Andando" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3900159)
+stream = ExtResource("14_00pic")
+parameters/looping = true
 
 [connection signal="pressed" from="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/PanelContainer/VBoxContainer/CenterContainer/Button" to="Neck/Head/Eyes/Camera3D/Documentos" method="_on_button_pressed"]

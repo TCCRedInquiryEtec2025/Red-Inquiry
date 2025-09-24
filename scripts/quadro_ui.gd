@@ -1,6 +1,6 @@
 extends Control
 
-@onready var codigo = $PanelContainer/MarginContainer/HBoxContainer/TextureRect/TextureRect4/VBoxContainer/LineEdit
+@onready var codigo = $PanelContainer/MarginContainer/HBoxContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/LineEdit
 
 
 func _ready() -> void:
@@ -11,7 +11,7 @@ func _on_button_pressed() -> void:
 	if(codigo.text.to_upper() == "VERMELHO EM GREENVILLE"):
 		print("Codigo certo!!!")
 		GameState.setValue("podeAndar", true)
-		TransicaoCenas.change_scene("res://scenes/fimDemo.tscn")
+		TransicaoCenas.change_scene("res://scenes/menuInicial.tscn")
 		
 	elif(codigo.text.to_upper() == "LABUBU"):
 		print("Morango do amor. Hmmmm...")

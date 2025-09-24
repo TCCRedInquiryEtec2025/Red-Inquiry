@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bahtauago805q"]
+[gd_scene load_steps=30 format=4 uid="uid://bahtauago805q"]
 
 [ext_resource type="Texture2D" uid="uid://rdpik2xs0fvt" path="res://assets/hdris/wmremove-transformed_LE_upscale_balanced_x4.jpg" id="1_3m7yw"]
 [ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="1_7lsr1"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://r4sr0buf7dbh" path="res://assets/scenes/paredeJanela.tscn" id="6_38wos"]
 [ext_resource type="PackedScene" uid="uid://biudj1nuio5tr" path="res://assets/scenes/Carpete.tscn" id="9_qfe6e"]
 [ext_resource type="PackedScene" uid="uid://bec1o7ycwl88g" path="res://assets/scenes/Estante.tscn" id="11_o58qu"]
+[ext_resource type="PackedScene" uid="uid://bopd65sk2st0l" path="res://assets/scenes/pendurador.tscn" id="15_3m7yw"]
 [ext_resource type="Script" uid="uid://dn6jscnm8fwkg" path="res://scripts/trovao.gd" id="16_r27xm"]
-[ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/thunderstorm-ambiance-191991 (2).mp3" id="17_38wos"]
+[ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/sounds/thunderstorm-ambiance-191991 (2).mp3" id="17_38wos"]
 [ext_resource type="PackedScene" uid="uid://c3vam4vl63k65" path="res://assets/scenes/mesa_dois.tscn" id="18_7lsr1"]
 [ext_resource type="PackedScene" uid="uid://djfxl76tmxu75" path="res://assets/scenes/cadera.tscn" id="19_k4050"]
 [ext_resource type="PackedScene" uid="uid://3446ia86njgy" path="res://assets/scenes/Planta.tscn" id="20_38wos"]
@@ -262,3 +263,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.54918, 0.365055, 5.14578)
 
 [node name="Ventilador" parent="." instance=ExtResource("23_qfe6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.052, 2.472, 0.25)
+
+[node name="Pendurador" parent="." instance=ExtResource("15_3m7yw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86, 0.359, 5.0035167)

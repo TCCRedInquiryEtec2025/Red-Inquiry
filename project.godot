@@ -14,24 +14,34 @@ config/name="Red Inquiry"
 config/description="Jogo para TCC"
 config/tags=PackedStringArray("tcc")
 run/main_scene="uid://8navspruggjk"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=120
 config/icon="uid://0kwnxspp82wn"
 config/main_scene="uid://bl3me73mor0ud"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [autoload]
 
 GameState="*res://scripts/gameState.gd"
 MouseManager="*res://scripts/mouseManager.gd"
 TransicaoCenas="*res://scenes/transicao_cenas.tscn"
+Settings="*res://scripts/settings.gd"
+
+[debug]
+
+gdscript/warnings/unassigned_variable_op_assign=2
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/mode=2
 window/size/initial_screen=1
 window/size/resizable=false
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [global_group]
@@ -105,4 +115,5 @@ common/max_physics_steps_per_frame=10
 
 renderer/rendering_method="mobile"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/screen_space_reflection/roughness_quality=0
 occlusion_culling/use_occlusion_culling=true

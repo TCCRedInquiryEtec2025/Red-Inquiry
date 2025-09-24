@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://bocxoodqwhwyy"]
+[gd_scene load_steps=7 format=4 uid="uid://bocxoodqwhwyy"]
+
+[ext_resource type="Script" uid="uid://dor8dij36hyda" path="res://scripts/fedora.gd" id="1_coavc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfh0e"]
 resource_name = "Material"
@@ -91,9 +93,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7cfeb")
 
-[node name="fedora" type="Node3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_coavc"]
+radius = 2.0
+height = 4.98
 
-[node name="Circle" type="MeshInstance3D" parent="."]
+[node name="Fedora" type="StaticBody3D"]
+script = ExtResource("1_coavc")
+response_prompt = "Meu querido chapéu, sempre me acompanhando. Ajuda muito nesses tempos chuvosos."
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.84574, 0, 0, 0, 2.84574, 0, 0, 0, 2.84574, 0, 0, 0)
 mesh = SubResource("ArrayMesh_e1ejg")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.031059265, 0.29085398, 0.008244008)
+shape = SubResource("CapsuleShape3D_coavc")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
