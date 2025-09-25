@@ -24,8 +24,14 @@
 [ext_resource type="ArrayOccluder3D" uid="uid://dk871sljoqsan" path="res://scenes/world.occ" id="15_xo05s"]
 [ext_resource type="Texture2D" uid="uid://w63kq3tidak8" path="res://assets/textures/wooden_gate_diff_4k.jpg" id="16_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://c4ungqri0a4e7" path="res://assets/scenes/quadro.tscn" id="16_dss4m"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Texture2D" uid="uid://o3pstuwpc16x" path="res://assets/textures/AgendaFolhaTexture.jpg" id="16_rup4s"]
+[ext_resource type="Texture2D" uid="uid://6kgxr1i5e3i8" path="res://assets/textures/ficha-pi1.png" id="17_fh13f"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://r4sr0buf7dbh" path="res://assets/scenes/paredeJanela.tscn" id="18_lakw3"]
 [ext_resource type="PackedScene" uid="uid://bqgy0t40ljfwu" path="res://assets/scenes/Lixo.tscn" id="18_pm21f"]
+[ext_resource type="Script" uid="uid://8p6vmo6j8sws" path="res://scenes/docs_button_2.gd" id="18_rup4s"]
 [ext_resource type="PackedScene" uid="uid://lhsujdq04cxh" path="res://assets/scenes/MesinhaCentro.tscn" id="21_7iits"]
 [ext_resource type="PackedScene" uid="uid://3446ia86njgy" path="res://assets/scenes/Planta.tscn" id="24_ctatt"]
 [ext_resource type="PackedScene" uid="uid://c3vam4vl63k65" path="res://assets/scenes/mesa_dois.tscn" id="28_0nbtd"]
@@ -812,6 +818,25 @@ sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_density = 0.1761
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f17e3"]
+texture = ExtResource("15_fh13f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x2olw"]
+texture = ExtResource("16_rup4s")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_817gm"]
+bg_color = Color(0.843137, 0.164706, 0.0117647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k0juu"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+shadow_size = 4
+shadow_offset = Vector2(3.1, 1)
+
+>>>>>>> Stashed changes
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0juu"]
 bg_color = Color(1, 0.98, 0.88, 1)
 border_width_left = 2
@@ -1204,6 +1229,7 @@ custom_minimum_size = Vector2(1200, 900)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
 
+<<<<<<< Updated upstream
 [node name="Label" type="Label" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg1"]
 layout_mode = 0
 offset_right = 40.0
@@ -1213,6 +1239,77 @@ label_settings = SubResource("LabelSettings_k0juu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+=======
+[node name="CenterContainer" type="CenterContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1"]
+layout_mode = 1
+offset_right = 592.0
+offset_bottom = 91.0
+
+[node name="Panel" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_817gm")
+
+[node name="Label" type="Label" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1/CenterContainer"]
+modulate = Color(0.537255, 0.0666667, 0.0823529, 1)
+self_modulate = Color(0.537255, 0.0666667, 0.0823529, 1)
+layout_mode = 2
+text = "Seleção de Documentos"
+label_settings = SubResource("LabelSettings_k0juu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DocContainer" type="HBoxContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -112.5
+offset_right = 500.0
+offset_bottom = 112.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 125
+
+[node name="DocContainerChild2" type="VBoxContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1/DocContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="DocsButton2" type="TextureButton" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1/DocContainer/DocContainerChild2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("17_fh13f")
+stretch_mode = 0
+script = ExtResource("18_rup4s")
+
+[node name="DocsButton1" type="TextureButton" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1/DocContainer/DocContainerChild2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("17_fh13f")
+stretch_mode = 0
+
+[node name="DocContainerChild1" type="VBoxContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1/DocContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="DocsButton4" type="TextureButton" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1/DocContainer/DocContainerChild1"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("17_fh13f")
+stretch_mode = 0
+
+[node name="DocsButton3" type="TextureButton" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1/DocContainer/DocContainerChild1"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("17_fh13f")
+stretch_mode = 0
+
+>>>>>>> Stashed changes
 [node name="PanelPg2" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
 custom_minimum_size = Vector2(1200, 900)
 layout_mode = 2
