@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=33 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
@@ -46,7 +46,21 @@ corner_detail = 5
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nh07x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00pic"]
-bg_color = Color(0, 0, 0, 0.686275)
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0, 0, 0, 0.8235294)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00pic"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
 
 [sub_resource type="InputEventKey" id="InputEventKey_1dmvh"]
 device = -1
@@ -249,43 +263,42 @@ expand_mode = 5
 
 [node name="Jornal" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/CenterContainer"]
 z_index = 1
-custom_minimum_size = Vector2(800, 500)
+custom_minimum_size = Vector2(600, 400)
 layout_mode = 2
 texture = ExtResource("6_00pic")
 expand_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_00pic")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/PanelContainer/VBoxContainer/CenterContainer2"]
-custom_minimum_size = Vector2(600, 750)
+[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer2"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/normal_font_size = 22
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_00pic")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer2/PanelContainer"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_00pic")
 text = "[TEXTO CONTIDO NA CARTA]"
 horizontal_alignment = 1
 vertical_alignment = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="CenterContainer3" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="Button" type="Button" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/PanelContainer/VBoxContainer/CenterContainer"]
+[node name="Button" type="Button" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer3"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -317,8 +330,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 600.0
-offset_bottom = -600.0
+offset_left = 50.0
+offset_top = -540.0
+offset_right = 550.0
+offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84enu")
@@ -440,4 +455,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3900159)
 stream = ExtResource("14_00pic")
 parameters/looping = true
 
-[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/PanelContainer/VBoxContainer/CenterContainer/Button" to="Neck/Head/Eyes/Camera3D/Documentos" method="_on_button_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer3/Button" to="Neck/Head/Eyes/Camera3D/Documentos" method="_on_button_pressed"]

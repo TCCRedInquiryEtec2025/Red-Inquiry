@@ -3,6 +3,8 @@ extends PanelContainer
 @onready var carta = $HBoxContainer/CenterContainer/CartaVertical
 @onready var jornal = $HBoxContainer/CenterContainer/Jornal
 
+@onready var label = $HBoxContainer/VBoxContainer/CenterContainer2/PanelContainer/RichTextLabel
+
 @onready var carta_map = {
 	"terence": preload("res://assets/cartas/Carta_Terence.jpg"),
 	"joanne": preload("res://assets/cartas/Carta_Joanne_Rochefart.jpg"),
@@ -52,4 +54,4 @@ func _on_interacted(interactable: Carta) -> void:
 			print(">> Achou a carta da Joanne")
 			carta.texture = carta_map["joanne"]
 
-	$HBoxContainer/PanelContainer/VBoxContainer/CenterContainer2/RichTextLabel.text = interactable.texto # Texto contido na carta
+	label.text = interactable.texto # Texto contido na carta

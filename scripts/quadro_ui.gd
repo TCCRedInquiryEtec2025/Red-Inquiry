@@ -1,24 +1,32 @@
 extends Control
 
-@onready var codigo = $PanelContainer/MarginContainer/HBoxContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/LineEdit
+@onready var codigo = $PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase
+@onready var LabelResposta = $PanelContainer/TextureRect/MarginContainer/TextureRect4/ResponseLabel
 
 
 func _ready() -> void:
 	GameState.setValue("podeAndar", false)
+	
+	LabelResposta.visible = false
+	LabelResposta.modulate.a = 0
 
 
 func _on_button_pressed() -> void:
-	if(codigo.text.to_upper() == "VERMELHO EM GREENVILLE"):
-		print("Codigo certo!!!")
+	if(codigo.check_phrase() == true):
 		GameState.setValue("podeAndar", true)
 		TransicaoCenas.change_scene("res://scenes/menuInicial.tscn")
 		
-	elif(codigo.text.to_upper() == "LABUBU"):
-		print("Morango do amor. Hmmmm...")
-		
 	else:
-		print("Codigo errado, tente novamente...")
-
-
-func _on_line_edit_text_submitted(_new_text: String) -> void:
-	_on_button_pressed()
+		LabelResposta.visible = true
+		
+		var falaTween = create_tween()
+		falaTween.tween_property(LabelResposta, "modulate:a", 1, 1)
+		await falaTween.finished
+		
+		await get_tree().create_timer(3).timeout
+		
+		falaTween = create_tween()
+		falaTween.tween_property(LabelResposta, "modulate:a", 0, 1)
+		await falaTween.finished
+		
+		LabelResposta.visible = false
