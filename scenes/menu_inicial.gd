@@ -94,3 +94,6 @@ func _on_menu_opcoes_visibility_changed() -> void:
 		slider_musica.value = int(Settings.volume_musica * 100)
 		slider_sensibilidade.value = Settings.sensibilidade
 		
+
+func _on_button_instagram_pressed() -> void:
+	OS.shell_open("https://www.instagram.com/red.inquiry/")

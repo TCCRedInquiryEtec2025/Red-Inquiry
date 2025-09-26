@@ -14,7 +14,7 @@
 
 ---
 
-## ✨ Features
+## ✨ Características
 
 - Atmosfera **misteriosa** com tons de vermelho marcantes.  
 - Narrativa **envolvente** e **imersiva**.  
