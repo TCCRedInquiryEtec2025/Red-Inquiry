@@ -967,12 +967,13 @@ mesh = SubResource("PlaneMesh_817gm")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Trovao"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.15, 0)
 stream = ExtResource("37_ovexh")
+volume_db = -5.0
+max_db = -5.0
 
 [node name="Chuva" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.22779, 1.53129, 0)
 stream = ExtResource("38_s7nc1")
-volume_db = 10.0
-max_db = 6.0
+max_db = 0.0
 pitch_scale = 1.6
 autoplay = true
 max_distance = 18.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=4 uid="uid://c3vam4vl63k65"]
+[gd_scene load_steps=24 format=4 uid="uid://c3vam4vl63k65"]
 
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="1_yy41q"]
 [ext_resource type="PackedScene" uid="uid://cc2gvjqiuwh4j" path="res://assets/scenes/folhaArrancada.tscn" id="2_xjwwk"]
 [ext_resource type="PackedScene" uid="uid://cab5n7sx7cott" path="res://assets/scenes/lampadaNoir.tscn" id="3_awkb7"]
+[ext_resource type="AudioStream" uid="uid://d18534pqo8fxj" path="res://assets/sounds/gaveta.mp3" id="3_bu1tl"]
 [ext_resource type="PackedScene" uid="uid://cenob6cdlvk2i" path="res://assets/scenes/retratoMesa.tscn" id="4_11fne"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdkoa"]
@@ -210,6 +211,12 @@ libraries = {
 
 [node name="Carta1" parent="Gaveta" instance=ExtResource("2_xjwwk")]
 transform = Transform3D(6.66, 0, 0, 0, -2.91118e-07, 6.66, 0, -6.66, -2.91118e-07, 5.89467, 5.22241, -0.163629)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Gaveta"]
+transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, 6.0839987, 4.472187, 0)
+stream = ExtResource("3_bu1tl")
+unit_size = 0.5
+pitch_scale = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07956, 2.19006, -1.229)

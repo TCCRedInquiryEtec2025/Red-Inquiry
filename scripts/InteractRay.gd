@@ -51,7 +51,8 @@ func _physics_process(_delta: float) -> void:
 func _interact_with(collider: Interactable) -> void:
 	collider.interact(owner)
 	
-	if(collider.get_class() == "Carta"):
+	if(collider is Carta):
+		$AudioStreamPlayer.play()
 		
 		GameState.setValue("lendo", true)
 		GameState.setValue("podeAndar", false)

@@ -632,12 +632,12 @@ texture_normal = ExtResource("6_70i05")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairSim" to="." method="_on_sair_sim_pressed"]
 [connection signal="pressed" from="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairNao" to="." method="_on_sair_nao_pressed"]
 [connection signal="visibility_changed" from="MenuOpcoes" to="." method="_on_menu_opcoes_visibility_changed"]

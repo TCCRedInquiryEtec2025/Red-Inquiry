@@ -886,6 +886,12 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="ButtonReiniciar" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Reiniciar"
+
 [node name="Button" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer"]
 custom_minimum_size = Vector2(210, 50)
 layout_mode = 2
@@ -916,4 +922,5 @@ label_settings = SubResource("LabelSettings_1i01y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/ButtonReiniciar" to="." method="_on_button_reiniciar_pressed"]
 [connection signal="pressed" from="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/Button" to="." method="_on_button_pressed"]

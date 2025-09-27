@@ -8,6 +8,7 @@ extends PanelContainer
 @onready var carta_map = {
 	"terence": preload("res://assets/cartas/Carta_Terence.jpg"),
 	"joanne": preload("res://assets/cartas/Carta_Joanne_Rochefart.jpg"),
+	"arquivo": preload("res://assets/cartas/arquivo.png"),
 }
 
 func _process(_delta: float) -> void:
@@ -53,5 +54,12 @@ func _on_interacted(interactable: Carta) -> void:
 		elif(interactable.name.to_lower().contains("joanne")):
 			print(">> Achou a carta da Joanne")
 			carta.texture = carta_map["joanne"]
+		elif(interactable.name.to_lower().contains("arquivo")):
+			print(">> Achou o arquivo")
+			carta.texture = carta_map["arquivo"]
+			
+		else:
+			print(">> Achou uma carta não identificada")
+			carta.texture = PlaceholderTexture2D.new()
 
 	label.text = interactable.texto # Texto contido na carta

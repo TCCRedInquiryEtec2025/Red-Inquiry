@@ -10,6 +10,8 @@ extends CharacterBody3D
 @onready var hitSensor = $HeadChecker
 @onready var camera_3d = $Neck/Head/Eyes/Camera3D
 
+@onready var StepTimer = $StepTimer
+
 # Speed vars
 var curSpeed = walkingSpeed
 
@@ -31,6 +33,8 @@ var headBobbingVector = Vector2.ZERO
 var headBobbingIndex = 0.0
 
 # Movement vars
+var is_moving: bool
+
 var crouchDepth = -0.5
 
 const jumpVelocity = 3
@@ -38,7 +42,7 @@ const jumpVelocity = 3
 var lerpSpeed = 8.0
 
 # Input vars
-var direction = Vector3.ZERO
+var direction := Vector3.ZERO
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -60,12 +64,28 @@ func _input(event: InputEvent) -> void:
 		head.rotate_x(deg_to_rad(event.relative.y * mouseSensi) * -1)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80)) # Não deixa a câmera virar 360 lol
 
+	if(event is InputEventKey):
+		if event.is_action_pressed("ui_menu"):
+			print("Abrindo Menu de pause")
+			
+			# $Neck/Head/Eyes/Camera3D/MenuPause.visible = true
+	
+
 func _physics_process(delta: float) -> void:
 	# Getting movement input
 	var input_dir := Input.get_vector("walkLeft", "walkRight", "walkUp", "walkDown")
 	# Handle movement state
 	if !GameState.getValue("podeAndar"):
 		return
+	
+	is_moving = input_dir != Vector2.ZERO
+	
+	if(is_moving and StepTimer.is_stopped()):
+		_update_step_timer()
+		StepTimer.start()
+	
+	if(!is_on_floor()):
+		StepTimer.stop()
 	
 	# Crouching
 	if Input.is_action_pressed("crouch"):			
@@ -117,7 +137,7 @@ func _physics_process(delta: float) -> void:
 		headBobbingIndex += headBobbingCrouchingSpeed * delta
 		
 	# Handle Movement / Camera
-	if is_on_floor() and input_dir != Vector2.ZERO:
+	if is_on_floor() and input_dir != Vector2.ZERO:		
 		headBobbingVector.y = sin(headBobbingIndex)
 		headBobbingVector.x = sin(headBobbingIndex / 2) + 0.5
 		
@@ -151,9 +171,19 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func tocar_passos(input: Vector2) -> void:
-	if(input != Vector2.ZERO):
-		$Andando.play()
+func _on_step_timeout() -> void:
+	if(!is_moving):
+		return
+	$Andando.play()
+	_update_step_timer()
+	StepTimer.start() # Agendando próximo passo
 	
+	
+func _update_step_timer() -> void:
+	if(GameState.getValue("correndo")):
+		StepTimer.wait_time = 0.6
+	elif(GameState.getValue("andando")):
+		StepTimer.wait_time = 1
 	else:
-		$Andando.stop()
+		StepTimer.wait_time = 1.35
+		
