@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://bl3me73mor0ud"]
+[gd_scene load_steps=82 format=4 uid="uid://bl3me73mor0ud"]
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_g1xw2"]
 [ext_resource type="PackedScene" uid="uid://cs4tduc8jd2vn" path="res://assets/scenes/player.tscn" id="2_c6i3x"]
@@ -17,12 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://bopd65sk2st0l" path="res://assets/scenes/pendurador.tscn" id="16_raiy0"]
 [ext_resource type="PackedScene" uid="uid://dndue43ha600b" path="res://assets/scenes/portabanheiro.tscn" id="16_rh0j0"]
 [ext_resource type="Texture2D" uid="uid://rdpik2xs0fvt" path="res://assets/hdris/wmremove-transformed_LE_upscale_balanced_x4.jpg" id="17_hpdng"]
-[ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="18_mliiq"]
-[ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="19_s13ow"]
-[ext_resource type="Texture2D" uid="uid://cm3chjprx5jun" path="res://assets/icons/PNG/White/2x/arrowRight.png" id="20_0wyva"]
-[ext_resource type="Texture2D" uid="uid://dbxpusbfsqafn" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_e_outline.png" id="21_bgytn"]
-[ext_resource type="Texture2D" uid="uid://bsl1kga0okqvo" path="res://assets/icons/PNG/White/2x/arrowLeft.png" id="22_nkjs1"]
-[ext_resource type="Texture2D" uid="uid://k0qxrnc8gxja" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_q_outline.png" id="23_scewh"]
 [ext_resource type="PackedScene" uid="uid://c4ungqri0a4e7" path="res://assets/scenes/quadro.tscn" id="25_c0cx3"]
 [ext_resource type="PackedScene" uid="uid://bqgy0t40ljfwu" path="res://assets/scenes/Lixo.tscn" id="26_pafkb"]
 [ext_resource type="PackedScene" uid="uid://lhsujdq04cxh" path="res://assets/scenes/MesinhaCentro.tscn" id="27_vx8ew"]
@@ -488,43 +482,6 @@ sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_density = 0.1761
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0juu"]
-bg_color = Color(1, 0.98, 0.88, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.650128, 0.650128, 0.650128, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_size = 4
-shadow_offset = Vector2(0.68, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_k0juu"]
-font_size = 24
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
-shadow_size = 4
-shadow_offset = Vector2(3.1, 1)
-
-[sub_resource type="InputEventKey" id="InputEventKey_o8fc1"]
-device = -1
-keycode = 69
-unicode = 101
-
-[sub_resource type="Shortcut" id="Shortcut_xo05s"]
-events = [SubResource("InputEventKey_o8fc1")]
-
-[sub_resource type="InputEventKey" id="InputEventKey_qfnet"]
-device = -1
-keycode = 81
-unicode = 113
-
-[sub_resource type="Shortcut" id="Shortcut_i7141"]
-events = [SubResource("InputEventKey_qfnet")]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npbic"]
 transparency = 1
 specular_mode = 1
@@ -742,7 +699,7 @@ mesh = SubResource("ArrayMesh_wfcqe")
 skeleton = NodePath("")
 
 [node name="Parede4q" type="MeshInstance3D" parent="Office/Quarto/StaticBody3D"]
-transform = Transform3D(0.68, 0, 8.34543e-08, 0, 1, 0, -3.78326e-08, 0, 1.5, -5.98941, 0.567042, -1.21456)
+transform = Transform3D(0.69814694, 0, 8.34543e-08, 0, 1, 0, -3.8842224e-08, 0, 1.5, -6.064075, 0.5455414, -1.21456)
 mesh = SubResource("ArrayMesh_xklus")
 skeleton = NodePath("")
 
@@ -780,122 +737,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7873235, 0.5629601, 1.2268
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Ambientacao"]
 environment = SubResource("Environment_i7141")
-
-[node name="NoteBookHUD" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("18_mliiq")
-
-[node name="AgendaUI" type="Control" parent="NoteBookHUD"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("19_s13ow")
-
-[node name="CenterContainer" type="CenterContainer" parent="NoteBookHUD/AgendaUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelPg1" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
-custom_minimum_size = Vector2(1200, 900)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
-
-[node name="Label" type="Label" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg1"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "ISSO É O UM TESTE"
-label_settings = SubResource("LabelSettings_k0juu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PanelPg2" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
-custom_minimum_size = Vector2(1200, 900)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
-
-[node name="Label" type="Label" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "ISSO É O UM TESTE, SÓ QUE 2"
-label_settings = SubResource("LabelSettings_k0juu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ButtonPage2" type="TextureButton" parent="NoteBookHUD/AgendaUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.85
-anchor_top = 0.5
-anchor_right = 0.85
-anchor_bottom = 0.5
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-shortcut = SubResource("Shortcut_xo05s")
-shortcut_in_tooltip = false
-
-[node name="ContainerSprites" type="VBoxContainer" parent="NoteBookHUD/AgendaUI/ButtonPage2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 100.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SpriteArrowRight" type="Sprite2D" parent="NoteBookHUD/AgendaUI/ButtonPage2/ContainerSprites"]
-position = Vector2(0, -100)
-texture = ExtResource("20_0wyva")
-
-[node name="SpriteKeyE" type="Sprite2D" parent="NoteBookHUD/AgendaUI/ButtonPage2/ContainerSprites"]
-texture = ExtResource("21_bgytn")
-
-[node name="ButtonPage1" type="TextureButton" parent="NoteBookHUD/AgendaUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.5
-anchor_right = 0.1
-anchor_bottom = 0.5
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-shortcut = SubResource("Shortcut_i7141")
-shortcut_in_tooltip = false
-
-[node name="ContainerSprites" type="VBoxContainer" parent="NoteBookHUD/AgendaUI/ButtonPage1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 100.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="SpriteArrowLeft" type="Sprite2D" parent="NoteBookHUD/AgendaUI/ButtonPage1/ContainerSprites"]
-position = Vector2(0, -100)
-texture = ExtResource("22_nkjs1")
-
-[node name="SpriteKeyQ" type="Sprite2D" parent="NoteBookHUD/AgendaUI/ButtonPage1/ContainerSprites"]
-texture = ExtResource("23_scewh")
 
 [node name="Quadro" parent="." instance=ExtResource("25_c0cx3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3755, 1.92909, -5.62593)

@@ -1,14 +1,14 @@
 extends CanvasLayer
 
-@export var player = null
+@export var player: CharacterBody3D
 
 func _input(event):
 	if event.is_action_pressed("ui_tab"):
-		if(player.is_on_floor()):
+		if(player.is_on_floor() and !GameState.getValue("pauseAberto")):
 			toggle_agenda()
 
 func toggle_agenda():
-	self.visible = !self.visible
+	visible = !visible
 	
-	GameState.setValue("podeAndar", !GameState.getValue("podeAndar"))
-	GameState.setValue("abrindoAgenda", self.visible)
+	GameState.setValue("podeAndar", !visible)
+	GameState.setValue("abrindoAgenda", visible)

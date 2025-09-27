@@ -1,4 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://dymlnvhjf20c0"]
+[gd_scene load_steps=12 format=4 uid="uid://dymlnvhjf20c0"]
+
+[ext_resource type="AudioStream" uid="uid://7lwvl3kmh76q" path="res://assets/sounds/fan.mp3" id="1_0t3xf"]
 
 [sub_resource type="Animation" id="Animation_k4050"]
 length = 0.001
@@ -149,10 +151,25 @@ libraries = {
 }
 
 [node name="Helice" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.655855, 0, 0.754887, 0, 1, 0, -0.754887, 0, -0.655855, 0, 0, 0)
+transform = Transform3D(-0.6558549, 0, 0.754887, 0, 1, 0, -0.754887, 0, -0.6558549, 0, 0, 0)
 mesh = SubResource("ArrayMesh_6xqoo")
 skeleton = NodePath("")
 
 [node name="Base" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_jaujb")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, -0.15435004, 0)
+stream = ExtResource("1_0t3xf")
+volume_db = 21.235
+unit_size = 2.0
+max_db = 6.0
+pitch_scale = 0.9
+autoplay = true
+max_distance = 8.0
+panning_strength = 10.0
+emission_angle_enabled = true
+emission_angle_filter_attenuation_db = -5.0
+attenuation_filter_cutoff_hz = 13160.0
+parameters/looping = true

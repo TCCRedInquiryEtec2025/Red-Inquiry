@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=57 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
@@ -15,6 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://drq1tdsc5pvh0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_ctrl_outline.png" id="11_ratp2"]
 [ext_resource type="Script" uid="uid://qqqq8ydrexln" path="res://scripts/menu_pause.gd" id="14_0bskb"]
 [ext_resource type="AudioStream" uid="uid://bbbim7rqf3pf6" path="res://assets/sounds/walking-on-wood-363349.mp3" id="14_00pic"]
+[ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="15_wf17w"]
+[ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="16_msj1n"]
+[ext_resource type="Texture2D" uid="uid://cm3chjprx5jun" path="res://assets/icons/PNG/White/2x/arrowRight.png" id="17_ktpxd"]
+[ext_resource type="Texture2D" uid="uid://dbxpusbfsqafn" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_e_outline.png" id="18_dvip7"]
+[ext_resource type="Texture2D" uid="uid://bsl1kga0okqvo" path="res://assets/icons/PNG/White/2x/arrowLeft.png" id="19_beuf1"]
+[ext_resource type="Texture2D" uid="uid://k0qxrnc8gxja" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_q_outline.png" id="20_0e2pd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6vv5"]
 margin = 0.0
@@ -69,6 +75,43 @@ keycode = 4194305
 
 [sub_resource type="Shortcut" id="Shortcut_ratp2"]
 events = [SubResource("InputEventKey_1dmvh")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ay2jx"]
+bg_color = Color(1, 0.98, 0.88, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.650128, 0.650128, 0.650128, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+shadow_offset = Vector2(0.68, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jukhh"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+shadow_size = 4
+shadow_offset = Vector2(3.1, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_o8fc1"]
+device = -1
+keycode = 69
+unicode = 101
+
+[sub_resource type="Shortcut" id="Shortcut_gdn7j"]
+events = [SubResource("InputEventKey_o8fc1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qfnet"]
+device = -1
+keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_6luef"]
+events = [SubResource("InputEventKey_qfnet")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84enu"]
 bg_color = Color(1, 1, 1, 0.25)
@@ -188,22 +231,22 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 corner_detail = 5
 
-[sub_resource type="DPITexture" id="DPITexture_84enu"]
+[sub_resource type="DPITexture" id="DPITexture_wf17w"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
 "
 base_scale = 1.2
 
-[sub_resource type="DPITexture" id="DPITexture_cd4ww"]
+[sub_resource type="DPITexture" id="DPITexture_msj1n"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
 "
 base_scale = 1.2
 
-[sub_resource type="DPITexture" id="DPITexture_rqyl7"]
+[sub_resource type="DPITexture" id="DPITexture_ktpxd"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
 "
 base_scale = 1.2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf17w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvip7"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -214,7 +257,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msj1n"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_beuf1"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -226,7 +269,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktpxd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jukhh"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -412,6 +455,123 @@ shortcut_in_tooltip = false
 text = "FECHAR"
 flat = true
 
+[node name="NoteBookHUD" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D" node_paths=PackedStringArray("player")]
+visible = false
+script = ExtResource("15_wf17w")
+player = NodePath("../../../../..")
+
+[node name="AgendaUI" type="Control" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_msj1n")
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelPg1" type="Panel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer"]
+custom_minimum_size = Vector2(1200, 900)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay2jx")
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer/PanelPg1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ISSO É O UM TESTE"
+label_settings = SubResource("LabelSettings_jukhh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelPg2" type="Panel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer"]
+custom_minimum_size = Vector2(1200, 900)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay2jx")
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer/PanelPg2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ISSO É O UM TESTE, SÓ QUE 2"
+label_settings = SubResource("LabelSettings_jukhh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPage2" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.5
+anchor_right = 0.85
+anchor_bottom = 0.5
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_gdn7j")
+shortcut_in_tooltip = false
+
+[node name="ContainerSprites" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpriteArrowRight" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2/ContainerSprites"]
+position = Vector2(0, -100)
+texture = ExtResource("17_ktpxd")
+
+[node name="SpriteKeyE" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2/ContainerSprites"]
+texture = ExtResource("18_dvip7")
+
+[node name="ButtonPage1" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.1
+anchor_bottom = 0.5
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_6luef")
+shortcut_in_tooltip = false
+
+[node name="ContainerSprites" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SpriteArrowLeft" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1/ContainerSprites"]
+position = Vector2(0, -100)
+texture = ExtResource("19_beuf1")
+
+[node name="SpriteKeyQ" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1/ContainerSprites"]
+texture = ExtResource("20_0e2pd")
+
 [node name="Tutorial" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
 layer = -1
 visible = false
@@ -551,7 +711,6 @@ libraries = {
 playback_auto_capture_transition_type = 7
 
 [node name="MenuPause" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
-visible = false
 script = ExtResource("14_0bskb")
 
 [node name="Pause" type="Control" parent="Neck/Head/Eyes/Camera3D/MenuPause"]
@@ -570,20 +729,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Divisão" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer"]
+[node name="Divisao" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer"]
 layout_mode = 2
 
-[node name="MenuLateral" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão"]
+[node name="MenuLateral" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_stretch_ratio = 0.95
 theme_override_styles/panel = SubResource("StyleBoxFlat_1dmvh")
 
-[node name="Opcoes" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/MenuLateral"]
+[node name="Opcoes" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral"]
 layout_mode = 2
 
-[node name="Continuar" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/MenuLateral/Opcoes"]
+[node name="Continuar" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -592,7 +751,7 @@ text = "Continuar jogando"
 flat = true
 alignment = 0
 
-[node name="Configuracoes" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/MenuLateral/Opcoes"]
+[node name="Configuracoes" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -601,7 +760,7 @@ text = "Configurações"
 flat = true
 alignment = 0
 
-[node name="Voltar" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/MenuLateral/Opcoes"]
+[node name="Voltar" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -610,7 +769,7 @@ text = "Voltar ao menu"
 flat = true
 alignment = 0
 
-[node name="Sair" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/MenuLateral/Opcoes"]
+[node name="Sair" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -619,7 +778,7 @@ text = "Sair do jogo"
 flat = true
 alignment = 0
 
-[node name="CantoDireito" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão"]
+[node name="CantoDireito" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 50
@@ -627,158 +786,161 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito"]
+[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ratp2")
 
-[node name="MarginContainer" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Configuracoes" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer"]
+[node name="Configuracoes" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Sliders_porcentagens" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes"]
+[node name="Sliders_porcentagens" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Sliders" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens"]
+[node name="Sliders" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="VolumeGeral" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
+[node name="VolumeGeral" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral"]
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral"]
 layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "Volume Geral"
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral"]
+[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral"]
 custom_minimum_size = Vector2(500, 30)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_icons/grabber = SubResource("DPITexture_84enu")
-theme_override_icons/grabber_highlight = SubResource("DPITexture_cd4ww")
-theme_override_icons/grabber_disabled = SubResource("DPITexture_rqyl7")
-theme_override_styles/slider = SubResource("StyleBoxFlat_wf17w")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_msj1n")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_ktpxd")
+theme_override_icons/grabber = SubResource("DPITexture_wf17w")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_msj1n")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_ktpxd")
+theme_override_styles/slider = SubResource("StyleBoxFlat_dvip7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_beuf1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jukhh")
 value = 100.0
 
-[node name="VolumeMusica" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
+[node name="VolumeMusica" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica"]
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica"]
 layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "Volume da Música"
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica"]
+[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica"]
 custom_minimum_size = Vector2(500, 30)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_icons/grabber = SubResource("DPITexture_84enu")
-theme_override_icons/grabber_highlight = SubResource("DPITexture_cd4ww")
-theme_override_icons/grabber_disabled = SubResource("DPITexture_rqyl7")
-theme_override_styles/slider = SubResource("StyleBoxFlat_wf17w")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_msj1n")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_ktpxd")
+theme_override_icons/grabber = SubResource("DPITexture_wf17w")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_msj1n")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_ktpxd")
+theme_override_styles/slider = SubResource("StyleBoxFlat_dvip7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_beuf1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jukhh")
 value = 100.0
 
-[node name="Sensibilidade" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
+[node name="Sensibilidade" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade"]
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade"]
 layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "Sensibilidade"
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade"]
+[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade"]
 custom_minimum_size = Vector2(500, 30)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_icons/grabber = SubResource("DPITexture_84enu")
-theme_override_icons/grabber_highlight = SubResource("DPITexture_cd4ww")
-theme_override_icons/grabber_disabled = SubResource("DPITexture_rqyl7")
-theme_override_styles/slider = SubResource("StyleBoxFlat_wf17w")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_msj1n")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_ktpxd")
+theme_override_icons/grabber = SubResource("DPITexture_wf17w")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_msj1n")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_ktpxd")
+theme_override_styles/slider = SubResource("StyleBoxFlat_dvip7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_beuf1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jukhh")
+min_value = 0.1
 max_value = 1.0
 step = 0.01
 value = 0.25
 
-[node name="Porcentagens" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens"]
+[node name="Porcentagens" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens"]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 35
 alignment = 1
 
-[node name="LabelVolumeGeral" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
+[node name="LabelVolumeGeral" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "100%"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="labelVolumeMusica" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
+[node name="labelVolumeMusica" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "100%"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelSensibilidade" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
+[node name="LabelSensibilidade" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "25% (Padrão)"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TelaCheia" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes"]
+[node name="TelaCheia" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/TelaCheia"]
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/TelaCheia"]
 layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "Tela Cheia: "
 vertical_alignment = 1
 
-[node name="CheckButtonTelaCheia" type="CheckButton" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisão/CantoDireito/PanelContainer/MarginContainer/Configuracoes/TelaCheia"]
+[node name="CheckButtonTelaCheia" type="CheckButton" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/TelaCheia"]
 layout_mode = 2
 focus_mode = 0
 theme_override_icons/checked = SubResource("DPITexture_dvip7")
@@ -857,4 +1019,14 @@ one_shot = true
 
 [connection signal="pressed" from="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer3/Button" to="Neck/Head/Eyes/Camera3D/Documentos" method="_on_button_pressed"]
 [connection signal="visibility_changed" from="Neck/Head/Eyes/Camera3D/MenuPause" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_visibility_changed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Continuar" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_continuar_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Configuracoes" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_configuracoes_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Voltar" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_voltar_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Sair" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_sair_pressed"]
+[connection signal="value_changed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral/HSlider" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica/HSlider" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_volume_musica_changed"]
+[connection signal="value_changed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade/HSlider" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_sensibilidade_changed"]
+[connection signal="toggled" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/TelaCheia/CheckButtonTelaCheia" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_check_button_tela_cheia_toggled"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairSim" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_sair_sim_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairNao" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_sair_nao_pressed"]
 [connection signal="timeout" from="StepTimer" to="." method="_on_step_timeout"]

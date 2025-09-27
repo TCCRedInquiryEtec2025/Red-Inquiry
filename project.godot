@@ -22,7 +22,7 @@ config/main_scene="uid://bl3me73mor0ud"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://dmf2ikwkfvsuv"
 
 [autoload]
 

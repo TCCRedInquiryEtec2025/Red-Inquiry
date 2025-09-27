@@ -52,6 +52,12 @@ func _ready() -> void:
 	$Neck/Head/Eyes/Camera3D/Tutorial.visible = true
 
 func _input(event: InputEvent) -> void:	
+	if event.is_action_pressed("ui_cancel"):
+		print("Alternando Menu de pause")
+		$Neck/Head/Eyes/Camera3D/MenuPause.visible = !$Neck/Head/Eyes/Camera3D/MenuPause.visible
+		
+		$Neck/Head/Eyes/Camera3D/NoteBookHUD.visible = false
+	
 	# Mouse looking logic
 	if(!GameState.getValue("podeAndar")):
 		return
@@ -63,19 +69,13 @@ func _input(event: InputEvent) -> void:
 			
 		head.rotate_x(deg_to_rad(event.relative.y * mouseSensi) * -1)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80)) # Não deixa a câmera virar 360 lol
-
-	if(event is InputEventKey):
-		if event.is_action_pressed("ui_menu"):
-			print("Abrindo Menu de pause")
-			
-			# $Neck/Head/Eyes/Camera3D/MenuPause.visible = true
 	
 
 func _physics_process(delta: float) -> void:
 	# Getting movement input
 	var input_dir := Input.get_vector("walkLeft", "walkRight", "walkUp", "walkDown")
 	# Handle movement state
-	if !GameState.getValue("podeAndar"):
+	if !GameState.getValue("podeAndar") or GameState.getValue("pauseAberto"):
 		return
 	
 	is_moving = input_dir != Vector2.ZERO
@@ -172,7 +172,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_step_timeout() -> void:
-	if(!is_moving):
+	if(!is_moving or GameState.getValue("pauseAberto")):
 		return
 	$Andando.play()
 	_update_step_timer()

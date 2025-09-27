@@ -286,10 +286,14 @@ skeleton = NodePath("")
 [node name="Open" type="AudioStreamPlayer3D" parent="Porta"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6449977)
 stream = ExtResource("3_65knd")
+volume_db = -12.0
+max_db = -5.0
 
 [node name="Close" type="AudioStreamPlayer3D" parent="Porta"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6449977)
 stream = ExtResource("4_pges8")
+volume_db = -12.0
+max_db = -5.0
 
 [connection signal="interacted" from="Porta" to="Porta" method="_on_interacted"]
 [connection signal="animation_finished" from="Porta/AnimationPlayer" to="Porta" method="_on_animation_finished"]

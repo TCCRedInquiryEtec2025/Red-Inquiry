@@ -12,6 +12,7 @@ extends Control
 @onready var label_sensibilidade = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens/LabelSensibilidade
 
 func _ready() -> void:	
+	$MenuOpcoes.visible = false
 	$Chuva.play()
 
 	GameState.setValue("podeAndar", false)

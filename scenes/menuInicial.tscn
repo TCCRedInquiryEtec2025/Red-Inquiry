@@ -313,6 +313,7 @@ alignment = 1
 
 [node name="Sliders_porcentagens" type="HBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 alignment = 1
@@ -397,11 +398,13 @@ theme_override_icons/grabber_disabled = SubResource("DPITexture_qx1f8")
 theme_override_styles/slider = SubResource("StyleBoxFlat_4m7wy")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_70i05")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qx1f8")
+min_value = 0.1
 max_value = 1.0
 step = 0.01
 value = 0.25
 
 [node name="Porcentagens" type="VBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens"]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -410,26 +413,26 @@ alignment = 1
 
 [node name="LabelVolumeGeral" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens"]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "100%"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="labelVolumeMusica" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens"]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "100%"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LabelSensibilidade" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens"]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 25
 text = "25% (Padrão)"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TelaCheia" type="HBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes"]
