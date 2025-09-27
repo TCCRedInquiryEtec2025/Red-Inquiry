@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vaj3pmmo26vq"
-path="res://.godot/imported/ficha-pi.png-6923ceeca6eee7096f94887da60ded4b.ctex"
+uid="uid://ccl8te2ukladd"
+path="res://.godot/imported/WoodFloor013_1K-JPG_Color.jpg-017ca40e8329b54a06c973603ca7a8fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ficha-pi.png"
-dest_files=["res://.godot/imported/ficha-pi.png-6923ceeca6eee7096f94887da60ded4b.ctex"]
+source_file="res://assets/textures/WoodFloor013_1K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/WoodFloor013_1K-JPG_Color.jpg-017ca40e8329b54a06c973603ca7a8fe.ctex"]
 
 [params]
 

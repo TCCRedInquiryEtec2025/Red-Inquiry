@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vaj3pmmo26vq"
-path="res://.godot/imported/ficha-pi.png-6923ceeca6eee7096f94887da60ded4b.ctex"
+uid="uid://dakqqs76hmrwh"
+path="res://.godot/imported/instagram.png-b3215bfc3c853895e9468022d568a752.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ficha-pi.png"
-dest_files=["res://.godot/imported/ficha-pi.png-6923ceeca6eee7096f94887da60ded4b.ctex"]
+source_file="res://assets/instagram.png"
+dest_files=["res://.godot/imported/instagram.png-b3215bfc3c853895e9468022d568a752.ctex"]
 
 [params]
 
