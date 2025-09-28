@@ -52,6 +52,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 35
 placeholder_text = "Codigo"
 alignment = 1
+<<<<<<< Updated upstream
 max_length = 22
 expand_to_text_length = true
 context_menu_enabled = false
@@ -63,6 +64,749 @@ drag_and_drop_selection_enabled = false
 draw_control_chars = true
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+=======
+script = ExtResource("7_j6161")
+
+[node name="HBoxVermelho" type="HBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase"]
+layout_mode = 2
+alignment = 1
+
+[node name="LetraV" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraV"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraV"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Y"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraV"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraE" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraE"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraE"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraE"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraR" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraR"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraR"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "U"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraR"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraM" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraM"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraM"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraM"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraE2" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraE2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraE2"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraE2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraL" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraL"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraL"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraL"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraH" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraH"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraH"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "K"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraH"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraO" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraO"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraO"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxVermelho/LetraO"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxEm" type="HBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase"]
+layout_mode = 2
+alignment = 1
+
+[node name="LetraE" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxEm"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxEm/LetraE"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxEm/LetraE"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxEm/LetraE"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraM" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxEm"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxEm/LetraM"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxEm/LetraM"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxEm/LetraM"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxGreenville" type="HBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase"]
+layout_mode = 2
+
+[node name="LetraG" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraG"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraG"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraG"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraR" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraR"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraR"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "U"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraR"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraE" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraE2" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE2"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraN" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraN"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraN"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraN"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraV" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraV"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraV"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Y"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraV"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraI" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraI"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraI"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraI"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraL" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraL"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraL"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraL"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraL2" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraL2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraL2"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraL2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LetraE3" type="VBoxContainer" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville"]
+layout_mode = 2
+theme_override_constants/separation = -10
+alignment = 1
+script = ExtResource("7_nsu73")
+
+[node name="ButtonCima" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE3"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("7_e6iwo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE3"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBaixo" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/HBoxGreenville/LetraE3"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(0.46358675, 0.46358675, 0.46358687, 1)
+icon = ExtResource("8_nsu73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="ButtonReiniciar" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Reiniciar"
+
+[node name="Button" type="Button" parent="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer"]
+custom_minimum_size = Vector2(210, 50)
+>>>>>>> Stashed changes
 layout_mode = 2
 theme_override_colors/font_color = Color(0.477966, 0.605056, 0.735128, 1)
 theme_override_font_sizes/font_size = 28
@@ -76,5 +820,10 @@ size_flags_horizontal = 3
 texture = ExtResource("1_ci1mp")
 stretch_mode = 3
 
+<<<<<<< Updated upstream
 [connection signal="text_submitted" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+=======
+[connection signal="pressed" from="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/ButtonReiniciar" to="." method="_on_button_reiniciar_pressed"]
+[connection signal="pressed" from="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/Button" to="." method="_on_button_pressed"]
+>>>>>>> Stashed changes

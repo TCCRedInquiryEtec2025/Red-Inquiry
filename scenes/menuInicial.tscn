@@ -1,0 +1,653 @@
+[gd_scene load_steps=18 format=3 uid="uid://8navspruggjk"]
+
+[ext_resource type="Script" uid="uid://bcd2164ydly4x" path="res://scenes/menu_inicial.gd" id="1_p0uqc"]
+[ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="2_jhs6u"]
+[ext_resource type="PackedScene" uid="uid://bahtauago805q" path="res://scenes/fundoMenu.tscn" id="2_mxdwk"]
+[ext_resource type="Texture2D" uid="uid://drt3yx3hkw15c" path="res://assets/Red-Inquiry.png" id="3_4m7wy"]
+[ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/sounds/thunderstorm-ambiance-191991 (2).mp3" id="3_81crh"]
+[ext_resource type="Texture2D" uid="uid://dakqqs76hmrwh" path="res://assets/instagram.png" id="6_70i05"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oiit"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pvsu"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.012920001, 0.012920001, 0.012920001, 0.90000004)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DPITexture" id="DPITexture_4m7wy"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+base_scale = 1.2
+
+[sub_resource type="DPITexture" id="DPITexture_70i05"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 1.2
+
+[sub_resource type="DPITexture" id="DPITexture_qx1f8"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
+base_scale = 1.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m7wy"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i05"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.85490197, 0.16078432, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx1f8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="DPITexture" id="DPITexture_1pvsu"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_8oiit"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4m7wy"]
+size = Vector2(100, 100)
+
+[node name="MenuInicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p0uqc")
+
+[node name="Fundo" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Fundo"]
+handle_input_locally = false
+size = Vector2i(1600, 900)
+render_target_update_mode = 4
+
+[node name="FundoMenu" parent="Fundo/SubViewport" instance=ExtResource("2_mxdwk")]
+
+[node name="MenuPrincipal" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuPrincipal"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPrincipal/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPrincipal/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("3_4m7wy")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Iniciar" type="Button" parent="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+z_as_relative = false
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.854902, 0.160784, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Iniciar"
+flat = true
+alignment = 0
+
+[node name="Opcoes" type="Button" parent="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+z_as_relative = false
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.854902, 0.160784, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Opções"
+flat = true
+alignment = 0
+
+[node name="Creditos" type="Button" parent="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+z_as_relative = false
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.854902, 0.160784, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Créditos"
+flat = true
+alignment = 0
+
+[node name="Sair" type="Button" parent="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+z_as_relative = false
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.854902, 0.160784, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Sair"
+flat = true
+alignment = 0
+
+[node name="ConfirmaSair" type="PanelContainer" parent="MenuPrincipal"]
+visible = false
+custom_minimum_size = Vector2(1000, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_8oiit")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPrincipal/ConfirmaSair"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPrincipal/ConfirmaSair/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Quer mesmo sair?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="SairSim" type="Button" parent="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+action_mode = 0
+text = "Sim"
+flat = true
+
+[node name="SairNao" type="Button" parent="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+action_mode = 0
+text = "Não"
+flat = true
+
+[node name="MenuOpcoes" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuOpcoes"]
+layout_mode = 2
+
+[node name="StylePanel" type="PanelContainer" parent="MenuOpcoes/CenterContainer"]
+custom_minimum_size = Vector2(1250, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1pvsu")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuOpcoes/CenterContainer/StylePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Layout" type="VBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Configuracoes" type="VBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Sliders_porcentagens" type="HBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Sliders" type="VBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="VolumeGeral" type="HBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Volume Geral"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("DPITexture_4m7wy")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_70i05")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_qx1f8")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4m7wy")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_70i05")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qx1f8")
+value = 100.0
+
+[node name="VolumeMusica" type="HBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Volume da Música"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("DPITexture_4m7wy")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_70i05")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_qx1f8")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4m7wy")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_70i05")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qx1f8")
+value = 100.0
+
+[node name="Sensibilidade" type="HBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Sensibilidade"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("DPITexture_4m7wy")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_70i05")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_qx1f8")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4m7wy")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_70i05")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qx1f8")
+min_value = 0.1
+max_value = 1.0
+step = 0.01
+value = 0.25
+
+[node name="Porcentagens" type="VBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="LabelVolumeGeral" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "100%"
+vertical_alignment = 1
+
+[node name="labelVolumeMusica" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "100%"
+vertical_alignment = 1
+
+[node name="LabelSensibilidade" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "25% (Padrão)"
+vertical_alignment = 1
+
+[node name="TelaCheia" type="HBoxContainer" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/TelaCheia"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Tela Cheia: "
+vertical_alignment = 1
+
+[node name="CheckButtonTelaCheia" type="CheckButton" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/TelaCheia"]
+layout_mode = 2
+focus_mode = 0
+theme_override_icons/checked = SubResource("DPITexture_1pvsu")
+theme_override_icons/unchecked = SubResource("DPITexture_8oiit")
+action_mode = 0
+
+[node name="Voltar" type="Button" parent="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout"]
+z_as_relative = false
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.854902, 0.160784, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Voltar"
+flat = true
+
+[node name="MenuCreditos" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuCreditos"]
+layout_mode = 2
+
+[node name="StylePanel" type="PanelContainer" parent="MenuCreditos/CenterContainer"]
+custom_minimum_size = Vector2(1400, 700)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1pvsu")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuCreditos/CenterContainer/StylePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Layout" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/h_separation = 350
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="RiamContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/RiamContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_4m7wy")
+
+[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/RiamContainer"]
+layout_mode = 2
+text = "Riam"
+horizontal_alignment = 1
+
+[node name="YuriContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/YuriContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_4m7wy")
+
+[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/YuriContainer"]
+layout_mode = 2
+text = "Yuri"
+horizontal_alignment = 1
+
+[node name="LeviContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/LeviContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_4m7wy")
+
+[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/LeviContainer"]
+layout_mode = 2
+text = "Levi"
+horizontal_alignment = 1
+
+[node name="PedroContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/PedroContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_4m7wy")
+
+[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/PedroContainer"]
+layout_mode = 2
+text = "Pedro"
+horizontal_alignment = 1
+
+[node name="GuilhermeContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/GuilhermeContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_4m7wy")
+
+[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/GuilhermeContainer"]
+layout_mode = 2
+text = "Guilherme"
+horizontal_alignment = 1
+
+[node name="DesenhistaContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/DesenhistaContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_4m7wy")
+
+[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/DesenhistaContainer"]
+layout_mode = 2
+text = "Desenhista"
+horizontal_alignment = 1
+
+[node name="Voltar" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout"]
+z_as_relative = false
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.854902, 0.160784, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Voltar"
+flat = true
+
+[node name="Chuva" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jhs6u")
+volume_db = -10.0
+pitch_scale = 1.6
+autoplay = true
+parameters/looping = true
+
+[node name="Trovao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_81crh")
+
+[node name="ButtonInstagram" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_70i05")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairSim" to="." method="_on_sair_sim_pressed"]
+[connection signal="pressed" from="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairNao" to="." method="_on_sair_nao_pressed"]
+[connection signal="visibility_changed" from="MenuOpcoes" to="." method="_on_menu_opcoes_visibility_changed"]
+[connection signal="value_changed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral/HSlider" to="." method="_on_slider_volume_geral_value_changed"]
+[connection signal="value_changed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica/HSlider" to="." method="_on_slider_volume_musica_value_changed"]
+[connection signal="value_changed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade/HSlider" to="." method="_on_slider_sensibilidade_value_changed"]
+[connection signal="toggled" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/TelaCheia/CheckButtonTelaCheia" to="." method="_on_check_button_tela_cheia_toggled"]
+[connection signal="pressed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Voltar" to="." method="_on_voltar_opcoes_pressed"]
+[connection signal="pressed" from="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/Voltar" to="." method="_on_voltar_creditos_pressed"]
+[connection signal="pressed" from="ButtonInstagram" to="." method="_on_button_instagram_pressed"]

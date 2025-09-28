@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Red Inquiry"
 config/description="Jogo para TCC"
+config/version="0.1"
 config/tags=PackedStringArray("tcc")
 run/main_scene="uid://8navspruggjk"
 config/features=PackedStringArray("4.4", "Forward Plus")
@@ -21,7 +22,7 @@ config/main_scene="uid://bl3me73mor0ud"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://dmf2ikwkfvsuv"
 
 [autoload]
 

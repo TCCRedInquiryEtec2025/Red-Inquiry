@@ -1,10 +1,31 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=11 format=3 uid="uid://cs4tduc8jd2vn"]
+=======
+[gd_scene load_steps=57 format=3 uid="uid://cs4tduc8jd2vn"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
 [ext_resource type="Script" uid="uid://0c0cns6vn1s1" path="res://assets/scenes/documentos.gd" id="5_8sknh"]
 [ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="5_60g6h"]
 [ext_resource type="Script" uid="uid://5io2so8aapg5" path="res://scripts/reticle.gd" id="6_hrrj1"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Script" uid="uid://b6ibqpel2ubsb" path="res://assets/scenes/painelTutorial.gd" id="6_nh07x"]
+[ext_resource type="Texture2D" uid="uid://duux1n4qvt4xf" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_a_outline.png" id="7_nh07x"]
+[ext_resource type="Texture2D" uid="uid://bixv66sany65t" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_s_outline.png" id="8_00pic"]
+[ext_resource type="Texture2D" uid="uid://ulm4ipqipuve" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_d_outline.png" id="9_0bskb"]
+[ext_resource type="Texture2D" uid="uid://c15i6xjax4ph8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_shift_outline.png" id="10_1dmvh"]
+[ext_resource type="Texture2D" uid="uid://drq1tdsc5pvh0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_ctrl_outline.png" id="11_ratp2"]
+[ext_resource type="Script" uid="uid://qqqq8ydrexln" path="res://scripts/menu_pause.gd" id="14_0bskb"]
+[ext_resource type="AudioStream" uid="uid://bbbim7rqf3pf6" path="res://assets/sounds/walking-on-wood-363349.mp3" id="14_00pic"]
+[ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="15_wf17w"]
+[ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="16_msj1n"]
+[ext_resource type="Texture2D" uid="uid://cm3chjprx5jun" path="res://assets/icons/PNG/White/2x/arrowRight.png" id="17_ktpxd"]
+[ext_resource type="Texture2D" uid="uid://dbxpusbfsqafn" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_e_outline.png" id="18_dvip7"]
+[ext_resource type="Texture2D" uid="uid://bsl1kga0okqvo" path="res://assets/icons/PNG/White/2x/arrowLeft.png" id="19_beuf1"]
+[ext_resource type="Texture2D" uid="uid://k0qxrnc8gxja" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_q_outline.png" id="20_0e2pd"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6vv5"]
 margin = 0.0
@@ -22,7 +43,278 @@ radius = 0.4
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1dmvh"]
 shader = ExtResource("5_60g6h")
 
+<<<<<<< Updated upstream
 [sub_resource type="CanvasTexture" id="CanvasTexture_4wcc8"]
+=======
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh07x"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nh07x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00pic"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0, 0, 0, 0.8235294)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00pic"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_1dmvh"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_ratp2"]
+events = [SubResource("InputEventKey_1dmvh")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ay2jx"]
+bg_color = Color(1, 0.98, 0.88, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.650128, 0.650128, 0.650128, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+shadow_offset = Vector2(0.68, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jukhh"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+shadow_size = 4
+shadow_offset = Vector2(3.1, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_o8fc1"]
+device = -1
+keycode = 69
+unicode = 101
+
+[sub_resource type="Shortcut" id="Shortcut_gdn7j"]
+events = [SubResource("InputEventKey_o8fc1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qfnet"]
+device = -1
+keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_6luef"]
+events = [SubResource("InputEventKey_qfnet")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84enu"]
+bg_color = Color(1, 1, 1, 0.25)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hrrj1"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+color = Color(0, 0, 0, 0)
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_c6vv5"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+color = Color(0, 0, 0, 0)
+vertical = true
+
+[sub_resource type="Animation" id="Animation_c6vv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Andar:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_00pic"]
+resource_name = "handleAgachar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Agachar:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hrrj1"]
+resource_name = "handleAndar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Andar:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nh07x"]
+resource_name = "handleCorrer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Correr:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bskb"]
+_data = {
+&"RESET": SubResource("Animation_c6vv5"),
+&"handleAgachar": SubResource("Animation_00pic"),
+&"handleAndar": SubResource("Animation_hrrj1"),
+&"handleCorrer": SubResource("Animation_nh07x")
+}
+>>>>>>> Stashed changes
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dmvh"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ratp2"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[sub_resource type="DPITexture" id="DPITexture_wf17w"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+base_scale = 1.2
+
+[sub_resource type="DPITexture" id="DPITexture_msj1n"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 1.2
+
+[sub_resource type="DPITexture" id="DPITexture_ktpxd"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
+base_scale = 1.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvip7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_beuf1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.85490197, 0.16078432, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jukhh"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="DPITexture" id="DPITexture_dvip7"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_beuf1"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e2pd"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 5
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_0gfpk")
@@ -92,7 +384,12 @@ grow_vertical = 2
 script = ExtResource("6_hrrj1")
 DOT_RADIUS = 4.0
 
+<<<<<<< Updated upstream
 [node name="Documentos" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D"]
+=======
+[node name="Documentos" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D"]
+visible = false
+>>>>>>> Stashed changes
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -105,4 +402,635 @@ visible = false
 custom_minimum_size = Vector2(500, 700)
 layout_mode = 2
 mouse_default_cursor_shape = 2
+<<<<<<< Updated upstream
 texture = SubResource("CanvasTexture_4wcc8")
+=======
+texture = SubResource("PlaceholderTexture2D_nh07x")
+expand_mode = 5
+
+[node name="Jornal" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/CenterContainer"]
+z_index = 1
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+texture = ExtResource("6_00pic")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_00pic")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer2/PanelContainer"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_00pic")
+text = "[TEXTO CONTIDO NA CARTA]"
+horizontal_alignment = 1
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="CenterContainer3" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Button" type="Button" parent="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer3"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.854902, 0.160784, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+shortcut = SubResource("Shortcut_ratp2")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "FECHAR"
+flat = true
+
+[node name="NoteBookHUD" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D" node_paths=PackedStringArray("player")]
+visible = false
+script = ExtResource("15_wf17w")
+player = NodePath("../../../../..")
+
+[node name="AgendaUI" type="Control" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_msj1n")
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelPg1" type="Panel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer"]
+custom_minimum_size = Vector2(1200, 900)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay2jx")
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer/PanelPg1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ISSO É O UM TESTE"
+label_settings = SubResource("LabelSettings_jukhh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelPg2" type="Panel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer"]
+custom_minimum_size = Vector2(1200, 900)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay2jx")
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer/PanelPg2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ISSO É O UM TESTE, SÓ QUE 2"
+label_settings = SubResource("LabelSettings_jukhh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPage2" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.5
+anchor_right = 0.85
+anchor_bottom = 0.5
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_gdn7j")
+shortcut_in_tooltip = false
+
+[node name="ContainerSprites" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpriteArrowRight" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2/ContainerSprites"]
+position = Vector2(0, -100)
+texture = ExtResource("17_ktpxd")
+
+[node name="SpriteKeyE" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2/ContainerSprites"]
+texture = ExtResource("18_dvip7")
+
+[node name="ButtonPage1" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.1
+anchor_bottom = 0.5
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_6luef")
+shortcut_in_tooltip = false
+
+[node name="ContainerSprites" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SpriteArrowLeft" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1/ContainerSprites"]
+position = Vector2(0, -100)
+texture = ExtResource("19_beuf1")
+
+[node name="SpriteKeyQ" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1/ContainerSprites"]
+texture = ExtResource("20_0e2pd")
+
+[node name="Tutorial" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
+visible = false
+
+[node name="Control" type="Control" parent="Neck/Head/Eyes/Camera3D/Tutorial"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutorialPainel" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -540.0
+offset_right = 550.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84enu")
+script = ExtResource("6_nh07x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Andar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 2
+
+[node name="WASD" type="GridContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="VSeparator" type="VSeparator" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_hrrj1")
+
+[node name="W" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_c6vv5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="VSeparator2" type="VSeparator" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_c6vv5")
+
+[node name="A" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("7_nh07x")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="S" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("8_00pic")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="D" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar/WASD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("9_0bskb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Andar"]
+layout_mode = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 40
+text = "Andar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Correr" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 2
+
+[node name="Shift" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Correr"]
+layout_mode = 2
+texture = ExtResource("10_1dmvh")
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Correr"]
+layout_mode = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 40
+text = "Correr"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Agachar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 2
+
+[node name="Control" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Agachar"]
+layout_mode = 2
+texture = ExtResource("11_ratp2")
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Agachar"]
+layout_mode = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 40
+text = "Agachar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_0bskb")
+}
+playback_auto_capture_transition_type = 7
+
+[node name="MenuPause" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
+script = ExtResource("14_0bskb")
+
+[node name="Pause" type="Control" parent="Neck/Head/Eyes/Camera3D/MenuPause"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Divisao" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer"]
+layout_mode = 2
+
+[node name="MenuLateral" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.95
+theme_override_styles/panel = SubResource("StyleBoxFlat_1dmvh")
+
+[node name="Opcoes" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral"]
+layout_mode = 2
+
+[node name="Continuar" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Continuar jogando"
+flat = true
+alignment = 0
+
+[node name="Configuracoes" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Configurações"
+flat = true
+alignment = 0
+
+[node name="Voltar" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Voltar ao menu"
+flat = true
+alignment = 0
+
+[node name="Sair" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Sair do jogo"
+flat = true
+alignment = 0
+
+[node name="CantoDireito" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ratp2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Configuracoes" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Sliders_porcentagens" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Sliders" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="VolumeGeral" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Volume Geral"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("DPITexture_wf17w")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_msj1n")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_ktpxd")
+theme_override_styles/slider = SubResource("StyleBoxFlat_dvip7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_beuf1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jukhh")
+value = 100.0
+
+[node name="VolumeMusica" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Volume da Música"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("DPITexture_wf17w")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_msj1n")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_ktpxd")
+theme_override_styles/slider = SubResource("StyleBoxFlat_dvip7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_beuf1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jukhh")
+value = 100.0
+
+[node name="Sensibilidade" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Sensibilidade"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("DPITexture_wf17w")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_msj1n")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_ktpxd")
+theme_override_styles/slider = SubResource("StyleBoxFlat_dvip7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_beuf1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jukhh")
+min_value = 0.1
+max_value = 1.0
+step = 0.01
+value = 0.25
+
+[node name="Porcentagens" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="LabelVolumeGeral" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "100%"
+vertical_alignment = 1
+
+[node name="labelVolumeMusica" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "100%"
+vertical_alignment = 1
+
+[node name="LabelSensibilidade" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Porcentagens"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "25% (Padrão)"
+vertical_alignment = 1
+
+[node name="TelaCheia" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/TelaCheia"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Tela Cheia: "
+vertical_alignment = 1
+
+[node name="CheckButtonTelaCheia" type="CheckButton" parent="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/TelaCheia"]
+layout_mode = 2
+focus_mode = 0
+theme_override_icons/checked = SubResource("DPITexture_dvip7")
+theme_override_icons/unchecked = SubResource("DPITexture_beuf1")
+action_mode = 0
+
+[node name="ConfirmaSair" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause"]
+visible = false
+custom_minimum_size = Vector2(1000, 450)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -225.0
+offset_right = 500.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_0e2pd")
+
+[node name="MarginContainer" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Quer mesmo sair?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="SairSim" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+action_mode = 0
+text = "Sim"
+flat = true
+
+[node name="SairNao" type="Button" parent="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+action_mode = 0
+text = "Não"
+flat = true
+
+[node name="Andando" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3900159)
+stream = ExtResource("14_00pic")
+max_db = -6.0
+
+[node name="StepTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer3/Button" to="Neck/Head/Eyes/Camera3D/Documentos" method="_on_button_pressed"]
+[connection signal="visibility_changed" from="Neck/Head/Eyes/Camera3D/MenuPause" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_visibility_changed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Continuar" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_continuar_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Configuracoes" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_configuracoes_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Voltar" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_voltar_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Sair" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_sair_pressed"]
+[connection signal="value_changed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral/HSlider" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica/HSlider" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_volume_musica_changed"]
+[connection signal="value_changed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade/HSlider" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_sensibilidade_changed"]
+[connection signal="toggled" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/CantoDireito/PanelContainer/MarginContainer/Configuracoes/TelaCheia/CheckButtonTelaCheia" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_check_button_tela_cheia_toggled"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairSim" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_sair_sim_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairNao" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_sair_nao_pressed"]
+[connection signal="timeout" from="StepTimer" to="." method="_on_step_timeout"]
+>>>>>>> Stashed changes

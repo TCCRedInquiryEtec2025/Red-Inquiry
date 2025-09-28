@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjursw5wdv40k"]
+[gd_scene load_steps=4 format=3 uid="uid://cjursw5wdv40k"]
 
 [ext_resource type="Script" uid="uid://cqvev0kpjqpqs" path="res://scripts/InteractRay.gd" id="1_pruh5"]
+[ext_resource type="AudioStream" uid="uid://bh3hikbxfaw76" path="res://assets/sounds/papel.wav" id="2_2k2nr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pruh5"]
 font_size = 34
@@ -47,3 +48,10 @@ text = "[FALA]"
 label_settings = SubResource("LabelSettings_pruh5")
 horizontal_alignment = 1
 vertical_alignment = 1
+<<<<<<< Updated upstream
+=======
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2k2nr")
+>>>>>>> Stashed changes

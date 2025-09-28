@@ -39,9 +39,25 @@ func _physics_process(_delta: float) -> void:
 			prompt.text = collider.get_prompt()
 			
 			if Input.is_action_just_pressed("interact"):
+<<<<<<< Updated upstream
 				collider.interact(owner)
 				show_response(collider.response_prompt)
 				
 				if(collider.isCarta):
 					GameState.setValue("lendoCarta", true)
 					GameState.setValue("podeAndar", false)
+=======
+				_interact_with(collider)
+
+
+func _interact_with(collider: Interactable) -> void:
+	collider.interact(owner)
+	
+	if(collider is Carta):
+		$AudioStreamPlayer.play()
+		
+		GameState.setValue("lendo", true)
+		GameState.setValue("podeAndar", false)
+		
+	_show_response(collider.response_prompt)
+>>>>>>> Stashed changes

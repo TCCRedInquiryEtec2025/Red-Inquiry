@@ -7,6 +7,7 @@ var state := {
 	"jornal": false,
 	"arquivo": false,
 	
+	"pauseAberto": false,
 	"abrindoAgenda": false,
 	"lendoCarta": false,
 	"podeAndar": true,

@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=112 format=4 uid="uid://bl3me73mor0ud"]
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_71j4m"]
@@ -46,6 +47,9 @@
 [ext_resource type="PackedScene" uid="uid://ccip78h4p28f0" path="res://assets/scenes/jornal_semanal.tscn" id="37_l8ah6"]
 =======
 [gd_scene load_steps=99 format=4 uid="uid://bl3me73mor0ud"]
+=======
+[gd_scene load_steps=82 format=4 uid="uid://bl3me73mor0ud"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_g1xw2"]
 [ext_resource type="PackedScene" uid="uid://cs4tduc8jd2vn" path="res://assets/scenes/player.tscn" id="2_c6i3x"]
@@ -64,6 +68,7 @@
 [ext_resource type="PackedScene" uid="uid://bopd65sk2st0l" path="res://assets/scenes/pendurador.tscn" id="16_raiy0"]
 [ext_resource type="PackedScene" uid="uid://dndue43ha600b" path="res://assets/scenes/portabanheiro.tscn" id="16_rh0j0"]
 [ext_resource type="Texture2D" uid="uid://rdpik2xs0fvt" path="res://assets/hdris/wmremove-transformed_LE_upscale_balanced_x4.jpg" id="17_hpdng"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="18_mliiq"]
 [ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="19_s13ow"]
 [ext_resource type="Texture2D" uid="uid://cm3chjprx5jun" path="res://assets/icons/PNG/White/2x/arrowRight.png" id="20_0wyva"]
@@ -73,6 +78,8 @@
 [ext_resource type="FontFile" uid="uid://5jq1pay8nb2q" path="res://assets/fonts/IMFeENsc28P.ttf" id="22_hi6a0"]
 [ext_resource type="Texture2D" uid="uid://bsl1kga0okqvo" path="res://assets/icons/PNG/White/2x/arrowLeft.png" id="22_nkjs1"]
 [ext_resource type="Texture2D" uid="uid://k0qxrnc8gxja" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_q_outline.png" id="23_scewh"]
+=======
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://c4ungqri0a4e7" path="res://assets/scenes/quadro.tscn" id="25_c0cx3"]
 [ext_resource type="PackedScene" uid="uid://bqgy0t40ljfwu" path="res://assets/scenes/Lixo.tscn" id="26_pafkb"]
 [ext_resource type="PackedScene" uid="uid://lhsujdq04cxh" path="res://assets/scenes/MesinhaCentro.tscn" id="27_vx8ew"]
@@ -867,6 +874,7 @@ volumetric_fog_density = 0.1761
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f17e3"]
 texture = ExtResource("15_fh13f")
@@ -935,6 +943,13 @@ resource_name = "Emit"
 cull_mode = 2
 albedo_color = Color(0.836669, 0.703574, 0.289489, 1)
 metallic = 1.0
+=======
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npbic"]
+transparency = 1
+specular_mode = 1
+albedo_color = Color(1, 1, 1, 0.079)
+roughness = 0.4
+>>>>>>> Stashed changes
 emission_enabled = true
 emission = Color(0.945495, 0.872556, 0, 1)
 emission_energy_multiplier = 16.0
@@ -1224,7 +1239,7 @@ mesh = SubResource("ArrayMesh_wfcqe")
 skeleton = NodePath("")
 
 [node name="Parede4q" type="MeshInstance3D" parent="Office/Quarto/StaticBody3D"]
-transform = Transform3D(0.68, 0, 8.34543e-08, 0, 1, 0, -3.78326e-08, 0, 1.5, -5.98941, 0.567042, -1.21456)
+transform = Transform3D(0.69814694, 0, 8.34543e-08, 0, 1, 0, -3.8842224e-08, 0, 1.5, -6.064075, 0.5455414, -1.21456)
 mesh = SubResource("ArrayMesh_xklus")
 skeleton = NodePath("")
 
@@ -1266,6 +1281,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78732, 0.56296, 1.22684)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Ambientacao"]
 environment = SubResource("Environment_i7141")
 
+<<<<<<< Updated upstream
 [node name="NoteBookHUD" type="CanvasLayer" parent="."]
 <<<<<<< Updated upstream
 visible = false
@@ -1508,6 +1524,9 @@ omni_range = 4.31
 omni_attenuation = 0.0
 
 [node name="Quadro" parent="." instance=ExtResource("16_dss4m")]
+=======
+[node name="Quadro" parent="." instance=ExtResource("25_c0cx3")]
+>>>>>>> Stashed changes
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3755, 1.92909, -5.62593)
 prompt_message = "Inspecionar"
 
@@ -1575,5 +1594,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82124, 0.522293, -0.706228)
 [node name="CartaJoanne" parent="." instance=ExtResource("36_ggc52")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52157, 0.522293, -0.882415)
 
+<<<<<<< Updated upstream
 [node name="JornalSemanal" parent="." instance=ExtResource("37_l8ah6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55709, 0.547292, -2.22763)
+=======
+[node name="OmniLight3D" type="OmniLight3D" parent="Trovao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.15, 0)
+light_energy = 3.0
+light_size = 2.0
+shadow_enabled = true
+shadow_blur = 0.0
+distance_fade_begin = 45.35
+omni_range = 7.5
+omni_attenuation = -3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Trovao"]
+transform = Transform3D(1.19249e-08, -0.999992, 0.00401416, -1, -1.19248e-08, 4.78683e-11, 0, -0.00401416, -0.999992, 7.63736, 2.1001, -0.00559557)
+mesh = SubResource("PlaneMesh_817gm")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Trovao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.15, 0)
+stream = ExtResource("37_ovexh")
+volume_db = -5.0
+max_db = -5.0
+
+[node name="Chuva" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.22779, 1.53129, 0)
+stream = ExtResource("38_s7nc1")
+max_db = 0.0
+pitch_scale = 1.6
+autoplay = true
+max_distance = 18.0
+parameters/looping = true
+
+[node name="ParticulasChuva" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.38761e-07, 0, -0.897972, 0, 1.77161, 0, 11.6362, 0, 1.07082e-08, 13.4495, 0, -1.43148)
+amount = 100
+sub_emitter = NodePath(".")
+lifetime = 0.6
+speed_scale = 3.0
+randomness = 1.0
+fixed_fps = 45
+process_material = SubResource("ParticleProcessMaterial_e75v4")
+draw_pass_1 = SubResource("QuadMesh_rga7q")
+
+[node name="Ventilador" parent="." instance=ExtResource("39_7qkyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.052, 2.472, 0.25)
+
+[node name="Lampada" parent="." instance=ExtResource("40_ixsj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97718, 2.52824, -3.25395)
+
+[connection signal="interacted" from="Quadro" to="." method="_on_quadro_interacted"]
+>>>>>>> Stashed changes

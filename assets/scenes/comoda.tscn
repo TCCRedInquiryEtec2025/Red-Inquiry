@@ -1,7 +1,18 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=4 uid="uid://bxnwlt1bl5qw7"]
 
 [ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="1_te44w"]
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="2_p6hy1"]
+=======
+[gd_scene load_steps=24 format=4 uid="uid://bxnwlt1bl5qw7"]
+
+[ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="1_te44w"]
+[ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="2_p6hy1"]
+[ext_resource type="PackedScene" uid="uid://lrm1rnuukciv" path="res://assets/scenes/carta_terence.tscn" id="3_6jugk"]
+[ext_resource type="AudioStream" uid="uid://d18534pqo8fxj" path="res://assets/sounds/gaveta.mp3" id="4_h2ea8"]
+[ext_resource type="Texture2D" uid="uid://c30qwopp0lwdu" path="res://assets/models/abajur_0.png" id="4_tb6i7"]
+[ext_resource type="PackedScene" uid="uid://b0d3530rw4k6d" path="res://assets/scenes/despertador.tscn" id="5_15hgr"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tm6q"]
 resource_name = "madeira"
@@ -137,4 +148,39 @@ libraries = {
 &"": SubResource("AnimationLibrary_h2ea8")
 }
 
+<<<<<<< Updated upstream
+=======
+[node name="CartaTerence" parent="Gaveta" instance=ExtResource("3_6jugk")]
+transform = Transform3D(-0.704882, 0.680058, -0.201649, -0.0180727, 0.266972, 0.963535, 0.709094, 0.682822, -0.175894, -0.161916, -0.860382, -0.439557)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Gaveta"]
+transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, 0.002973631, -0.78371614, 0.37702018)
+stream = ExtResource("4_h2ea8")
+unit_size = 0.5
+pitch_scale = 2.0
+
+[node name="Lamp" type="Node3D" parent="."]
+transform = Transform3D(0.286988, -0.087396, -3.8202e-10, 0, -1.31134e-08, 0.03, -0.087396, -0.286988, -1.25446e-09, 1.51904, 1.24829, 0.316408)
+
+[node name="Lamp_M_Nightstand_0" type="MeshInstance3D" parent="Lamp"]
+mesh = SubResource("ArrayMesh_15hgr")
+skeleton = NodePath("")
+
+[node name="Lamp_M_Lamp_0" type="MeshInstance3D" parent="Lamp"]
+mesh = SubResource("ArrayMesh_h2ea8")
+skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.765)
+light_energy = 1.2
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 8.0
+omni_shadow_mode = 0
+
+[node name="clock" parent="." instance=ExtResource("5_15hgr")]
+transform = Transform3D(-0.189351, 0, 0.0643904, 0, 0.25, 0, -0.0643904, 0, -0.189351, 0.302065, 1.07747, 0.274178)
+
+>>>>>>> Stashed changes
 [connection signal="interacted" from="Gaveta" to="Gaveta" method="_on_interacted"]

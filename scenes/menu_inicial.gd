@@ -5,12 +5,14 @@ extends Control
 @onready var slider_geral = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral/HSlider
 @onready var slider_musica = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica/HSlider
 @onready var slider_sensibilidade = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade/HSlider
+@onready var toggle_telaCheia = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/TelaCheia/CheckButtonTelaCheia
 
 @onready var label_geral = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens/LabelVolumeGeral
 @onready var label_musica = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens/labelVolumeMusica
 @onready var label_sensibilidade = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens/LabelSensibilidade
 
 func _ready() -> void:	
+	$MenuOpcoes.visible = false
 	$Chuva.play()
 
 	GameState.setValue("podeAndar", false)
@@ -93,6 +95,9 @@ func _on_menu_opcoes_visibility_changed() -> void:
 		slider_geral.value = int(Settings.volume_geral * 100)
 		slider_musica.value = int(Settings.volume_musica * 100)
 		slider_sensibilidade.value = Settings.sensibilidade
+		# Ajusta a opção de tela cheia bonitinho
+		toggle_telaCheia.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
+		
 		
 
 func _on_button_instagram_pressed() -> void:

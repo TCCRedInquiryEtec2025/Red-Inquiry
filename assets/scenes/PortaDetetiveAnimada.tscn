@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://dl3rricwut7yg"]
+[gd_scene load_steps=22 format=4 uid="uid://dl3rricwut7yg"]
 
 [ext_resource type="Script" uid="uid://csh5jk0b0ahyf" path="res://scripts/portaAnimacao.gd" id="1_0ivlr"]
 [ext_resource type="Texture2D" uid="uid://x42h1n2b644y" path="res://assets/textures/wood_cabinet_worn_long_diff_4k.jpg" id="2_62kac"]
+[ext_resource type="AudioStream" uid="uid://dbofgwuc6pfy8" path="res://assets/sounds/porta.mp3" id="3_65knd"]
+[ext_resource type="AudioStream" uid="uid://iqbmcm1vte7t" path="res://assets/sounds/portaFecha.mp3" id="4_pges8"]
 
 [sub_resource type="Animation" id="Animation_dxq2g"]
 resource_name = "LightAction"
@@ -253,13 +255,13 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Porta"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_0ivlr")
 
 [node name="NodeDoor" type="Node3D" parent="Porta"]
 
 [node name="Door" type="MeshInstance3D" parent="Porta/NodeDoor"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_amagh")
 skeleton = NodePath("")
 
@@ -281,4 +283,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000958875)
 mesh = SubResource("ArrayMesh_sgblf")
 skeleton = NodePath("")
 
+[node name="Open" type="AudioStreamPlayer3D" parent="Porta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6449977)
+stream = ExtResource("3_65knd")
+volume_db = -12.0
+max_db = -5.0
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Porta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6449977)
+stream = ExtResource("4_pges8")
+volume_db = -12.0
+max_db = -5.0
+
 [connection signal="interacted" from="Porta" to="Porta" method="_on_interacted"]
+[connection signal="animation_finished" from="Porta/AnimationPlayer" to="Porta" method="_on_animation_finished"]
