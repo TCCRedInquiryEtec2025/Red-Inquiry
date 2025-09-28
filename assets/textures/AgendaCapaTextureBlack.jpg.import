@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8npe4rqyyw3x"
-path.s3tc="res://.godot/imported/Fabric007_2K_Normal.jpg-f2cd84992ec0cb3b7b927929245deb98.s3tc.ctex"
+uid="uid://d3xctxuhdmigh"
+path.s3tc="res://.godot/imported/AgendaCapaTextureBlack.jpg-9268c38cafbdbe5954f83b540adc735f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/Fabric007_2K_Normal.jpg"
-dest_files=["res://.godot/imported/Fabric007_2K_Normal.jpg-f2cd84992ec0cb3b7b927929245deb98.s3tc.ctex"]
+source_file="res://assets/textures/AgendaCapaTextureBlack.jpg"
+dest_files=["res://.godot/imported/AgendaCapaTextureBlack.jpg-9268c38cafbdbe5954f83b540adc735f.s3tc.ctex"]
 
 [params]
 

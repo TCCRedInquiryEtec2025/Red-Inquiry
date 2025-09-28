@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://lrm1rnuukciv"]
+[gd_scene load_steps=6 format=3 uid="uid://lrm1rnuukciv"]
 
 [ext_resource type="Script" uid="uid://cxdt0sbidk3cy" path="res://scripts/carta_terence.gd" id="1_6iy5l"]
+[ext_resource type="Texture2D" uid="uid://1kjoqg8ljb0g" path="res://assets/cartas/Carta_Terence.jpg" id="2_c6j7w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gp88q"]
+albedo_texture = ExtResource("2_c6j7w")
+uv1_scale = Vector3(3, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xyupw"]
+material = SubResource("StandardMaterial3D_gp88q")
 size = Vector3(0.21, 0.3, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjcnx"]
@@ -16,15 +22,6 @@ response_prompt = "Finalmente achei você. Deixa eu me lembrar, onde é que eu t
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)
 mesh = SubResource("BoxMesh_xyupw")
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-pixel_size = 0.001
-double_sided = false
-text = "CARTA
-(Terence)"
-font_size = 46
-outline_size = 18
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00311279, -0.0059967, 0.00278364)

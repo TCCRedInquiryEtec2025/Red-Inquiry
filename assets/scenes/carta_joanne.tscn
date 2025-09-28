@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciqb6x5eawn8v"]
+[gd_scene load_steps=6 format=3 uid="uid://ciqb6x5eawn8v"]
 
 [ext_resource type="Script" uid="uid://f6yo0fhud1cq" path="res://scripts/carta_joanne.gd" id="1_tslmq"]
+[ext_resource type="Texture2D" uid="uid://dpkvaco16f6rl" path="res://assets/cartas/Carta_Joanne_Rochefart.jpg" id="2_lf5by"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wei7"]
+albedo_texture = ExtResource("2_lf5by")
+uv1_scale = Vector3(3, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lf5by"]
+material = SubResource("StandardMaterial3D_3wei7")
 size = Vector3(0.21, 0.3, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wei7"]
@@ -16,15 +22,6 @@ response_prompt = "Essa senhora tá realmente desesperada. Gostaria de resolver 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)
 mesh = SubResource("BoxMesh_lf5by")
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-pixel_size = 0.001
-double_sided = false
-text = "CARTA
-(Joanne)"
-font_size = 46
-outline_size = 18
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00311279, -0.0059967, 0.00278364)

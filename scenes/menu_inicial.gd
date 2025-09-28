@@ -11,6 +11,8 @@ extends Control
 @onready var label_musica = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens/labelVolumeMusica
 @onready var label_sensibilidade = $MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Porcentagens/LabelSensibilidade
 
+@onready var label_versao = $MenuPrincipal/MarginContainer/LabelVersao
+
 func _ready() -> void:	
 	$MenuOpcoes.visible = false
 	$Chuva.play()
@@ -19,6 +21,9 @@ func _ready() -> void:
 	trovao.connect("trovao_acionado", Callable(self, "_on_thunder_triggered"))
 	
 	$MenuPrincipal/ConfirmaSair.visible = false
+	
+	label_versao.text = ProjectSettings.get_setting("application/config/version")
+	print(ProjectSettings.get_setting("application/config/version"))
 
 func _on_thunder_triggered():
 	$Trovao.play()

@@ -1,9 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccip78h4p28f0"]
 
 [ext_resource type="Script" uid="uid://bey1drfr5hc0a" path="res://scripts/jornal_semanal.gd" id="1_vlw0r"]
-[ext_resource type="Texture2D" uid="uid://yrvstsevwgvx" path="res://assets/textures/Imagem do WhatsApp de 2025-04-15 à(s) 18.52.30_663286ec.jpg" id="2_o1xx0"]
+[ext_resource type="Texture2D" uid="uid://c6tss7lcdqskg" path="res://assets/cartas/Jornal.png" id="2_o1xx0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akans"]
+albedo_color = Color(0.7441813, 0.7441813, 0.7441813, 1)
 albedo_texture = ExtResource("2_o1xx0")
 uv1_scale = Vector3(3, 2, 0)
 
@@ -23,14 +24,6 @@ response_prompt = "Aquele Mafioso daqui tem alguma coisa a ver com isso. Sei dis
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)
 mesh = SubResource("BoxMesh_xyupw")
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-pixel_size = 0.001
-double_sided = false
-text = "JORNAL"
-font_size = 46
-outline_size = 18
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00162128, -0.0048438, 0.00278364)

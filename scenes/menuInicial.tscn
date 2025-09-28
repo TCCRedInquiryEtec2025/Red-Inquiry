@@ -277,6 +277,32 @@ action_mode = 0
 text = "Não"
 flat = true
 
+[node name="MarginContainer" type="MarginContainer" parent="MenuPrincipal"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ButtonInstagram" type="TextureButton" parent="MenuPrincipal/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+action_mode = 0
+texture_normal = ExtResource("6_70i05")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LabelVersao" type="Label" parent="MenuPrincipal/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 20
+text = "[GAME VERSION]"
+
 [node name="MenuOpcoes" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 1
@@ -617,24 +643,6 @@ parameters/looping = true
 [node name="Trovao" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_81crh")
 
-[node name="ButtonInstagram" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-offset_right = -40.0
-offset_bottom = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("6_70i05")
-ignore_texture_size = true
-stretch_mode = 5
-
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Opcoes" to="." method="_on_opcoes_pressed"]
@@ -643,6 +651,7 @@ stretch_mode = 5
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairSim" to="." method="_on_sair_sim_pressed"]
 [connection signal="pressed" from="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairNao" to="." method="_on_sair_nao_pressed"]
+[connection signal="pressed" from="MenuPrincipal/MarginContainer/ButtonInstagram" to="." method="_on_button_instagram_pressed"]
 [connection signal="visibility_changed" from="MenuOpcoes" to="." method="_on_menu_opcoes_visibility_changed"]
 [connection signal="value_changed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeGeral/HSlider" to="." method="_on_slider_volume_geral_value_changed"]
 [connection signal="value_changed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/VolumeMusica/HSlider" to="." method="_on_slider_volume_musica_value_changed"]
@@ -650,4 +659,3 @@ stretch_mode = 5
 [connection signal="toggled" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/TelaCheia/CheckButtonTelaCheia" to="." method="_on_check_button_tela_cheia_toggled"]
 [connection signal="pressed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Voltar" to="." method="_on_voltar_opcoes_pressed"]
 [connection signal="pressed" from="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/Voltar" to="." method="_on_voltar_creditos_pressed"]
-[connection signal="pressed" from="ButtonInstagram" to="." method="_on_button_instagram_pressed"]

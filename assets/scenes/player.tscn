@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=66 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
@@ -11,16 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://duux1n4qvt4xf" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_a_outline.png" id="7_nh07x"]
 [ext_resource type="Texture2D" uid="uid://bixv66sany65t" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_s_outline.png" id="8_00pic"]
 [ext_resource type="Texture2D" uid="uid://ulm4ipqipuve" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_d_outline.png" id="9_0bskb"]
+[ext_resource type="Texture2D" uid="uid://d3xctxuhdmigh" path="res://assets/textures/AgendaCapaTextureBlack.jpg" id="9_msj1n"]
 [ext_resource type="Texture2D" uid="uid://c15i6xjax4ph8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_shift_outline.png" id="10_1dmvh"]
+[ext_resource type="Texture2D" uid="uid://bqik6qx4rvv1" path="res://assets/textures/AgendaFolhaTexture.jpg" id="10_ktpxd"]
+[ext_resource type="FontFile" uid="uid://dbwh0wnd303hu" path="res://assets/fonts/IMFeENsc28P.ttf" id="11_dvip7"]
 [ext_resource type="Texture2D" uid="uid://drq1tdsc5pvh0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_ctrl_outline.png" id="11_ratp2"]
+[ext_resource type="Texture2D" uid="uid://1kjoqg8ljb0g" path="res://assets/cartas/Carta_Terence.jpg" id="12_beuf1"]
+[ext_resource type="Texture2D" uid="uid://0kwnxspp82wn" path="res://icon.svg" id="13_0e2pd"]
 [ext_resource type="Script" uid="uid://qqqq8ydrexln" path="res://scripts/menu_pause.gd" id="14_0bskb"]
 [ext_resource type="AudioStream" uid="uid://bbbim7rqf3pf6" path="res://assets/sounds/walking-on-wood-363349.mp3" id="14_00pic"]
 [ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="15_wf17w"]
 [ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="16_msj1n"]
-[ext_resource type="Texture2D" uid="uid://cm3chjprx5jun" path="res://assets/icons/PNG/White/2x/arrowRight.png" id="17_ktpxd"]
-[ext_resource type="Texture2D" uid="uid://dbxpusbfsqafn" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_e_outline.png" id="18_dvip7"]
-[ext_resource type="Texture2D" uid="uid://bsl1kga0okqvo" path="res://assets/icons/PNG/White/2x/arrowLeft.png" id="19_beuf1"]
-[ext_resource type="Texture2D" uid="uid://k0qxrnc8gxja" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_q_outline.png" id="20_0e2pd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6vv5"]
 margin = 0.0
@@ -76,35 +77,6 @@ keycode = 4194305
 [sub_resource type="Shortcut" id="Shortcut_ratp2"]
 events = [SubResource("InputEventKey_1dmvh")]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ay2jx"]
-bg_color = Color(1, 0.98, 0.88, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.650128, 0.650128, 0.650128, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_size = 4
-shadow_offset = Vector2(0.68, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_jukhh"]
-font_size = 24
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
-shadow_size = 4
-shadow_offset = Vector2(3.1, 1)
-
-[sub_resource type="InputEventKey" id="InputEventKey_o8fc1"]
-device = -1
-keycode = 69
-unicode = 101
-
-[sub_resource type="Shortcut" id="Shortcut_gdn7j"]
-events = [SubResource("InputEventKey_o8fc1")]
-
 [sub_resource type="InputEventKey" id="InputEventKey_qfnet"]
 device = -1
 keycode = 81
@@ -112,6 +84,106 @@ unicode = 113
 
 [sub_resource type="Shortcut" id="Shortcut_6luef"]
 events = [SubResource("InputEventKey_qfnet")]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ay2jx"]
+load_path = "res://.godot/imported/arrowLeft.png-c15ca93bc45d9e5155ec9fe3ec7b864c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jukhh"]
+load_path = "res://.godot/imported/keyboard_q_outline.png-83730cf22a391f39d4b8adafdc7bc82f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdn7j"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 20.0
+texture = ExtResource("9_msj1n")
+region_rect = Rect2(0, 0, 6781, 4000)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6luef"]
+texture = ExtResource("10_ktpxd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmant"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omckb"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqo28"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5eo68"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="InputEventKey" id="InputEventKey_msj1n"]
+device = -1
+keycode = 69
+unicode = 101
+
+[sub_resource type="Shortcut" id="Shortcut_gdn7j"]
+events = [SubResource("InputEventKey_msj1n")]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fiote"]
+load_path = "res://.godot/imported/arrowRight.png-47b81357333b3a196c961cef80351a80.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5308x"]
+load_path = "res://.godot/imported/keyboard_e_outline.png-a451e524e5e69dba88cee91a68245b32.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84enu"]
 bg_color = Color(1, 1, 1, 0.25)
@@ -456,7 +528,6 @@ text = "FECHAR"
 flat = true
 
 [node name="NoteBookHUD" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D" node_paths=PackedStringArray("player")]
-visible = false
 script = ExtResource("15_wf17w")
 player = NodePath("../../../../..")
 
@@ -469,108 +540,535 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("16_msj1n")
 
-[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="PanelPg1" type="Panel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer"]
-custom_minimum_size = Vector2(1200, 900)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ay2jx")
-
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer/PanelPg1"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "ISSO É O UM TESTE"
-label_settings = SubResource("LabelSettings_jukhh")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PanelPg2" type="Panel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer"]
-custom_minimum_size = Vector2(1200, 900)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ay2jx")
-
-[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/CenterContainer/PanelPg2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "ISSO É O UM TESTE, SÓ QUE 2"
-label_settings = SubResource("LabelSettings_jukhh")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ButtonPage2" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.85
-anchor_top = 0.5
-anchor_right = 0.85
-anchor_bottom = 0.5
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-shortcut = SubResource("Shortcut_gdn7j")
-shortcut_in_tooltip = false
-
-[node name="ContainerSprites" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 100.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SpriteArrowRight" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2/ContainerSprites"]
-position = Vector2(0, -100)
-texture = ExtResource("17_ktpxd")
-
-[node name="SpriteKeyE" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage2/ContainerSprites"]
-texture = ExtResource("18_dvip7")
-
-[node name="ButtonPage1" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.5
-anchor_right = 0.1
-anchor_bottom = 0.5
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-shortcut = SubResource("Shortcut_6luef")
-shortcut_in_tooltip = false
-
-[node name="ContainerSprites" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 100.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
+theme_override_constants/separation = 30
 alignment = 1
 
-[node name="SpriteArrowLeft" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1/ContainerSprites"]
-position = Vector2(0, -100)
-texture = ExtResource("19_beuf1")
+[node name="ContainerSetaEsquerda" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer"]
+layout_mode = 2
+alignment = 1
 
-[node name="SpriteKeyQ" type="Sprite2D" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/ButtonPage1/ContainerSprites"]
-texture = ExtResource("20_0e2pd")
+[node name="ButtonLeft" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaEsquerda"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+shortcut = SubResource("Shortcut_6luef")
+shortcut_in_tooltip = false
+texture_normal = SubResource("CompressedTexture2D_ay2jx")
+stretch_mode = 0
+
+[node name="TextureKeyQ" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaEsquerda"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("CompressedTexture2D_jukhh")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ContainerCapa" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_gdn7j")
+
+[node name="ContainerPaginas" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa"]
+custom_minimum_size = Vector2(1200, 800)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_6luef")
+
+[node name="ContainerFolhaObjetivos" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ContainerPaginaEsquerda" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 50
+
+[node name="ContainerObjetivos" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos/ContainerPaginaEsquerda"]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LabelTitulo" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos/ContainerPaginaEsquerda/ContainerObjetivos"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_dvip7")
+theme_override_font_sizes/normal_font_size = 50
+text = "Objetivos"
+fit_content = true
+
+[node name="LabelObjetivos" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos/ContainerPaginaEsquerda/ContainerObjetivos"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_dvip7")
+theme_override_font_sizes/normal_font_size = 35
+text = "- Exemplo de objetivo
+-Outro exemplo"
+
+[node name="ContainerContexto" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos/ContainerPaginaEsquerda"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_gmant")
+
+[node name="LabelContexto" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos/ContainerPaginaEsquerda/ContainerContexto"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_dvip7")
+theme_override_font_sizes/normal_font_size = 25
+text = "[CONTEXTUALIZAÇÃO]"
+fit_content = true
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContainerPaginaDireita" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos/ContainerPaginaDireita"]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+
+[node name="LabelTitulo" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos/ContainerPaginaDireita/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_dvip7")
+theme_override_font_sizes/normal_font_size = 50
+text = "Sumário"
+fit_content = true
+
+[node name="LabelObjetivos" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos/ContainerPaginaDireita/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/paragraph_separation = 22
+theme_override_fonts/normal_font = ExtResource("11_dvip7")
+theme_override_font_sizes/normal_font_size = 35
+text = "I - Objetivos
+II - Documentos
+III - Inventário"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="ContainerFolhaCartas" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ContainerPaginaEsquerda" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 50
+
+[node name="ContainerDocumentos" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda"]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LabelTitulo" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_dvip7")
+theme_override_font_sizes/font_size = 50
+text = "Documentos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContainerDocumentos" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="PanelDocumento" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
+
+[node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento/ContainerDocumentoExemplo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="TextureCarta" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento/ContainerDocumentoExemplo/CenterContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("12_beuf1")
+expand_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento/ContainerDocumentoExemplo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelNomeCarta" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento/ContainerDocumentoExemplo/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_dvip7")
+theme_override_font_sizes/font_size = 22
+text = "[NOME DA CARTA]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDocumento2" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
+
+[node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento2"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento2/ContainerDocumentoExemplo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="TextureCarta" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento2/ContainerDocumentoExemplo/CenterContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("12_beuf1")
+expand_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento2/ContainerDocumentoExemplo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelNomeCarta" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento2/ContainerDocumentoExemplo/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_dvip7")
+theme_override_font_sizes/font_size = 22
+text = "[NOME DA CARTA]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDocumento3" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
+
+[node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento3"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento3/ContainerDocumentoExemplo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="TextureCarta" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento3/ContainerDocumentoExemplo/CenterContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("12_beuf1")
+expand_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento3/ContainerDocumentoExemplo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelNomeCarta" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento3/ContainerDocumentoExemplo/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_dvip7")
+theme_override_font_sizes/font_size = 22
+text = "[NOME DA CARTA]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDocumento4" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
+
+[node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento4"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento4/ContainerDocumentoExemplo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="TextureCarta" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento4/ContainerDocumentoExemplo/CenterContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("12_beuf1")
+expand_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento4/ContainerDocumentoExemplo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelNomeCarta" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/PanelDocumento4/ContainerDocumentoExemplo/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_dvip7")
+theme_override_font_sizes/font_size = 22
+text = "[NOME DA CARTA]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContainerConteudoDocumento" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.4
+theme_override_styles/panel = SubResource("StyleBoxFlat_gmant")
+
+[node name="LabelConteudo" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/ContainerConteudoDocumento"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_dvip7")
+theme_override_font_sizes/normal_font_size = 25
+text = "[CONTEÚDO DA CARTA]"
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContainerPaginaDireita" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaDireita"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaDireita/CenterContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+expand_mode = 5
+
+[node name="ContainerFolhaInventario" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ContainerPaginaEsquerda" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_dvip7")
+theme_override_font_sizes/font_size = 40
+text = "Inventário"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="PanelItem" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem2" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem2"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem3" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem3"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem4" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem4"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem5" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem5"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem6" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem6"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem7" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem7"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem8" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem8"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem9" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem9"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="PanelItem10" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
+
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem10"]
+layout_mode = 2
+texture = ExtResource("13_0e2pd")
+
+[node name="ContainerPaginaDireita" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PanelImagemItem" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5eo68")
+
+[node name="TextureImagemItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer/PanelImagemItem"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("12_beuf1")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="PanelDescricaoItem" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5eo68")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer/PanelDescricaoItem"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_dvip7")
+theme_override_font_sizes/normal_font_size = 20
+text = "[DESCRIÇÂO DO ITEM]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContainerSetaDireita" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonRight" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaDireita"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+shortcut = SubResource("Shortcut_gdn7j")
+shortcut_in_tooltip = false
+texture_normal = SubResource("CompressedTexture2D_fiote")
+stretch_mode = 0
+
+[node name="TextureKeyE" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaDireita"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("CompressedTexture2D_5308x")
+expand_mode = 4
+stretch_mode = 5
 
 [node name="Tutorial" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
 layer = -1
@@ -711,6 +1209,7 @@ libraries = {
 playback_auto_capture_transition_type = 7
 
 [node name="MenuPause" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
+visible = false
 script = ExtResource("14_0bskb")
 
 [node name="Pause" type="Control" parent="Neck/Head/Eyes/Camera3D/MenuPause"]
@@ -1018,6 +1517,8 @@ wait_time = 0.05
 one_shot = true
 
 [connection signal="pressed" from="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer3/Button" to="Neck/Head/Eyes/Camera3D/Documentos" method="_on_button_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaEsquerda/ButtonLeft" to="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI" method="_on_button_left_pressed"]
+[connection signal="pressed" from="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaDireita/ButtonRight" to="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI" method="_on_button_right_pressed"]
 [connection signal="visibility_changed" from="Neck/Head/Eyes/Camera3D/MenuPause" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_visibility_changed"]
 [connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Continuar" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_continuar_pressed"]
 [connection signal="pressed" from="Neck/Head/Eyes/Camera3D/MenuPause/Pause/PanelContainer/Divisao/MenuLateral/Opcoes/Configuracoes" to="Neck/Head/Eyes/Camera3D/MenuPause" method="_on_configuracoes_pressed"]

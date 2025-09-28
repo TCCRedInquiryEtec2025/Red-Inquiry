@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8npe4rqyyw3x"
-path.s3tc="res://.godot/imported/Fabric007_2K_Normal.jpg-f2cd84992ec0cb3b7b927929245deb98.s3tc.ctex"
+uid="uid://cog4gy6jspq3e"
+path.s3tc="res://.godot/imported/folhaArrancada.jpg-8bdf0e5fa6a4a918ffe3c3599a8829ae.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/Fabric007_2K_Normal.jpg"
-dest_files=["res://.godot/imported/Fabric007_2K_Normal.jpg-f2cd84992ec0cb3b7b927929245deb98.s3tc.ctex"]
+source_file="res://assets/cartas/folhaArrancada.jpg"
+dest_files=["res://.godot/imported/folhaArrancada.jpg-8bdf0e5fa6a4a918ffe3c3599a8829ae.s3tc.ctex"]
 
 [params]
 

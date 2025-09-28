@@ -46,6 +46,7 @@ shading_mode = 0
 heightmap_deep_parallax = true
 heightmap_min_layers = 64
 heightmap_max_layers = 32
+uv1_scale = Vector3(3.1, 2.1, 0)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nkmkp"]
 _surfaces = [{

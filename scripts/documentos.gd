@@ -9,6 +9,7 @@ extends PanelContainer
 	"terence": preload("res://assets/cartas/Carta_Terence.jpg"),
 	"joanne": preload("res://assets/cartas/Carta_Joanne_Rochefart.jpg"),
 	"arquivo": preload("res://assets/cartas/arquivo.png"),
+	"folha_arrancada": preload("res://assets/cartas/folhaArrancada.jpg"),
 }
 
 func _process(_delta: float) -> void:
@@ -57,6 +58,9 @@ func _on_interacted(interactable: Carta) -> void:
 		elif(interactable.name.to_lower().contains("arquivo")):
 			print(">> Achou o arquivo")
 			carta.texture = carta_map["arquivo"]
+		elif(interactable.name.to_lower().contains("arrancada")):
+			print(">> Achou a folha arrancada")
+			carta.texture = carta_map["folha_arrancada"]
 			
 		else:
 			print(">> Achou uma carta não identificada")

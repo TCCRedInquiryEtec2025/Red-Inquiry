@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8npe4rqyyw3x"
-path.s3tc="res://.godot/imported/Fabric007_2K_Normal.jpg-f2cd84992ec0cb3b7b927929245deb98.s3tc.ctex"
+uid="uid://bqik6qx4rvv1"
+path.s3tc="res://.godot/imported/AgendaFolhaTexture.jpg-ec437217c02710d29e93c47b36bdbd51.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/Fabric007_2K_Normal.jpg"
-dest_files=["res://.godot/imported/Fabric007_2K_Normal.jpg-f2cd84992ec0cb3b7b927929245deb98.s3tc.ctex"]
+source_file="res://assets/textures/AgendaFolhaTexture.jpg"
+dest_files=["res://.godot/imported/AgendaFolhaTexture.jpg-ec437217c02710d29e93c47b36bdbd51.s3tc.ctex"]
 
 [params]
 
