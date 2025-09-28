@@ -20,5 +20,3 @@ export_presets.cfg
 # OS junk
 .DS_Store
 Thumbs.db
-
-assets/models
