@@ -3,11 +3,19 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://7lwvl3kmh76q"
+<<<<<<< Updated upstream
 valid=false
+=======
+path="res://.godot/imported/fan.mp3-1fdd7c0f69b291cb370d78a54e5b8de9.mp3str"
+>>>>>>> Stashed changes
 
 [deps]
 
 source_file="res://assets/sounds/fan.mp3"
+<<<<<<< Updated upstream
+=======
+dest_files=["res://.godot/imported/fan.mp3-1fdd7c0f69b291cb370d78a54e5b8de9.mp3str"]
+>>>>>>> Stashed changes
 
 [params]
 

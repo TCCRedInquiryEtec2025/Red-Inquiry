@@ -5,8 +5,11 @@ extends Node3D
 func _ready() -> void:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	$NoteBookHUD.player = $Player
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 	$ParticulasChuva.emitting = true

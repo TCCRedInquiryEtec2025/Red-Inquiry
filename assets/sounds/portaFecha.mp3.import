@@ -3,11 +3,19 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://iqbmcm1vte7t"
+<<<<<<< Updated upstream
 valid=false
+=======
+path="res://.godot/imported/portaFecha.mp3-bc4e14427089fae8e2aa2e612a5f9b97.mp3str"
+>>>>>>> Stashed changes
 
 [deps]
 
 source_file="res://assets/sounds/portaFecha.mp3"
+<<<<<<< Updated upstream
+=======
+dest_files=["res://.godot/imported/portaFecha.mp3-bc4e14427089fae8e2aa2e612a5f9b97.mp3str"]
+>>>>>>> Stashed changes
 
 [params]
 

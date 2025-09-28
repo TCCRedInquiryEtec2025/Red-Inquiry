@@ -53,6 +53,9 @@ func _on_button_reiniciar_pressed() -> void:
 			# Atualizando também o índice no script
 			letra_vbox.index = letra_vbox.letras.find(label.text)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

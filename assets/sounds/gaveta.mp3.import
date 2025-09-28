@@ -3,11 +3,19 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d18534pqo8fxj"
+<<<<<<< Updated upstream
 valid=false
+=======
+path="res://.godot/imported/gaveta.mp3-b453ce3b4375e54aa40c016ddd94330c.mp3str"
+>>>>>>> Stashed changes
 
 [deps]
 
 source_file="res://assets/sounds/gaveta.mp3"
+<<<<<<< Updated upstream
+=======
+dest_files=["res://.godot/imported/gaveta.mp3-b453ce3b4375e54aa40c016ddd94330c.mp3str"]
+>>>>>>> Stashed changes
 
 [params]
 

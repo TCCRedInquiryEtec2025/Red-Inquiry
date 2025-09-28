@@ -2,16 +2,36 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:assets/cartas/arquivo.png.import
 uid="uid://bvvyklrc1r6up"
 path="res://.godot/imported/arquivo.png-93d90b55168a77ca5bf26c58971cc6e9.ctex"
+========
+uid="uid://1kjoqg8ljb0g"
+path="res://.godot/imported/Carta_Terence.jpg-48842283177247839e018bea73d07f4c.ctex"
+>>>>>>>> Stashed changes:assets/cartas/Carta_Terence.jpg.import
+=======
+uid="uid://ciav0h1exguag"
+path="res://.godot/imported/arquivo.png-93d90b55168a77ca5bf26c58971cc6e9.ctex"
+>>>>>>> Stashed changes
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:assets/cartas/arquivo.png.import
 source_file="res://assets/cartas/arquivo.png"
 dest_files=["res://.godot/imported/arquivo.png-93d90b55168a77ca5bf26c58971cc6e9.ctex"]
+========
+source_file="res://assets/cartas/Carta_Terence.jpg"
+dest_files=["res://.godot/imported/Carta_Terence.jpg-48842283177247839e018bea73d07f4c.ctex"]
+>>>>>>>> Stashed changes:assets/cartas/Carta_Terence.jpg.import
+=======
+source_file="res://assets/cartas/arquivo.png"
+dest_files=["res://.godot/imported/arquivo.png-93d90b55168a77ca5bf26c58971cc6e9.ctex"]
+>>>>>>> Stashed changes
 
 [params]
 

@@ -1,10 +1,13 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=4 uid="uid://bxnwlt1bl5qw7"]
 
 [ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="1_te44w"]
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="2_p6hy1"]
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 [gd_scene load_steps=24 format=4 uid="uid://bxnwlt1bl5qw7"]
