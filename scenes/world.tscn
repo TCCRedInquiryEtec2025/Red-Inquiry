@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=112 format=4 uid="uid://bl3me73mor0ud"]
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_71j4m"]
@@ -43,6 +44,52 @@
 [ext_resource type="PackedScene" uid="uid://ph5dmad4elmn" path="res://assets/scenes/arquivo.tscn" id="35_817gm"]
 [ext_resource type="PackedScene" uid="uid://ciqb6x5eawn8v" path="res://assets/scenes/carta_joanne.tscn" id="36_ggc52"]
 [ext_resource type="PackedScene" uid="uid://ccip78h4p28f0" path="res://assets/scenes/jornal_semanal.tscn" id="37_l8ah6"]
+=======
+[gd_scene load_steps=99 format=4 uid="uid://bl3me73mor0ud"]
+
+[ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_g1xw2"]
+[ext_resource type="PackedScene" uid="uid://cs4tduc8jd2vn" path="res://assets/scenes/player.tscn" id="2_c6i3x"]
+[ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="3_vsras"]
+[ext_resource type="PackedScene" uid="uid://dnhj12foq7mg4" path="res://assets/scenes/banqueta.tscn" id="4_m5sfa"]
+[ext_resource type="Texture2D" uid="uid://drlxoye4i20q6" path="res://assets/textures/Concrete042A_4K-PNG_Color.png" id="5_t31jn"]
+[ext_resource type="PackedScene" uid="uid://q67q0fijhxbv" path="res://assets/scenes/porta_saida.tscn" id="6_rh0j0"]
+[ext_resource type="PackedScene" uid="uid://r4sr0buf7dbh" path="res://assets/scenes/paredeJanela.tscn" id="7_4q8fb"]
+[ext_resource type="PackedScene" uid="uid://dl3rricwut7yg" path="res://assets/scenes/PortaDetetiveAnimada.tscn" id="9_ll66a"]
+[ext_resource type="PackedScene" uid="uid://biudj1nuio5tr" path="res://assets/scenes/Carpete.tscn" id="10_n78ak"]
+[ext_resource type="PackedScene" uid="uid://dn7fwlgngg75t" path="res://assets/scenes/Sofa.tscn" id="11_oq354"]
+[ext_resource type="PackedScene" uid="uid://bec1o7ycwl88g" path="res://assets/scenes/Estante.tscn" id="12_tbfbj"]
+[ext_resource type="PackedScene" uid="uid://bn1elfij2nvlc" path="res://assets/scenes/Gaveteiro.tscn" id="13_pnxpg"]
+[ext_resource type="PackedScene" uid="uid://cfnw03t333d23" path="res://assets/scenes/Relogio.tscn" id="14_qhtwx"]
+[ext_resource type="PackedScene" uid="uid://8jtajy5bce6t" path="res://assets/scenes/Lampada.tscn" id="15_lcva7"]
+[ext_resource type="PackedScene" uid="uid://bopd65sk2st0l" path="res://assets/scenes/pendurador.tscn" id="16_raiy0"]
+[ext_resource type="PackedScene" uid="uid://dndue43ha600b" path="res://assets/scenes/portabanheiro.tscn" id="16_rh0j0"]
+[ext_resource type="Texture2D" uid="uid://rdpik2xs0fvt" path="res://assets/hdris/wmremove-transformed_LE_upscale_balanced_x4.jpg" id="17_hpdng"]
+[ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="18_mliiq"]
+[ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="19_s13ow"]
+[ext_resource type="Texture2D" uid="uid://cm3chjprx5jun" path="res://assets/icons/PNG/White/2x/arrowRight.png" id="20_0wyva"]
+[ext_resource type="Texture2D" uid="uid://x7ksgt7ryanh" path="res://assets/textures/AgendaCapaTextureBlack.jpg" id="20_rga7q"]
+[ext_resource type="Texture2D" uid="uid://o3pstuwpc16x" path="res://assets/textures/AgendaFolhaTexture.jpg" id="21_6oujy"]
+[ext_resource type="Texture2D" uid="uid://dbxpusbfsqafn" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_e_outline.png" id="21_bgytn"]
+[ext_resource type="FontFile" uid="uid://5jq1pay8nb2q" path="res://assets/fonts/IMFeENsc28P.ttf" id="22_hi6a0"]
+[ext_resource type="Texture2D" uid="uid://bsl1kga0okqvo" path="res://assets/icons/PNG/White/2x/arrowLeft.png" id="22_nkjs1"]
+[ext_resource type="Texture2D" uid="uid://k0qxrnc8gxja" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_q_outline.png" id="23_scewh"]
+[ext_resource type="PackedScene" uid="uid://c4ungqri0a4e7" path="res://assets/scenes/quadro.tscn" id="25_c0cx3"]
+[ext_resource type="PackedScene" uid="uid://bqgy0t40ljfwu" path="res://assets/scenes/Lixo.tscn" id="26_pafkb"]
+[ext_resource type="PackedScene" uid="uid://lhsujdq04cxh" path="res://assets/scenes/MesinhaCentro.tscn" id="27_vx8ew"]
+[ext_resource type="PackedScene" uid="uid://3446ia86njgy" path="res://assets/scenes/Planta.tscn" id="28_6et6a"]
+[ext_resource type="PackedScene" uid="uid://c3vam4vl63k65" path="res://assets/scenes/mesa_dois.tscn" id="29_cnewj"]
+[ext_resource type="PackedScene" uid="uid://djfxl76tmxu75" path="res://assets/scenes/cadera.tscn" id="30_mssx4"]
+[ext_resource type="PackedScene" uid="uid://bxnwlt1bl5qw7" path="res://assets/scenes/comoda.tscn" id="31_ks4vj"]
+[ext_resource type="PackedScene" uid="uid://cejwurtknbdgp" path="res://assets/scenes/cama.tscn" id="32_xsycb"]
+[ext_resource type="PackedScene" uid="uid://cma0802wr3ivw" path="res://assets/scenes/Shelf.tscn" id="33_g3nm6"]
+[ext_resource type="PackedScene" uid="uid://ciqb6x5eawn8v" path="res://assets/scenes/carta_joanne.tscn" id="34_hfkgr"]
+[ext_resource type="PackedScene" uid="uid://ccip78h4p28f0" path="res://assets/scenes/jornal_semanal.tscn" id="35_5g8w7"]
+[ext_resource type="Script" uid="uid://dn6jscnm8fwkg" path="res://scripts/trovao.gd" id="36_71hwl"]
+[ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/sounds/thunderstorm-ambiance-191991 (2).mp3" id="37_ovexh"]
+[ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="38_s7nc1"]
+[ext_resource type="PackedScene" uid="uid://dymlnvhjf20c0" path="res://assets/scenes/ventilador.tscn" id="39_7qkyt"]
+[ext_resource type="PackedScene" uid="uid://c64ecbs7anqes" path="res://assets/scenes/lampadaQuarto.tscn" id="40_ixsj0"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
 shading_mode = 0
@@ -819,6 +866,7 @@ glow_enabled = true
 volumetric_fog_density = 0.1761
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f17e3"]
 texture = ExtResource("15_fh13f")
@@ -828,6 +876,13 @@ texture = ExtResource("16_rup4s")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_817gm"]
 bg_color = Color(0.843137, 0.164706, 0.0117647, 1)
+=======
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eo1xk"]
+texture = ExtResource("20_rga7q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18clu"]
+texture = ExtResource("21_6oujy")
+>>>>>>> Stashed changes
 
 [sub_resource type="LabelSettings" id="LabelSettings_k0juu"]
 font_size = 24
@@ -836,6 +891,9 @@ outline_size = 2
 shadow_size = 4
 shadow_offset = Vector2(3.1, 1)
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0juu"]
 bg_color = Color(1, 0.98, 0.88, 1)
@@ -850,13 +908,6 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 shadow_size = 4
 shadow_offset = Vector2(0.68, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_k0juu"]
-font_size = 24
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
-shadow_size = 4
-shadow_offset = Vector2(3.1, 1)
 
 [sub_resource type="InputEventKey" id="InputEventKey_o8fc1"]
 device = -1
@@ -1028,6 +1079,12 @@ skeleton = NodePath("")
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, -8.50043, 2.50421, 0)
 shape = SubResource("ConcavePolygonShape3D_7t5mc")
 
+<<<<<<< Updated upstream
+=======
+[node name="PortaSaida" parent="Office/ParedeFrente/StaticBody3D" instance=ExtResource("6_rh0j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45181, 0.568898, -0.0133459)
+
+>>>>>>> Stashed changes
 [node name="ParedeTras" type="Node3D" parent="Office"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.120952)
 
@@ -1198,14 +1255,24 @@ transform = Transform3D(1, 0, 0, 0, 1.50662, 0, 0, 0, 1, -5.37425, 2.1594, -1.22
 [node name="Pendurador" parent="Office" instance=ExtResource("8_0nbtd")]
 transform = Transform3D(0.85, 0, 0, 0, 1.281, 0, 0, 0, 0.85, 1.85858, 0.55004, 5.01518)
 
+<<<<<<< Updated upstream
+=======
+[node name="Portabanheiro" parent="Office" instance=ExtResource("16_rh0j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78732, 0.56296, 1.22684)
+
+>>>>>>> Stashed changes
 [node name="Ambientacao" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Ambientacao"]
 environment = SubResource("Environment_i7141")
 
 [node name="NoteBookHUD" type="CanvasLayer" parent="."]
+<<<<<<< Updated upstream
 visible = false
 script = ExtResource("4_k0juu")
+=======
+script = ExtResource("18_mliiq")
+>>>>>>> Stashed changes
 
 [node name="AgendaUI" type="Control" parent="NoteBookHUD"]
 layout_mode = 3
@@ -1224,21 +1291,44 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelPg1" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
+[node name="AgendaCapa" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
+custom_minimum_size = Vector2(1300, 950)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_eo1xk")
+
+[node name="DocsPg" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
 custom_minimum_size = Vector2(1200, 900)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
+theme_override_styles/panel = SubResource("StyleBoxTexture_18clu")
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 [node name="Label" type="Label" parent="NoteBookHUD/AgendaUI/CenterContainer/PanelPg1"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "ISSO É O UM TESTE"
+=======
+[node name="VBoxContainer" type="VBoxContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg"]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 592.0
+offset_bottom = 900.0
+
+[node name="CenterContainer" type="CenterContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="TituloDocs" type="Label" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("22_hi6a0")
+text = "SELEÇÃO DE DOCUMENTOS"
+>>>>>>> Stashed changes
 label_settings = SubResource("LabelSettings_k0juu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+<<<<<<< Updated upstream
 =======
 [node name="CenterContainer" type="CenterContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg1"]
 layout_mode = 1
@@ -1310,7 +1400,13 @@ texture_normal = ExtResource("17_fh13f")
 stretch_mode = 0
 
 >>>>>>> Stashed changes
+=======
+[node name="VBoxContainer" type="VBoxContainer" parent="NoteBookHUD/AgendaUI/CenterContainer/DocsPg/VBoxContainer"]
+layout_mode = 2
+
+>>>>>>> Stashed changes
 [node name="PanelPg2" type="Panel" parent="NoteBookHUD/AgendaUI/CenterContainer"]
+visible = false
 custom_minimum_size = Vector2(1200, 900)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k0juu")
@@ -1332,6 +1428,9 @@ anchor_left = 0.85
 anchor_top = 0.5
 anchor_right = 0.85
 anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 toggle_mode = true

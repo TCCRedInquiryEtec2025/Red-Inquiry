@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bud0kdvqfhvbi"
-path="res://.godot/imported/ficha-pi1.png-90163df870a2581ccdbdf046b23fec91.ctex"
+uid="uid://d10h2qdnearmj"
+path="res://.godot/imported/Cork002_1K-JPG_Color.jpg-506f7cd2a6594c4ca31df96dee0d9a25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ficha-pi1.png"
-dest_files=["res://.godot/imported/ficha-pi1.png-90163df870a2581ccdbdf046b23fec91.ctex"]
+source_file="res://assets/textures/Cork002_1K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/Cork002_1K-JPG_Color.jpg-506f7cd2a6594c4ca31df96dee0d9a25.ctex"]
 
 [params]
 
