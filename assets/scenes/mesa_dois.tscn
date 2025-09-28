@@ -1,9 +1,12 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=21 format=4 uid="uid://c3vam4vl63k65"]
 
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="1_yy41q"]
 [ext_resource type="PackedScene" uid="uid://cc2gvjqiuwh4j" path="res://assets/scenes/folhaArrancada.tscn" id="2_xjwwk"]
 =======
+=======
+>>>>>>> Stashed changes
 [gd_scene load_steps=24 format=4 uid="uid://c3vam4vl63k65"]
 
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="1_yy41q"]

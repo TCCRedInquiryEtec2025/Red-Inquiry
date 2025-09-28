@@ -45,8 +45,12 @@ var freeLookTiltAmount = 8
 
 # Input vars
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 var direction = Vector3.ZERO
 const mouseSensi = 0.25
+=======
+var direction := Vector3.ZERO
+>>>>>>> Stashed changes
 =======
 var direction := Vector3.ZERO
 >>>>>>> Stashed changes
@@ -138,7 +142,12 @@ func _physics_process(delta: float) -> void:
 		headBobbingIndex += headBobbingCrouchingSpeed * delta
 		
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	if is_on_floor() and input_dir != Vector2.ZERO:
+=======
+	# Handle Movement / Camera
+	if is_on_floor() and input_dir != Vector2.ZERO:		
+>>>>>>> Stashed changes
 =======
 	# Handle Movement / Camera
 	if is_on_floor() and input_dir != Vector2.ZERO:		
@@ -194,4 +203,7 @@ func _update_step_timer() -> void:
 	else:
 		StepTimer.wait_time = 1.35
 		
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

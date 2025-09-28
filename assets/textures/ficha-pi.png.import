@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream:assets/textures/ficha-pi.png.import
-uid="uid://dcqgrsr11jmvj"
+uid="uid://ce3auvf82wj0b"
 path="res://.godot/imported/ficha-pi.png-6923ceeca6eee7096f94887da60ded4b.ctex"
-=======
-uid="uid://1kjoqg8ljb0g"
-path="res://.godot/imported/Carta_Terence.jpg-48842283177247839e018bea73d07f4c.ctex"
->>>>>>> Stashed changes:assets/cartas/Carta_Terence.jpg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< Updated upstream:assets/textures/ficha-pi.png.import
 source_file="res://assets/textures/ficha-pi.png"
 dest_files=["res://.godot/imported/ficha-pi.png-6923ceeca6eee7096f94887da60ded4b.ctex"]
-=======
-source_file="res://assets/cartas/Carta_Terence.jpg"
-dest_files=["res://.godot/imported/Carta_Terence.jpg-48842283177247839e018bea73d07f4c.ctex"]
->>>>>>> Stashed changes:assets/cartas/Carta_Terence.jpg.import
 
 [params]
 

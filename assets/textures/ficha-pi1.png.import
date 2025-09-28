@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream:assets/textures/ficha-pi1.png.import
-uid="uid://bud0kdvqfhvbi"
+uid="uid://6lywrqcvtauk"
 path="res://.godot/imported/ficha-pi1.png-90163df870a2581ccdbdf046b23fec91.ctex"
-=======
-uid="uid://c6tss7lcdqskg"
-path="res://.godot/imported/Jornal.png-6d567c66c1d18641927293ffcba2d0e6.ctex"
->>>>>>> Stashed changes:assets/cartas/Jornal.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< Updated upstream:assets/textures/ficha-pi1.png.import
 source_file="res://assets/textures/ficha-pi1.png"
 dest_files=["res://.godot/imported/ficha-pi1.png-90163df870a2581ccdbdf046b23fec91.ctex"]
-=======
-source_file="res://assets/cartas/Jornal.png"
-dest_files=["res://.godot/imported/Jornal.png-6d567c66c1d18641927293ffcba2d0e6.ctex"]
->>>>>>> Stashed changes:assets/cartas/Jornal.png.import
 
 [params]
 
