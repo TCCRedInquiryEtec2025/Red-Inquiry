@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	if(codigo.check_phrase() == true):
 		GameState.setValue("podeAndar", true)
-		TransicaoCenas.change_scene("res://scenes/menuInicial.tscn")
+		TransicaoCenas.change_scene("res://scenes/fimDemo.tscn")
 		
 	else:
 		LabelResposta.visible = true

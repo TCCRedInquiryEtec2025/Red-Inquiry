@@ -1,7 +1,10 @@
 extends Control
 
-@onready var progress = $PanelContainer/VBoxContainer/CenterContainer2/ProgressBar
+@onready var progress = $PanelContainer/MarginContainer/VBoxContainer/ProgressBar
+@onready var label = $PanelContainer/MarginContainer/VBoxContainer/Label
 var path := "res://scenes/escritorio.tscn"
+
+var load_concluido := false
 
 func _ready():	
 	ResourceLoader.load_threaded_request(path, "PackedScene")
@@ -20,12 +23,18 @@ func _process(_delta: float) -> void:
 		ResourceLoader.THREAD_LOAD_LOADED:
 			progress.value = 100
 			
-			await get_tree().create_timer(1).timeout
+			load_concluido = true
 			
-			var world_scene = ResourceLoader.load_threaded_get(path)
-			TransicaoCenas.change_scene_to_packed(world_scene)
-			set_process(false)
+			label.text = "PRESSIONE QUALQUER TECLA PARA CONTINUAR"
 			
 		ResourceLoader.THREAD_LOAD_FAILED:
 			push_error("Falha ao carregar a cena: " + path)
 			set_process(false)
+
+
+func _input(_event: InputEvent) -> void:
+	if(load_concluido):
+		if(_event is InputEventKey):
+			TransicaoCenas.change_scene("res://scenes/cutscene.tscn")
+			set_process(false)
+			

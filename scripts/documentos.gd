@@ -49,6 +49,8 @@ func _on_interacted(interactable: Carta) -> void:
 			jornal.visible = true
 
 	if(interactable.tipo == interactable.TipoCarta.Carta):
+		label.scroll_to_line(0)
+		
 		if(interactable.name.to_lower().contains("terence")):
 			print(">> Achou a carta do Terence")
 			carta.texture = carta_map["terence"]

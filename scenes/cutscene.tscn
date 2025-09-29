@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2c6g66w0ncnx"]
+
+[ext_resource type="Script" uid="uid://ot6taq1csu43" path="res://scripts/cutscene.gd" id="1_a320b"]
+[ext_resource type="Texture2D" uid="uid://c6crsqdp41knm" path="res://assets/loadingScreen.png" id="1_edmg7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a320b"]
+texture = ExtResource("1_edmg7")
+modulate_color = Color(0.39679098, 0.39679098, 0.39679098, 1)
+
+[node name="CutScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a320b")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_a320b")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 60
+
+[node name="LabelTexto" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 24
+text = "ESEMPLO DE TESTO"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelPular" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/outline_size = 10
+text = "Pressione [ESPAÇO] para pular"
+horizontal_alignment = 1
+vertical_alignment = 1

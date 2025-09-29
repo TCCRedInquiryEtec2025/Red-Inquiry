@@ -304,6 +304,7 @@ theme_override_font_sizes/font_size = 20
 text = "[GAME VERSION]"
 
 [node name="MenuOpcoes" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -651,12 +652,12 @@ parameters/looping = true
 [node name="Trovao" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_81crh")
 
-[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Sair" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairSim" to="." method="_on_sair_sim_pressed"]
 [connection signal="pressed" from="MenuPrincipal/ConfirmaSair/MarginContainer/VBoxContainer/HBoxContainer/SairNao" to="." method="_on_sair_nao_pressed"]
 [connection signal="pressed" from="MenuPrincipal/MarginContainer/ButtonInstagram" to="." method="_on_button_instagram_pressed"]

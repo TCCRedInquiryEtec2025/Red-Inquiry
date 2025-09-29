@@ -5,4 +5,4 @@ func _ready() -> void:
 
 
 func _on_close_pressed() -> void:
-	get_tree().quit()
+	TransicaoCenas.change_scene("res://scenes/menuInicial.tscn")

@@ -6,7 +6,7 @@ func _ready() -> void:
 	visible = false
 
 func _input(event):
-	if event.is_action_pressed("ui_tab"):
+	if event.is_action_pressed("agenda"):
 		if(player.is_on_floor() and !GameState.getValue("pauseAberto")):
 			toggle_agenda()
 
