@@ -36,14 +36,14 @@ func _ready() -> void:
 		tween.tween_property(label, "modulate:a", 0, 0.8)
 		await tween.finished
 	
-	var world_scene = ResourceLoader.load_threaded_get("res://scenes/escritorio.tscn")
-	TransicaoCenas.change_scene_to_packed(world_scene)
+	TransicaoCenas.change_scene_to_packed(TransicaoCenas.cena_escritorio)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
-		var world_scene = ResourceLoader.load_threaded_get("res://scenes/escritorio.tscn")
-		TransicaoCenas.change_scene_to_packed(world_scene)
-		set_process(false)
+		if(TransicaoCenas.cena_escritorio):
+			TransicaoCenas.change_scene_to_packed(TransicaoCenas.cena_escritorio)
+		else:
+			print("⚠ Cena ainda não foi carregada")
 
 
 func pular_pisca() -> void:

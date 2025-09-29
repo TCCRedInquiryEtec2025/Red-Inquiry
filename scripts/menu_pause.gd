@@ -53,7 +53,7 @@ func _on_configuracoes_pressed() -> void:
 
 func _on_voltar_pressed() -> void:
 	visible = false
-	TransicaoCenas.change_scene("./scenes/MenuInicial.tscn")
+	TransicaoCenas.change_scene("res://scenes/MenuInicial.tscn")
 
 
 func _on_volume_value_changed(value: float) -> void:

@@ -529,6 +529,15 @@ text = "Em Desenvolvimento"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ButtonVoltar" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Voltar"
+flat = true
+
 [node name="Layout" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
 visible = false
 layout_mode = 2
@@ -667,4 +676,5 @@ stream = ExtResource("3_81crh")
 [connection signal="value_changed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade/HSlider" to="." method="_on_slider_sensibilidade_value_changed"]
 [connection signal="toggled" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/TelaCheia/CheckButtonTelaCheia" to="." method="_on_check_button_tela_cheia_toggled"]
 [connection signal="pressed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Voltar" to="." method="_on_voltar_opcoes_pressed"]
+[connection signal="pressed" from="MenuCreditos/CenterContainer/StylePanel/MarginContainer/ButtonVoltar" to="." method="_on_button_voltar_creditos_pressed"]
 [connection signal="pressed" from="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/Voltar" to="." method="_on_voltar_creditos_pressed"]

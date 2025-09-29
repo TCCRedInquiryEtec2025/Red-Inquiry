@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var cena_escritorio: PackedScene
+
 var is_changing: bool = false
 
 func _ready() -> void:

@@ -107,3 +107,8 @@ func _on_menu_opcoes_visibility_changed() -> void:
 
 func _on_button_instagram_pressed() -> void:
 	OS.shell_open("https://www.instagram.com/red.inquiry/")
+
+
+func _on_button_voltar_creditos_pressed() -> void:
+	$MenuPrincipal.visible = true
+	$MenuCreditos.visible = false

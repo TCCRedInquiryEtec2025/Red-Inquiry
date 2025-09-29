@@ -21,10 +21,9 @@ func _process(_delta: float) -> void:
 			progress.value = progress_array[0] * 100
 		
 		ResourceLoader.THREAD_LOAD_LOADED:
+			TransicaoCenas.cena_escritorio = ResourceLoader.load_threaded_get(path)
 			progress.value = 100
-			
 			load_concluido = true
-			
 			label.text = "PRESSIONE QUALQUER TECLA PARA CONTINUAR"
 			
 		ResourceLoader.THREAD_LOAD_FAILED:
@@ -32,9 +31,8 @@ func _process(_delta: float) -> void:
 			set_process(false)
 
 
-func _input(_event: InputEvent) -> void:
-	if(load_concluido):
-		if(_event is InputEventKey):
-			TransicaoCenas.change_scene("res://scenes/cutscene.tscn")
-			set_process(false)
+func _input(event: InputEvent) -> void:
+	if(load_concluido and event is InputEventKey):
+		TransicaoCenas.change_scene("res://scenes/cutscene.tscn")
+		set_process(false)
 			
