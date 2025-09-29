@@ -209,7 +209,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_qy22g")
 }
 
-[node name="Carta1" parent="Gaveta" instance=ExtResource("2_xjwwk")]
+[node name="folha_arrancada" parent="Gaveta" instance=ExtResource("2_xjwwk")]
 transform = Transform3D(6.66, 0, 0, 0, -2.91118e-07, 6.66, 0, -6.66, -2.91118e-07, 5.89467, 5.22241, -0.163629)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Gaveta"]

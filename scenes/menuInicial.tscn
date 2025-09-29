@@ -304,7 +304,6 @@ theme_override_font_sizes/font_size = 20
 text = "[GAME VERSION]"
 
 [node name="MenuOpcoes" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -521,7 +520,16 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
+[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 50
+text = "Em Desenvolvimento"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Layout" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
+visible = false
 layout_mode = 2
 alignment = 1
 
