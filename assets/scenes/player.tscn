@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=65 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://ciav0h1exguag" path="res://assets/cartas/arquivo.png" id="15_ay2jx"]
 [ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="15_wf17w"]
 [ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="16_msj1n"]
-[ext_resource type="Texture2D" uid="uid://dryhg50xpkml0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_h_outline.png" id="24_0e2pd"]
+[ext_resource type="Texture2D" uid="uid://bj3vita7cmla0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_tab_outline.png" id="24_0e2pd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6vv5"]
 margin = 0.0
@@ -216,74 +216,6 @@ content_margin_right = 0.0
 content_margin_bottom = 4.0
 color = Color(0, 0, 0, 0)
 vertical = true
-
-[sub_resource type="Animation" id="Animation_c6vv5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Andar:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1.0]
-}
-
-[sub_resource type="Animation" id="Animation_00pic"]
-resource_name = "handleAgachar"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Agachar:modulate:a")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_hrrj1"]
-resource_name = "handleAndar"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Andar:modulate:a")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_nh07x"]
-resource_name = "handleCorrer"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/TutorialPainel/VBoxContainer/Correr:modulate:a")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bskb"]
-_data = {
-&"RESET": SubResource("Animation_c6vv5"),
-&"handleAgachar": SubResource("Animation_00pic"),
-&"handleAndar": SubResource("Animation_hrrj1"),
-&"handleCorrer": SubResource("Animation_nh07x")
-}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dmvh"]
 content_margin_left = 50.0
@@ -590,7 +522,6 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_6luef")
 
 [node name="ContainerFolhaObjetivos" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -640,7 +571,7 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("11_dvip7")
 theme_override_font_sizes/normal_font_size = 25
-text = "Recebi um caso de desaparecimento e, depois de horas tentando avançar, acabei adormecendo em uma noite chuvosa e pesada. Acordei confuso, sem me lembrar direito do que havia feito. O tempo corre, e já nem lembro onde guardei a única pista que poderia mudar tudo."
+text = "Recebi um caso de desaparecimento e, depois de horas tentando avançar, acabei adormecendo em uma noite chuvosa e pesada. Acordei confuso, sem me lembrar direito do que havia feito. O tempo corre, e já nem lembro onde guardei as únicas pistas que poderiam mudar tudo."
 fit_content = true
 shortcut_keys_enabled = false
 horizontal_alignment = 1
@@ -684,6 +615,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="ContainerFolhaCartas" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -1176,13 +1108,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_84enu")
 script = ExtResource("6_nh07x")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel"]
+custom_minimum_size = Vector2(500, 450)
 layout_mode = 2
 alignment = 1
 
 [node name="Andar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 theme_override_constants/separation = 40
 alignment = 2
 
@@ -1247,7 +1180,7 @@ vertical_alignment = 1
 [node name="Correr" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 theme_override_constants/separation = 40
 alignment = 2
 
@@ -1268,7 +1201,7 @@ vertical_alignment = 1
 [node name="Agachar" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 theme_override_constants/separation = 40
 alignment = 2
 
@@ -1289,11 +1222,10 @@ vertical_alignment = 1
 [node name="Agenda" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 theme_override_constants/separation = 40
-alignment = 2
 
-[node name="H" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Agenda"]
+[node name="Tab" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel/VBoxContainer/Agenda"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture = ExtResource("24_0e2pd")
@@ -1307,15 +1239,7 @@ text = "Agenda"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Neck/Head/Eyes/Camera3D/Tutorial/Control/TutorialPainel"]
-root_node = NodePath("../../..")
-libraries = {
-&"": SubResource("AnimationLibrary_0bskb")
-}
-playback_auto_capture_transition_type = 7
-
 [node name="MenuPause" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
-visible = false
 script = ExtResource("14_0bskb")
 
 [node name="Pause" type="Control" parent="Neck/Head/Eyes/Camera3D/MenuPause"]
@@ -1351,6 +1275,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Continuar jogando"
 flat = true
@@ -1360,6 +1285,7 @@ alignment = 0
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Configurações"
 flat = true
@@ -1369,6 +1295,7 @@ alignment = 0
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Voltar ao menu"
 flat = true
@@ -1378,6 +1305,7 @@ alignment = 0
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Sair do jogo"
 flat = true

@@ -1,9 +1,13 @@
-[gd_scene load_steps=82 format=4 uid="uid://bl3me73mor0ud"]
+[gd_scene load_steps=87 format=4 uid="uid://bl3me73mor0ud"]
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_g1xw2"]
 [ext_resource type="PackedScene" uid="uid://cs4tduc8jd2vn" path="res://assets/scenes/player.tscn" id="2_c6i3x"]
+[ext_resource type="Texture2D" uid="uid://ndnr1u5sd5oa" path="res://assets/textures/papel/Paper005_2K-PNG_Roughness.png" id="2_hfin4"]
+[ext_resource type="FontFile" uid="uid://dbwh0wnd303hu" path="res://assets/fonts/IMFeENsc28P.ttf" id="3_lvr0u"]
 [ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="3_vsras"]
+[ext_resource type="AudioStream" uid="uid://1ie5ug5mqajk" path="res://assets/sounds/Pencil Writing.mp3" id="4_lvr0u"]
 [ext_resource type="PackedScene" uid="uid://dnhj12foq7mg4" path="res://assets/scenes/banqueta.tscn" id="4_m5sfa"]
+[ext_resource type="AudioStream" uid="uid://wuhujj1onrqb" path="res://assets/sounds/paper-tearing-252620.mp3" id="5_fj6gc"]
 [ext_resource type="Texture2D" uid="uid://drlxoye4i20q6" path="res://assets/textures/Concrete042A_4K-PNG_Color.png" id="5_t31jn"]
 [ext_resource type="PackedScene" uid="uid://q67q0fijhxbv" path="res://assets/scenes/porta_saida.tscn" id="6_rh0j0"]
 [ext_resource type="PackedScene" uid="uid://r4sr0buf7dbh" path="res://assets/scenes/paredeJanela.tscn" id="7_4q8fb"]
@@ -33,6 +37,14 @@
 [ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="38_s7nc1"]
 [ext_resource type="PackedScene" uid="uid://dymlnvhjf20c0" path="res://assets/scenes/ventilador.tscn" id="39_7qkyt"]
 [ext_resource type="PackedScene" uid="uid://c64ecbs7anqes" path="res://assets/scenes/lampadaQuarto.tscn" id="40_ixsj0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fj6gc"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+texture = ExtResource("2_hfin4")
+modulate_color = Color(0.92, 0.8388867, 0.7084, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
 shading_mode = 0
@@ -515,6 +527,51 @@ size = Vector2(0.06, 0.3)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_g1xw2")
+
+[node name="ControlObjetivos" type="Control" parent="."]
+z_index = 3
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 150.0
+
+[node name="PainelObjetivos" type="PanelContainer" parent="ControlObjetivos"]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_fj6gc")
+
+[node name="LabelTitulo" type="Label" parent="ControlObjetivos/PainelObjetivos"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lvr0u")
+theme_override_font_sizes/font_size = 36
+text = "Objetivo atual:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelObjetivo" type="Label" parent="ControlObjetivos/PainelObjetivos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lvr0u")
+theme_override_font_sizes/font_size = 22
+text = "- Exemplo de objetivo (6/7)"
+vertical_alignment = 1
+
+[node name="AudioEscrevendo" type="AudioStreamPlayer" parent="ControlObjetivos"]
+stream = ExtResource("4_lvr0u")
+pitch_scale = 1.6
+
+[node name="AudioRasgando" type="AudioStreamPlayer" parent="ControlObjetivos"]
+stream = ExtResource("5_fj6gc")
+volume_db = -10.0
 
 [node name="Player" parent="." instance=ExtResource("2_c6i3x")]
 transform = Transform3D(-0.395257, 0, 0.918571, 0, 1, 0, -0.918571, 0, -0.395257, 5.73113, 0.380671, -0.886408)

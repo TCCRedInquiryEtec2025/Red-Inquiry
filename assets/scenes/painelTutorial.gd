@@ -1,88 +1,63 @@
 extends PanelContainer
 
-@onready var vbox: VBoxContainer = $VBoxContainer
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var vbox = $VBoxContainer
+@onready var hbox_andar = $VBoxContainer/Andar
+@onready var hbox_correr = $VBoxContainer/Correr
+@onready var hbox_agachar = $VBoxContainer/Agachar
+@onready var hbox_agenda = $VBoxContainer/Agenda
 
 var andar_done := false
 var agachar_done := false
 var correr_done := false
-
-var _resize_tween: Tween = null
-
-
-func _ready():
-	anim_player.animation_finished.connect(_on_anim_finished)
+var agenda_done := false
 	
-	
-func _process(_delta: float) -> void:
-	var input_dir := Input.get_vector("walkLeft", "walkRight", "walkUp", "walkDown")
-	
-	if(!input_dir.is_zero_approx() and not andar_done): # TUTORIAL: ANDAR
+func _process(_delta: float) -> void:	
+	if(!Input.get_vector("walkLeft", "walkRight", "walkUp", "walkDown").is_zero_approx() and not andar_done): # TUTORIAL: ANDAR
 		andar_done = true
-		anim_player.play("handleAndar")
+		fade_out(hbox_andar, true)
 	
 	if(Input.is_action_just_pressed("crouch") and not agachar_done): # TUTORIAL: AGACHAR
 		agachar_done = true
-		anim_player.play("handleAgachar")
+		fade_out(hbox_agachar, true)
 		
-	if(Input.is_action_just_pressed("sprint") and not correr_done): # TUTORIAL: CORRER
+	if(Input.is_action_just_pressed("sprint") and !Input.get_vector("walkLeft", "walkRight", "walkUp", "walkDown").is_zero_approx() and not correr_done): # TUTORIAL: CORRER
 		correr_done = true
-		anim_player.play("handleCorrer")
+		fade_out(hbox_correr, true)
+		
+	if(Input.is_action_just_pressed("ui_tab") and not agenda_done): # TUTORIAL: AGENDA
+		agenda_done = true
+		fade_out(hbox_agenda, true)
 		
 	
-func _on_anim_finished(anim_name: String):
-	if(anim_name == "handleAndar"):
-		$VBoxContainer/Andar.visible = false
-		animate_resize()
+func fade_out(node: Control, resize:= false) -> void:	
+	var tween := create_tween()
+	tween.tween_property(node, "modulate:a", 0, 0.5) # Some em meio segundo
+		
+	await tween.finished
 	
-	elif(anim_name == "handleAgachar"):
-		$VBoxContainer/Agachar.visible = false
-		animate_resize()
+	node.visible = false
 		
-	elif(anim_name == "handleCorrer"):
-		$VBoxContainer/Correr.visible = false
-		animate_resize()
-		
-	if(andar_done && agachar_done && correr_done):
-		await get_tree().create_timer(1).timeout
-			
-		var tween = create_tween()
-		tween.tween_property(self, "modulate:a", 0, 0.8)			
-		tween.finished.connect(queue_free)
-
-
-func animate_resize():
-	if(not is_inside_tree()):
-		return
-		
-	var old_size = size
-	
-	# força recálculo do layout dos containers
 	vbox.queue_sort()
-	# espera 1-2 frames pra garantir que o layout foi atualizado
-	await get_tree().process_frame
-	await get_tree().process_frame
+	if(resize):
+		reset_panel()
+	if(all_done()):
+		hide_self()
 	
-	var new_size = size
+
+func reset_panel() -> void:
+	vbox.queue_sort()
+	queue_sort()
+	reset_size()
 	
-	# Pega o tamanho do viewport para evitar pedir um tamanho inválido
-	var vp_size := get_viewport().get_visible_rect().size
-	
-	# Aplica limites mínimos (500x300) e limites máximos baseados no viewport
-	new_size.x = clamp(new_size.x, 500, max(vp_size.x - 2, 1))
-	new_size.y = clamp(new_size.y, 300, max(vp_size.y - 2, 1))
-	
-	# Garante que não seja 0/NAN
-	new_size.x = max(new_size.x, 1)
-	new_size.y = max(new_size.y, 1)
-	
-	if(_resize_tween and is_instance_valid(_resize_tween)):
-		_resize_tween.kill()
-		_resize_tween = null
 		
-	_resize_tween = create_tween()
-	var tprop = _resize_tween.tween_property(self, "size", new_size, 0.6)
-	if(tprop):
-		tprop.from(old_size)
-	else:
-		push_warning("animate_resize: tween_property retornou null; pulando animação")
+func hide_self() -> void:
+	var tween := create_tween()
+	tween.tween_property(self, "modulate:a", 0, 0.8)
+	
+	await tween.finished
+	
+	visible = false
+
+
+func all_done() -> bool:
+	return andar_done and agachar_done and agenda_done and correr_done

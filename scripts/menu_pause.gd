@@ -18,7 +18,7 @@ func _ready() -> void:
 
 
 func _on_visibility_changed() -> void:
-	if(visible == true):		
+	if(visible == true):
 		# Iniciando os sliders
 		slider_volume_geral.value = int(Settings.volume_geral * 100)
 		slider_volume_musica.value = int(Settings.volume_musica * 100)

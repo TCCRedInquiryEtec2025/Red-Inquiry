@@ -52,7 +52,7 @@ func _ready() -> void:
 	$Neck/Head/Eyes/Camera3D/Tutorial.visible = true
 
 func _input(event: InputEvent) -> void:	
-	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("ui_tab"):
+	if event.is_action_pressed("ui_cancel"):
 		print("Alternando Menu de pause")
 		$Neck/Head/Eyes/Camera3D/MenuPause.visible = !$Neck/Head/Eyes/Camera3D/MenuPause.visible
 		
