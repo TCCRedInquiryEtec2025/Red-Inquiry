@@ -10,6 +10,9 @@ var andar_done := false
 var agachar_done := false
 var correr_done := false
 var agenda_done := false
+
+var tempo_maximo := 20
+var timer_acabou = false
 	
 func _process(_delta: float) -> void:	
 	if(!Input.get_vector("walkLeft", "walkRight", "walkUp", "walkDown").is_zero_approx() and not andar_done): # TUTORIAL: ANDAR
@@ -27,6 +30,12 @@ func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("ui_tab") and not agenda_done): # TUTORIAL: AGENDA
 		agenda_done = true
 		fade_out(hbox_agenda, true)
+		
+func _ready() -> void:
+	await get_tree().create_timer(tempo_maximo).timeout
+	
+	hide_self()
+	
 		
 	
 func fade_out(node: Control, resize:= false) -> void:	

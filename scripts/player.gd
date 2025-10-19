@@ -53,10 +53,26 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:	
 	if event.is_action_pressed("ui_cancel"):
-		print("Alternando Menu de pause")
-		$Neck/Head/Eyes/Camera3D/MenuPause.visible = !$Neck/Head/Eyes/Camera3D/MenuPause.visible
+		print(GameState.state)
+					  
+		if GameState.getValue("lendo"): # Se estiver lendo um documento
+			print(">> FECHANDO DOCUMENTO")
+			$Neck/Head/Eyes/Camera3D/Documentos.visible = false
+			GameState.setValue("lendo", false)
+			GameState.setValue("podeAndar", true)
+			return
+			
+		elif GameState.getValue("abrindoAgenda"): # Se estiver com a agenda aberta
+			print(">> FECHANDO AGENDA")
+			$Neck/Head/Eyes/Camera3D/NoteBookHUD.visible = false
+			GameState.setValue("podeAndar", true)
+			GameState.setValue("abrindoAgenda", false)
+			return
 		
-		$Neck/Head/Eyes/Camera3D/NoteBookHUD.visible = false
+		else: # Caso contrário, dá um toggle no menu
+			print(">> TOGGLE DO MENU DE PAUSE")
+			$Neck/Head/Eyes/Camera3D/MenuPause.visible = !$Neck/Head/Eyes/Camera3D/MenuPause.visible
+			return
 	
 	# Mouse looking logic
 	if(!GameState.getValue("podeAndar")):

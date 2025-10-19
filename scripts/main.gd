@@ -56,7 +56,7 @@ func _ready() -> void:
 		if(!GameState.getValue("cartaTerence") or !GameState.getValue("folhaArrancada")):
 			print(">> Esperando as cartas")
 			
-			for i in range(12):
+			for i in range(60):
 				await get_tree().process_frame
 			continue
 			

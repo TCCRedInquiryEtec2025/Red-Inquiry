@@ -35,7 +35,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	prompt.text = ''
 	
-	if(GameState.getValue("lendo")):
+	if(GameState.getValue("lendo") or GameState.getValue("pauseAberto") or GameState.getValue("abrindoAgenda")):
 		return
 	
 	if(is_colliding()):

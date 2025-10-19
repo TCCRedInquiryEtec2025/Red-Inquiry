@@ -12,10 +12,6 @@ extends PanelContainer
 	"folha_arrancada": preload("res://assets/cartas/folhaArrancada.jpg"),
 }
 
-func _process(_delta: float) -> void:
-	if(GameState.getValue("lendo")):
-		visible = true
-
 func _ready() -> void:
 	visible = false
 	
@@ -34,10 +30,14 @@ func _on_button_pressed() -> void:
 	carta.visible = false
 	
 	self.visible = false
+	
 
 func _on_interacted(interactable: Carta) -> void:
+	if GameState.getValue("abrindoAgenda") or GameState.getValue("pauseAberto"): return
+	
 	GameState.setValue("lendo", true)
 	GameState.setValue("podeAndar", false)
+	visible = true
 	
 	jornal.visible = false
 	carta.visible = false

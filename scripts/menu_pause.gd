@@ -45,7 +45,6 @@ func _on_sair_nao_pressed() -> void:
 func _on_continuar_pressed() -> void:
 	self.visible = false
 	container_configuracoes.visible = false
-	GameState.setValue("podeAndar", true) # Habilita o movimento e prende o mouse
 
 
 func _on_configuracoes_pressed() -> void:
@@ -53,7 +52,7 @@ func _on_configuracoes_pressed() -> void:
 
 func _on_voltar_pressed() -> void:
 	visible = false
-	TransicaoCenas.change_scene("res://scenes/MenuInicial.tscn")
+	TransicaoCenas.change_scene("res://scenes/menuInicial.tscn")
 
 
 func _on_volume_value_changed(value: float) -> void:
