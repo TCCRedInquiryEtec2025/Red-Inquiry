@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=66 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
@@ -122,6 +122,9 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0e2pd"]
+content_margin_top = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omckb"]
 content_margin_left = 0.0
@@ -464,7 +467,6 @@ text = "FECHAR"
 flat = true
 
 [node name="NoteBookHUD" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D" node_paths=PackedStringArray("player")]
-visible = false
 script = ExtResource("15_wf17w")
 player = NodePath("../../../../..")
 
@@ -489,14 +491,18 @@ alignment = 1
 
 [node name="ContainerSetaEsquerda" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 alignment = 1
 
 [node name="ButtonLeft" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaEsquerda"]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
+size_flags_horizontal = 4
 shortcut = SubResource("Shortcut_6luef")
 shortcut_in_tooltip = false
 texture_normal = SubResource("CompressedTexture2D_ay2jx")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TextureKeyQ" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaEsquerda"]
@@ -522,6 +528,7 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_6luef")
 
 [node name="ContainerFolhaObjetivos" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -575,7 +582,7 @@ text = "Recebi um caso de desaparecimento e, depois de horas tentando avançar, 
 fit_content = true
 shortcut_keys_enabled = false
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 3
 
 [node name="ContainerPaginaDireita" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaObjetivos"]
 layout_mode = 2
@@ -615,7 +622,6 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="ContainerFolhaCartas" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -651,22 +657,31 @@ vertical_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0e2pd")
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
 
 [node name="ContainerDocumentos" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_constants/separation = 25
 
 [node name="ButtonTerence" type="Button" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
 flat = true
 
 [node name="PanelCartaTerence" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonTerence"]
-layout_mode = 0
-offset_top = -925.0
-offset_right = 562.0
-offset_bottom = -765.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
 
 [node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonTerence/PanelCartaTerence"]
@@ -698,14 +713,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonJornal" type="Button" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
 flat = true
 
 [node name="PanelJornal" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonJornal"]
-layout_mode = 0
-offset_top = -773.0
-offset_right = 562.0
-offset_bottom = -613.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
 
 [node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonJornal/PanelJornal"]
@@ -715,10 +736,10 @@ layout_mode = 2
 [node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonJornal/PanelJornal/ContainerDocumentoExemplo"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.3
+size_flags_stretch_ratio = 0.6
 
 [node name="TextureCarta" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonJornal/PanelJornal/ContainerDocumentoExemplo/CenterContainer2"]
-custom_minimum_size = Vector2(100, 120)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("6_00pic")
 expand_mode = 3
@@ -737,14 +758,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonJoanne" type="Button" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
 flat = true
 
 [node name="PanelCartaJoanne" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonJoanne"]
-layout_mode = 0
-offset_top = -621.0
-offset_right = 562.0
-offset_bottom = -461.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
 
 [node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonJoanne/PanelCartaJoanne"]
@@ -776,14 +803,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonFolhaArrancada" type="Button" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
 flat = true
 
 [node name="PanelFolhaArrancada" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonFolhaArrancada"]
-layout_mode = 0
-offset_top = -469.0
-offset_right = 562.0
-offset_bottom = -309.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
 
 [node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonFolhaArrancada/PanelFolhaArrancada"]
@@ -815,14 +848,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonArquivo" type="Button" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
 flat = true
 
 [node name="PanelArquivoMafioso" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonArquivo"]
-layout_mode = 0
-offset_top = -317.0
-offset_right = 570.0
-offset_bottom = -157.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_omckb")
 
 [node name="ContainerDocumentoExemplo" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonArquivo/PanelArquivoMafioso"]
@@ -1062,11 +1101,14 @@ vertical_alignment = 1
 
 [node name="ContainerSetaDireita" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 alignment = 1
 
 [node name="ButtonRight" type="TextureButton" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaDireita"]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
+size_flags_horizontal = 4
 shortcut = SubResource("Shortcut_gdn7j")
 shortcut_in_tooltip = false
 texture_normal = SubResource("CompressedTexture2D_fiote")
@@ -1083,6 +1125,7 @@ stretch_mode = 5
 
 [node name="Tutorial" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
 layer = -1
+visible = false
 
 [node name="Control" type="Control" parent="Neck/Head/Eyes/Camera3D/Tutorial"]
 layout_mode = 3
@@ -1240,6 +1283,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MenuPause" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
+visible = false
 script = ExtResource("14_0bskb")
 
 [node name="Pause" type="Control" parent="Neck/Head/Eyes/Camera3D/MenuPause"]
