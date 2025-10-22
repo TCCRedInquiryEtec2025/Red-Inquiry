@@ -137,7 +137,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
-border_blend = true
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -348,15 +347,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168516, 0)
 [node name="Camera3D" type="Camera3D" parent="Neck/Head/Eyes"]
 fov = 85.0
 
-[node name="InteractRay" parent="Neck/Head/Eyes/Camera3D" instance=ExtResource("2_0hrit")]
-
 [node name="Shaders" type="Control" parent="Neck/Head/Eyes/Camera3D"]
+top_level = true
+z_index = 25
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="ColorRect" type="ColorRect" parent="Neck/Head/Eyes/Camera3D/Shaders"]
 z_index = 2
@@ -375,7 +376,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="Reticle" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/Crosshair"]
 layout_mode = 1
@@ -471,6 +472,7 @@ script = ExtResource("15_wf17w")
 player = NodePath("../../../../..")
 
 [node name="AgendaUI" type="Control" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD"]
+modulate = Color(0.7, 0.7, 0.7, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -478,6 +480,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("16_msj1n")
+
+[node name="Panel" type="Panel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
 layout_mode = 1
@@ -905,7 +915,7 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("11_dvip7")
 theme_override_font_sizes/normal_font_size = 25
-text = "*Em desenvolvimento*"
+text = "*Conteúdo da Carta*"
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -920,7 +930,6 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="CenterContainer" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaDireita"]
-visible = false
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaDireita/CenterContainer"]
@@ -958,7 +967,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -1078,7 +1086,6 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_5eo68")
 
 [node name="TextureImagemItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer/PanelImagemItem"]
-visible = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 texture = ExtResource("12_beuf1")
@@ -1095,7 +1102,7 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("11_dvip7")
 theme_override_font_sizes/normal_font_size = 20
-text = "*EM DESENVOLVIMENTO*"
+text = "*Descrição do Item*"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1124,7 +1131,7 @@ expand_mode = 4
 stretch_mode = 5
 
 [node name="Tutorial" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
-layer = -1
+layer = -2
 visible = false
 
 [node name="Control" type="Control" parent="Neck/Head/Eyes/Camera3D/Tutorial"]
@@ -1584,6 +1591,9 @@ theme_override_font_sizes/font_size = 30
 action_mode = 0
 text = "Não"
 flat = true
+
+[node name="InteractRay" parent="Neck/Head/Eyes/Camera3D" instance=ExtResource("2_0hrit")]
+visible = false
 
 [node name="Andando" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3900159)

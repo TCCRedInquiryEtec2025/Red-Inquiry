@@ -1,5 +1,7 @@
 extends RayCast3D
 
+signal carta_coletada(nome_carta)
+
 @onready var prompt = $Prompt
 @onready var response = $ResponseLabel
 
@@ -56,5 +58,8 @@ func _interact_with(collider: Interactable) -> void:
 		
 		GameState.setValue("lendo", true)
 		GameState.setValue("podeAndar", false)
+		
+		# Emitindo o sinal a agenda
+		emit_signal("carta_coletada", collider.name)
 		
 	_show_response(collider.response_prompt)

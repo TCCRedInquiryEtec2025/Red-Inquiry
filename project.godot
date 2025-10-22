@@ -39,6 +39,7 @@ gdscript/warnings/unassigned_variable_op_assign=2
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
+window/size/mode=4
 window/size/initial_screen=1
 window/size/resizable=false
 window/stretch/mode="canvas_items"
