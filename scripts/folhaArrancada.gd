@@ -1,5 +1,6 @@
 extends Carta
 
+@export var falaReserva = AudioStreamMP3
 
 func _on_interacted(_body: Variant) -> void:
 	if GameState.getValue("pauseAberto") or GameState.getValue("abrindoAgenda"): return

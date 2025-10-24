@@ -1,6 +1,7 @@
 extends RayCast3D
 
 signal carta_coletada(nome_carta)
+signal fala_interacao(interagivel)
 
 @onready var prompt = $Prompt
 @onready var response = $ResponseLabel
@@ -52,6 +53,7 @@ func _physics_process(_delta: float) -> void:
 
 func _interact_with(collider: Interactable) -> void:
 	collider.interact(owner)
+	emit_signal("fala_interacao", collider)
 	
 	if(collider is Carta):
 		$AudioStreamPlayer.play()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=4 uid="uid://c3vam4vl63k65"]
+[gd_scene load_steps=25 format=4 uid="uid://c3vam4vl63k65"]
 
+[ext_resource type="Texture2D" uid="uid://su3yxw6qqu8j" path="res://assets/textures/wood_table_worn_diff_4k.jpg" id="1_84i5a"]
 [ext_resource type="Script" uid="uid://b7ayhnsbihhlt" path="res://scripts/gaveta.gd" id="1_yy41q"]
 [ext_resource type="PackedScene" uid="uid://cc2gvjqiuwh4j" path="res://assets/scenes/folhaArrancada.tscn" id="2_xjwwk"]
 [ext_resource type="PackedScene" uid="uid://cab5n7sx7cott" path="res://assets/scenes/lampadaNoir.tscn" id="3_awkb7"]
@@ -7,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cenob6cdlvk2i" path="res://assets/scenes/retratoMesa.tscn" id="4_11fne"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdkoa"]
-albedo_color = Color(0.317647, 0.219608, 0.113725, 1)
+albedo_texture = ExtResource("1_84i5a")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 2.378423
+uv1_world_triplanar = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vs01d"]
 _surfaces = [{
@@ -41,7 +46,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vs01d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxyhf"]
-albedo_color = Color(0.317647, 0.219608, 0.113725, 1)
+albedo_texture = ExtResource("1_84i5a")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_offset = Vector3(0, 0.12, 0)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yccq0"]
 _surfaces = [{
@@ -75,7 +84,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yccq0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fe2h"]
-albedo_color = Color(0.317647, 0.219608, 0.113725, 1)
+albedo_texture = ExtResource("1_84i5a")
+normal_scale = 12.65
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.15932015
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t56m6"]
 _surfaces = [{
@@ -107,7 +120,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t56m6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohrvj"]
-albedo_color = Color(0.317647, 0.219608, 0.113725, 1)
+albedo_texture = ExtResource("1_84i5a")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_offset = Vector3(-0.71, 0.28, -0.36)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.3298771
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_id0bk"]
 _surfaces = [{
@@ -230,6 +247,6 @@ shape = SubResource("BoxShape3D_xjwwk")
 transform = Transform3D(-5.15577, 0, -8.56844, 0, 10, 0, 8.56844, 0, -5.15577, 7.04021, 5.48091, -3.14703)
 
 [node name="RetratoMesa" parent="." instance=ExtResource("4_11fne")]
-transform = Transform3D(0.91941, -0.3933, -1.71917e-08, -8.84584e-16, -4.37114e-08, 1, -0.3933, -0.91941, -4.01887e-08, -2.88211, 5.75293, -3.00519)
+transform = Transform3D(0.91940993, -0.39329997, -1.71917e-08, -8.8458393e-16, -4.37114e-08, 0.99999994, -0.39329997, -0.91940993, -4.0188695e-08, -2.88211, 5.5131807, -3.00519)
 
 [connection signal="interacted" from="Gaveta" to="Gaveta" method="_on_interacted"]

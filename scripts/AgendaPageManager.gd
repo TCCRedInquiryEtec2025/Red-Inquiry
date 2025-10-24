@@ -45,6 +45,7 @@ var current_page_index = 0
 @onready var carta_grande = $HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaDireita/CenterContainer/TextureRect
 
 var carta_selecionada = null
+@export var ray: RayCast3D
 
 func _ready():
 	update_pages()
@@ -52,7 +53,6 @@ func _ready():
 	print("update_cartas chamado")
 	
 	# Conectando o sinal do InteractRay
-	var ray = get_tree().root.get_node("World/Player/Neck/Head/Eyes/Camera3D/InteractRay")
 	ray.connect("carta_coletada", Callable(self, "_on_carta_coletada"))
 	
 	

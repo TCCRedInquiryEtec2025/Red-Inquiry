@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://lrm1rnuukciv"]
+[gd_scene load_steps=7 format=3 uid="uid://lrm1rnuukciv"]
 
 [ext_resource type="Script" uid="uid://cxdt0sbidk3cy" path="res://scripts/carta_terence.gd" id="1_6iy5l"]
 [ext_resource type="Texture2D" uid="uid://1kjoqg8ljb0g" path="res://assets/cartas/Carta_Terence.jpg" id="2_c6j7w"]
+[ext_resource type="AudioStream" uid="uid://bre1nrix1u121" path="res://assets/sounds/DetetiveFalas/acheivoce.mp3" id="2_gp88q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gp88q"]
 albedo_texture = ExtResource("2_c6j7w")
@@ -17,6 +18,7 @@ size = Vector3(0.242798, 0.320831, 0.0352135)
 [node name="CartaTerence" type="RigidBody3D" groups=["legiveis"]]
 mass = 0.001
 script = ExtResource("1_6iy5l")
+fala = ExtResource("2_gp88q")
 response_prompt = "Finalmente achei você. Deixa eu me lembrar, onde é que eu tava?"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

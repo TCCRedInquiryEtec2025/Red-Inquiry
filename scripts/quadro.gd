@@ -1,5 +1,7 @@
 extends Interactable
 
+@export var fala: AudioStreamMP3
+
 func _process(_delta: float) -> void:
 	pass
 	

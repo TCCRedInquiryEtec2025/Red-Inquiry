@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://c4ungqri0a4e7"]
+[gd_scene load_steps=24 format=4 uid="uid://c4ungqri0a4e7"]
 
 [ext_resource type="Script" uid="uid://hicndkiaqi73" path="res://scripts/quadro.gd" id="1_ic0kn"]
+[ext_resource type="AudioStream" uid="uid://4vga00civohm" path="res://assets/sounds/DetetiveFalas/maisinformacoes.mp3" id="2_jsx6j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ic0kn"]
 size = Vector3(1.92203, 1.19958, 0.0454102)
@@ -300,6 +301,7 @@ shadow_mesh = SubResource("ArrayMesh_wf1ao")
 
 [node name="Quadro" type="StaticBody3D"]
 script = ExtResource("1_ic0kn")
+fala = ExtResource("2_jsx6j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000747681, -0.000793457, -0.00610352)

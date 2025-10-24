@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ph5dmad4elmn"]
+[gd_scene load_steps=7 format=3 uid="uid://ph5dmad4elmn"]
 
 [ext_resource type="Script" uid="uid://d4fvw58gepxvl" path="res://scripts/arquivo.gd" id="1_k0r62"]
 [ext_resource type="Texture2D" uid="uid://ciav0h1exguag" path="res://assets/cartas/arquivo.png" id="2_7ebtq"]
+[ext_resource type="AudioStream" uid="uid://de16o66x37p74" path="res://assets/sounds/DetetiveFalas/investigacaodelado.mp3" id="2_jmmx4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmmx4"]
 albedo_texture = ExtResource("2_7ebtq")
@@ -18,6 +19,7 @@ size = Vector3(0.242798, 0.320831, 0.0352135)
 mass = 0.001
 script = ExtResource("1_k0r62")
 texto = "William Goldberg, notório mafioso com operações em Modest Valley. A extensão de suas operações é desconhecida, mas pode-se especular sua participação ativa no mercado ilegal de entorpecentes.É frequentemente avistado nas periferias de Modest Valley pelos moradores das áreas. Possíveis locais de negociação? Majoritariamente avistado nas periferias do bairro Kennedy Garden. Boatos de atuações criminosas no bairro de Greenville.A Polícia tentou prendê-lo a aproximadamente três anos, sem sucesso. O sujeito conseguiu eliminar quaisquer provas de seu envolvimento com o Caso “Velvet”. O julgamento se encerrou com o “Don Goldberg” saindo ileso das acusações.O Delegado Mário Florenza, amigo e conivente com minha investigação, foi demitido de seu cargo após seu envolvimento e responsabilização pelo Caso “Velvet”. Sinais da influência de Don Goldberg nessa demissão são claros.Antes da demissão ele investigava contatos indefinidos entre o mafioso e correspondentes chineses. O motivo permanece desconhecido visto o fim de todas as investigações relacionadas a Goldberg (Mais um sinal claro da influência do Mafioso)."
+fala = ExtResource("2_jmmx4")
 response_prompt = "Vou ter que deixar essa investigação de lado por um tempo. Também preciso pagar as contas."
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

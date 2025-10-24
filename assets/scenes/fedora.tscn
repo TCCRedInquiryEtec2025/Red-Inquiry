@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://bocxoodqwhwyy"]
+[gd_scene load_steps=8 format=4 uid="uid://bocxoodqwhwyy"]
 
 [ext_resource type="Script" uid="uid://dor8dij36hyda" path="res://scripts/fedora.gd" id="1_coavc"]
+[ext_resource type="AudioStream" uid="uid://tpcmg7ujfx3p" path="res://assets/sounds/DetetiveFalas/queridochapeu.mp3" id="2_skxll"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfh0e"]
 resource_name = "Material"
@@ -99,6 +100,7 @@ height = 4.98
 
 [node name="Fedora" type="StaticBody3D"]
 script = ExtResource("1_coavc")
+fala = ExtResource("2_skxll")
 response_prompt = "Meu querido chapéu, sempre me acompanhando. Ajuda muito nesses tempos chuvosos."
 
 [node name="Mesh" type="MeshInstance3D" parent="."]

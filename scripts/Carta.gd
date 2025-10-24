@@ -7,3 +7,5 @@ enum TipoCarta { Carta, Jornal }
 @export var tipo: TipoCarta = TipoCarta.Carta
 
 @export var texto: String
+
+@export var fala: AudioStreamMP3

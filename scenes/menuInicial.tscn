@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://8navspruggjk"]
+[gd_scene load_steps=19 format=3 uid="uid://8navspruggjk"]
 
 [ext_resource type="Script" uid="uid://bcd2164ydly4x" path="res://scenes/menu_inicial.gd" id="1_p0uqc"]
 [ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="2_jhs6u"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://drt3yx3hkw15c" path="res://assets/Red-Inquiry.png" id="3_4m7wy"]
 [ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/sounds/thunderstorm-ambiance-191991 (2).mp3" id="3_81crh"]
 [ext_resource type="Texture2D" uid="uid://dakqqs76hmrwh" path="res://assets/instagram.png" id="6_70i05"]
+[ext_resource type="AudioStream" uid="uid://bfpdxa57hwy8o" path="res://assets/sounds/Musicas/menuInicial.mp3" id="7_qx1f8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oiit"]
 content_margin_left = 0.0
@@ -286,14 +287,14 @@ theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
 [node name="ButtonInstagram" type="TextureButton" parent="MenuPrincipal/MarginContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 action_mode = 0
 texture_normal = ExtResource("6_70i05")
 ignore_texture_size = true
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="LabelVersao" type="Label" parent="MenuPrincipal/MarginContainer"]
 layout_mode = 2
@@ -660,6 +661,13 @@ parameters/looping = true
 
 [node name="Trovao" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_81crh")
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qx1f8")
+volume_db = 15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_button_pressed"]

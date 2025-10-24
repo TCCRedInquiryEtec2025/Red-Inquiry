@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=68 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
@@ -26,6 +26,8 @@
 [ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="15_wf17w"]
 [ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="16_msj1n"]
 [ext_resource type="Texture2D" uid="uid://bj3vita7cmla0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_tab_outline.png" id="24_0e2pd"]
+[ext_resource type="AudioStream" uid="uid://bre1nrix1u121" path="res://assets/sounds/DetetiveFalas/acheivoce.mp3" id="27_jukhh"]
+[ext_resource type="Script" uid="uid://ugmcw1fcnwxf" path="res://scripts/falas.gd" id="28_gdn7j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6vv5"]
 margin = 0.0
@@ -471,7 +473,7 @@ flat = true
 script = ExtResource("15_wf17w")
 player = NodePath("../../../../..")
 
-[node name="AgendaUI" type="Control" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD"]
+[node name="AgendaUI" type="Control" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD" node_paths=PackedStringArray("ray")]
 modulate = Color(0.7, 0.7, 0.7, 1)
 layout_mode = 3
 anchors_preset = 15
@@ -480,6 +482,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("16_msj1n")
+ray = NodePath("../../InteractRay")
 
 [node name="Panel" type="Panel" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI"]
 layout_mode = 1
@@ -1603,6 +1606,12 @@ max_db = -6.0
 [node name="StepTimer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
+
+[node name="Falas" type="AudioStreamPlayer" parent="." node_paths=PackedStringArray("interact_ray")]
+stream = ExtResource("27_jukhh")
+pitch_scale = 0.92
+script = ExtResource("28_gdn7j")
+interact_ray = NodePath("../Neck/Head/Eyes/Camera3D/InteractRay")
 
 [connection signal="pressed" from="Neck/Head/Eyes/Camera3D/Documentos/HBoxContainer/VBoxContainer/CenterContainer3/Button" to="Neck/Head/Eyes/Camera3D/Documentos" method="_on_button_pressed"]
 [connection signal="pressed" from="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerSetaEsquerda/ButtonLeft" to="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI" method="_on_button_left_pressed"]

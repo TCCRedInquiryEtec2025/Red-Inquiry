@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciqb6x5eawn8v"]
+[gd_scene load_steps=7 format=3 uid="uid://ciqb6x5eawn8v"]
 
 [ext_resource type="Script" uid="uid://f6yo0fhud1cq" path="res://scripts/carta_joanne.gd" id="1_tslmq"]
+[ext_resource type="AudioStream" uid="uid://bo71nwt72s1ns" path="res://assets/sounds/DetetiveFalas/senhoradesesperada.mp3" id="2_3wei7"]
 [ext_resource type="Texture2D" uid="uid://dpkvaco16f6rl" path="res://assets/cartas/Carta_Joanne_Rochefart.jpg" id="2_lf5by"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wei7"]
@@ -17,6 +18,7 @@ size = Vector3(0.242798, 0.320831, 0.0352135)
 [node name="CartaJoanne" type="RigidBody3D" groups=["legiveis"]]
 mass = 0.001
 script = ExtResource("1_tslmq")
+fala = ExtResource("2_3wei7")
 response_prompt = "Essa senhora tá realmente desesperada. Gostaria de resolver tudo logo, mas com tão poucas informações…"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

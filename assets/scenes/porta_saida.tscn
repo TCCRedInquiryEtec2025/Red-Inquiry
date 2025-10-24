@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://q67q0fijhxbv"]
+[gd_scene load_steps=15 format=4 uid="uid://q67q0fijhxbv"]
 
 [ext_resource type="Texture2D" uid="uid://drlxoye4i20q6" path="res://assets/textures/Concrete042A_4K-PNG_Color.png" id="1_4nm8y"]
 [ext_resource type="Script" uid="uid://bg7qb8t15joxb" path="res://scripts/porta_saida.gd" id="1_crgac"]
 [ext_resource type="Texture2D" uid="uid://w63kq3tidak8" path="res://assets/textures/wooden_gate_diff_4k.jpg" id="2_crgac"]
+[ext_resource type="AudioStream" uid="uid://yiw2f442y6oi" path="res://assets/sounds/DetetiveFalas/naopossosair.mp3" id="2_np0gi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1a8v"]
 resource_name = "Office_Sh.005"
@@ -154,6 +155,7 @@ size = Vector3(0.1445288, 3.0740576, 1.1265429)
 
 [node name="PortaSaida" type="StaticBody3D"]
 script = ExtResource("1_crgac")
+fala = ExtResource("2_np0gi")
 prompt_message = "Abrir"
 response_prompt = "Não posso sair agora, isso daqui é mais importante."
 
