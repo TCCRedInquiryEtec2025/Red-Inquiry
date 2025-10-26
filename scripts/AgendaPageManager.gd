@@ -45,6 +45,8 @@ var current_page_index = 0
 @onready var carta_grande = $HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaDireita/CenterContainer/TextureRect
 
 var carta_selecionada = null
+var carta_ativa_btn: Button = null
+
 @export var ray: RayCast3D
 
 func _ready():
@@ -55,6 +57,7 @@ func _ready():
 	# Conectando o sinal do InteractRay
 	ray.connect("carta_coletada", Callable(self, "_on_carta_coletada"))
 	
+	carta_ativa_btn = null
 	
 func _process(_delta: float) -> void:
 	update_objetivos()
@@ -87,16 +90,25 @@ func update_cartas() -> void:
 			
 			# Criando o botão da carta
 			var btnCarta = Button.new()
+			btnCarta.disabled = false
 			btnCarta.flat = true
 			btnCarta.toggle_mode = true
 			btnCarta.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+			btnCarta.button_mask = MOUSE_BUTTON_MASK_LEFT
 			btnCarta.custom_minimum_size = Vector2(0, 150)
 			btnCarta.size_flags_horizontal = Control.SIZE_FILL
 			btnCarta.size_flags_vertical = Control.SIZE_EXPAND_FILL
 			
 			# Criando o painel de fundo da carta
 			var panelCarta = PanelContainer.new()
-			panelCarta.set_anchors_preset(Control.PRESET_FULL_RECT)
+			panelCarta.anchor_left = 0
+			panelCarta.anchor_top = 0
+			panelCarta.anchor_right = 1
+			panelCarta.anchor_bottom = 1
+			panelCarta.offset_left = 0
+			panelCarta.offset_top = 0
+			panelCarta.offset_bottom = 0
+			panelCarta.offset_right = 0
 			
 			var panelStyle = StyleBoxFlat.new()
 			panelStyle.bg_color = Color(0, 0, 0, 0)
@@ -114,26 +126,33 @@ func update_cartas() -> void:
 			panelStyle.content_margin_top = 1
 			panelStyle.content_margin_left = 1
 			panelStyle.content_margin_right = 1
+			panelCarta.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			panelCarta.add_theme_stylebox_override("panel", panelStyle)
 			
 			var hbox = HBoxContainer.new()
 			hbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL # Carta vai expandir e preencher o espaço todo
 			hbox.custom_minimum_size = Vector2(0, 160)
+			hbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			
 			var centerFoto = CenterContainer.new()
 			centerFoto.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			centerFoto.size_flags_vertical = Control.SIZE_FILL
 			centerFoto.size_flags_stretch_ratio = 0.6
-			
+			centerFoto.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			
 			var foto = TextureRect.new()
 			foto.texture = carta_info["foto"]
-			foto.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+			foto.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
+			if(carta_info["nome"] == "Jornal semanal"):
+				# Se for o jornal, ajusta para caber de acordo
+				foto.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 			foto.custom_minimum_size = Vector2(100, 100)
 			foto.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			centerFoto.add_child(foto)
 			
 			var centerLabel = CenterContainer.new()
 			centerLabel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			centerLabel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			
 			var label = Label.new()
 			label.text = carta_info["nome"]
@@ -151,8 +170,7 @@ func update_cartas() -> void:
 			panelCarta.add_child(hbox)
 			btnCarta.add_child(panelCarta)
 			
-			btnCarta.connect("pressed", Callable(self, "_on_carta_selecionada").bind(key))
-			
+			btnCarta.connect("pressed", Callable.create(self, "_on_carta_selecionada").bind(key, btnCarta))
 			container_cartas.add_child(btnCarta)
 	
 
@@ -170,9 +188,17 @@ func update_objetivos() -> void:
 	label_objetivos.text = texto_objetivos
 	
 	
-func _on_carta_selecionada(key: String) -> void:
-		carta_selecionada = key
-		_show_carta_data(key)
+func _on_carta_selecionada(key: String, btn: Button) -> void:
+	# Desmarcando a carta ativa anteriormente
+	if(carta_ativa_btn and carta_ativa_btn != btn):
+		carta_ativa_btn.button_pressed = false
+	
+	# Atualizando a carta ativa
+	carta_ativa_btn = btn
+	carta_ativa_btn.button_pressed = true
+	
+	# Mostrando os dados
+	_show_carta_data(key)
 		
 		
 func _show_carta_data(key: String) -> void:

@@ -103,7 +103,6 @@ func _on_menu_opcoes_visibility_changed() -> void:
 		# Ajusta a opção de tela cheia bonitinho
 		toggle_telaCheia.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 		
-		
 
 func _on_button_instagram_pressed() -> void:
 	OS.shell_open("https://www.instagram.com/red.inquiry/")

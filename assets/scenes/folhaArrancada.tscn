@@ -1,11 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc2gvjqiuwh4j"]
+[gd_scene load_steps=10 format=3 uid="uid://cc2gvjqiuwh4j"]
 
 [ext_resource type="Script" uid="uid://dyvey466drvjb" path="res://scripts/folhaArrancada.gd" id="1_fjcnx"]
 [ext_resource type="Texture2D" uid="uid://cog4gy6jspq3e" path="res://assets/cartas/folhaArrancada.jpg" id="2_74mm3"]
 [ext_resource type="AudioStream" uid="uid://dcephfhe6ej6k" path="res://assets/sounds/DetetiveFalas/ahmelembreicomcarta.mp3" id="2_hppls"]
 [ext_resource type="AudioStream" uid="uid://xs3tf175jxws" path="res://assets/sounds/DetetiveFalas/ahmelembreisemcarta.mp3" id="2_rxd3g"]
+[ext_resource type="Shader" uid="uid://c5penxg5gfje0" path="res://assets/shaders/aura_carta.gdshader" id="5_1df6u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e2nvt"]
+render_priority = 0
+shader = ExtResource("5_1df6u")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/size = 1.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hppls"]
+next_pass = SubResource("ShaderMaterial_e2nvt")
 albedo_texture = ExtResource("2_74mm3")
 uv1_scale = Vector3(3, 1.2, 1)
 

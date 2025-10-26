@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://ph5dmad4elmn"]
+[gd_scene load_steps=9 format=3 uid="uid://ph5dmad4elmn"]
 
 [ext_resource type="Script" uid="uid://d4fvw58gepxvl" path="res://scripts/arquivo.gd" id="1_k0r62"]
 [ext_resource type="Texture2D" uid="uid://ciav0h1exguag" path="res://assets/cartas/arquivo.png" id="2_7ebtq"]
 [ext_resource type="AudioStream" uid="uid://de16o66x37p74" path="res://assets/sounds/DetetiveFalas/investigacaodelado.mp3" id="2_jmmx4"]
+[ext_resource type="Shader" uid="uid://c5penxg5gfje0" path="res://assets/shaders/aura_carta.gdshader" id="4_nbfpa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xk0ei"]
+render_priority = 0
+shader = ExtResource("4_nbfpa")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/size = 1.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmmx4"]
+next_pass = SubResource("ShaderMaterial_xk0ei")
 albedo_texture = ExtResource("2_7ebtq")
 uv1_scale = Vector3(3, 2, 1)
 

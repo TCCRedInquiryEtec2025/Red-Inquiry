@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8n82y6uq32l0"]
+[gd_scene load_steps=17 format=3 uid="uid://8n82y6uq32l0"]
 
 [ext_resource type="Script" uid="uid://c1xn428gdou8r" path="res://scripts/quadro_ui.gd" id="1_pchnr"]
 [ext_resource type="Texture2D" uid="uid://ccl8te2ukladd" path="res://assets/textures/WoodFloor013_1K-JPG_Color.jpg" id="2_g3mub"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bfvc2ug3molcs" path="res://scripts/frase.gd" id="7_j6161"]
 [ext_resource type="Script" uid="uid://dys58cax3w8lg" path="res://scripts/letra.gd" id="7_nsu73"]
 [ext_resource type="Texture2D" uid="uid://buov34cptfppg" path="res://assets/icons/PNG/White/1x/down.png" id="8_nsu73"]
+[ext_resource type="AudioStream" uid="uid://8pyyhvg2ge4h" path="res://assets/sounds/DetetiveFalas/issonaoestacerto.mp3" id="11_cxpar"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1i01y"]
 shader = ExtResource("5_k70iu")
@@ -922,6 +923,11 @@ text = "Isso não está certo..."
 label_settings = SubResource("LabelSettings_1i01y")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_cxpar")
+volume_db = -5.0
+pitch_scale = 0.95
 
 [connection signal="pressed" from="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/ButtonReiniciar" to="." method="_on_button_reiniciar_pressed"]
 [connection signal="pressed" from="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -16,7 +16,7 @@ func _on_triggered_fala(trigger: Interactable) -> void:
 	print(">> Trigger de fala acionado")
 	stream = null
 	stream = trigger.fala
-	if("falaReserva" in trigger):
+	if("falaReserva" in trigger and !GameState.getValue("cartaTerence")):
 		stream = trigger.falaReserva
 		
 	pitch_scale = 0.92

@@ -1,14 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://lrm1rnuukciv"]
+[gd_scene load_steps=9 format=3 uid="uid://lrm1rnuukciv"]
 
 [ext_resource type="Script" uid="uid://cxdt0sbidk3cy" path="res://scripts/carta_terence.gd" id="1_6iy5l"]
 [ext_resource type="Texture2D" uid="uid://1kjoqg8ljb0g" path="res://assets/cartas/Carta_Terence.jpg" id="2_c6j7w"]
 [ext_resource type="AudioStream" uid="uid://bre1nrix1u121" path="res://assets/sounds/DetetiveFalas/acheivoce.mp3" id="2_gp88q"]
+[ext_resource type="Shader" uid="uid://c5penxg5gfje0" path="res://assets/shaders/aura_carta.gdshader" id="4_6l2p1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6l2p1"]
+render_priority = 0
+shader = ExtResource("4_6l2p1")
+shader_parameter/color = Color(0.9, 0.1, 0.1, 1)
+shader_parameter/size = 1.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gp88q"]
+next_pass = SubResource("ShaderMaterial_6l2p1")
 albedo_texture = ExtResource("2_c6j7w")
+normal_scale = -16.0
+ao_light_affect = 1.0
+heightmap_scale = 16.0
 uv1_scale = Vector3(3, 2, 1)
+billboard_keep_scale = true
+point_size = 128.0
+stencil_flags = 2
+stencil_reference = 255
 
 [sub_resource type="BoxMesh" id="BoxMesh_xyupw"]
+lightmap_size_hint = Vector2i(5, 10)
 material = SubResource("StandardMaterial3D_gp88q")
 size = Vector3(0.21, 0.3, 0.01)
 

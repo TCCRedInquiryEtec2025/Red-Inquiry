@@ -526,6 +526,7 @@ size = Vector3(4.10785, 0.486267, 1.39252)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_71j4m"]
 panorama = ExtResource("17_hpdng")
+energy_multiplier = 0.8
 
 [sub_resource type="Sky" id="Sky_qfnet"]
 sky_material = SubResource("PanoramaSkyMaterial_71j4m")
@@ -538,10 +539,13 @@ sky_rotation = Vector3(0, 3.14159, 0)
 ambient_light_source = 1
 reflected_light_source = 1
 tonemap_mode = 4
-ssao_enabled = true
-sdfgi_enabled = true
 glow_enabled = true
-volumetric_fog_density = 0.1761
+glow_normalized = true
+glow_intensity = 1.5
+glow_strength = 0.5
+glow_mix = 0.5
+glow_bloom = 0.8
+glow_hdr_threshold = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npbic"]
 transparency = 1

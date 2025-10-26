@@ -2,7 +2,7 @@ extends Control
 
 @onready var codigo = $PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase
 @onready var LabelResposta = $PanelContainer/TextureRect/MarginContainer/TextureRect4/ResponseLabel
-
+@onready var Audio = $AudioStreamPlayer
 
 func _ready() -> void:
 	GameState.setValue("podeAndar", false)
@@ -17,6 +17,9 @@ func _on_button_pressed() -> void:
 		TransicaoCenas.change_scene("res://scenes/fimDemo.tscn")
 		
 	else:
+		Audio.stop() # Para se já estiver falando
+		Audio.play() # Começa a falar
+		
 		LabelResposta.visible = true
 		
 		var falaTween = create_tween()

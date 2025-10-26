@@ -1,6 +1,5 @@
 extends Carta
 
-
 func _on_interacted(_body: Variant) -> void:
 	if GameState.getValue("pauseAberto") or GameState.getValue("abrindoAgenda"): return
 	GameState.setValue("jornal", !GameState.getValue("jornal"))

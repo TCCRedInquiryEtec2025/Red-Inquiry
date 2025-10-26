@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://8navspruggjk"]
+[gd_scene load_steps=22 format=3 uid="uid://8navspruggjk"]
 
 [ext_resource type="Script" uid="uid://bcd2164ydly4x" path="res://scenes/menu_inicial.gd" id="1_p0uqc"]
 [ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="2_jhs6u"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/sounds/thunderstorm-ambiance-191991 (2).mp3" id="3_81crh"]
 [ext_resource type="Texture2D" uid="uid://dakqqs76hmrwh" path="res://assets/instagram.png" id="6_70i05"]
 [ext_resource type="AudioStream" uid="uid://bfpdxa57hwy8o" path="res://assets/sounds/Musicas/menuInicial.mp3" id="7_qx1f8"]
+[ext_resource type="Script" uid="uid://84emwilsgwda" path="res://scripts/VhsShader.gd" id="8_1pvsu"]
+[ext_resource type="Shader" uid="uid://btm06oysqalih" path="res://assets/shaders/CRTMonitor.gdshader" id="9_8oiit"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oiit"]
 content_margin_left = 0.0
@@ -97,6 +99,30 @@ base_scale = 2.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4m7wy"]
 size = Vector2(100, 100)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oiit"]
+shader = ExtResource("9_8oiit")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.3
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(1600, 900)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 4.5
+shader_parameter/roll_size = 18.000000855
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0250000011875
+shader_parameter/noise_opacity = 0.250000011875
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.1200000057
+shader_parameter/aberration = 0.010000047974999982
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.250000011875
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.400000019
 
 [node name="MenuInicial" type="Control"]
 layout_mode = 3
@@ -668,6 +694,20 @@ volume_db = 15.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="Shader" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+script = ExtResource("8_1pvsu")
+
+[node name="ColorRect" type="ColorRect" parent="Shader"]
+material = SubResource("ShaderMaterial_8oiit")
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="MenuPrincipal/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Iniciar" to="." method="_on_button_pressed"]

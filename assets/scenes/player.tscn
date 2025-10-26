@@ -704,7 +704,7 @@ layout_mode = 2
 [node name="CenterContainer2" type="CenterContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonTerence/PanelCartaTerence/ContainerDocumentoExemplo"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.3
+size_flags_stretch_ratio = 0.6
 
 [node name="TextureCarta" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaEsquerda/ContainerDocumentos/VBoxContainer/ScrollContainer/ContainerDocumentos/ButtonTerence/PanelCartaTerence/ContainerDocumentoExemplo/CenterContainer2"]
 custom_minimum_size = Vector2(100, 0)
