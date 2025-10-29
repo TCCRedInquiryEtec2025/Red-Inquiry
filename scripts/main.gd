@@ -4,14 +4,14 @@ extends Node3D
 @onready var fotoMario = $Comoda/RetratoMesa/Foto
 
 @onready var objetivosUI = $ControlObjetivos
-@onready var label_objetivo = $ControlObjetivos/PainelObjetivos/LabelObjetivo
+@onready var label_objetivo = $ControlObjetivos/PainelObjetivos/VBoxContainer/LabelObjetivo
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:	
 	var tween: Tween
 	objetivosUI.visible = false
 	objetivosUI.modulate.a = 0
-	label_objetivo.text = "- Ache as cartas\n(consulte a agenda)"
+	label_objetivo.text = "- Ache as cartas necessárias\n(consulte a agenda pressionando [TAB])"
 	
 	GameState.setValue("cartaTerence", false)
 	GameState.setValue("folhaArrancada", false)
@@ -51,30 +51,32 @@ func _ready() -> void:
 	await tween.tween_property(objetivosUI, "modulate:a", 0, 0.35).finished
 	objetivosUI.visible = false
 	
-	var segundo_objetivo = true
-	while(segundo_objetivo):
-		if(!GameState.getValue("cartaTerence") or !GameState.getValue("folhaArrancada")):
-			print(">> Esperando as cartas")
+	# Espera as cartas necessárias
+	await esperar_cartas()
 			
-			for i in range(60):
-				await get_tree().process_frame
-			continue
-			
-		label_objetivo.text = "- Resolva o mistério no quadro"
+	label_objetivo.text = "- Resolva o mistério no quadro"
 		
-		await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1).timeout
 		
-		objetivosUI.visible = true
-		$ControlObjetivos/AudioEscrevendo.play()
-		tween = create_tween()
-		await tween.tween_property(objetivosUI, "modulate:a", 1, 0.4).finished
-		
-		await get_tree().create_timer(7).timeout
-		
-		$ControlObjetivos/AudioRasgando.play()
-		tween = create_tween()
-		await tween.tween_property(objetivosUI, "modulate:a", 0, 0.35).finished
-		objetivosUI.visible = false
+	objetivosUI.visible = true
+	$ControlObjetivos/AudioEscrevendo.play()
+	tween = create_tween()
+	await tween.tween_property(objetivosUI, "modulate:a", 1, 0.4).finished
 	
-		segundo_objetivo = false
+	await get_tree().create_timer(7).timeout
 	
+	$ControlObjetivos/AudioRasgando.play()
+	tween = create_tween()
+	await tween.tween_property(objetivosUI, "modulate:a", 0, 0.35).finished
+	objetivosUI.visible = false
+
+
+func esperar_cartas() -> void:
+	var cartas_necessarias = ["cartaTerence", "folhaArrancada"]
+	
+	for carta in cartas_necessarias:
+		if(!GameState.getValue(carta)):
+			while(!GameState.getValue(carta)):
+				var nome = await GameState.carta_obtida
+				if(nome == carta):
+					break

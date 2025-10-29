@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bigptdc4ibawy"]
+[gd_scene load_steps=9 format=3 uid="uid://bigptdc4ibawy"]
 
 [ext_resource type="Script" uid="uid://dty5ut07vclbw" path="res://scripts/loading_screen.gd" id="1_ep5rh"]
 [ext_resource type="Texture2D" uid="uid://c6crsqdp41knm" path="res://assets/loadingScreen.png" id="2_ku3bi"]
 [ext_resource type="FontFile" uid="uid://dbwh0wnd303hu" path="res://assets/fonts/IMFeENsc28P.ttf" id="3_5phy8"]
+[ext_resource type="Shader" uid="uid://dlly7f75ufni7" path="res://assets/shaders/monochromeCRT.gdshader" id="4_5phy8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djmwj"]
 texture = ExtResource("2_ku3bi")
@@ -25,12 +26,32 @@ content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
-bg_color = Color(0.854902, 0.160784, 0, 0.694118)
+bg_color = Color(0.85, 0.15583333, 0, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 corner_detail = 6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djmwj"]
+shader = ExtResource("4_5phy8")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.1
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.1
+shader_parameter/resolution = Vector2(1600, 900)
+shader_parameter/pixelate = true
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.15
+shader_parameter/noise_speed = 20.0
+shader_parameter/static_noise_intensity = 0.1
+shader_parameter/aberration = 0.0050000477375000685
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.050000002375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.4
 
 [node name="LoadingScreen" type="Control"]
 layout_mode = 3
@@ -78,3 +99,15 @@ theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 25
 theme_override_styles/background = SubResource("StyleBoxFlat_ep5rh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ku3bi")
+
+[node name="Shaders" type="CanvasLayer" parent="."]
+
+[node name="MonochromeCRT" type="ColorRect" parent="Shaders"]
+z_index = 2
+material = SubResource("ShaderMaterial_djmwj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

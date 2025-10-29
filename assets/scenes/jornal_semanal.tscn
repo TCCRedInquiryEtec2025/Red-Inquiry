@@ -1,18 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccip78h4p28f0"]
+[gd_scene load_steps=8 format=3 uid="uid://ccip78h4p28f0"]
 
 [ext_resource type="Script" uid="uid://bey1drfr5hc0a" path="res://scripts/jornal_semanal.gd" id="1_vlw0r"]
 [ext_resource type="AudioStream" uid="uid://cx6xcyjrobdn5" path="res://assets/sounds/DetetiveFalas/mafiosodaqui.mp3" id="2_akans"]
 [ext_resource type="Texture2D" uid="uid://c6tss7lcdqskg" path="res://assets/cartas/Jornal.png" id="2_o1xx0"]
-[ext_resource type="Shader" uid="uid://c5penxg5gfje0" path="res://assets/shaders/aura_carta.gdshader" id="4_7fe8a"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpk18"]
-render_priority = 0
-shader = ExtResource("4_7fe8a")
-shader_parameter/color = Color(1, 0, 0, 1)
-shader_parameter/size = 1.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akans"]
-next_pass = SubResource("ShaderMaterial_gpk18")
 albedo_color = Color(0.7441813, 0.7441813, 0.7441813, 1)
 albedo_texture = ExtResource("2_o1xx0")
 uv1_scale = Vector3(3, 2, 0)
@@ -25,6 +17,9 @@ size = Vector3(0.5, 0.35, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjcnx"]
 size = Vector3(0.507607, 0.361422, 0.0352135)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7fe8a"]
+size = Vector3(2, 2, 2)
 
 [node name="JornalSemanal" type="RigidBody3D" groups=["legiveis"]]
 mass = 0.001
@@ -41,4 +36,12 @@ mesh = SubResource("BoxMesh_xyupw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00162128, -0.0048438, 0.00278364)
 shape = SubResource("BoxShape3D_fjcnx")
 
+[node name="GlowArea" type="Area3D" parent="."]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GlowArea"]
+shape = SubResource("BoxShape3D_7fe8a")
+
 [connection signal="interacted" from="." to="." method="_on_interacted"]
+[connection signal="body_entered" from="GlowArea" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="GlowArea" to="." method="_on_area_body_exited"]

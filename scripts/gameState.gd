@@ -1,5 +1,7 @@
 extends Node
 
+signal carta_obtida(key: String)
+
 var state := {
 	"folhaArrancada": false,
 	"cartaTerence" : false,
@@ -24,6 +26,7 @@ func getValue(key):
 	printerr("Chave não encontrada: ", key)
 	
 
-func setValue(key, value):
+func setValue(key: String, value: bool) -> void:
 	state[key] = value
-	
+	if(key in ["cartaTerence", "folhaArrancada"] and value):
+		emit_signal("carta_obtida", key)

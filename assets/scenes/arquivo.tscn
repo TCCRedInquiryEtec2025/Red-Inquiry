@@ -1,18 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ph5dmad4elmn"]
+[gd_scene load_steps=8 format=3 uid="uid://ph5dmad4elmn"]
 
 [ext_resource type="Script" uid="uid://d4fvw58gepxvl" path="res://scripts/arquivo.gd" id="1_k0r62"]
 [ext_resource type="Texture2D" uid="uid://ciav0h1exguag" path="res://assets/cartas/arquivo.png" id="2_7ebtq"]
 [ext_resource type="AudioStream" uid="uid://de16o66x37p74" path="res://assets/sounds/DetetiveFalas/investigacaodelado.mp3" id="2_jmmx4"]
-[ext_resource type="Shader" uid="uid://c5penxg5gfje0" path="res://assets/shaders/aura_carta.gdshader" id="4_nbfpa"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xk0ei"]
-render_priority = 0
-shader = ExtResource("4_nbfpa")
-shader_parameter/color = Color(1, 0, 0, 1)
-shader_parameter/size = 1.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmmx4"]
-next_pass = SubResource("ShaderMaterial_xk0ei")
 albedo_texture = ExtResource("2_7ebtq")
 uv1_scale = Vector3(3, 2, 1)
 
@@ -22,6 +14,9 @@ size = Vector3(0.21, 0.3, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jmmx4"]
 size = Vector3(0.242798, 0.320831, 0.0352135)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nbfpa"]
+size = Vector3(2, 2, 2)
 
 [node name="Arquivo" type="RigidBody3D" groups=["legiveis"]]
 mass = 0.001
@@ -38,4 +33,12 @@ mesh = SubResource("BoxMesh_7ebtq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00311279, -0.0059967, 0.00278364)
 shape = SubResource("BoxShape3D_jmmx4")
 
+[node name="GlowArea" type="Area3D" parent="."]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GlowArea"]
+shape = SubResource("BoxShape3D_nbfpa")
+
 [connection signal="interacted" from="." to="." method="_on_interacted"]
+[connection signal="body_entered" from="GlowArea" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="GlowArea" to="." method="_on_area_body_exited"]

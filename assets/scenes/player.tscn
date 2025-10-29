@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
+[ext_resource type="Shader" uid="uid://dlly7f75ufni7" path="res://assets/shaders/monochromeCRT.gdshader" id="2_gdn7j"]
 [ext_resource type="Script" uid="uid://0c0cns6vn1s1" path="res://scripts/documentos.gd" id="5_8sknh"]
-[ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="5_60g6h"]
 [ext_resource type="Texture2D" uid="uid://c6tss7lcdqskg" path="res://assets/cartas/Jornal.png" id="6_00pic"]
 [ext_resource type="Texture2D" uid="uid://c0ouu504y8fq8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_w_outline.png" id="6_c6vv5"]
 [ext_resource type="Script" uid="uid://5io2so8aapg5" path="res://scripts/reticle.gd" id="6_hrrj1"]
@@ -42,8 +42,25 @@ height = 1.2
 [sub_resource type="SphereShape3D" id="SphereShape3D_00pic"]
 radius = 0.4
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dmvh"]
-shader = ExtResource("5_60g6h")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6luef"]
+shader = ExtResource("2_gdn7j")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.1
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.1
+shader_parameter/resolution = Vector2(1600, 900)
+shader_parameter/pixelate = true
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.15
+shader_parameter/noise_speed = 20.0
+shader_parameter/static_noise_intensity = 0.1
+shader_parameter/aberration = 0.003000047642500059
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.050000002375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh07x"]
 content_margin_left = 0.0
@@ -349,27 +366,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168516, 0)
 [node name="Camera3D" type="Camera3D" parent="Neck/Head/Eyes"]
 fov = 85.0
 
-[node name="Shaders" type="Control" parent="Neck/Head/Eyes/Camera3D"]
-top_level = true
-z_index = 25
-layout_mode = 3
+[node name="Shaders" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D"]
+
+[node name="MonochromeCRT" type="ColorRect" parent="Neck/Head/Eyes/Camera3D/Shaders"]
+z_index = 2
+material = SubResource("ShaderMaterial_6luef")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-mouse_behavior_recursive = 1
-
-[node name="ColorRect" type="ColorRect" parent="Neck/Head/Eyes/Camera3D/Shaders"]
-z_index = 2
-material = SubResource("ShaderMaterial_1dmvh")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Crosshair" type="Control" parent="Neck/Head/Eyes/Camera3D"]
 layout_mode = 3
@@ -470,6 +477,7 @@ text = "FECHAR"
 flat = true
 
 [node name="NoteBookHUD" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D" node_paths=PackedStringArray("player")]
+layer = 0
 script = ExtResource("15_wf17w")
 player = NodePath("../../../../..")
 

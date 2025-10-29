@@ -1,11 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2c6g66w0ncnx"]
+[gd_scene load_steps=6 format=3 uid="uid://c2c6g66w0ncnx"]
 
 [ext_resource type="Script" uid="uid://ot6taq1csu43" path="res://scripts/cutscene.gd" id="1_a320b"]
 [ext_resource type="Texture2D" uid="uid://c6crsqdp41knm" path="res://assets/loadingScreen.png" id="1_edmg7"]
+[ext_resource type="Shader" uid="uid://dlly7f75ufni7" path="res://assets/shaders/monochromeCRT.gdshader" id="3_0sipp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a320b"]
 texture = ExtResource("1_edmg7")
 modulate_color = Color(0.39679098, 0.39679098, 0.39679098, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2bm7f"]
+shader = ExtResource("3_0sipp")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.1
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.1
+shader_parameter/resolution = Vector2(1600, 900)
+shader_parameter/pixelate = true
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.15
+shader_parameter/noise_speed = 20.0
+shader_parameter/static_noise_intensity = 0.1
+shader_parameter/aberration = 0.0050000477375000685
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.050000002375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.4
 
 [node name="CutScene" type="Control"]
 layout_mode = 3
@@ -56,3 +77,15 @@ theme_override_constants/outline_size = 10
 text = "Pressione [ESPAÇO] para pular"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Shaders" type="CanvasLayer" parent="."]
+
+[node name="MonochromeCRT" type="ColorRect" parent="Shaders"]
+z_index = 2
+material = SubResource("ShaderMaterial_2bm7f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

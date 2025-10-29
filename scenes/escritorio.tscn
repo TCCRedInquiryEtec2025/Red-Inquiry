@@ -42,11 +42,12 @@
 [ext_resource type="PackedScene" uid="uid://c64ecbs7anqes" path="res://assets/scenes/lampadaQuarto.tscn" id="40_ixsj0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fj6gc"]
-content_margin_left = 7.0
-content_margin_top = 7.0
-content_margin_right = 7.0
-content_margin_bottom = 7.0
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 texture = ExtResource("2_hfin4")
+expand_margin_bottom = 2.0
 modulate_color = Color(0.92, 0.8388867, 0.7084, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
@@ -588,6 +589,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 400.0
 offset_bottom = 150.0
+mouse_filter = 2
 
 [node name="PainelObjetivos" type="PanelContainer" parent="ControlObjetivos"]
 custom_minimum_size = Vector2(400, 150)
@@ -599,7 +601,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_fj6gc")
 
-[node name="LabelTitulo" type="Label" parent="ControlObjetivos/PainelObjetivos"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlObjetivos/PainelObjetivos"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="LabelTitulo" type="Label" parent="ControlObjetivos/PainelObjetivos/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -610,13 +616,12 @@ text = "Objetivo atual:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelObjetivo" type="Label" parent="ControlObjetivos/PainelObjetivos"]
+[node name="LabelObjetivo" type="Label" parent="ControlObjetivos/PainelObjetivos/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_lvr0u")
 theme_override_font_sizes/font_size = 22
 text = "- Exemplo de objetivo (6/7)"
-vertical_alignment = 1
 
 [node name="AudioEscrevendo" type="AudioStreamPlayer" parent="ControlObjetivos"]
 stream = ExtResource("4_lvr0u")

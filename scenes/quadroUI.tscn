@@ -4,16 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://ccl8te2ukladd" path="res://assets/textures/WoodFloor013_1K-JPG_Color.jpg" id="2_g3mub"]
 [ext_resource type="Texture2D" uid="uid://d10h2qdnearmj" path="res://assets/textures/Cork002_1K-JPG_Color.jpg" id="3_k70iu"]
 [ext_resource type="Texture2D" uid="uid://1kjoqg8ljb0g" path="res://assets/cartas/Carta_Terence.jpg" id="5_1i01y"]
-[ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="5_k70iu"]
 [ext_resource type="Texture2D" uid="uid://cog4gy6jspq3e" path="res://assets/cartas/folhaArrancada.jpg" id="6_j6161"]
 [ext_resource type="Texture2D" uid="uid://4mh2b6hye7tk" path="res://assets/icons/PNG/White/1x/up.png" id="7_e6iwo"]
 [ext_resource type="Script" uid="uid://bfvc2ug3molcs" path="res://scripts/frase.gd" id="7_j6161"]
 [ext_resource type="Script" uid="uid://dys58cax3w8lg" path="res://scripts/letra.gd" id="7_nsu73"]
 [ext_resource type="Texture2D" uid="uid://buov34cptfppg" path="res://assets/icons/PNG/White/1x/down.png" id="8_nsu73"]
 [ext_resource type="AudioStream" uid="uid://8pyyhvg2ge4h" path="res://assets/sounds/DetetiveFalas/issonaoestacerto.mp3" id="11_cxpar"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i01y"]
-shader = ExtResource("5_k70iu")
+[ext_resource type="Shader" uid="uid://dlly7f75ufni7" path="res://assets/shaders/monochromeCRT.gdshader" id="11_dw0rx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6161"]
 content_margin_left = 0.0
@@ -38,6 +35,26 @@ font_size = 34
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgvrg"]
+shader = ExtResource("11_dw0rx")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.1
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.1
+shader_parameter/resolution = Vector2(1600, 900)
+shader_parameter/pixelate = true
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.15
+shader_parameter/noise_speed = 20.0
+shader_parameter/static_noise_intensity = 0.1
+shader_parameter/aberration = 0.002000047594999943
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.050000002375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.4
+
 [node name="Quadro" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -46,24 +63,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pchnr")
-
-[node name="Shaders" type="Control" parent="."]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Shaders"]
-material = SubResource("ShaderMaterial_1i01y")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -928,6 +927,18 @@ vertical_alignment = 1
 stream = ExtResource("11_cxpar")
 volume_db = -5.0
 pitch_scale = 0.95
+
+[node name="Shaders" type="CanvasLayer" parent="."]
+
+[node name="MonochromeCRT" type="ColorRect" parent="Shaders"]
+z_index = 2
+material = SubResource("ShaderMaterial_hgvrg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/VBoxFrase/ButtonReiniciar" to="." method="_on_button_reiniciar_pressed"]
 [connection signal="pressed" from="PanelContainer/TextureRect/MarginContainer/TextureRect4/VBoxContainer/Button" to="." method="_on_button_pressed"]
