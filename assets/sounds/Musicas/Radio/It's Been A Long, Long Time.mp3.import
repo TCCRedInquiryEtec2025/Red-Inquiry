@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl2qf1vvbe76k"
+path="res://.godot/imported/It's Been A Long, Long Time.mp3-f70276a646ff25cc38500f99a060adff.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Musicas/Radio/It's Been A Long, Long Time.mp3"
+dest_files=["res://.godot/imported/It's Been A Long, Long Time.mp3-f70276a646ff25cc38500f99a060adff.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

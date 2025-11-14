@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://bopd65sk2st0l"]
+[gd_scene load_steps=7 format=4 uid="uid://bopd65sk2st0l"]
 
+[ext_resource type="Texture2D" uid="uid://su3yxw6qqu8j" path="res://assets/textures/wood_table_worn_diff_4k.jpg" id="1_byo84"]
 [ext_resource type="PackedScene" uid="uid://bocxoodqwhwyy" path="res://assets/scenes/fedora.tscn" id="1_s4wyy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7nul"]
 resource_name = "Office_Sh"
 cull_mode = 2
-albedo_color = Color(0.668033, 0.376988, 0.215597, 1)
+albedo_texture = ExtResource("1_byo84")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ts0tc"]
 _surfaces = [{

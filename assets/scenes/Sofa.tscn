@@ -1,9 +1,12 @@
-[gd_scene load_steps=26 format=4 uid="uid://dn7fwlgngg75t"]
+[gd_scene load_steps=27 format=4 uid="uid://dn7fwlgngg75t"]
+
+[ext_resource type="Texture2D" uid="uid://ct02awywhjqxu" path="res://assets/models/textures/Fabric029_2K_Roughness.jpg" id="1_stogs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmq70"]
 resource_name = "White"
 cull_mode = 2
 albedo_color = Color(0.27451, 0.27451, 0.27451, 1)
+albedo_texture = ExtResource("1_stogs")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_m2lko"]
 _surfaces = [{
@@ -42,6 +45,7 @@ shadow_mesh = SubResource("ArrayMesh_m2lko")
 resource_name = "Grey"
 cull_mode = 2
 albedo_color = Color(0.415686, 0.670588, 0.537255, 1)
+albedo_texture = ExtResource("1_stogs")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6bb8s"]
 _surfaces = [{
@@ -245,6 +249,7 @@ shadow_mesh = SubResource("ArrayMesh_odf6y")
 resource_name = "Black"
 cull_mode = 2
 albedo_color = Color(0.27451, 0.27451, 0.27451, 1)
+albedo_texture = ExtResource("1_stogs")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_asj0e"]
 _surfaces = [{
@@ -316,6 +321,7 @@ shadow_mesh = SubResource("ArrayMesh_e7kxr")
 resource_name = "Brown"
 cull_mode = 2
 albedo_color = Color(0.27451, 0.27451, 0.27451, 1)
+albedo_texture = ExtResource("1_stogs")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_p71yb"]
 _surfaces = [{

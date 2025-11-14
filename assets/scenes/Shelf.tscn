@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://cma0802wr3ivw"]
+[gd_scene load_steps=12 format=4 uid="uid://cma0802wr3ivw"]
+
+[ext_resource type="Texture2D" uid="uid://su3yxw6qqu8j" path="res://assets/textures/wood_table_worn_diff_4k.jpg" id="1_rg0rn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyknk"]
 resource_name = "Shelf_common"
 cull_mode = 2
-albedo_color = Color(0.65098, 0.37647, 0.160784, 1)
-roughness = 0.8
+albedo_texture = ExtResource("1_rg0rn")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2angv"]
 _surfaces = [{
@@ -42,9 +45,7 @@ shadow_mesh = SubResource("ArrayMesh_2angv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_335aj"]
 resource_name = "Shelf_blot"
-cull_mode = 2
-albedo_color = Color(0.65098, 0.376471, 0.160784, 1)
-roughness = 0.8
+albedo_texture = ExtResource("1_rg0rn")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_stebv"]
 _surfaces = [{
@@ -105,8 +106,7 @@ shadow_mesh = SubResource("ArrayMesh_stebv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pecte"]
 resource_name = "black"
 cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-roughness = 0.4
+albedo_color = Color(0.45, 0.31500003, 0.225, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_n1y2e"]
 _surfaces = [{

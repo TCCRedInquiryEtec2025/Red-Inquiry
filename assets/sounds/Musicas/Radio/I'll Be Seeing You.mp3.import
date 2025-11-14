@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dq308585osefn"
+path="res://.godot/imported/I'll Be Seeing You.mp3-07578363a1fbcff266965d8525fa2615.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Musicas/Radio/I'll Be Seeing You.mp3"
+dest_files=["res://.godot/imported/I'll Be Seeing You.mp3-07578363a1fbcff266965d8525fa2615.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

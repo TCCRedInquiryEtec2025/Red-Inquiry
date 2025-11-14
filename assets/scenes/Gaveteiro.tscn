@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=4 uid="uid://bn1elfij2nvlc"]
+[gd_scene load_steps=7 format=4 uid="uid://bn1elfij2nvlc"]
+
+[ext_resource type="Texture2D" uid="uid://b87jcm1xyuqw6" path="res://assets/models/textures/Metal009_2K_Color.jpg" id="1_dvh80"]
+[ext_resource type="Texture2D" uid="uid://cuve4q7jfun4j" path="res://assets/models/textures/Metal009_2K_Metalness.jpg" id="2_qs7t4"]
+[ext_resource type="Texture2D" uid="uid://bjptipkcvyrhu" path="res://assets/models/textures/Metal009_2K_Roughness.jpg" id="3_xbf4e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22sqg"]
 resource_name = "Office_Sh"
-cull_mode = 2
-albedo_color = Color(0.521141, 0.521141, 0.521141, 1)
+albedo_texture = ExtResource("1_dvh80")
 metallic = 1.0
 metallic_specular = 1.0
+metallic_texture = ExtResource("2_qs7t4")
+roughness_texture = ExtResource("3_xbf4e")
+uv1_world_triplanar = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_f4cdd"]
 resource_name = "Gaveteiro_Lockers_01"

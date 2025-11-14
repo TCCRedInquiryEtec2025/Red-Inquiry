@@ -7,7 +7,7 @@ extends Node3D
 @onready var label_objetivo = $ControlObjetivos/PainelObjetivos/VBoxContainer/LabelObjetivo
 
 
-func _ready() -> void:	
+func _ready() -> void:		
 	var tween: Tween
 	objetivosUI.visible = false
 	objetivosUI.modulate.a = 0

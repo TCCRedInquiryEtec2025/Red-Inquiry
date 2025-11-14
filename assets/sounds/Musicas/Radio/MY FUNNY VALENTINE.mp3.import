@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvk13m37lg234"
+path="res://.godot/imported/MY FUNNY VALENTINE.mp3-09c5007ec7458cc119ab619c46866a4d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Musicas/Radio/MY FUNNY VALENTINE.mp3"
+dest_files=["res://.godot/imported/MY FUNNY VALENTINE.mp3-09c5007ec7458cc119ab619c46866a4d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://dymlnvhjf20c0"]
+[gd_scene load_steps=13 format=4 uid="uid://dymlnvhjf20c0"]
 
 [ext_resource type="AudioStream" uid="uid://7lwvl3kmh76q" path="res://assets/sounds/fan.mp3" id="1_0t3xf"]
+[ext_resource type="Texture2D" uid="uid://ndnr1u5sd5oa" path="res://assets/textures/papel/Paper005_2K-PNG_Roughness.png" id="1_6xqoo"]
 
 [sub_resource type="Animation" id="Animation_k4050"]
 length = 0.001
@@ -33,14 +34,14 @@ _data = {
 resource_name = "Office_Sh"
 cull_mode = 2
 albedo_color = Color(0.227451, 0.227451, 0.227451, 1)
+albedo_texture = ExtResource("1_6xqoo")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd061"]
 resource_name = "Emit"
 cull_mode = 2
-albedo_color = Color(0, 0, 0, 1)
-metallic = 1.0
 emission_enabled = true
 emission = Color(0.906332, 0.855062, 0.701252, 1)
+emission_energy_multiplier = 4.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_v7puf"]
 _surfaces = [{
@@ -100,6 +101,7 @@ shadow_mesh = SubResource("ArrayMesh_v7puf")
 resource_name = "Office_Sh"
 cull_mode = 2
 albedo_color = Color(0.227451, 0.227451, 0.227451, 1)
+albedo_texture = ExtResource("1_6xqoo")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3p2yd"]
 _surfaces = [{

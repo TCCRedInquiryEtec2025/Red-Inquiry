@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdurlpi1kb02w"
+path="res://.godot/imported/I Don't Want To Set The World On Fire.mp3-a3a00a64309bf2618476304311850fd1.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Musicas/Radio/I Don't Want To Set The World On Fire.mp3"
+dest_files=["res://.godot/imported/I Don't Want To Set The World On Fire.mp3-a3a00a64309bf2618476304311850fd1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

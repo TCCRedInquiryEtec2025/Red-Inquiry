@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://dnhj12foq7mg4"]
+[gd_scene load_steps=18 format=4 uid="uid://dnhj12foq7mg4"]
 
 [ext_resource type="Texture2D" uid="uid://dydt3cymyxwe7" path="res://assets/models/textures/Fabric007_2K_Color.jpg" id="1_d45l7"]
+[ext_resource type="Texture2D" uid="uid://x42h1n2b644y" path="res://assets/textures/wood_cabinet_worn_long_diff_4k.jpg" id="2_gnk2e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qhkc"]
 resource_name = "Grey"
@@ -43,8 +44,9 @@ shadow_mesh = SubResource("ArrayMesh_lxkww")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7t0ed"]
 resource_name = "Brown"
-cull_mode = 2
-albedo_color = Color(0.22541, 0.13266, 0.0606731, 1)
+albedo_texture = ExtResource("2_gnk2e")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_o5fun"]
 _surfaces = [{

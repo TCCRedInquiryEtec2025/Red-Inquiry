@@ -1,4 +1,21 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://dmf2ikwkfvsuv"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://dmf2ikwkfvsuv"]
+
+[sub_resource type="AudioEffectEQ10" id="AudioEffectEQ10_xy1bq"]
+resource_name = "EQ10"
+band_db/31_hz = -40.0
+band_db/62_hz = -30.0
+band_db/125_hz = -18.0
+band_db/250_hz = -6.0
+band_db/500_hz = -3.0
+band_db/1000_hz = 1.0
+band_db/2000_hz = 2.0
+band_db/8000_hz = -8.0
+band_db/16000_hz = -20.0
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_xy1bq"]
+resource_name = "Distortion"
+keep_hf_hz = 1.0
+drive = 0.08
 
 [resource]
 bus/0/volume_db = -0.0438385
@@ -8,3 +25,7 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
 bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectEQ10_xy1bq")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectDistortion_xy1bq")
+bus/1/effect/1/enabled = true

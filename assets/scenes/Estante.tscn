@@ -1,6 +1,9 @@
-[gd_scene load_steps=80 format=4 uid="uid://bec1o7ycwl88g"]
+[gd_scene load_steps=83 format=4 uid="uid://bec1o7ycwl88g"]
 
 [ext_resource type="Texture2D" uid="uid://cv15awoa0hje3" path="res://assets/models/Estante_Image.png" id="1_717dj"]
+[ext_resource type="Texture2D" uid="uid://x42h1n2b644y" path="res://assets/textures/wood_cabinet_worn_long_diff_4k.jpg" id="1_eimrv"]
+[ext_resource type="Texture2D" uid="uid://d3xctxuhdmigh" path="res://assets/textures/AgendaCapaTextureBlack.jpg" id="1_rrdqj"]
+[ext_resource type="Texture2D" uid="uid://drlxoye4i20q6" path="res://assets/textures/Concrete042A_4K-PNG_Color.png" id="2_8w5vq"]
 [ext_resource type="PackedScene" uid="uid://ph5dmad4elmn" path="res://assets/scenes/arquivo.tscn" id="2_aqox6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6dfi"]
@@ -12,7 +15,7 @@ roughness = 0.5
 resource_name = "bookcovver"
 cull_mode = 2
 albedo_color = Color(0.359994, 0.243104, 0.0344351, 1)
-roughness = 0.5
+albedo_texture = ExtResource("1_rrdqj")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_eg46a"]
 _surfaces = [{
@@ -144,6 +147,8 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpa7r"]
 resource_name = "bookcovver.002"
 cull_mode = 2
+albedo_color = Color(1, 0.35000002, 0.35000002, 1)
+albedo_texture = ExtResource("2_8w5vq")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_esmpa"]
@@ -1933,11 +1938,13 @@ shadow_mesh = SubResource("ArrayMesh_gx8fl")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qld6a"]
 resource_name = "Material.002"
 cull_mode = 2
-albedo_color = Color(0.549097, 0.277029, 0.0934145, 1)
+albedo_texture = ExtResource("1_eimrv")
 metallic_texture = ExtResource("1_717dj")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("1_717dj")
 roughness_texture_channel = 1
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h6420"]
 _surfaces = [{
@@ -2058,8 +2065,8 @@ transform = Transform3D(0.000204698, -0.00722478, -0.0382744, -0.00105373, 0.148
 mesh = SubResource("ArrayMesh_07umd")
 skeleton = NodePath("")
 
-[node name="book1_023" type="MeshInstance3D" parent="book1_015"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0314564, -2.68108, -10.1206)
+[node name="book1_023" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.000204698, -0.00722478, -0.0382744, -0.00105373, 0.148101, -0.00186754, 0.123753, 0.00127301, 4.74076e-05, -8.269294, 1.2718068, -0.20335901)
 mesh = SubResource("ArrayMesh_i1aqd")
 skeleton = NodePath("")
 

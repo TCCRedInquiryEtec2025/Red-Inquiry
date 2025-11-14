@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://bdkj08m4cyyef"]
+[gd_scene load_steps=11 format=4 uid="uid://bdkj08m4cyyef"]
 
 [ext_resource type="Script" uid="uid://cy484nj2jqljc" path="res://scripts/radio.gd" id="1_5e52h"]
 [ext_resource type="Texture2D" uid="uid://bbel3swuaisqv" path="res://assets/textures/radio/Radio_BaseColor.jpg" id="2_5st51"]
 [ext_resource type="Texture2D" uid="uid://ctwih0cal78o0" path="res://assets/textures/radio/Radiot_Normal.jpg" id="3_wp6nv"]
 [ext_resource type="Texture2D" uid="uid://dgxtpt6kt254b" path="res://assets/textures/radio/Radio_Metallic.jpg" id="4_ld51f"]
 [ext_resource type="Texture2D" uid="uid://csw85ppnidh52" path="res://assets/textures/radio/Radio_Roughness.jpg" id="5_6ebqm"]
+[ext_resource type="AudioStream" uid="uid://dq308585osefn" path="res://assets/sounds/Musicas/Radio/I'll Be Seeing You.mp3" id="6_5st51"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mb5d"]
 metallic = 1.0
@@ -63,5 +64,17 @@ mesh = SubResource("ArrayMesh_sfjjp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018310547, 0.17196655, 0.0045166016)
 shape = SubResource("BoxShape3D_f4bhh")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12251106, -0.18381783)
+stream = ExtResource("6_5st51")
+volume_db = -20.0
+unit_size = 15.0
+max_db = -10.0
+autoplay = true
+max_distance = 20.0
+max_polyphony = 2
+bus = &"Music"
+emission_angle_filter_attenuation_db = -30.7
 
 [connection signal="interacted" from="." to="." method="_on_interacted"]
