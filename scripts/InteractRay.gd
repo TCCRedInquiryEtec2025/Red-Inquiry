@@ -3,6 +3,8 @@ extends RayCast3D
 signal carta_coletada(nome_carta)
 signal fala_interacao(interagivel)
 
+var highlighted: Interactable = null
+
 @onready var prompt = $Prompt
 @onready var response = $ResponseLabel
 
@@ -47,9 +49,19 @@ func _physics_process(_delta: float) -> void:
 		if(collider is Interactable):
 			prompt.text = collider.get_prompt()
 			
+			if(highlighted and highlighted != collider):
+				highlighted.disable_highlight()
+			
+			collider.enable_highlight()
+			highlighted = collider
+			
 			if Input.is_action_just_pressed("interact"):
 				_interact_with(collider)
 
+	else:
+		if(highlighted):
+			highlighted.disable_highlight()
+			highlighted = null
 
 func _interact_with(collider: Interactable) -> void:
 	collider.interact(owner)

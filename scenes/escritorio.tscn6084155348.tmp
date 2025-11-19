@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://bl3me73mor0ud"]
+[gd_scene load_steps=94 format=4 uid="uid://bl3me73mor0ud"]
 
 [ext_resource type="Script" uid="uid://5iauodu0w3m4" path="res://scripts/main.gd" id="1_g1xw2"]
 [ext_resource type="PackedScene" uid="uid://cs4tduc8jd2vn" path="res://assets/scenes/player.tscn" id="2_c6i3x"]
@@ -40,8 +40,6 @@
 [ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="38_s7nc1"]
 [ext_resource type="PackedScene" uid="uid://dymlnvhjf20c0" path="res://assets/scenes/ventilador.tscn" id="39_7qkyt"]
 [ext_resource type="PackedScene" uid="uid://c64ecbs7anqes" path="res://assets/scenes/lampadaQuarto.tscn" id="40_ixsj0"]
-[ext_resource type="PackedScene" uid="uid://bjnlcdxyc5e11" path="res://assets/scenes/jornal_semanal_1.tscn" id="41_vsras"]
-[ext_resource type="PackedScene" uid="uid://csqkjh04rpi6t" path="res://assets/scenes/jornal_semanal_2.tscn" id="42_m5sfa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fj6gc"]
 content_margin_left = 15.0
@@ -968,11 +966,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.052, 2.472, 0.25)
 
 [node name="Lampada" parent="." instance=ExtResource("40_ixsj0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97718, 2.52824, -3.25395)
-
-[node name="JornalSemanal1" parent="." instance=ExtResource("41_vsras")]
-transform = Transform3D(0.8694087, -0.4890495, -0.070420824, 0.02732275, 0.18989351, -0.9814244, 0.49333754, 0.8513348, 0.17845725, 3.7636828, 0.8971665, 4.8673224)
-
-[node name="JornalSemanal2" parent="." instance=ExtResource("42_m5sfa")]
-transform = Transform3D(0.6930331, -0.7191383, -0.050449014, -0.012958739, 0.057541486, -0.99825895, 0.72078955, 0.6924802, 0.030559056, -6.047659, 0.8349097, -1.9920993)
 
 [connection signal="interacted" from="Quadro" to="." method="_on_quadro_interacted"]

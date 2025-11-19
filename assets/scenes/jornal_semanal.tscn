@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c6tss7lcdqskg" path="res://assets/cartas/Jornal.png" id="2_o1xx0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akans"]
-albedo_color = Color(0.7441813, 0.7441813, 0.7441813, 1)
 albedo_texture = ExtResource("2_o1xx0")
 uv1_scale = Vector3(3, 2, 0)
 stencil_compare = 6

@@ -17,6 +17,8 @@ func _ready() -> void:
 	GameState.setValue("folhaArrancada", false)
 	GameState.setValue("cartaJoanne", false)
 	GameState.setValue("jornal", false)
+	GameState.setValue("jornal1", false)
+	GameState.setValue("jornal2", false)
 	GameState.setValue("arquivo", false)
 	
 	$ParticulasChuva.emitting = true

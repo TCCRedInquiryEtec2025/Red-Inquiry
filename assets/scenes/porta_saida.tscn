@@ -52,6 +52,9 @@ albedo_texture = ExtResource("2_crgac")
 backlight_enabled = true
 backlight = Color(0.563626, 0.563626, 0.563626, 1)
 grow_amount = -2.265
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 0.05
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hi6a0"]
 _surfaces = [{
@@ -159,17 +162,17 @@ fala = ExtResource("2_np0gi")
 prompt_message = "Abrir"
 response_prompt = "Não posso sair agora, isso daqui é mais importante."
 
-[node name="Porta2f" type="MeshInstance3D" parent="."]
+[node name="Porta" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.63918e-08, 0, -1, 0, 1.4, 0, 0.375, 0, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_np0gi")
 skeleton = NodePath("")
 
-[node name="Builds_Door" type="MeshInstance3D" parent="Porta2f"]
+[node name="Builds_Door" type="MeshInstance3D" parent="Porta"]
 transform = Transform3D(-2.66667, 0, 0, 0, 0.909033, 0, 0, 0, 1, -0.00558758, 0, 0.013588)
 mesh = SubResource("ArrayMesh_om17w")
 skeleton = NodePath("")
 
-[node name="Door" type="MeshInstance3D" parent="Porta2f/Builds_Door"]
+[node name="Door" type="MeshInstance3D" parent="Porta/Builds_Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 1.00271, -0.0520763)
 mesh = SubResource("ArrayMesh_40ud5")
 skeleton = NodePath("")

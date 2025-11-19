@@ -6,6 +6,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qhkc"]
 resource_name = "Grey"
 cull_mode = 2
+shading_mode = 0
 albedo_texture = ExtResource("1_d45l7")
 grow_amount = -0.725
 
@@ -214,7 +215,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tygnk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4txue"]
-size = Vector3(1.01294, 0.609924, 2.03766)
+size = Vector3(1.01294, 0.48648056, 2.03766)
 
 [node name="Banqueta" type="StaticBody3D"]
 transform = Transform3D(0.9, 0, 0, 0, 0.945, 0, 0, 0, 1, 0, 0, 0)
@@ -250,6 +251,5 @@ mesh = SubResource("ArrayMesh_o22bp")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00646973, 0.284943, 0.00491333)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006469731, 0.22322127, 0.00491333)
 shape = SubResource("BoxShape3D_4txue")

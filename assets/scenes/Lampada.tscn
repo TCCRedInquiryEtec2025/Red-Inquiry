@@ -272,3 +272,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0.15)
 light_energy = 12.071
 light_indirect_energy = 4.31
 omni_range = 4.0
+omni_attenuation = 3.0

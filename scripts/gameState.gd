@@ -7,6 +7,8 @@ var state := {
 	"cartaTerence" : false,
 	"cartaJoanne": false,
 	"jornal": false,
+	"jornal1": false,
+	"jornal2": false,
 	"arquivo": false,
 	
 	"pauseAberto": false,

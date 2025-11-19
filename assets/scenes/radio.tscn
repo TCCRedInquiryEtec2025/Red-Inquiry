@@ -14,6 +14,9 @@ roughness_texture = ExtResource("5_6ebqm")
 detail_enabled = true
 detail_albedo = ExtResource("2_5st51")
 detail_normal = ExtResource("3_wp6nv")
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sxm3f"]
 _surfaces = [{
@@ -55,11 +58,10 @@ size = Vector3(0.5480957, 0.31451416, 0.31274414)
 script = ExtResource("1_5e52h")
 prompt_message = "Trocar estação"
 
-[node name="Radio" type="Node3D" parent="."]
-
-[node name="Radio" type="MeshInstance3D" parent="Radio"]
+[node name="MeshInstace3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 mesh = SubResource("ArrayMesh_sfjjp")
+skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018310547, 0.17196655, 0.0045166016)

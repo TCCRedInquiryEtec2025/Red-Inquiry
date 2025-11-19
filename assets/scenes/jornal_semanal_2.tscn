@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://csqkjh04rpi6t"]
+
+[ext_resource type="Script" uid="uid://cy3uu0grc3bfh" path="res://scripts/jornal_semanal_2.gd" id="1_ml8lr"]
+[ext_resource type="Texture2D" uid="uid://cx6mkby1tsifv" path="res://assets/cartas/Jornal2.png" id="1_pvta5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml8lr"]
+albedo_texture = ExtResource("1_pvta5")
+uv1_scale = Vector3(3, 2, 0)
+stencil_compare = 6
+stencil_reference = 255
+
+[sub_resource type="BoxMesh" id="BoxMesh_ulqfw"]
+material = SubResource("StandardMaterial3D_ml8lr")
+size = Vector3(0.5, 0.35, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1jadh"]
+size = Vector3(0.507607, 0.361422, 0.0352135)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7okeo"]
+size = Vector3(2, 2, 2)
+
+[node name="JornalSemanal2" type="RigidBody3D" groups=["legiveis"]]
+script = ExtResource("1_ml8lr")
+tipo = 1
+response_prompt = "[ TEXTO ]"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)
+mesh = SubResource("BoxMesh_ulqfw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00162128, -0.0048438, 0.00278364)
+shape = SubResource("BoxShape3D_1jadh")
+
+[node name="GlowArea" type="Area3D" parent="."]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GlowArea"]
+shape = SubResource("BoxShape3D_7okeo")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
+[connection signal="body_entered" from="GlowArea" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="GlowArea" to="." method="_on_area_body_exited"]

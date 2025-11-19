@@ -10,6 +10,10 @@ extends PanelContainer
 	"joanne": preload("res://assets/cartas/Carta_Joanne_Rochefart.jpg"),
 	"arquivo": preload("res://assets/cartas/arquivo.png"),
 	"folha_arrancada": preload("res://assets/cartas/folhaArrancada.jpg"),
+	
+	"jornal": preload("res://assets/cartas/Jornal.png"),
+	"jornal1": preload("res://assets/cartas/Jornal1.png"),
+	"jornal2": preload("res://assets/cartas/Jornal2.png"),
 }
 
 func _ready() -> void:
@@ -67,5 +71,21 @@ func _on_interacted(interactable: Carta) -> void:
 		else:
 			print(">> Achou uma carta não identificada")
 			carta.texture = PlaceholderTexture2D.new()
+	
+	if(interactable.tipo == interactable.TipoCarta.Jornal):
+		label.scroll_to_line(0)
+		
+		if(interactable.name.to_lower() == "jornalsemanal"):
+			print(">> Achou o jornal principal")
+			jornal.texture = carta_map["jornal"]
+		elif(interactable.name.to_lower() == "jornalsemanal1"):
+			print(">> Achou o jornal sobre maus-tratos")
+			jornal.texture = carta_map["jornal1"]
+		elif(interactable.name.to_lower() == "jornalsemanal2"):
+			print(">> Achou o jornal sobre o panda")
+			jornal.texture = carta_map["jornal2"]
+		else:
+			print(">> Achou um jornal não identificado")
+			jornal.texture = PlaceholderTexture2D.new()
 
 	label.text = interactable.texto # Texto contido na carta

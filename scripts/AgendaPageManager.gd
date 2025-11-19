@@ -18,9 +18,21 @@ var cartas_data = {
 	},
 	"jornal": {
 		"nome": "Jornal semanal",
-		"conteudo": "“INFORMANTE MORTO A TIROS EM FRENTE A DELEGACIA:
-	Após tragédia em centro comercial Nova Iorquino e apreensão de aproximadamente três toneladas de entorpecentes na semana passada, suspeito encontrado no local, identificado como Erick Nixon, admitiu vínculo com a Máfia Italiana.\nO criminoso, além de citar local de origem e destino das mercadorias contrabandeadas, prometeu revelar nomes com a devida realização de um acordo cujas cláusulas desconhecemos.\nAo ser transferido para outra delegacia no centro de Nova Iorque para a realização do acordo que lhe fora prometido, um carro não identificado passou em alta velocidade, alvejando o criminoso e outros quatro policiais presentes. Testemunhas dizem que tudo foi rápido demais para que conseguissem citar detalhes.\nO criminoso não resistiu aos ferimentos e faleceu no local, enquanto os policiais baleados estão todos em estado crítico no Hospital Mount Sinai.”",
+		"conteudo": "“INFORMANTE MORTO A TIROS EM FRENTE A DELEGACIA
+			Após tragédia em centro comercial Nova Iorquino e apreensão de aproximadamente três toneladas de entorpecentes na semana passada, suspeito encontrado no local, identificado como Erick Nixon, admitiu vínculo com a Máfia Italiana.\nO criminoso, além de citar local de origem e destino das mercadorias contrabandeadas, prometeu revelar nomes com a devida realização de um acordo cujas cláusulas desconhecemos.\nAo ser transferido para outra delegacia no centro de Nova Iorque para a realização do acordo que lhe fora prometido, um carro não identificado passou em alta velocidade, alvejando o criminoso e outros quatro policiais presentes. Testemunhas dizem que tudo foi rápido demais para que conseguissem citar detalhes.\nO criminoso não resistiu aos ferimentos e faleceu no local, enquanto os policiais baleados estão todos em estado crítico no Hospital Mount Sinai.”",
 		"foto": preload("res://assets/cartas/Jornal.png")
+	},
+	"jornal1": {
+		"nome": "Jornal semanal (contrabando animal)",
+		"conteudo": "“CONTRABANDO ANIMAL SE TORNA PREOCUPAÇÃO MUNDIAL
+			Após relatório feito pelo OPFF(Órgão Protetor da Fauna e Flora), registrou-se a diminuição de aproximadamente 73% nos animais vertebrados. Dentro do senso, observa-se como as principais afetadas são a fauna latino-americana, africana e da Ásia-Pacífico.\nSomente na África, foi contabilizada a caça ilegal de aproximadamente 1.600 elefantes no último mês, espécie que se tornou alvo para a utilização do marfim de seus chifres.\nNo Brasil, aproximadamente 38 milhões de animais são retirados anualmente da natureza, com apenas 0,45% dos casos sendo apreendidos pelas autoridades.\nInvestiga-se a atuação das mais variadas máfias do mundo no contrabando de animais. As atenções se voltaram para o assunto desde a recente apreensão de 23 espécies em um depósito de Gizé, no Egito, onde uma organização, até então desconhecida, atuava no contrabando constante de espécies africanas para a América…”",
+		"foto": preload("res://assets/cartas/Jornal1.png")
+	},
+	"jornal2": {
+		"nome": "Jornal semanal (panda vermelho)",
+		"conteudo": "“PANDA VERMELHO FAMOSO NO TIBETE DESAPARECE
+			O panda vermelho conhecido como Hao, famoso em todo o Tibete por ser o único presente na área de conservação de Hirohito, foi dado como desaparecido na manhã de ontem.\nOs biólogos responsáveis pela observação constante do animal alegam que o panda estava no recinto até a noite passada, quando fizeram seu último registro.\nApós investigações na área, foram achadas marcas de pneu recentes, indicando a passagem de um veículo não autorizado pela área.\nA segurança local atribui o sumiço do animal ao contrabando das mais variadas espécies que vêm assolando toda a região, especialmente após evidências da interligação da máfia italiana com a máfia chinesa.”",
+		"foto": preload("res://assets/cartas/Jornal2.png")
 	},
 	"arquivo": {
 		"nome": "Arquivo do mafioso",

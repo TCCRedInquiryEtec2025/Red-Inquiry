@@ -4,6 +4,8 @@ var ultima_musica = ""
 var musicas: Array = []
 
 func _ready() -> void:
+	super._ready()
+	
 	var dir = DirAccess.open("res://assets/sounds/Musicas/Radio/")
 	if dir:
 		dir.list_dir_begin()
