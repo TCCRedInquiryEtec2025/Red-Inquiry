@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://8navspruggjk"]
+[gd_scene load_steps=29 format=3 uid="uid://8navspruggjk"]
 
 [ext_resource type="Script" uid="uid://bcd2164ydly4x" path="res://scenes/menu_inicial.gd" id="1_p0uqc"]
 [ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="2_jhs6u"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://drt3yx3hkw15c" path="res://assets/Red-Inquiry.png" id="3_4m7wy"]
 [ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/sounds/thunderstorm-ambiance-191991 (2).mp3" id="3_81crh"]
 [ext_resource type="Texture2D" uid="uid://cqq2miaawq5lg" path="res://assets/icons/user-folder_12075473.png" id="5_dcbex"]
+[ext_resource type="Script" uid="uid://ch06ioc720mo4" path="res://scripts/menu_creditos.gd" id="5_jc1lq"]
 [ext_resource type="Texture2D" uid="uid://dakqqs76hmrwh" path="res://assets/instagram.png" id="6_70i05"]
 [ext_resource type="Texture2D" uid="uid://biqxnc20n63wx" path="res://assets/icons/github-mark-white.png" id="6_xhvtj"]
 [ext_resource type="Texture2D" uid="uid://txfpvxyqmngm" path="res://assets/icons/youtube.png" id="7_fhqre"]
@@ -101,6 +102,8 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\">
 "
 base_scale = 2.0
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_xhvtj"]
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fhqre"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gth6r"]
@@ -123,7 +126,7 @@ shader_parameter/distort_intensity = 0.05
 shader_parameter/noise_opacity = 0.150000007125
 shader_parameter/noise_speed = 20.0
 shader_parameter/static_noise_intensity = 0.10000000475
-shader_parameter/aberration = 0.008000047879999972
+shader_parameter/aberration = 0.00800004787999997
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.10000000475
@@ -538,6 +541,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_jc1lq")
 
 [node name="CenterContainer" type="CenterContainer" parent="MenuCreditos"]
 layout_mode = 2
@@ -585,6 +589,7 @@ focus_mode = 0
 theme_override_constants/icon_max_width = 100
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
+button_group = SubResource("ButtonGroup_xhvtj")
 text = "PEDRO"
 icon = ExtResource("5_dcbex")
 flat = true
@@ -601,6 +606,7 @@ focus_mode = 0
 theme_override_constants/icon_max_width = 100
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
+button_group = SubResource("ButtonGroup_xhvtj")
 text = "LEVI"
 icon = ExtResource("5_dcbex")
 flat = true
@@ -617,6 +623,7 @@ focus_mode = 0
 theme_override_constants/icon_max_width = 100
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
+button_group = SubResource("ButtonGroup_xhvtj")
 text = "RIAM"
 icon = ExtResource("5_dcbex")
 flat = true
@@ -633,6 +640,7 @@ focus_mode = 0
 theme_override_constants/icon_max_width = 100
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
+button_group = SubResource("ButtonGroup_xhvtj")
 text = "YURI"
 icon = ExtResource("5_dcbex")
 flat = true
@@ -649,6 +657,7 @@ focus_mode = 0
 theme_override_constants/icon_max_width = 100
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
+button_group = SubResource("ButtonGroup_xhvtj")
 text = "IAGO"
 icon = ExtResource("5_dcbex")
 flat = true
@@ -665,6 +674,7 @@ focus_mode = 0
 theme_override_constants/icon_max_width = 100
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
+button_group = SubResource("ButtonGroup_xhvtj")
 text = "GABRIEL"
 icon = ExtResource("5_dcbex")
 flat = true
@@ -681,6 +691,7 @@ focus_mode = 0
 theme_override_constants/icon_max_width = 100
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
+button_group = SubResource("ButtonGroup_xhvtj")
 text = "BERNARDO"
 icon = ExtResource("5_dcbex")
 flat = true
@@ -701,12 +712,18 @@ alignment = 1
 [node name="ContainerLeft" type="HBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.25
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/MarginContainer"]
 custom_minimum_size = Vector2(300, 400)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_fhqre")
+expand_mode = 3
 
 [node name="ContainerInfo" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft"]
 layout_mode = 2
@@ -784,27 +801,33 @@ theme_override_constants/separation = 25
 alignment = 1
 
 [node name="ButtonGithub" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes/ContainerBotoesRedes"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
 icon = ExtResource("6_xhvtj")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="ButtonInstagram" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes/ContainerBotoesRedes"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
 icon = ExtResource("6_70i05")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="ButtonYoutube" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes/ContainerBotoesRedes"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
 icon = ExtResource("7_fhqre")
 flat = true
 icon_alignment = 1
