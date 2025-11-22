@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://dndue43ha600b"]
 
-[ext_resource type="Script" uid="uid://cfpaapq6c8alj" path="res://assets/scenes/portabanheiro.gd" id="1_3l0ky"]
+[ext_resource type="Script" uid="uid://cfpaapq6c8alj" path="res://scripts/portabanheiro.gd" id="1_3l0ky"]
 [ext_resource type="Texture2D" uid="uid://x42h1n2b644y" path="res://assets/textures/wood_cabinet_worn_long_diff_4k.jpg" id="1_vplv5"]
 [ext_resource type="AudioStream" uid="uid://dfejy306htwym" path="res://assets/sounds/DetetiveFalas/comidagordurosa.mp3" id="2_1pcrw"]
 

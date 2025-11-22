@@ -1,11 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://8navspruggjk"]
+[gd_scene load_steps=27 format=3 uid="uid://8navspruggjk"]
 
 [ext_resource type="Script" uid="uid://bcd2164ydly4x" path="res://scenes/menu_inicial.gd" id="1_p0uqc"]
 [ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="2_jhs6u"]
 [ext_resource type="PackedScene" uid="uid://bahtauago805q" path="res://scenes/fundoMenu.tscn" id="2_mxdwk"]
 [ext_resource type="Texture2D" uid="uid://drt3yx3hkw15c" path="res://assets/Red-Inquiry.png" id="3_4m7wy"]
 [ext_resource type="AudioStream" uid="uid://b838qj8mpa3iy" path="res://assets/sounds/thunderstorm-ambiance-191991 (2).mp3" id="3_81crh"]
+[ext_resource type="Texture2D" uid="uid://cqq2miaawq5lg" path="res://assets/icons/user-folder_12075473.png" id="5_dcbex"]
 [ext_resource type="Texture2D" uid="uid://dakqqs76hmrwh" path="res://assets/instagram.png" id="6_70i05"]
+[ext_resource type="Texture2D" uid="uid://biqxnc20n63wx" path="res://assets/icons/github-mark-white.png" id="6_xhvtj"]
+[ext_resource type="Texture2D" uid="uid://txfpvxyqmngm" path="res://assets/icons/youtube.png" id="7_fhqre"]
+[ext_resource type="Texture2D" uid="uid://climd5kbdlemk" path="res://assets/textures/papel/Paper005_2K-PNG_Color.png" id="7_jc1lq"]
 [ext_resource type="AudioStream" uid="uid://bfpdxa57hwy8o" path="res://assets/sounds/Musicas/menuInicial.mp3" id="7_qx1f8"]
 [ext_resource type="Script" uid="uid://84emwilsgwda" path="res://scripts/VhsShader.gd" id="8_1pvsu"]
 [ext_resource type="Shader" uid="uid://btm06oysqalih" path="res://assets/shaders/CRTMonitor.gdshader" id="9_8oiit"]
@@ -97,8 +101,11 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\">
 "
 base_scale = 2.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4m7wy"]
-size = Vector2(100, 100)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fhqre"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gth6r"]
+texture = ExtResource("7_jc1lq")
+modulate_color = Color(0.5796909, 0.57969093, 0.57969093, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8oiit"]
 shader = ExtResource("9_8oiit")
@@ -116,7 +123,7 @@ shader_parameter/distort_intensity = 0.05
 shader_parameter/noise_opacity = 0.150000007125
 shader_parameter/noise_speed = 20.0
 shader_parameter/static_noise_intensity = 0.10000000475
-shader_parameter/aberration = 0.010000047974999982
+shader_parameter/aberration = 0.008000047879999972
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.10000000475
@@ -525,7 +532,6 @@ text = "Voltar"
 flat = true
 
 [node name="MenuCreditos" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -537,7 +543,7 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="StylePanel" type="PanelContainer" parent="MenuCreditos/CenterContainer"]
-custom_minimum_size = Vector2(1400, 700)
+custom_minimum_size = Vector2(1500, 800)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1pvsu")
 
@@ -548,126 +554,285 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
+[node name="Layout" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 1
+alignment = 1
+
+[node name="ContainerTop" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 50
-text = "Em Desenvolvimento"
+text = "Créditos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonVoltar" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
+[node name="ContainerFichas" type="HBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonPedro" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop/ContainerFichas"]
+custom_minimum_size = Vector2(150, 120)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
-text = "Voltar"
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_constants/icon_max_width = 100
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "PEDRO"
+icon = ExtResource("5_dcbex")
 flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
 
-[node name="Layout" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer"]
-visible = false
-layout_mode = 2
-alignment = 1
-
-[node name="GridContainer" type="GridContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout"]
+[node name="ButtonLevi" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop/ContainerFichas"]
+custom_minimum_size = Vector2(150, 120)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_constants/h_separation = 350
-theme_override_constants/v_separation = 50
-columns = 3
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_constants/icon_max_width = 100
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "LEVI"
+icon = ExtResource("5_dcbex")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
 
-[node name="RiamContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
-custom_minimum_size = Vector2(200, 250)
+[node name="ButtonRiam" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop/ContainerFichas"]
+custom_minimum_size = Vector2(150, 120)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_constants/icon_max_width = 100
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "RIAM"
+icon = ExtResource("5_dcbex")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ButtonYuri" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop/ContainerFichas"]
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_constants/icon_max_width = 100
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "YURI"
+icon = ExtResource("5_dcbex")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ButtonIago" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop/ContainerFichas"]
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_constants/icon_max_width = 100
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "IAGO"
+icon = ExtResource("5_dcbex")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ButtonGabriel" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop/ContainerFichas"]
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_constants/icon_max_width = 100
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "GABRIEL"
+icon = ExtResource("5_dcbex")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ButtonBernardo" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop/ContainerFichas"]
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_constants/icon_max_width = 100
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "BERNARDO"
+icon = ExtResource("5_dcbex")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ContainerBottom" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="ContainerTab" type="HBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom"]
+layout_mode = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/RiamContainer"]
+[node name="ContainerLeft" type="HBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab"]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_4m7wy")
-
-[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/RiamContainer"]
-layout_mode = 2
-text = "Riam"
-horizontal_alignment = 1
-
-[node name="YuriContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
-custom_minimum_size = Vector2(200, 250)
-layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/YuriContainer"]
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft"]
+custom_minimum_size = Vector2(300, 400)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_4m7wy")
+texture = SubResource("PlaceholderTexture2D_fhqre")
 
-[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/YuriContainer"]
+[node name="ContainerInfo" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft"]
 layout_mode = 2
-text = "Yuri"
-horizontal_alignment = 1
-
-[node name="LeviContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
-custom_minimum_size = Vector2(200, 250)
-layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/LeviContainer"]
+[node name="ContainerNome" type="HBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo"]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_4m7wy")
-
-[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/LeviContainer"]
-layout_mode = 2
-text = "Levi"
-horizontal_alignment = 1
-
-[node name="PedroContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
-custom_minimum_size = Vector2(200, 250)
-layout_mode = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/PedroContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerNome"]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_4m7wy")
-
-[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/PedroContainer"]
-layout_mode = 2
-text = "Pedro"
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_font_sizes/normal_font_size = 30
+text = "Nome:"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="GuilhermeContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
-custom_minimum_size = Vector2(200, 250)
+[node name="RichTextLabel2" type="RichTextLabel" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerNome"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 30
+text = "[ NOME ]"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="ContainerFuncao" type="HBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo"]
+layout_mode = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/GuilhermeContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerFuncao"]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_4m7wy")
-
-[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/GuilhermeContainer"]
-layout_mode = 2
-text = "Guilherme"
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_font_sizes/normal_font_size = 30
+text = "Função:"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="DesenhistaContainer" type="VBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer"]
-custom_minimum_size = Vector2(200, 250)
+[node name="RichTextLabel2" type="RichTextLabel" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerFuncao"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 30
+text = "[ NOME DA FUNÇÃO ]"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="ContainerRedes" type="HBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo"]
+layout_mode = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/DesenhistaContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes"]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_4m7wy")
-
-[node name="Label" type="Label" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/GridContainer/DesenhistaContainer"]
-layout_mode = 2
-text = "Desenhista"
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_font_sizes/normal_font_size = 30
+text = "Redes:"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Voltar" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout"]
+[node name="ContainerBotoesRedes" type="HBoxContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="ButtonGithub" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes/ContainerBotoesRedes"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("6_xhvtj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="ButtonInstagram" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes/ContainerBotoesRedes"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("6_70i05")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="ButtonYoutube" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes/ContainerBotoesRedes"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("7_fhqre")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/CenterContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_gth6r")
+text = "MUITO TEXTO"
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Voltar" type="Button" parent="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom"]
 z_as_relative = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 8
 focus_mode = 0
 mouse_force_pass_scroll_events = false
 mouse_default_cursor_shape = 2
@@ -724,5 +889,4 @@ mouse_filter = 2
 [connection signal="value_changed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/Sliders_porcentagens/Sliders/Sensibilidade/HSlider" to="." method="_on_slider_sensibilidade_value_changed"]
 [connection signal="toggled" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Configuracoes/TelaCheia/CheckButtonTelaCheia" to="." method="_on_check_button_tela_cheia_toggled"]
 [connection signal="pressed" from="MenuOpcoes/CenterContainer/StylePanel/MarginContainer/Layout/Voltar" to="." method="_on_voltar_opcoes_pressed"]
-[connection signal="pressed" from="MenuCreditos/CenterContainer/StylePanel/MarginContainer/ButtonVoltar" to="." method="_on_button_voltar_creditos_pressed"]
-[connection signal="pressed" from="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/Voltar" to="." method="_on_voltar_creditos_pressed"]
+[connection signal="pressed" from="MenuCreditos/CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/Voltar" to="." method="_on_voltar_creditos_pressed"]

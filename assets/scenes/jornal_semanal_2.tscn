@@ -22,7 +22,7 @@ size = Vector3(2, 2, 2)
 [node name="JornalSemanal2" type="RigidBody3D" groups=["legiveis"]]
 script = ExtResource("1_ml8lr")
 tipo = 1
-response_prompt = "[ TEXTO ]"
+response_prompt = "Nem mesmo os animais em áreas de conservação extremamente protegidas estão seguros."
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)

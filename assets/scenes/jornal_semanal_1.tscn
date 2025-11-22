@@ -22,7 +22,7 @@ size = Vector3(2, 2, 2)
 [node name="JornalSemanal1" type="RigidBody3D" groups=["legiveis"]]
 script = ExtResource("1_ndwun")
 tipo = 1
-response_prompt = "[ TEXTO ]"
+response_prompt = "Esses burburinhos sempre duram muito pouco… Não se deram o trabalho de investigar nem mesmo por um mês depois desse escândalo."
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00142431, -0.00723732, 0.00300002)

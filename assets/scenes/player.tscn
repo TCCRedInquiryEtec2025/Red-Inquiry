@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c6tss7lcdqskg" path="res://assets/cartas/Jornal.png" id="6_00pic"]
 [ext_resource type="Texture2D" uid="uid://c0ouu504y8fq8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_w_outline.png" id="6_c6vv5"]
 [ext_resource type="Script" uid="uid://5io2so8aapg5" path="res://scripts/reticle.gd" id="6_hrrj1"]
-[ext_resource type="Script" uid="uid://b6ibqpel2ubsb" path="res://assets/scenes/painelTutorial.gd" id="6_nh07x"]
+[ext_resource type="Script" uid="uid://b6ibqpel2ubsb" path="res://scripts/painelTutorial.gd" id="6_nh07x"]
 [ext_resource type="Texture2D" uid="uid://duux1n4qvt4xf" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_a_outline.png" id="7_nh07x"]
 [ext_resource type="Texture2D" uid="uid://bixv66sany65t" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_s_outline.png" id="8_00pic"]
 [ext_resource type="Texture2D" uid="uid://ulm4ipqipuve" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_d_outline.png" id="9_0bskb"]
@@ -926,7 +926,8 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("11_dvip7")
 theme_override_font_sizes/normal_font_size = 25
-text = "*Conteúdo da Carta*"
+text = "Aqui aparecerá
+o conteúdo das cartas"
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -946,7 +947,6 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaCartas/ContainerPaginaDireita/CenterContainer"]
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
-texture = ExtResource("13_0e2pd")
 expand_mode = 5
 
 [node name="ContainerFolhaInventario" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
