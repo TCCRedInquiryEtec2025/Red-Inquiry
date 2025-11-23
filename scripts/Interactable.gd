@@ -39,6 +39,8 @@ func enable_highlight() -> void:
 			material.stencil_outline_thickness = 0.01
 		if(name == "Radio"):
 			material.stencil_outline_thickness = 0.5
+		if(name == "Flashlight"):
+			material.stencil_outline_thickness = 0.3
 		material.stencil_color = Color.WHITE 
 	
 

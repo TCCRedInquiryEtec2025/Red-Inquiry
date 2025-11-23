@@ -18,7 +18,6 @@ func _ready() -> void:
 	
 	brilho_material = ShaderMaterial.new()
 	brilho_material.shader = preload("res://assets/shaders/aura_carta.gdshader")
-	brilho_material.set_shader_parameter("color", Color("#e61a1a"))
 	brilho_material.set_shader_parameter("size", 1.1)
 
 

@@ -1,6 +1,7 @@
 extends RayCast3D
 
 signal carta_coletada(nome_carta)
+signal item_coletado(nome_item)
 signal fala_interacao(interagivel)
 
 var highlighted: Interactable = null
@@ -75,5 +76,8 @@ func _interact_with(collider: Interactable) -> void:
 		
 		# Emitindo o sinal a agenda
 		emit_signal("carta_coletada", collider.name)
+	
+	if(collider is Item):
+		emit_signal("item_coletado", collider.name)
 		
 	_show_response(collider.response_prompt)

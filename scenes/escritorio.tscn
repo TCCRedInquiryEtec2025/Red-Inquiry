@@ -53,10 +53,9 @@ expand_margin_bottom = 2.0
 modulate_color = Color(0.92, 0.8388867, 0.7084, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
-shading_mode = 0
-albedo_color = Color(0.733005, 0.733005, 0.733005, 1)
 albedo_texture = ExtResource("3_vsras")
-refraction_scale = -1.0
+albedo_texture_force_srgb = true
+metallic_specular = 0.25
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2lf6f"]
 _surfaces = [{
@@ -77,7 +76,6 @@ backface_collision = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hie3k"]
 resource_name = "Office_Sh.008"
 cull_mode = 2
-shading_mode = 0
 albedo_color = Color(0.345402, 0.652112, 0.441709, 1)
 albedo_texture = ExtResource("5_t31jn")
 uv1_scale = Vector3(3.75, 1, 1)
@@ -644,7 +642,7 @@ transform = Transform3D(1, 0, 0, 0, 0.663737, 0, 0, 0, 1, 0, 0, 0)
 [node name="StaticBody3D" type="StaticBody3D" parent="Office/Chao"]
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Office/Chao/StaticBody3D"]
-transform = Transform3D(2.02031, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 0, -0.5, 0)
+transform = Transform3D(2.02031, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -0.005221486, -0.49412733, -0.005427122)
 mesh = SubResource("ArrayMesh_2lf6f")
 skeleton = NodePath("../../..")
 
@@ -875,7 +873,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3755, 1.92909, -5.62593)
 prompt_message = "Inspecionar"
 
 [node name="Lixo" parent="." instance=ExtResource("26_pafkb")]
-transform = Transform3D(0.705, 0, 0, 0, 0.705, 0, 0, 0, 0.705, 0.338473, 0.390971, -5.34742)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0.38323507, 0.390971, -5.2935658)
 
 [node name="MesinhaCentro" parent="." instance=ExtResource("27_vx8ew")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0312536, 0.243416, 2.80243)

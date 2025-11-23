@@ -82,3 +82,4 @@ func esperar_cartas() -> void:
 				var nome = await GameState.carta_obtida
 				if(nome == carta):
 					break
+					

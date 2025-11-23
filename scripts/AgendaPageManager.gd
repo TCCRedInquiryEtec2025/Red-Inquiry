@@ -23,13 +23,13 @@ var cartas_data = {
 		"foto": preload("res://assets/cartas/Jornal.png")
 	},
 	"jornal1": {
-		"nome": "Jornal semanal (contrabando animal)",
+		"nome": "Jornal semanal (contrabando)",
 		"conteudo": "“CONTRABANDO ANIMAL SE TORNA PREOCUPAÇÃO MUNDIAL
 			Após relatório feito pelo OPFF(Órgão Protetor da Fauna e Flora), registrou-se a diminuição de aproximadamente 73% nos animais vertebrados. Dentro do senso, observa-se como as principais afetadas são a fauna latino-americana, africana e da Ásia-Pacífico.\nSomente na África, foi contabilizada a caça ilegal de aproximadamente 1.600 elefantes no último mês, espécie que se tornou alvo para a utilização do marfim de seus chifres.\nNo Brasil, aproximadamente 38 milhões de animais são retirados anualmente da natureza, com apenas 0,45% dos casos sendo apreendidos pelas autoridades.\nInvestiga-se a atuação das mais variadas máfias do mundo no contrabando de animais. As atenções se voltaram para o assunto desde a recente apreensão de 23 espécies em um depósito de Gizé, no Egito, onde uma organização, até então desconhecida, atuava no contrabando constante de espécies africanas para a América…”",
 		"foto": preload("res://assets/cartas/Jornal1.png")
 	},
 	"jornal2": {
-		"nome": "Jornal semanal (panda vermelho)",
+		"nome": "Jornal semanal (panda)",
 		"conteudo": "“PANDA VERMELHO FAMOSO NO TIBETE DESAPARECE
 			O panda vermelho conhecido como Hao, famoso em todo o Tibete por ser o único presente na área de conservação de Hirohito, foi dado como desaparecido na manhã de ontem.\nOs biólogos responsáveis pela observação constante do animal alegam que o panda estava no recinto até a noite passada, quando fizeram seu último registro.\nApós investigações na área, foram achadas marcas de pneu recentes, indicando a passagem de um veículo não autorizado pela área.\nA segurança local atribui o sumiço do animal ao contrabando das mais variadas espécies que vêm assolando toda a região, especialmente após evidências da interligação da máfia italiana com a máfia chinesa.”",
 		"foto": preload("res://assets/cartas/Jornal2.png")
@@ -39,6 +39,13 @@ var cartas_data = {
 		"conteudo": "William Goldberg, notório mafioso com operações em Modest Valley. A extensão de suas operações é desconhecida, mas pode-se especular sua participação ativa no mercado ilegal de entorpecentes.\nÉ frequentemente avistado nas periferias de Modest Valley pelos moradores das áreas. Possíveis locais de negociação? Majoritariamente avistado nas periferias do bairro Kennedy Garden. Boatos de atuações criminosas no bairro de Greenville.A Polícia tentou prendê-lo a aproximadamente três anos, sem sucesso. O sujeito conseguiu eliminar quaisquer provas de seu envolvimento com o Caso “Velvet”. O julgamento se encerrou com o “Don Goldberg” saindo ileso das acusações.\nO Delegado Mário Florenza, amigo e conivente com minha investigação, foi demitido de seu cargo após seu envolvimento e responsabilização pelo Caso “Velvet”. Sinais da influência de Don Goldberg nessa demissão são claros.\nAntes da demissão ele investigava contatos indefinidos entre o mafioso e correspondentes chineses. O motivo permanece desconhecido visto o fim de todas as investigações relacionadas a Goldberg (Mais um sinal claro da influência do Mafioso).",
 		"foto": preload("res://assets/cartas/arquivo.png")
 	},
+}
+
+var itens_data = {
+	"flashlight": {
+		"descricao": "Uma lanterna. Pode ser utilizada para iluminar lugares escuros.",
+		"foto": preload("res://assets/itens/flashlight.png")
+	}
 }
 
 # UI - Navegação
@@ -59,17 +66,28 @@ var current_page_index = 0
 var carta_selecionada = null
 var carta_ativa_btn: Button = null
 
+# UI - Itens
+@onready var container_itens = $HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer
+@onready var label_item = $HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer/PanelDescricaoItem/RichTextLabel
+@onready var item_grande = $HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer/PanelImagemItem/TextureImagemItem
+
+var item_selecionado = null
+var item_ativo_btn: Button = null
+
 @export var ray: RayCast3D
 
 func _ready():
 	update_pages()
 	update_cartas()
+	update_itens()
 	print("update_cartas chamado")
 	
 	# Conectando o sinal do InteractRay
 	ray.connect("carta_coletada", Callable(self, "_on_carta_coletada"))
+	ray.connect("item_coletado", Callable(self, "_on_item_coletado"))
 	
 	carta_ativa_btn = null
+	item_ativo_btn = null
 	
 func _process(_delta: float) -> void:
 	update_objetivos()
@@ -155,7 +173,7 @@ func update_cartas() -> void:
 			var foto = TextureRect.new()
 			foto.texture = carta_info["foto"]
 			foto.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
-			if(carta_info["nome"] == "Jornal semanal"):
+			if("Jornal semanal" in carta_info["nome"]):
 				# Se for o jornal, ajusta para caber de acordo
 				foto.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 			foto.custom_minimum_size = Vector2(100, 100)
@@ -199,6 +217,70 @@ func update_objetivos() -> void:
 	texto_objetivos = "- Ache as cartas (%d/%d)\n- Desvende o mistério no quadro" % [cartas_pegas, total_cartas]
 	label_objetivos.text = texto_objetivos
 	
+func update_itens() -> void:
+	for child in container_itens.get_children():
+		child.queue_free()
+		
+	label_item.text = "Aqui aparecerá a descrição do item"
+	item_grande.visible = false
+	
+	for key in itens_data.keys():
+		if GameState.getValue(key):
+			var item_info = itens_data[key]
+			
+			# Criando o botão do item
+			var btnItem = Button.new()
+			btnItem.disabled = false
+			btnItem.flat = true
+			btnItem.toggle_mode = true
+			btnItem.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+			btnItem.button_mask = MOUSE_BUTTON_MASK_LEFT
+			btnItem.custom_minimum_size = Vector2(200, 200)
+			btnItem.size_flags_horizontal = Control.SIZE_FILL
+			btnItem.size_flags_vertical = Control.SIZE_FILL
+			
+			# Criando o painel de fundo do item
+			var panelItem = PanelContainer.new()
+			panelItem.set_anchors_preset(Control.PRESET_FULL_RECT)
+			
+			var itemStyle = StyleBoxFlat.new()
+			itemStyle.bg_color = Color(0, 0, 0, 0)
+			itemStyle.draw_center = true
+			itemStyle.corner_detail = 5
+			itemStyle.border_width_bottom = 3
+			itemStyle.border_width_top = 3
+			itemStyle.border_width_left = 3
+			itemStyle.border_width_right = 3
+			itemStyle.border_color = Color(0,0,0)
+			itemStyle.border_blend = true
+			itemStyle.corner_radius_bottom_left = 10
+			itemStyle.corner_radius_top_left = 10
+			itemStyle.corner_radius_bottom_right = 10
+			itemStyle.corner_radius_top_right = 10
+			itemStyle.content_margin_bottom = 30
+			itemStyle.content_margin_top = 30
+			itemStyle.content_margin_left = 30
+			itemStyle.content_margin_right = 30
+			panelItem.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			panelItem.add_theme_stylebox_override("panel", itemStyle)
+			
+			var centerContainer = CenterContainer.new()
+			centerContainer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			panelItem.add_child(centerContainer)
+			
+			var foto = TextureRect.new()
+			foto.texture = item_info["foto"]
+			foto.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
+			foto.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			foto.custom_minimum_size = Vector2(100, 100)
+			foto.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			
+			centerContainer.add_child(foto)
+			btnItem.add_child(panelItem)
+			
+			btnItem.connect("pressed", Callable.create(self, "_on_item_selecionado").bind(key, btnItem))
+			container_itens.add_child(btnItem)
+	
 	
 func _on_carta_selecionada(key: String, btn: Button) -> void:
 	# Desmarcando a carta ativa anteriormente
@@ -211,6 +293,19 @@ func _on_carta_selecionada(key: String, btn: Button) -> void:
 	
 	# Mostrando os dados
 	_show_carta_data(key)
+	
+	
+func _on_item_selecionado(key: String, btn: Button) -> void:
+	# Desmarcando o item ativo anteriormente
+	if(item_ativo_btn and item_ativo_btn != btn):
+		item_ativo_btn.button_pressed = false
+	
+	# Atualizando o item ativa
+	item_ativo_btn = btn
+	item_ativo_btn.button_pressed = true
+	
+	# Mostrando os dados
+	_show_item_data(key)
 		
 		
 func _show_carta_data(key: String) -> void:
@@ -218,8 +313,21 @@ func _show_carta_data(key: String) -> void:
 	var carta_data = cartas_data[key]
 	label_conteudo.text = carta_data["conteudo"]
 	carta_grande.texture = carta_data["foto"]
+	
+func _show_item_data(key: String) -> void:
+	print("show_item_data() chamado. key: ", key)
+	var item_data = itens_data[key]
+	label_item.text = item_data["descricao"]
+	
+	item_grande.visible = true
+	item_grande.texture = item_data["foto"]
 
 
 func _on_carta_coletada(nome_carta: String) -> void:
 	print("Carta coletada: ", nome_carta)
 	update_cartas()
+	
+
+func _on_item_coletado(nome_item: String) -> void:
+	print("Item coletado: ", nome_item)
+	update_itens()

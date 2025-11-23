@@ -27,11 +27,11 @@ var members = {
 	},
 	"ButtonLevi":{
 		"nome": "Levi Aparecido da S. Alcântara",
-		"funcao": "Modelagem 3D",
-		"texto": "texto dele",
-		"foto": preload("res://icon.svg"), # preload("res://assets/fotos/pedro.png")
-		"github": "",
-		"instagram": "",
+		"funcao": "Design",
+		"texto": "“Um homem sábio pode considerar a vida uma comédia, uma tragédia ou uma farsa, e ainda assim gozá-la.”",
+		"foto": preload("res://assets/fotos/levi.jpg"),
+		"github": "https://github.com/LeviAlcantara",
+		"instagram": "https://www.instagram.com/levi_aparecido_/",
 		"youtube": ""
 	},
 	"ButtonRiam":{
@@ -45,9 +45,9 @@ var members = {
 	},
 	"ButtonYuri":{
 		"nome": "Yuri Acosta Navarro",
-		"funcao": "História e brainstorming",
-		"texto": "texto dele",
-		"foto": preload("res://icon.svg"), # preload("res://assets/fotos/pedro.png")
+		"funcao": "História/Roteiro",
+		"texto": "Um Homem não é nada sem seu chapéu.",
+		"foto": preload("res://assets/fotos/yuri.jpg"),
 		"github": "",
 		"instagram": "",
 		"youtube": ""
@@ -62,21 +62,21 @@ var members = {
 		"youtube": ""
 	},
 	"ButtonIago":{
-		"nome": "Iago",
+		"nome": "Iago Anjos da Silva",
 		"funcao": "Dublagem",
-		"texto": "texto dele",
-		"foto": preload("res://icon.svg"), # preload("res://assets/fotos/pedro.png")
-		"github": "",
+		"texto": "“BEHOLD THE POWER OF AN ANGEL!”",
+		"foto": preload("res://assets/fotos/iago.jpg"),
+		"github": "https://github.com/ImFenyx",
 		"instagram": "",
 		"youtube": ""
 	},
 	"ButtonGabriel":{
-		"nome": "Gabriel",
-		"funcao": "ele fez alguma coisa?",
-		"texto": "texto dele",
-		"foto": preload("res://icon.svg"), # preload("res://assets/fotos/pedro.png")
+		"nome": "Gabriel Soares",
+		"funcao": "Artista",
+		"texto": "Tudo e todos dizem que vai dar errado, e vai mesmo. O importante é levantar e tentar de novo, até que dê certo",
+		"foto": preload("res://icon.svg"),
 		"github": "",
-		"instagram": "",
+		"instagram": "https://www.instagram.com/dogzu_cdt/",
 		"youtube": ""
 	}
 }
@@ -88,6 +88,8 @@ func _ready() -> void:
 	github.pressed.connect(_open_github)
 	instagram.pressed.connect(_open_instagram)
 	youtube.pressed.connect(_open_youtube)
+	
+	$CenterContainer/StylePanel/MarginContainer/Layout/ContainerTop/ContainerFichas/ButtonPedro.button_pressed = true
 	
 	
 func _on_button_membro_pressed(button) -> void:	
@@ -111,6 +113,8 @@ func _on_button_membro_pressed(button) -> void:
 	current_github_url = data["github"]
 	current_instagram_url = data["instagram"]
 	current_youtube_url = data["youtube"]
+	
+	$CenterContainer/StylePanel/MarginContainer/Layout/ContainerBottom/ContainerTab/ContainerLeft/ContainerInfo/ContainerRedes.visible = (github.visible or instagram.visible or youtube.visible)
 	
 
 func update_icons(clicked_button: Button) -> void:

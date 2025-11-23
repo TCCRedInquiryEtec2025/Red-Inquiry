@@ -46,10 +46,16 @@ var direction := Vector3.ZERO
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$Neck/Head/Eyes/Camera3D/HintContainer.visible = false
+	$Neck/Head/Eyes/FlashLight.visible = false
 	
 	await get_tree().create_timer(3).timeout
 	
 	$Neck/Head/Eyes/Camera3D/Tutorial.visible = true
+	
+	await get_tree().create_timer(25).timeout
+	$Neck/Head/Eyes/Camera3D/HintContainer.visible = true
+	
 
 func _input(event: InputEvent) -> void:	
 	if event.is_action_pressed("ui_cancel"):
@@ -77,6 +83,10 @@ func _input(event: InputEvent) -> void:
 	# Mouse looking logic
 	if(!GameState.getValue("podeAndar")):
 		return
+		
+	if(event.is_action_pressed("flashLight") and GameState.getValue("flashlight")):
+		$Neck/Head/Eyes/FlashLight.visible = !$Neck/Head/Eyes/FlashLight.visible
+		$Neck/Head/Eyes/FlashLightClick.play()
 	
 	if event is InputEventMouseMotion: # Moves camera
 		var mouseSensi = Settings.sensibilidade

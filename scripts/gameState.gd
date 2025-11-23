@@ -11,6 +11,8 @@ var state := {
 	"jornal2": false,
 	"arquivo": false,
 	
+	"flashlight": false,
+	
 	"pauseAberto": false,
 	"abrindoAgenda": false,
 	"lendo": false,

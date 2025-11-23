@@ -9,6 +9,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mb5d"]
 metallic = 1.0
+metallic_specular = 0.75
 metallic_texture = ExtResource("4_ld51f")
 roughness_texture = ExtResource("5_6ebqm")
 detail_enabled = true

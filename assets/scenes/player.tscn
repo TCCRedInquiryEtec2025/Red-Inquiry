@@ -1,13 +1,15 @@
-[gd_scene load_steps=68 format=3 uid="uid://cs4tduc8jd2vn"]
+[gd_scene load_steps=72 format=3 uid="uid://cs4tduc8jd2vn"]
 
 [ext_resource type="Script" uid="uid://dm3sv1hfrba04" path="res://scripts/player.gd" id="1_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://cjursw5wdv40k" path="res://assets/scenes/InteractRaytscn.tscn" id="2_0hrit"]
 [ext_resource type="Shader" uid="uid://dlly7f75ufni7" path="res://assets/shaders/monochromeCRT.gdshader" id="2_gdn7j"]
 [ext_resource type="Script" uid="uid://0c0cns6vn1s1" path="res://scripts/documentos.gd" id="5_8sknh"]
+[ext_resource type="Script" uid="uid://co7fp23ce1x3w" path="res://scripts/flashlightHint.gd" id="5_omckb"]
 [ext_resource type="Texture2D" uid="uid://c6tss7lcdqskg" path="res://assets/cartas/Jornal.png" id="6_00pic"]
 [ext_resource type="Texture2D" uid="uid://c0ouu504y8fq8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_w_outline.png" id="6_c6vv5"]
 [ext_resource type="Script" uid="uid://5io2so8aapg5" path="res://scripts/reticle.gd" id="6_hrrj1"]
 [ext_resource type="Script" uid="uid://b6ibqpel2ubsb" path="res://scripts/painelTutorial.gd" id="6_nh07x"]
+[ext_resource type="Texture2D" uid="uid://djubg2db4tiy8" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_f_outline.png" id="6_uqo28"]
 [ext_resource type="Texture2D" uid="uid://duux1n4qvt4xf" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_a_outline.png" id="7_nh07x"]
 [ext_resource type="Texture2D" uid="uid://bixv66sany65t" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_s_outline.png" id="8_00pic"]
 [ext_resource type="Texture2D" uid="uid://ulm4ipqipuve" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_d_outline.png" id="9_0bskb"]
@@ -25,7 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://ciav0h1exguag" path="res://assets/cartas/arquivo.png" id="15_ay2jx"]
 [ext_resource type="Script" uid="uid://cxt5osv81rjw6" path="res://scripts/noteBookHUD.gd" id="15_wf17w"]
 [ext_resource type="Script" uid="uid://dyjp3l6nhgy61" path="res://scripts/AgendaPageManager.gd" id="16_msj1n"]
+[ext_resource type="Texture2D" uid="uid://cl2tnt826vt48" path="res://assets/itens/flashlight.png" id="17_gdn7j"]
 [ext_resource type="Texture2D" uid="uid://bj3vita7cmla0" path="res://assets/input_prompts/Keyboard & Mouse/Double/keyboard_tab_outline.png" id="24_0e2pd"]
+[ext_resource type="AudioStream" uid="uid://ddt7p7u057oea" path="res://assets/sounds/flashlight-click-46073.mp3" id="27_6luef"]
 [ext_resource type="AudioStream" uid="uid://bre1nrix1u121" path="res://assets/sounds/DetetiveFalas/acheivoce.mp3" id="27_jukhh"]
 [ext_resource type="Script" uid="uid://ugmcw1fcnwxf" path="res://scripts/falas.gd" id="28_gdn7j"]
 
@@ -399,6 +403,71 @@ grow_vertical = 2
 script = ExtResource("6_hrrj1")
 DOT_RADIUS = 4.0
 
+[node name="HintContainer" type="Control" parent="Neck/Head/Eyes/Camera3D"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Neck/Head/Eyes/Camera3D/HintContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 65
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Neck/Head/Eyes/Camera3D/HintContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ContainerLanterna" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/HintContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+script = ExtResource("5_omckb")
+
+[node name="TextureRect" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/HintContainer/MarginContainer/VBoxContainer/ContainerLanterna"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+texture = ExtResource("6_uqo28")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/HintContainer/MarginContainer/VBoxContainer/ContainerLanterna"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Lanterna"
+
+[node name="ContainerAgenda" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/HintContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/HintContainer/MarginContainer/VBoxContainer/ContainerAgenda"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+texture = ExtResource("24_0e2pd")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Neck/Head/Eyes/Camera3D/HintContainer/MarginContainer/VBoxContainer/ContainerAgenda"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Agenda"
+
 [node name="Documentos" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D"]
 visible = false
 anchors_preset = 15
@@ -478,6 +547,7 @@ flat = true
 
 [node name="NoteBookHUD" type="CanvasLayer" parent="Neck/Head/Eyes/Camera3D" node_paths=PackedStringArray("player")]
 layer = 0
+visible = false
 script = ExtResource("15_wf17w")
 player = NodePath("../../../../..")
 
@@ -643,6 +713,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="ContainerFolhaCartas" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -950,7 +1021,6 @@ layout_mode = 2
 expand_mode = 5
 
 [node name="ContainerFolhaInventario" type="HBoxContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -989,15 +1059,33 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="PanelItem" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+[node name="Button" type="Button" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
+flat = true
+icon_alignment = 1
+
+[node name="PanelItem" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
 
-[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/PanelItem"]
+[node name="TextureItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer/Button/PanelItem"]
 layout_mode = 2
-texture = ExtResource("13_0e2pd")
+texture = ExtResource("17_gdn7j")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="PanelItem2" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
@@ -1007,6 +1095,7 @@ layout_mode = 2
 texture = ExtResource("13_0e2pd")
 
 [node name="PanelItem3" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
@@ -1016,6 +1105,7 @@ layout_mode = 2
 texture = ExtResource("13_0e2pd")
 
 [node name="PanelItem4" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
@@ -1025,6 +1115,7 @@ layout_mode = 2
 texture = ExtResource("13_0e2pd")
 
 [node name="PanelItem5" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
@@ -1034,6 +1125,7 @@ layout_mode = 2
 texture = ExtResource("13_0e2pd")
 
 [node name="PanelItem6" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
@@ -1043,6 +1135,7 @@ layout_mode = 2
 texture = ExtResource("13_0e2pd")
 
 [node name="PanelItem7" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
 
@@ -1051,6 +1144,7 @@ layout_mode = 2
 texture = ExtResource("13_0e2pd")
 
 [node name="PanelItem8" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
 
@@ -1059,6 +1153,7 @@ layout_mode = 2
 texture = ExtResource("13_0e2pd")
 
 [node name="PanelItem9" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
 
@@ -1067,6 +1162,7 @@ layout_mode = 2
 texture = ExtResource("13_0e2pd")
 
 [node name="PanelItem10" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaEsquerda/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uqo28")
 
@@ -1099,8 +1195,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5eo68")
 [node name="TextureImagemItem" type="TextureRect" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer/PanelImagemItem"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
-texture = ExtResource("12_beuf1")
-expand_mode = 4
+texture = ExtResource("17_gdn7j")
+expand_mode = 5
 stretch_mode = 5
 
 [node name="PanelDescricaoItem" type="PanelContainer" parent="Neck/Head/Eyes/Camera3D/NoteBookHUD/AgendaUI/HBoxContainer/ContainerCapa/ContainerPaginas/ContainerFolhaInventario/ContainerPaginaDireita/VBoxContainer"]
@@ -1112,7 +1208,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5eo68")
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("11_dvip7")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 28
 text = "*Descrição do Item*"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1605,6 +1701,20 @@ flat = true
 
 [node name="InteractRay" parent="Neck/Head/Eyes/Camera3D" instance=ExtResource("2_0hrit")]
 visible = false
+
+[node name="FlashLight" type="SpotLight3D" parent="Neck/Head/Eyes"]
+visible = false
+light_energy = 3.0
+light_indirect_energy = 2.0
+light_specular = 1.0
+spot_range = 10.0
+spot_attenuation = 1.2
+spot_angle = 25.0
+
+[node name="FlashLightClick" type="AudioStreamPlayer" parent="Neck/Head/Eyes"]
+stream = ExtResource("27_6luef")
+volume_db = 6.0
+pitch_scale = 1.8
 
 [node name="Andando" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3900159)
