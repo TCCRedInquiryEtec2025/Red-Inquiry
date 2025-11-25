@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://toduqpnkwd6e"]
+[gd_scene load_steps=11 format=4 uid="uid://toduqpnkwd6e"]
 
 [ext_resource type="Script" uid="uid://qjfjihi5a8g1" path="res://scripts/flashlight.gd" id="1_s50o1"]
 [ext_resource type="Texture2D" uid="uid://ndnr1u5sd5oa" path="res://assets/textures/papel/Paper005_2K-PNG_Roughness.png" id="2_8m6px"]
+[ext_resource type="AudioStream" uid="uid://cu0k6geiagm7p" path="res://assets/sounds/DetetiveFalas/lanterna.mp3" id="2_kvkvb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvkvb"]
 albedo_color = Color(0.23874435, 0.23874438, 0.23874435, 1)
@@ -90,6 +91,8 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 mass = 0.2
 freeze = true
 script = ExtResource("1_s50o1")
+fala = ExtResource("2_kvkvb")
+response_prompt = "Não sei onde eu vou parar depois, mas essa lanterna definitivamente pode ser útil."
 
 [node name="flashlight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)

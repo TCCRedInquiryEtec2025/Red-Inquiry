@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://csqkjh04rpi6t"]
+[gd_scene load_steps=8 format=3 uid="uid://csqkjh04rpi6t"]
 
 [ext_resource type="Script" uid="uid://cy3uu0grc3bfh" path="res://scripts/jornal_semanal_2.gd" id="1_ml8lr"]
 [ext_resource type="Texture2D" uid="uid://cx6mkby1tsifv" path="res://assets/cartas/Jornal2.png" id="1_pvta5"]
+[ext_resource type="AudioStream" uid="uid://c0pfrl5mciuf7" path="res://assets/sounds/DetetiveFalas/conservacao.mp3" id="2_ulqfw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml8lr"]
 albedo_texture = ExtResource("1_pvta5")
@@ -22,6 +23,7 @@ size = Vector3(2, 2, 2)
 [node name="JornalSemanal2" type="RigidBody3D" groups=["legiveis"]]
 script = ExtResource("1_ml8lr")
 tipo = 1
+fala = ExtResource("2_ulqfw")
 response_prompt = "Nem mesmo os animais em áreas de conservação extremamente protegidas estão seguros."
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

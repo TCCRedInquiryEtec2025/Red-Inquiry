@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjnlcdxyc5e11"]
+[gd_scene load_steps=8 format=3 uid="uid://bjnlcdxyc5e11"]
 
 [ext_resource type="Texture2D" uid="uid://477ea5oq0qij" path="res://assets/cartas/Jornal1.png" id="1_n48ik"]
 [ext_resource type="Script" uid="uid://583wmcbstm8q" path="res://scripts/jornal_semanal_1.gd" id="1_ndwun"]
+[ext_resource type="AudioStream" uid="uid://bv7tqtlqb4kfw" path="res://assets/sounds/DetetiveFalas/murmurinhos.mp3" id="2_jffx8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jffx8"]
 albedo_texture = ExtResource("1_n48ik")
@@ -22,6 +23,7 @@ size = Vector3(2, 2, 2)
 [node name="JornalSemanal1" type="RigidBody3D" groups=["legiveis"]]
 script = ExtResource("1_ndwun")
 tipo = 1
+fala = ExtResource("2_jffx8")
 response_prompt = "Esses burburinhos sempre duram muito pouco… Não se deram o trabalho de investigar nem mesmo por um mês depois desse escândalo."
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

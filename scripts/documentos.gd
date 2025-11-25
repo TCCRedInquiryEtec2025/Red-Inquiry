@@ -34,6 +34,8 @@ func _on_button_pressed() -> void:
 	carta.visible = false
 	
 	self.visible = false
+	get_parent().get_child(0).get_child(0).visible = true
+	get_parent().get_child(0).get_child(1).visible = false
 	
 
 func _on_interacted(interactable: Carta) -> void:
@@ -45,6 +47,9 @@ func _on_interacted(interactable: Carta) -> void:
 	
 	jornal.visible = false
 	carta.visible = false
+	
+	get_parent().get_child(0).get_child(0).visible = false
+	get_parent().get_child(0).get_child(1).visible = true
 	
 	match interactable.tipo:
 		interactable.TipoCarta.Carta:

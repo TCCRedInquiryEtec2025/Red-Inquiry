@@ -66,6 +66,8 @@ func _input(event: InputEvent) -> void:
 			$Neck/Head/Eyes/Camera3D/Documentos.visible = false
 			GameState.setValue("lendo", false)
 			GameState.setValue("podeAndar", true)
+			$Neck/Head/Eyes/Camera3D/Shaders/Monochrome.visible = false
+			$Neck/Head/Eyes/Camera3D/Shaders/MonochromeCRT.visible = true
 			return
 			
 		elif GameState.getValue("abrindoAgenda"): # Se estiver com a agenda aberta

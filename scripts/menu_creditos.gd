@@ -53,8 +53,8 @@ var members = {
 		"youtube": ""
 	},
 	"ButtonBernardo":{
-		"nome": "Bernardo",
-		"funcao": "Sonorização",
+		"nome": "Bernando Henrique Santos",
+		"funcao": "Compositor",
 		"texto": "“Você é autista”\n- De acordo com qualquer pessoa que me conhece",
 		"foto": preload("res://assets/fotos/bernardo.jpg"),
 		"github": "",
@@ -63,7 +63,7 @@ var members = {
 	},
 	"ButtonIago":{
 		"nome": "Iago Anjos da Silva",
-		"funcao": "Dublagem",
+		"funcao": "Dublagens",
 		"texto": "“BEHOLD THE POWER OF AN ANGEL!”",
 		"foto": preload("res://assets/fotos/iago.jpg"),
 		"github": "https://github.com/ImFenyx",
@@ -72,9 +72,9 @@ var members = {
 	},
 	"ButtonGabriel":{
 		"nome": "Gabriel Soares",
-		"funcao": "Artista",
+		"funcao": "Ilustrador",
 		"texto": "Tudo e todos dizem que vai dar errado, e vai mesmo. O importante é levantar e tentar de novo, até que dê certo",
-		"foto": preload("res://icon.svg"),
+		"foto": preload("res://assets/fotos/gabriel.jpg"),
 		"github": "",
 		"instagram": "https://www.instagram.com/dogzu_cdt/",
 		"youtube": ""
