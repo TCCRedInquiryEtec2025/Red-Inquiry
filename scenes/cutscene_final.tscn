@@ -1,15 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2c6g66w0ncnx"]
+[gd_scene load_steps=6 format=3 uid="uid://b1qqsypqhd7ws"]
 
-[ext_resource type="Script" uid="uid://ot6taq1csu43" path="res://scripts/cutscene.gd" id="1_a320b"]
-[ext_resource type="Texture2D" uid="uid://c6crsqdp41knm" path="res://assets/loadingScreen.png" id="1_edmg7"]
-[ext_resource type="Shader" uid="uid://dlly7f75ufni7" path="res://assets/shaders/monochromeCRT.gdshader" id="3_0sipp"]
+[ext_resource type="Script" uid="uid://drqjsycmg4oni" path="res://scripts/cutscene_final.gd" id="1_6e8du"]
+[ext_resource type="Texture2D" uid="uid://bf3d212rnxt2u" path="res://assets/cutscene2.jpg" id="2_6e8du"]
+[ext_resource type="Shader" uid="uid://dlly7f75ufni7" path="res://assets/shaders/monochromeCRT.gdshader" id="3_1qmla"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a320b"]
-texture = ExtResource("1_edmg7")
-modulate_color = Color(0.39679098, 0.39679098, 0.39679098, 1)
+texture = ExtResource("2_6e8du")
+modulate_color = Color(0.5370113, 0.5370113, 0.5370112, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0sipp"]
-shader = ExtResource("3_0sipp")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xd2ph"]
+shader = ExtResource("3_1qmla")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.1
 shader_parameter/scanlines_width = 0.25
@@ -25,17 +25,17 @@ shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.050000002375
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.750000035625
+shader_parameter/vignette_intensity = 0.7
+shader_parameter/vignette_opacity = 0.4
 
-[node name="CutScene" type="Control"]
+[node name="CutSceneFinal" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a320b")
+script = ExtResource("1_6e8du")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -82,7 +82,7 @@ vertical_alignment = 1
 
 [node name="MonochromeCRT" type="ColorRect" parent="Shaders"]
 z_index = 2
-material = SubResource("ShaderMaterial_0sipp")
+material = SubResource("ShaderMaterial_xd2ph")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

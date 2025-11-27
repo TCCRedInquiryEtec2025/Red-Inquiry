@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	if(codigo.check_phrase() == true):
 		GameState.setValue("podeAndar", true)
-		TransicaoCenas.change_scene("res://scenes/fimDemo.tscn")
+		TransicaoCenas.change_scene("res://scenes/cutscene_final.tscn")
 		
 	else:
 		Audio.stop() # Para se já estiver falando

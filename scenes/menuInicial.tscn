@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://8navspruggjk"]
 
-[ext_resource type="Script" uid="uid://bcd2164ydly4x" path="res://scenes/menu_inicial.gd" id="1_p0uqc"]
+[ext_resource type="Script" uid="uid://bcd2164ydly4x" path="res://scripts/menu_inicial.gd" id="1_p0uqc"]
 [ext_resource type="AudioStream" uid="uid://dfoi8p1810pt" path="res://assets/sounds/winter-rain-in-oak-forest-loop-185672.mp3" id="2_jhs6u"]
 [ext_resource type="PackedScene" uid="uid://bahtauago805q" path="res://scenes/fundoMenu.tscn" id="2_mxdwk"]
 [ext_resource type="Texture2D" uid="uid://drt3yx3hkw15c" path="res://assets/Red-Inquiry.png" id="3_4m7wy"]

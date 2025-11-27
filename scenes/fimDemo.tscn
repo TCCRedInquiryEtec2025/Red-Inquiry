@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://buuimvvob7se2"]
 
-[ext_resource type="Script" uid="uid://dsdgqgutg8aly" path="res://scenes/fim_demo.gd" id="1_l14m7"]
+[ext_resource type="Script" uid="uid://dsdgqgutg8aly" path="res://scripts/fim_demo.gd" id="1_l14m7"]
 [ext_resource type="Shader" uid="uid://dlly7f75ufni7" path="res://assets/shaders/monochromeCRT.gdshader" id="2_ro206"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ro206"]
@@ -18,7 +18,7 @@ shader_parameter/distort_intensity = 0.05
 shader_parameter/noise_opacity = 0.15
 shader_parameter/noise_speed = 20.0
 shader_parameter/static_noise_intensity = 0.1
-shader_parameter/aberration = 0.0050000477375000685
+shader_parameter/aberration = 0.00500004773750006
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.050000002375

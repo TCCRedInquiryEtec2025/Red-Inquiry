@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://rdpik2xs0fvt" path="res://assets/hdris/wmremove-transformed_LE_upscale_balanced_x4.jpg" id="1_3m7yw"]
 [ext_resource type="Shader" uid="uid://dxotq2if8l73l" path="res://assets/shaders/monochrome.gdshader" id="1_7lsr1"]
-[ext_resource type="Script" uid="uid://bilfgoj4lmyd" path="res://scenes/fundo_menu.gd" id="1_k4050"]
+[ext_resource type="Script" uid="uid://bilfgoj4lmyd" path="res://scripts/fundo_menu.gd" id="1_k4050"]
 [ext_resource type="Texture2D" uid="uid://bg35j0p6nplu4" path="res://assets/textures/wood_table_001_diff_4k.jpg" id="2_42mv4"]
 [ext_resource type="Texture2D" uid="uid://drlxoye4i20q6" path="res://assets/textures/Concrete042A_4K-PNG_Color.png" id="4_vj7jv"]
 [ext_resource type="PackedScene" uid="uid://r4sr0buf7dbh" path="res://assets/scenes/paredeJanela.tscn" id="6_38wos"]

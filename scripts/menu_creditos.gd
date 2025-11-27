@@ -59,7 +59,7 @@ var members = {
 		"foto": preload("res://assets/fotos/bernardo.jpg"),
 		"github": "",
 		"instagram": "https://www.instagram.com/dmoneggs/",
-		"youtube": ""
+		"youtube": "https://www.youtube.com/@dme6demonegg"
 	},
 	"ButtonIago":{
 		"nome": "Iago Anjos da Silva",
