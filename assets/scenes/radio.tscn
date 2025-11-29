@@ -80,4 +80,7 @@ max_polyphony = 2
 bus = &"Music"
 emission_angle_filter_attenuation_db = -30.7
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="interacted" from="." to="." method="_on_interacted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

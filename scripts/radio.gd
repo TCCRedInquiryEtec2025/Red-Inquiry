@@ -18,8 +18,6 @@ func _ready() -> void:
 		dir.list_dir_end()
 		
 		tocar_musica_aleatoria($AudioStreamPlayer3D)
-		
-	$AudioStreamPlayer3D.finished.connect(_on_music_finished)
 	
 		
 func _on_interacted(_interactable: Variant) -> void:
@@ -42,13 +40,15 @@ func tocar_musica_aleatoria(audio_player: AudioStreamPlayer3D):
 	var path = ultima_musica
 	while path == ultima_musica and musicas.size() > 1:
 		path = musicas[randi() % musicas.size()]
-	
 	ultima_musica = path
 	
 	audio_player.stop()
 	audio_player.stream = load(path)
 	audio_player.play()
+	
+	var dur = audio_player.stream.get_length()
+	$Timer.start(dur)
 
 
-func _on_music_finished():
+func _on_timer_timeout() -> void:
 	tocar_musica_aleatoria($AudioStreamPlayer3D)
